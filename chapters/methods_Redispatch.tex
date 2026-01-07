@@ -1,0 +1,38 @@
+\subsection{Redispatch framework}
+A two-stage optimisation model is used to analyse the influence of \ac{EV} demand-side flexibility on congestion and redispatch needs. To couple the dispatch and the redispatch model two additional data preparation steps are needed resulting in a four step model (Figure \ref{fig:model_overview}). The methodology is based on \textit{Flexibility potential of aggregated electric vehicle fleets to reduce transmission congestions and redispatch needs: A case study in Austria} \cite{LoschanEV}. 
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=1.0\textwidth]{graphics/RQ3/model_overview.pdf}
+    \caption{Graphic illustration of the two-stage model}
+    \label{fig:model_overview}
+\end{figure} 
+The time sequence of the model and the corresponding spatial resolution in use is illustrated in Figure \ref{fig:Redispatch_timing}.
+
+
+The first step of the model is aggregating the necessary input data. \ac{EV}s are aggregated to several \ac{CD}s for each node. These \ac{CD}s are characterised by a specific timeframe and electricity demand (Section \ref{sec:EV_model}). The nodes within Austria are aggregated based on the research question to be answered, This could be an aggregation to one node per country to model the market without physical limitations. Another option is to use the nodes that are connected by transmission lines with a high congestion risk and \ac{FBMC} in the dispatch \cite{Bergh2016}. 
+
+
+However, fewer nodes and transmission lines but all generation units exist in the dispatch. These generation units can no longer be precisely assigned to their geographical position (nodes) in the transmission grid. The correct cross border capacities are still included. Within Austria, the transmission grid is no longer modelled in sufficient detail. This may lead to congested transmission lines in Austria. 
+
+
+In the following dispatch step, the generation schedule of all power plants within each node is calculated based on their \ac{SRMC} to maximise \ac{SEW}.
+
+
+The previously aggregated nodes are disaggregated after the market clearing to consider transmission lines' physical limitations. Hence, a detailed power plant fleet and the related transmission grid are modelled for Austria. The power plant use remains unchanged compared with the one determined in the dispatch as the optimum of the market-clearing perspective. The last step of the optimisation involves preventing congestion by redispatch measures within Austria. As derived from the market-clearing perspective, local \ac{DA} prices are used to calculate the redispatch costs of different generation units. Thermal power plant regulation and \ac{RESE} curtailment are associated with redispatch costs to ensure revenue compensation. 
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=1.0\textwidth]{graphics/Redispatch_timing.pdf}
+    \caption{Time sequence and spatial resolution of the optimisation approach}
+    \label{fig:Redispatch_timing}
+\end{figure} 
+An overview of the two-stage electricity market model and the implementation of \ac{EV} demand-side flexibility can be seen in Figure \ref{fig:model_dependencies}. The “Dispatch model” block calculates the generation schedules and the \ac{DA} prices. These results influence the available capacity for redispatch measures. The block \textit{Redispatch model} performs the redispatch after the market clearing is done in the \textit{Dispatch model} block. The model uses the \ac{DA} price calculated in the dispatch. Available generation capacities for redispatch measures result from the previously calculated generation schedules. The flexibility potential provided by \ac{EV} fleets (block \textit{Electric Vehicle Model}) can be included in both model steps. It is used to balance redispatch needs or as a market-based charging strategy to minimise costs. The dashed arrows show the possible integration of the model stages, whilst the \ac{CD} and their constraints are always considered.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=1.0\textwidth]{graphics/RQ3/Data-Flow.pdf}
+    \caption{Electric vehicle model dependencies}
+    \label{fig:model_dependencies}
+\end{figure}
+\FloatBarrier

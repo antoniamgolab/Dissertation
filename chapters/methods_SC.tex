@@ -1,0 +1,13 @@
+\subsection{Sector coupling integration}
+The sector coupling between the European electricity market and national hydrogen markets is done to integrate electrolysers, hydrogen storage, fuel cells and the resulting flexibility. The methodology is based on \textit{Hydrogen as Short-Term Flexibility and Seasonal Storage in a Sector-Coupled Electricity Market} \cite{LoschanH2}. Figure \ref{fig:Model_setup} gives an overview of this sector-coupling approach. 
+
+
+The blocks on the left (\textit{Electricity Market}, \textit{Electricity Generators} and \textit{Electricity Demand}) were already part of the existing \textit{EDisOn} model. The blocks on the right (\textit{Hydrogen Market}, \textit{Hydrogen Storage}, \textit{Hydrogen Generators} and \textit{Hydrogen Consumers}) are model extensions. 
+Several signals connect these two markets. The clearing price of the electricity market impacts the hydrogen market. It alters the production of hydrogen and the use of hydrogen to generate electricity. The first causes increased electricity demand, which influences electricity generation and price. The latter can have an impact on electricity generation and thus on electricity prices. As a result, the electricity and hydrogen markets impact one another. Thus, they are optimised together to achieve a holistic \ac{SEW} optimum for the electricity- and hydrogen markets. It is preferable to avoid an iterative solution in which the hydrogen market acts as a price taker and the electricity market acts as a price setter.
+\begin{figure}[h]
+\centering
+      \includegraphics[width=1.0\textwidth]{graphics/RQ2/Model_setup.pdf}
+      \caption{Graphic illustration of the sector coupling approach}
+      \label{fig:Model_setup}
+\end{figure}
+\FloatBarrier

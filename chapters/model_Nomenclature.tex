@@ -1,0 +1,99 @@
+\subsection{Nomenclature}
+An overview of all sets, parameters and decision variables is given in Table \ref{table:nomenclature}.
+\begin{longtable}{l|l|l} 
+\multicolumn{3}{l}{\textbf{Sets}}     \endfirsthead
+$E$ & Electrolysers & index: $e$ \\
+$\mathrm{FC}$ & Fuel cells & index: $\mathrm{fc}$ \\
+$L$ & All transmission lines & index: $l_\mathrm{AC}$ \\
+$L_\mathrm{AC}$ & AC transmission lines & index: $l_\mathrm{AC}$ \\
+$N$     & Reduced set of nodes   & index: $n$        \\ 
+$N^\mathrm{All}$     & Complete set of nodes   & index: $n$        \\ 
+$\mathrm{PS}$    & Hydro storage units          & index: $\mathrm{ps}$        \\ 
+$\mathrm{RESE}$ & Renewable energy sources & index: $r$ \\
+$\mathrm{ST}$  & Battery storage units & index: $\mathrm{st}$   \\ 
+$T$      & Time steps  & index: $t$         \\ 
+$\mathrm{TH}$  & Thermal power plants  & index: $\mathrm{th}$        \\ 
+$\Gamma$ & Charging demands & index: $\gamma$ \\
+
+\multicolumn{2}{l}{}       &       \\
+\multicolumn{2}{l}{\textbf{Parameters}}   &       \\
+$A_{l,n}$ & Transmission line and node incidence matrix & (0;1) \\
+$B_l$ & Transmission line susceptance & $1/\Omega$  \\
+$B_d$ & Susceptance diagonal matrix & 1/$\Omega$  \\
+$C^\mathrm{DSM}$ & Demand-side response costs & \euro{}/MWh \\
+$C^\mathrm{ps}$               & Pumped hydro-power storage turbine costs  & \euro{}/MWh            \\ 
+$C^{\mathrm{MissingInflow}}$ & Missing inflow costs  & \euro{}/MWh            \\ 
+$C^\mathrm{RESE}$             & Renewable energy maintenance costs & \euro{}/MWh            \\ 
+$C^\mathrm{start}$                & Start-up costs    & \euro{}                \\ 
+$\mathrm{CAP}^\mathrm{EV max.}$  & Electric vehicle's maximum charging power & MW    \\ 
+$\mathrm{CAP}^\mathrm{EV min.}$  & Electric vehicle's minimum charging power & MW   \\
+$\mathrm{CAP}_l$ & Transmission line's capacity & MW \\
+$\mathrm{CAP}_{e}$  & Maximum electrical electrolyser power & MW   \\
+$\mathrm{CAP}_\mathrm{fc}$  & Maximum electrical fuel cell power & MW    \\ 
+$D^\mathrm{EV}_{\gamma}$  & Electricity demand of charging profile $\gamma$  & MWh   \\ 
+$D_{n}$       & Electricity demand  & MWh   \\
+$P^\mathrm{bid}_\mathrm{el}$ & Electricity price bid to produce hydrogen & \euro{}/MWh \\
+$P^\mathrm{bid}_{H_2}$ & Hydrogen market price & \euro{}/MWh\textsubscript{H\textsubscript{2}} \\
+$Q^\mathrm{RESE}$            & Renewable energy generation  & MWh              \\ 
+$R_l$ & Transmission line resistance & $\Omega$  \\
+$\mathrm{SRMC}$                     & Short run marginal costs          & \euro{}/MWh            \\
+$\mathrm{VoLL}$                            & Value of lost load    & \euro{}/MWh            \\
+$\mathrm{WTP}$                            & Willingness to pay for electricity & \euro{}/MWh            \\
+$X_l$ & Transmission line reactance & $\Omega$  \\
+$\eta_{e}$ & Electrolyser efficiency & \% \\
+$\eta_\mathrm{fc}$ & Fuel cell efficiency & \% \\
+
+\multicolumn{2}{l}{}       &       \\
+\multicolumn{3}{l}{\textbf{Parameters - Redispatch model}} \\
+$C^\mathrm{RES Redis}$ & Renewable energy curtailment costs & \euro{}/MWh \\ 
+$C^\mathrm{th Redis}$ & Generation increase costs & \euro{}/MWh \\ 
+$P^\mathrm{Premium}$ & Market premium & \euro{}/MWh \\
+
+\multicolumn{2}{l}{}       &       \\
+\multicolumn{3}{l}{\textbf{Decision Variables}} \\
+$d^\mathrm{down}$ & Demand-side response - demand reduction & MWh \\
+$d^\mathrm{el}_{H_2}$ & Electrolysers' electricity demand & MWh  \\
+$d^\mathrm{EV}$       & Demand of all electric vehicles & MWh   \\ 
+$d^\mathrm{EV}_{\gamma}$  & Demand of charging profile $\gamma$  & MWh   \\ 
+$d^\mathrm{EV +}_{\gamma}$  & Demand increase of charging profile $\gamma$   & MWh  \\ 
+$d^\mathrm{EV -}_{\gamma}$  & Demand decrease of charging profile $\gamma$    & MWh \\
+$d^{H_2}_\mathrm{el}$ & Hydrogen demand to generate electricity & MWh\textsubscript{H\textsubscript{2}} \\
+$d^\mathrm{up}$ & Demand-side response - demand increase & MWh \\
+$\mathrm{exch}$       & Power exchange between nodes & MWh              \\ 
+$\mathrm{flow}$ & Power flow over a transmission line & MWh \\
+$p^\mathrm{CP}$ &  Electricity market clearing price & \euro{}/MWh \\
+$p^\mathrm{CP}_{H_2}$ &  Hydrogen market clearing price & \euro{}/MWh\textsubscript{H\textsubscript{2}} \\
+$q^\mathrm{el}_{H_2}$ & Fuel cell electricity generation & MWh \\
+$q^{H_2}_\mathrm{el}$ & Hydrogen generation & MWh\textsubscript{H\textsubscript{2}} \\
+$q^\mathrm{in}$        & Storage charging power& MWh              \\ 
+$q^\mathrm{missingInflow}$ & Missing Inflow & MWh \\
+$q^\mathrm{out}$      & Storage discharging power& MWh              \\ 
+$q^\mathrm{pu}$   & Pumped hydro-power storage pump mode & MWh    \\ 
+$q_\mathrm{th}$   & Thermal power plant electricity generation & MWh   \\
+$q^\mathrm{tu}$    & Pumped hydro-power storage turbine mode & MWh \\ 
+$\mathrm{soc}^\mathrm{DSR}$ & Demand-side response state of charge & MWh \\
+$\mathrm{soc}^{H_2}$ & Hydrogen storage state of charge & MWh\textsubscript{H\textsubscript{2}} \\
+$\mathrm{spill}^\mathrm{RESE}$     & Renewable energy curtailment    & MWh              \\ 
+$\mathrm{str}_\mathrm{th}$    & Thermal power plant start-up   & (0;1)            \\ 
+$\mathrm{nse}$       & Not supplied energy  & MWh \\
+
+\multicolumn{2}{l}{}       &       \\
+\multicolumn{3}{l}{\textbf{Decision Variables - Redispatch model}} \\
+$q^\mathrm{+ Redis} $      & \begin{tabular}[c]{@{}l@{}}Electricity generation increase\end{tabular}                & MWh  \\ 
+$q^\mathrm{- Redis} $      & \begin{tabular}[c]{@{}l@{}}Electricity generation decrease\end{tabular}                & MWh  \\ 
+$\mathrm{spill}^\mathrm{RESE}_\mathrm{Redis}$   & Additional renewable energy curtailment & MWh  \\ 
+
+\multicolumn{2}{l}{}       &       \\
+\multicolumn{3}{l}{\textbf{Calculation terms - Socio-economic welfare}} \\
+$\mathrm{costs}^\mathrm{el}$ & Other cost term & \euro{} \\
+$\mathrm{CR}^\mathrm{el}$ & Congestion rent & \euro{}\\
+$\mathrm{CS}^\mathrm{el}$ & Electricity market consumer surplus & \euro{}\\
+$\mathrm{CS}^{H_2}$ & Hydrogen market consumer surplus & \euro{}\\
+$\mathrm{PS}^\mathrm{el}$ & Electricity market producer surplus & \euro{}\\
+$\mathrm{PS}^{H_2}$ & Hydrogen market producer surplus & \euro{}\\
+$\mathrm{SEW}^\mathrm{el}$ & Electricity market socio-economic welfare & \euro{}\\
+$\mathrm{SEW}^{H_2}$ & Hydrogen market socio-economic welfare & \euro{}
+\\ \hline
+\caption{Model sets, parameters and decision variables}
+\label{table:nomenclature}
+\end{longtable}

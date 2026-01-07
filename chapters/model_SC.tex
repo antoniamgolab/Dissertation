@@ -1,0 +1,26 @@
+\paragraph*{Sector coupling}\mbox{}\\
+Conversion technologies are used to connect the electricity- and hydrogen markets. Production ($q$) in one sector causes demand ($d$) in another. Superscripts indicate the target sector, whereas subscripts indicate the source sector.
+Electrolysers couple the electricity and hydrogen markets (Equation \ref{equ:electro_conversion}). Hydrogen generation ($q^{H_2}_\mathrm{el}$) causes additional electricity demand ($d^\mathrm{el}_{H_2}$) that must be met (Equation \ref{equ:dispatch_kirchhoff}). 
+\begin{flalign}
+    &q^{H_2}_{\mathrm{el}_{t,e}} = d^\mathrm{el}_{H_{2_{t,e}}} \cdot \eta_{e} \label{equ:electro_conversion} \\ \nonumber
+    &\forall t \in T, \forall e \in E 
+\end{flalign}
+The coupling from the hydrogen market to the electricity market is accomplished using fuel cells (Equation \ref{equ:fuelcell_conversion}). Electricity generation ($q^\mathrm{el}_{H_2}$) causes hydrogen demand ($d^{H_2}_\mathrm{el}$) that must be met. 
+\begin{flalign}
+    &q^\mathrm{el}_{H_{2_{t,\mathrm{fc}}}} = d^{H_2}_{\mathrm{el}_{t,\mathrm{fc}}} \cdot \eta_{fc}
+    \label{equ:fuelcell_conversion} \\ \nonumber
+    &\forall t \in T, \forall \mathrm{fc} \in \mathrm{FC} 
+\end{flalign}
+Therefore, hydrogen must be produced prior to use. Electrolysers (Equation \ref{equ:CAP_electrolyzer}) and fuel cells (Equation \ref{equ:CAP_fuelcell}) are limited by a specified minimum and maximum electrical power. 
+\begin{flalign}
+    &0 \leq d^\mathrm{el}_{H_{2_{t,e}}} \leq \mathrm{CAP}_{e} \label{equ:CAP_electrolyzer}\\ \nonumber
+    &\forall t \in T, \forall e \in E  \\
+    &0 \leq q^\mathrm{el}_{H_{2_{t,\mathrm{fc}}}} \leq \mathrm{CAP}_{fc} \label{equ:CAP_fuelcell}\\ \nonumber
+    &\forall t \in T, \mathrm{fc} \in \mathrm{FC} 
+\end{flalign}
+Hydrogen production and consumption are coupled with hydrogen storage (Equation \ref{equ:H2_storage} - \ref{equ:H2_storage_CAP}). The storage capacity is not limited but evaluated ex-post optimisation.
+\begin{flalign}
+    &\mathrm{soc}^{H_2}_{t,n} = \mathrm{soc}^{H_2}_{t-1,n} - \sum\limits_{\mathrm{fc} \in \mathrm{FC}_{n}} d^{H_2}_{\mathrm{el}_{t,\mathrm{fc}}} + \sum\limits_{e \in E_{n}} q^{H_2}_{\mathrm{el}_{t,e}} \label{equ:H2_storage}\\
+    &0 \leq \mathrm{soc}^{H_2}_{t,n} \leq \infty \label{equ:H2_storage_CAP}\\ \nonumber
+    &\forall t \in T, \forall n \in N 
+\end{flalign}

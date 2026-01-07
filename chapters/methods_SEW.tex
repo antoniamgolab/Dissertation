@@ -1,0 +1,45 @@
+\subsection{Socio-economic welfare}\label{sec:method_SEW}
+This section describes the principle of the used approach to maximise \ac{SEW}. Furthermore, it includes a methodological explanation of hydrogen sector coupling and is essential for evaluating the results after the optimisation. The methodology is based on \textit{Hydrogen as Short-Term Flexibility and Seasonal Storage in a Sector-Coupled Electricity Market} \cite{LoschanH2}. 
+\subsection*{Without Sector Coupling}
+In economics theory, the electricity demand is elastic. A relationship exists between the actual demand and the price (Figure \ref{fig:SEW_theory}). This implementation cannot be solved by large-scale electricity market models in a reasonable time. As a consequence, electricity demand is assumed to be inelastic, but demand-side flexibility is implemented (Figure \ref{fig:SEW_model}). The demand remains constant until the electricity price equals the \ac{WTP}, an exogenous predefined maximum electricity price.
+
+\begin{figure}[h]
+\centering
+   \begin{minipage}[b]{.49\linewidth} % [b] => Ausrichtung an \caption
+      \includegraphics[width=1\textwidth]{graphics/RQ2/Social_Welfare_theory.pdf}
+      \caption{Economic welfare in theory}
+      \label{fig:SEW_theory}
+   \end{minipage}
+   \hspace{0.00\linewidth}% Abstand zwischen Bilder
+   \begin{minipage}[b]{0.49\linewidth} % [b] => Ausrichtung an \caption
+        \includegraphics[width=1\textwidth]{graphics/RQ2/Social_Welfare_model.pdf}
+        \caption{Economic welfare in the model}
+        \label{fig:SEW_model}
+   \end{minipage}
+\end{figure}
+The \ac{PS} describes the area between the cost of electricity generation (supply curve) and the resulting clearing price (p*). The \ac{CS} is calculated by multiplying the difference between the clearing price and the \ac{WTP} by the hourly electricity demand (Figure \ref{fig:SEW_model}). Hence, the \ac{WTP} directly determines this value. Because this analysis considers the difference from a reference scenario, the chosen value does not affect the results.
+\subsection*{With Sector Coupling}
+Figure \ref{fig:SEW_theory} depicts the electricity market clearing without sector coupling to the hydrogen market. The intersection of the supply curve and the demand curve results in a market clearing price ($p^*$). The corresponding \ac{PS} is highlighted in a light orange area and the \ac{CS} in a light blue area. Figure \ref{fig:MO_wH2} depicts the impact of increased electricity demand due to hydrogen production. 
+\begin{figure}[h]
+    \centering
+        \includegraphics[width=0.8\textwidth]{graphics/RQ2/Merit_Order_el_wH2.pdf}
+        \caption{Electricity market merit order with sector coupling}
+        \label{fig:MO_wH2}
+\end{figure} 
+\FloatBarrier
+The electricity demand without sector coupling (blue line) raises (red line) due to the electrolyser's demand ($\Delta el.D$). This additional electricity demand will exist until a predetermined exogenous market clearing price is realised (P\textsubscript{bid el.}). If possible, the additional demand will be so high that the new clearing price ($p^{*}_{new}$) as the intersection between the supply curve and the new demand curve (red line) corresponds to the maximum bid price of the hydrogen producers on the electricity market (P\textsubscript{bid el.}). This is the maximum bid made by hydrogen producers on the electricity market. It depends on the associated hydrogen price until production becomes economically viable. The amount of this additional electricity demand is determined by the amount of hydrogen produced and the efficiency of the electrolysers. 
+
+
+If the clearing price without the additional demand is already higher than P\textsubscript{bid el.}, there will be no additional demand. Their installed capacity limits the additional demand of hydrogen producers. Hence, the demand will not always rise until $p^*_{new}$ corresponds to P\textsubscript{bid el.}. This case is shown in Figure \ref{fig:MO_wH2}. The raised market clearing price increases the \ac{PS} (green and dark orange areas). Part of this increased \ac{PS} is due to a reduction in \ac{CS} (green area). Additionally, the \ac{CS} rises due to the increased electricity demand of hydrogen producers (dark blue area).
+
+\begin{figure}[h]
+    \centering
+      \includegraphics[width=0.8\textwidth]{graphics/RQ2/Merit_Order_H2.pdf}
+      \caption{Hydrogen market merit order}
+      \label{fig:MO_H2}
+\end{figure} 
+Figure \ref{fig:MO_H2} depicts the additional \ac{PS} obtained on the hydrogen market. The amount of hydrogen produced (hy. Q; red line) is proportional to the electricity demand increase ($\Delta el.D$) on the electricity market via the electrolyser efficiency ($\eta$). Moreover, the hydrogen market clearing price ($p^{*}_{H_2}$) is proportional the electricity clearing price ($p^{*}_{new}$). A \ac{PS} (turquoise area) occurs if the hydrogen market clearing price is lower than the maximum hydrogen price (P\textsubscript{bid H2}). In this case, the hydrogen \ac{PS} is calculated by multiplying the difference between the clearing price and the maximum bid price by the hourly hydrogen generation. If these two prices are the same, the benefits of the market coupling are fully captured by the electricity market \ac{CS} increase. This occurs if there is more electrolyser capacity installed than needed.
+
+
+Fuel cells that generate electricity using hydrogen are another available generation capacity. These are used if the electricity prices exceed their \ac{SRMC}. The required hydrogen must be produced ahead of time. This can result in hydrogen production even if the market clearing price (p*\textsubscript{H2}) is higher than the maximum hydrogen price (P\textsubscript{bid H2}), which corresponds to a negative electrolyser \ac{PS}.
+\FloatBarrier

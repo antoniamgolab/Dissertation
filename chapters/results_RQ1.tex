@@ -1,0 +1,121 @@
+\section{Flexibility competition and synergy}\label{sec:results_RQ1}
+This section answers research question 1: Are there competitive or synergistic effects between different types of flexibility when different technologies provide them? The presented results are based on \textit{Synergies and competition: Examining flexibility options in the European electricity market} \cite{LoschanFlexibility}.
+\subsection{Transmission line expansion}\label{sec:results_transmission_line_expansion}
+The effects of storage expansion on electricity prices in two connected bidding zones are evaluated in this section. Congestion occurs several times between the bidding zones Austria and Germany in the \textit{Baseline-1} scenario. Thus, the electricity price changes between the \textit{Baseline-1} scenario and the \textit{Baseline-2} scenario with transmission line expansion. While in the \textit{Baseline-1} scenario, the transmission line is congested 55\% of the time, it is only congested 16\% of the time in the \textit{Baseline-2} scenario. Figure \ref{fig:priceduration_basline} illustrates the effects of interconnector expansion. 
+
+
+The electricity prices in Austria are presented in the upper figure and those of Germany are presented in the lower figure. Peak electricity prices are lower in Austria than in Germany without transmission line expansion. This indicates that expansion tends to raise electricity prices in Austria and reduce prices in Germany due to electricity trade. This is evident when the electricity price in Austria rises from 120 \euro{} to 200 \euro{} (upper left side in Figure \ref{fig:priceduration_basline}) while that in Germany lowers to the same price from 500 \euro{} (lower left side). Effects on electricity prices are observed multiple times in the year.
+\begin{figure}[h]
+\centering
+\includegraphics[width=1.0\textwidth]{graphics/RQ1/result_figures/priceduration/Annual_price_duration_transmission_exp.pdf}
+\caption{Price effects of transmission line expansion, upper: Austria, lower: Germany}
+\label{fig:priceduration_basline}
+\end{figure}
+\FloatBarrier
+\subsection{Storage expansion}
+As shown in Section \ref{sec:results_transmission_line_expansion}, price divergence is evident between Austrian and German bidding zones. Congestion and transmission line expansion result in opposing \ac{SEW} increases and revenue, which are examined in this section. As shown in Figure \ref{fig:priceduration_basline}, flexibility primarily influences the edges of the annual price duration curve. Hence, the highest and the lowest electricity prices change while the median remains unchanged. Thus, price changes are evaluated for these two cases (reduction in peak prices in the left figures and increases in very low prices in the right figures). To examine the influence of storage expansion, the difference in the annual price duration curves with and without storage expansion are subtracted from the \textit{Baseline} scenarios and subsequently sorted. Changes in the electricity price for Austria are shown in Figure \ref{fig:Change_Storage_exp_Austria} and those for Germany in Figure \ref{fig:Change_Storage_exp_Germany}. 
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=1.0\textwidth]{graphics/RQ1/result_figures/priceduration/Change_in_elprice_Austria.pdf}
+\caption{Change in electricity price in Austria through storage expansion (upper: compared to \textit{Baseline-1}, lower: compared to \textit{Baseline-2})}
+\label{fig:Change_Storage_exp_Austria}
+\end{figure}
+\FloatBarrier
+The upper two figures show the results without transmission line expansion, and the lower two figures show the results with the expansion. As illustrated on the left side of the figures, the reduction in peak prices indicates that storage expansion benefits the bidding zone in which the storage is located. A storage expansion in Austria leads to a higher peak price reduction in Austria, while a storage expansion in Germany leads to a higher peak price reduction in Germany. The right side of the figures presents the corresponding results for very low electricity prices, revealing that a stronger reduction in high electricity prices leads to a stronger increase in low electricity prices. Moreover, a transmission line expansion that leads to price convergence between bidding zones and lower peak prices reduces the potential effects that additional storage units can generate (left lower plot in Figure \ref{fig:Change_Storage_exp_Germany}). 
+\begin{figure}[h]
+\centering
+\includegraphics[width=1.0\textwidth]{graphics/RQ1/result_figures/priceduration/Change_in_elprice_Germany.pdf}
+\caption{Change in electricity price in Germany through storage expansion (upper: compared to \textit{Baseline-1}, lower: compared to \textit{Baseline-2})}
+\label{fig:Change_Storage_exp_Germany}
+\end{figure}
+
+The changes in electricity prices due to flexibility use are a reduction in very high and an increase in very low electricity prices. In order to analyse the effects on the \ac{SEW} of the system, the respective amounts of electricity must be considered in addition to the changes in electricity prices. The evaluation of changes in \ac{SEW} considers this. Figure \ref{fig:SEW_storage} presents the change in thermal power plant, \ac{RESE}, storage, hydrogen (electrolyser and fuel cell) \ac{PS}, \ac{CR}, \ac{CS}, and resulting \ac{SEW}. The \textit{Baseline-1} scenario is a reference for all other scenarios.
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=1.0\textwidth]{graphics/RQ1/result_figures/SEW/SEW_storage.pdf}
+\caption{Change in economic welfare through storage and transmission line expansion}
+\label{fig:SEW_storage}
+\end{figure}
+Storage expansion in Austria (\textit{Storage Austria-1}) and in Germany (\textit{Storage Germany-1}) reduces \ac{CS}, storage- and thermal power plant \ac{PS}. 
+Consumers are influenced by the reduction in peak prices (\ac{CS} increase) and the increase of very low electricity prices (\ac{CS} decrease). These two effects lead to overall \ac{CS} reduction. 
+Storage \ac{PS} reduces because additional storage tends to reduce peak prices and increase very low prices; therefore, the storage \ac{PS} lowers. An overall storage \ac{PS} increase with additional storage would only be possible if the new storage does not influence the electricity price. 
+Thermal power plants' \ac{PS} lowers as they only operate if the electricity price is at least as high as the associated \ac{SRMC}. Hence, reducing peak prices lowers their revenue while increasing very low prices has no influence on them.
+In contrast \ac{RESE} is the beneficiary of the additional storage capacity, as \ac{RESE} curtailment and very low electricity prices can be reduced, leading to increased \ac{PS}. Overall, the storage location influences the  \ac{SEW}. Located in Austria \ac{SEW} increases by 13 M\euro{}, and in Germany \ac{SEW} increases by 19 M\euro{}, which is 46\% higher. This was previously observed in the electricity price changes in Figure \ref{fig:Change_Storage_exp_Austria} and \ref{fig:Change_Storage_exp_Germany}, because storage expansion in Germany exerts significantly larger impacts on electricity prices in Germany than storage expansion in Austria (upper left plot in Figure \ref{fig:Change_Storage_exp_Germany}). The storage location does not affect Austria as much (upper left graph in Figure \ref{fig:Change_Storage_exp_Austria}). 
+
+
+The expansion of a congested interconnector results in a significantly higher \ac{SEW} increase, as can be observed in the \textit{Baseline-2} scenario, which is attributable to the unlimited availability of transmission lines until maximum power is reached. In contrast, storage is limited in power and energy, which is further affected by conversion losses during charging and discharging. This implies that price arbitrage is only used if price spreads are high enough to compensate for losses. Moreover, this leads to an increased demand for electricity. These characteristics result in a significantly higher \ac{SEW} increase of 64 M\euro{} than for isolated storage expansion. In contrast to storage expansion, transmission line expansion increases \ac{CS} and storage \ac{PS}. \ac{RESE} particularly benefits strongly from the increased trading capacity and thermal power plants' \ac{PS} decreases. The negative change in \ac{CR} indicates a positive effect of transmission line expansion on electricity price convergence between the bidding zones. 
+
+
+In addition to transmission line expansion, storage is expanded in Austria and Germany in the respective \textit{Storage Austria-2} and Germany \textit{Storage Germany-2} scenarios. Compared with the \textit{Baseline-2} scenario, this storage expansion leads to an overall 15 M\euro{} increase in \ac{SEW} in Austria and 16 M\euro{} in Germany (Figure \ref{fig:SEW_DSM}). 
+\begin{figure}[h]
+\centering
+\includegraphics[width=1.0\textwidth]{graphics/RQ1/result_figures/SEW/SEW_storage_DSM.pdf}
+\caption{Change in economic welfare through demand-side flexibility}
+\label{fig:SEW_DSM}
+\end{figure}
+Increased transmission capacity raises \ac{SEW} increase through storage expansion by 18\% in Austria and reduces the increase by 17\% in Germany. Thus, a synergistic effect on the \ac{SEW} of the entire system can be achieved with transmission grid and storage expansion if the storage expansion is located in bidding zones with increased peak prices (Figure \ref{fig:priceduration_basline}). The total \ac{SEW} increase of the \textit{Storage Austria-2} and \textit{Storage Germany-2} scenarios compared with the \textit{Baseline-1} scenario shows that the storage expansion in Germany leads to slightly higher welfare gains. Only permanent non-congested interconnectors would lead to the same \ac{SEW} benefits regardless of the storage location. 
+\FloatBarrier
+\subsection{Demand-side flexibility}
+Figure \ref{fig:SEW_DSM} depicts the \ac{SEW} increase through the implementation of demand-side flexibility in the \textit{EVDSM only} and \textit{EVDSM Storage} scenarios. While the former includes demand-side flexibility, the latter implements demand-side flexibility and storage expansion. The changes in \ac{SEW} are calculated referencing the \textit{Baseline-2} scenario.
+
+
+The introduction of \ac{EV} fleets providing demand-side flexibility (\textit{EVDSM only} scenario) increases \ac{CS} and reduces \ac{PS}. Demand shifts to times with lower electricity prices; thus, \ac{CS} increases. In contrast, this behaviour reduces the demand at times with higher electricity prices, which reduces \ac{PS}. Overall, \ac{SEW} increases by 2 M\euro{}. The combination of demand-side flexibility and storage expansion in Austria is evaluated using the \textit{EVDSM Storage} scenario. While in the \textit{Storage Austria-2} scenario \ac{CS} reduces by 32 M\euro{}, it only reduces by 19 M\euro{} if demand-side flexibility is introduced. Consequently, the demand-side flexibility leads to a 13 M\euro{} smaller \ac{CS} reduction in this case. On the other hand, demand-side flexibility itself (\textit{EVDSM only} scenario) leads only to an 8 M\euro{} \ac{CS} increase. Hence, when storage and demand-side flexibility are implemented, positive synergistic effects on the \ac{CS} are evident. This positive effect on \ac{CS} leads to a \ac{PS} reduction, while the total \ac{SEW} increase is nearly equal to the sum of individual \ac{SEW} increases. 
+\FloatBarrier
+\subsection{Hydrogen sector coupling}
+The effects of sector coupling between the electricity market and national hydrogen markets are illustrated in Figure \ref{fig:SEW_hydrogen}. While the \textit{Hydrogen only} scenario implements sector coupling, the \textit{Hydrogen Storage} scenario implements sector coupling and storage, and the \textit{Hydrogen EVDSM} scenario implements sector couplöing and\ac{EV} demand-side flexibility. 
+
+
+Hydrogen sector coupling leads to hydrogen production if the electricity price is low enough to generate hydrogen at a price that is not higher than the predefined maximum hydrogen price ($P^{bid}_{H_2}$). In this case, hydrogen production generates additional electricity demand, which increases the electricity price. As a consequence, \ac{CS} is reduced, while thermal- and \ac{RESE} \ac{PS} rises. Storage \ac{PS} decreases because the volatility between very low and high electricity prices lowers. Hydrogen \ac{PS} makes a high share of the total \ac{SEW} increase, indicating that \ac{SEW} shifts from the electricity market toward the hydrogen market.
+
+
+Furthermore, \ac{CR} reduces as 0.5\% fewer electricity trades occur between all bidding zones, indicating higher self-consumption within the bidding zones as \ac{RESE} electricity is used to generate hydrogen rather than traded. In addition, the price divergence between the bidding zones decreases as the average electricity price standard deviation shrinks by 10\% from 10.7 \euro{}/MWh to 9.6 \euro{}/MWh. \ac{CR} decreases, because both of these values are aspects of the \ac{CR} calculation.
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=1.0\textwidth]{graphics/RQ1/result_figures/SEW/SEW_Hydrogen.pdf}
+\caption{Change in economic welfare through sector coupling to national hydrogen markets}
+\label{fig:SEW_hydrogen}
+\end{figure}
+\FloatBarrier
+Additional storage (\textit{Hydrogen Storage} scenario) increases \ac{RESE} \ac{PS} while reducing thermal power plants' \ac{PS}. Overall storage expansion increases \ac{SEW} increases by 7 M\euro{} from 2 520 M\euro{} to 2 527 M\euro{}. This increase is notably lower than the 15 M\euro{} increase generated by sole storage expansion (\textit{Storage Austria-2} scenario), establishing competition between sector coupling and storage. 
+
+
+\ac{EV} demand-side flexibility (\textit{Hydrogen EVDSM} scenario) increases \ac{SEW} by 2 M\euro{} from 2 520 M\euro{} to 2 522 M\euro{}; thus, the total \ac{SEW} increase equals the sum of the individual \ac{SEW} increases.
+In contrast to the combination of storage expansion and demand-side flexibility, no positive synergistic effects on \ac{CS} are evident through the combination of hydrogen sector coupling and demand-side flexibility; however, the introduction of demand-side flexibility increases the \ac{RESE} \ac{PS} by 3 M\euro{}, from 2 394 M\euro{} to 2 397 M\euro{}. In contrast, demand-side flexibility alone reduces the \ac{RESE} \ac{PS}. 
+\FloatBarrier
+\subsection{Flexible electricity market}
+The scenarios evaluated in this section simultaneously include all flexibility types used in the previous sections. The benefits of flexibility integration compared with the corresponding baseline scenario are presented in Figure \ref{fig:SEW_flexibility}. 
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=1.0\textwidth]{graphics/RQ1/result_figures/SEW/SEW_flexibility.pdf}
+\caption{Change in economic welfare through demand-side flexibility, storages and sector coupling}
+\label{fig:SEW_flexibility}
+\end{figure}
+\FloatBarrier
+The \textit{Flexibility-1} scenario is evaluated compared with the \textit{Baseline-1} scenario, and the \textit{Flexibility-2} scenario is evaluated in comparison to the \textit{Baseline-2} scenario. Therefore, these results do not include the direct \ac{SEW} increase of transmission line expansion. The 3 513 M\euro{} \ac{CS} reduction without transmission line expansion changes significantly to 2 622 M\euro{} reduction from the enhanced trading capacity. The additional demand generated by sector coupling increases the benefits of transmission line expansion for consumers. This is evident in \ac{CS} only increasing by about 48 M\euro{} through transmission line expansion without sector coupling (Figure \ref{fig:SEW_storage}). Changes in thermal and \ac{RESE} \ac{PS} compensate for this difference in \ac{CS} reduction. The overall \ac{SEW} increase of 2 526 M\euro{} without transmission line expansion and 2 529 M\euro{} including expansion is only slightly influenced. This is attributed to the flexible demand of sector coupling already resulting in a price convergence toward the hydrogen producers' maximum bid price in the electricity market ($P^{bid}_{el}$). Therefore, the additional trading capacity has only a minimal effect. 
+
+The same evaluation without sector coupling to the hydrogen market is shown in Figure \ref{fig:SEW_flexibility_woH2}.
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=1.0\textwidth]{graphics/RQ1/result_figures/SEW/SEW_flexibility_woH2.pdf}
+\caption{Change in economic welfare through demand-side flexibility and storages}
+\label{fig:SEW_flexibility_woH2}
+\end{figure}
+\FloatBarrier
+ The combinations of storage, demand-side flexibility, and transmission line expansion are already evaluated in the \textit{EVDSM Storage} scenario in Figure \ref{fig:SEW_DSM}. For this scenario, the \textit{Baseline-2} scenario serves as a reference, while the evaluation without the transmission line expansion in the \textit{Flexibility-1 w/o H2} scenario uses the \textit{Baseline-1} scenario as a reference. The results reveal that transmission line expansion and other types of flexibility can substitute for one another. Demand-side flexibility and storage expansion increase \ac{SEW} by 32 M\euro{} without transmission line expansion and by 17 M\euro{} with transmission line expansion. Hence, transmission line expansion already achieves huge parts of the potential \ac{SEW} increases. 
+
+
+The benefits of all flexibility types, including transmission line expansion, are presented in Figure \ref{fig:SEW_Flex2}.
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=1.0\textwidth]{graphics/RQ1/result_figures/SEW/SEW_Flex2.pdf}
+\caption{Change in economic welfare through implementation of all flexibility types}
+\label{fig:SEW_Flex2}
+\end{figure}
+The \textit{Baseline-1} scenario serves as reference for the \textit{Flexibility-2} scenario. Overall \ac{SEW} increases by 2 593 M\euro{}; hence, the direct benefit of transmission line expansion is 64 M\euro{}, revealing the same benefit that could be obtained in the \textit{Baseline-2} scenario compared with the \textit{Baseline-1} scenario. The price convergence through sector coupling leads to neither synergistic nor competitive effects on the \ac{SEW}. 
+\FloatBarrier

@@ -1,0 +1,21 @@
+\paragraph*{Electric vehicle}\mbox{}\\
+The summation of individual \ac{CD}s ($D^\mathrm{EV}$) and their positive ($d^\mathrm{EV +}$) and negative demand regulation ($d^\mathrm{EV -}$) to an aggregated demand per node ($d^\mathrm{EV}$) is described in Equation \ref{equ:EV_aggregation}.
+\begin{flalign} 
+    &d^\mathrm{EV}_{t,n} = \displaystyle\sum\limits_{\gamma \in \Gamma_{n}} D^\mathrm{EV}_{t,\gamma} + d^\mathrm{EV +}_{t,\gamma} - d^\mathrm{EV -}_{t,\gamma} \label{equ:EV_aggregation} \\ \nonumber
+    &\forall t \in T, \forall n \in N
+\end{flalign}
+A demand increase (Equation \ref{equ:EV_curtailment_up}) and decrease (Equation \ref{equ:EV_curtailment_down}) is only possible when the \ac{CD} is larger than zero, thereby implying that the \ac{EV}s are connected to a charging station. The used \ac{EV}s and the charging infrastructure limit the charging power. On the one hand, the upper power limit ($\mathrm{CAP}^\mathrm{EV max.}$) must not be exceeded. On the other hand, the charging power must not be lower than the minimum power ($\mathrm{CAP}^\mathrm{EV min.}$). These calculations are performed before the optimisation and therefore do not influence the model optimisation time; their implementation as \ac{LP} models is possible.
+\begin{flalign} 
+    &d^\mathrm{EV +}_{t,\gamma} = 0 ;\quad \forall D^\mathrm{EV}_{t,\gamma} \leq 0 
+    \label{equ:EV_curtailment_up}\\ \nonumber
+    &0 \leq d^\mathrm{EV +}_{t,\gamma} \leq \mathrm{CAP}^\mathrm{EV max.}_{\gamma} - D^\mathrm{EV}_{t,\gamma} ;\quad \forall D^\mathrm{EV}_{t,\gamma} > 0 \\
+    &d^\mathrm{EV -}_{t,\gamma} = 0 ;\quad \forall D^\mathrm{EV}_{t,\gamma} \leq 0
+    \label{equ:EV_curtailment_down} \\ \nonumber
+    &0 \leq d^\mathrm{EV -}_{t,\gamma} \leq D^\mathrm{EV}_{t,\gamma} - \mathrm{CAP}^\mathrm{EV min.}_{\gamma} ;\quad \forall D^\mathrm{EV}_{t,\gamma} > 0 \\ \nonumber
+    &\forall t \in T, \forall \gamma \in \Gamma 
+\end{flalign}
+Moreover, these equations limit each \ac{EV}'s minimal- and maximal charging power whilst the demand flexibility is in use. The electricity demand of each \ac{CD} is always compensated whilst the vehicle is plugged in, which corresponds to the time frame during which a demand regulation is possible to avoid negative effects on the car owner. Equation \ref{equ:EV_charging_guarantee} ensures that the sum of up and down regulations over the entire 24 hour \ac{DA} optimisation step equals zero. Thus, demand-side flexibility influences the temporal charging power but not charged electricity in total.
+\begin{flalign}
+    &\displaystyle\sum\limits_{t=j\cdot24+1}^{t=j\cdot24+24} d^\mathrm{EV +}_{t,\gamma} - d^\mathrm{EV -}_{t,\gamma} = 0 \label{equ:EV_charging_guarantee} \\ \nonumber
+    &\forall \gamma \in \Gamma, \forall j \in \left\{0,1,...,\frac{T}{24}-1 \right\}
+\end{flalign}

@@ -1,0 +1,99 @@
+\subsection{Dispatch model}\label{sec:model_dispatch}
+The European electricity market model \textit{EDisOn} \cite{Dallinger2018,LoschanEV,LoschanH2} minimises the overall electricity generation costs of the entire system, which corresponds to \ac{SEW} maximisation. This includes the European electricity market and national hydrogen markets in an \ac{LP} unit commitment model that is implemented in MATLAB. The electricity generation fleets consist of thermal power plants, \ac{RESE}, storage and fuel cells. Whereby thermal power plants include both CO\textsubscript{2} emitting power plants (coal, \ac{CCGT}, oil and lignite) and power plants without direct CO\textsubscript{2} emissions (nuclear, biomass, biogas). Interconnectors link the countries in the market area with a limited capacity. Further \ac{EV}s are implemented with a temporally available demand-side flexibility \cite{LoschanEV}. The model calculates the cost minimal dispatch of all thermal power plants, \ac{RESE} curtailment, and storage use. 
+The \ac{RESE} generation technologies, namely \ac{PV}, \ac{RoR} and wind, are not dispatchable, and their generation profiles are exogenously defined. Figure \ref{fig:market_area} illustrates an example of nodes and interconnectors used for optimisations that use one node per country.
+\begin{figure}[ht]
+\centering
+      \includegraphics[width=0.48\textwidth]{graphics/nodes_methodik.jpg}
+      \caption{Nodes and grid of the electricity market model}
+      \label{fig:market_area}
+\end{figure}
+\FloatBarrier
+\subsubsection{Objective function}\label{sec:objective_function}
+The objective function (Equation \ref{equ:objective_function}) minimises the overall electricity generation costs due to generation ($q_\mathrm{th}$) proportional to the \ac{SRMC}, and due to start ups ($\mathrm{str}$) proportional to the start-up costs ($C^\mathrm{start}$) \cite{Farahmand2012} of thermal power plants, 
+\ac{RESE} \ac{OM} ($C^\mathrm{RESE}$),  
+\ac{PHS} turbine \ac{OM} costs ($C^\mathrm{ps}$),  
+\ac{NSE} fee ($\mathrm{VoLL}$), 
+costs for insufficient \ac{PHS} \ac{SOC} ($C^{\mathrm{missingInflow}}$),
+and costs ($C^\mathrm{DSM}$) for temporal demand reduction ($d^\mathrm{down}$).
+Furthermore, hydrogen demand generates associated costs, and hydrogen generation adds revenue proportional to the hydrogen market price ($P^\mathrm{bid}_{H_2}$).
+\newpage
+\begin{flalign} 
+\label{equ:objective_function}
+&\underset{q, \mathrm{str}, q^\mathrm{tu}, \mathrm{spill}^{\mathrm{RESE}}, \mathrm{nse}, q^\mathrm{missingInflow}, d^\mathrm{down}, q^{H_2}_\mathrm{el}, d^{H_2}_\mathrm{el}}{\mathrm{min}} 
+\\ \nonumber
+& \sum_{t \in T} \sum_{\mathrm{th} \in \mathrm{TH}} \left( q_{t,\mathrm{th}} \cdot \mathrm{SRMC}_\mathrm{th} + \mathrm{str}_{t,\mathrm{th}} \cdot C^{\mathrm{start}}_\mathrm{th} \right)  
++ \sum_{t \in T} \sum_{\mathrm{ps} \in \mathrm{PS}} q^\mathrm{tu}_{t,\mathrm{ps}} \cdot C^\mathrm{ps} 
+\\ \nonumber
++ &\sum_{t \in T} \sum_{r \in \mathrm{RESE}}
+\left( Q^{\mathrm{RESE}}_{t} - \mathrm{spill}^{\mathrm{RESE}}_{t,r} \right) \cdot C^{\mathrm{RESE}} \\ \nonumber
++& \sum_{t \in T} \sum_{n \in N} \mathrm{nse}_{t,n} \cdot \mathrm{VoLL} 
++  \sum_{t \in T} \sum_{\mathrm{ps} \in \mathrm{PS}} q^\mathrm{missingInflow}_{t,\mathrm{ps}} \cdot C^{\mathrm{MissingInflow}}\\ \nonumber
++&\sum_{t \in T} \sum_{n \in N} d^\mathrm{down}_{n} \cdot C^\mathrm{DSM}_{n} - \sum_{t \in T} \sum_{e \in E} P^\mathrm{bid}_{H_2} \cdot q^{H_2}_{\mathrm{el}_{t,e}} + 
+\sum_{t \in T} \sum_{\mathrm{fc} \in \mathrm{FC}} P^\mathrm{bid}_{H_2} \cdot d^{H_2}_{\mathrm{el}_{t,\mathrm{fc}}} \\
+\nonumber
+\end{flalign}
+The \ac{RESE} \ac{OM} costs are proportional to \ac{RESE} generation ($Q^\mathrm{RESE}$) minus curtailment ($\mathrm{spill}^\mathrm{RESE}$). \ac{PHS} turbine \ac{OM} costs are proportional to the turbined electricity ($q^\mathrm{tu}$). The coupling of the electricity- and the hydrogen market is done by the amount of hydrogen produced ($q^{H_2}_\mathrm{el}$) and the amount of hydrogen used to generate electricity ($d^{H_2}_\mathrm{el}$). These hydrogen quantities influence the objective function in proportion to the hydrogen price ($P^\mathrm{bid}_{H_2}$).
+\subsubsection{Constraints}
+\paragraph*{Demand equilibrium}\mbox{}\\
+Determining the demand that must be met in every node for each timestamp (Equation \ref{equ:dispatch_kirchhoff}) employs several parts. The exogenous electricity demand ($D_{n}$) and flexible, temporal shift-able, \ac{EV} demand ($d^\mathrm{EV}_{n}$). In addition, the demand can increase ($d^\mathrm{up}$) or decrease ($d^\mathrm{down}$), wherein the use of this power- and energy constrained flexibility is associated with costs.
+\newpage
+\begin{flalign} \label{equ:dispatch_kirchhoff} 
+&D_{t,n} + d^\mathrm{up}_{t,n} - d^\mathrm{down}_{t,n} + d^\mathrm{EV}_{t,n} + \displaystyle\sum\limits_{e \in E_{n}} d^\mathrm{el}_{H_{2_{t,e}}} = \\ \nonumber
+& \displaystyle\sum\limits_{\mathrm{th} \in \mathrm{TH}_{n}} q_{t,\mathrm{th}} + \displaystyle\sum\limits_{\mathrm{fc} \in \mathrm{FC}_{n}} q^\mathrm{el}_{H_{2_{t,\mathrm{fc}}}} + 
+\displaystyle\sum\limits_{\mathrm{ps} \in \mathrm{PS}_{n}} (q^\mathrm{tu}_{t,\mathrm{ps}} - q^\mathrm{pu}_{t,\mathrm{ps}}) 
++ \displaystyle\sum\limits_{\mathrm{st} \in \mathrm{ST}_{n}} (q^\mathrm{out}_{t,\mathrm{st}} - q^\mathrm{in}_{t,\mathrm{st}}) \\ \nonumber
+&+ Q^\mathrm{RESE}_{t,n} - \mathrm{spill}^\mathrm{RESE}_{t,n} - \mathrm{exch}_{t,n} + \mathrm{nse}_{t,n} : p^\mathrm{CP}_{t,n}\\ \nonumber
+&\forall t \in T, \forall n \in N 
+\end{flalign}
+Demand compensation is done through thermal power plant generation ($q_\mathrm{th}$), \ac{PHS} turbine generation ($q^\mathrm{tu}$), storage discharging ($q^\mathrm{out}$), \ac{RESE} generation ($Q^\mathrm{RESE}$) minus curtailment ($\mathrm{spill}^\mathrm{RESE}$), and \ac{NSE} ($\mathrm{nse}$). Demand increases through \ac{PHS} pump use ($q^\mathrm{pu}$) and storage charging ($q^\mathrm{in}$). A power exchange ($\mathrm{exch}$) between nodes connects various nodes and bidding zones. The dual variable of this constraint ($p^\mathrm{CP}$) provides the local electricity market clearing price as an hourly profile, which is used to calculate \ac{CS}, \ac{PS}, \ac{CR}, and \ac{SEW}.
+
+\paragraph*{Chargeable demand-side flexibility}\mbox{}\\
+Chargeable demand-side flexibility and demand response are modeled as storage with 100\% efficiency (Equation \ref{equ:DSM_storage} - \ref{equ:DSM_storage_CAP}), wherein power of demand increase (Equation \ref{equ:DSM_increase}) and decrease (Equation \ref{equ:DSM_decrease}) are constrained.
+\begin{flalign}
+    &0 \leq d^\mathrm{up}_{t,n} \leq \mathrm{CAP}^\mathrm{DSR}_{n} \label{equ:DSM_increase}\\ 
+    &0 \leq d^\mathrm{down}_{t,n} \leq \mathrm{CAP}^\mathrm{DSR}_{n} \label{equ:DSM_decrease}\\
+    &\mathrm{soc}^\mathrm{DSR}_{t,n} = \mathrm{soc}^\mathrm{DSR}_{t-1,n} - d^\mathrm{down}_{t,n} + d^\mathrm{up}_{t,n} \label{equ:DSM_storage}\\ 
+    &0 \leq \mathrm{soc}^\mathrm{DSR}_{t,n} \leq \mathrm{soc}^\mathrm{max. DSR}_{n} \label{equ:DSM_storage_CAP}\\ \nonumber
+    &\forall t \in T, \forall n \in N
+\end{flalign}
+\input{chapters/model_EV}
+\input{chapters/model_SC}
+\paragraph*{Power exchange}\mbox{}\\
+Two different methods for modeling the power exchange between the nodes are implemented. These are used depending on the research question to be answered. 
+
+
+The first method calculates the power exchange between the nodes (exch) using the transmission line power flow ($\mathrm{flow}$) and an incidence matrix ($A$) (Equation \ref{equ:flow}). This matrix describes which nodes are connected by a specific transmission line. The transmission lines power flows are limited by total \ac{NTC} (Equation \ref{equ:flow1_limit}) \cite{NTCDEF}.
+\begin{flalign}
+    &\mathrm{exch}_{t,n} = \displaystyle\sum\limits_{l \in L_n} A_{l,n} \cdot \mathrm{flow}_{t,l} \label{equ:flow} \\
+    & \forall t \in T, \forall n \in N \nonumber \\
+    &-\mathrm{CAP}_l \leq \mathrm{flow}_{t,l} \leq \mathrm{CAP}_l \label{equ:flow1_limit} \\
+    &\forall t \in T, \forall l \in L \nonumber
+\end{flalign}
+The second method calculates the power exchange between the nodes (exch) connected by \ac{AC} transmission lines using a \ac{PTDF} matrix, while \ac{DC} transmission lines are always implemented using the \ac{NTC} approach. This method presupposes that the voltage angle between neighbour nodes is small; thus, a \ac{DC} approximation of the power flow can be used \cite{VanDenBergh2014}. Based on this methodology, the susceptance ($B_{l_\mathrm{AC}}$) of the transmission lines is calculated (Equation \ref{flow1}). 
+\begin{flalign}
+    &B_{l_\mathrm{AC}} = \frac{-X_{l_\mathrm{AC}}}{R^{2}_{l_\mathrm{AC}} + X^{2}_{l_\mathrm{AC}}} \approx - \frac{1}{X_{l_\mathrm{AC}}} \label{flow1} \\ \nonumber
+    &\forall l_\mathrm{AC} \in L_\mathrm{AC} 
+\end{flalign}
+The resistance ($R_{l_\mathrm{AC}}$) is negligible and the reactance ($X_{l_\mathrm{AC}}$) is considered. Subsequently, the corresponding diagonal matrix ($B_d$) is formed (Equation \ref{flow2}) to calculate the \ac{PTDF} matrix (Equation \ref{flow3}). 
+\begin{flalign}
+    &B_d =: \mathrm{diag}(B_{L_\mathrm{AC}}) \label{flow2} \\
+    &\mathrm{PTDF} = (B_d*A)*(A^T*B_d*A)^{-1} \label{flow3}
+\end{flalign}
+This describes the relationship between the energy exchange between the nodes (exch), and the load flows over the transmission lines (flow) (Equation \ref{flow4} - \ref{flow5}). 
+\begin{flalign}
+    &flow_{t,l_\mathrm{AC}} = \displaystyle\sum\limits_{n \in N} \mathrm{PTDF}_{l_\mathrm{AC},n} \cdot 
+    \mathrm{exch}_{t,n} \label{flow4} \\ \nonumber
+    &\forall t \in T, \forall l_\mathrm{AC} \in L_\mathrm{AC} \\
+    &\mathrm{exch}_{t,n} = \displaystyle\sum\limits_{l_\mathrm{AC} \in L_{\mathrm{AC}_n}} A_{l_\mathrm{AC},n} \cdot \mathrm{flow}_{t,l_\mathrm{AC}} \label{flow5} \\ \nonumber
+    &\forall t \in T, \forall n \in N 
+\end{flalign}
+These transmission lines are constrained by their technical capacity (Equation \ref{equ:flow6}). Because the distribution of the power flow on the individual lines is known, the total tradeable capacity between the two bidding zones can increase compared to the \ac{NTC} approach \cite{Jegleim2015}. 
+\begin{flalign}
+    &-\mathrm{CAP}_l \leq \mathrm{flow}_{t,l_\mathrm{AC}} \leq \mathrm{CAP}_l \label{equ:flow6}\\
+    &\forall t \in T, \forall n \in N, \forall l_\mathrm{AC} \in L_\mathrm{AC} \nonumber
+\end{flalign}
+If a subset of nodes is used the transmission lines and their transfer capacities are aggregated. Hence, the information regarding their spatial distribution is lost but the transmission lines are limited by their total capacity \cite{NTCDEF}.
+\paragraph*{Other constraints}\mbox{}\\
+Thermal power plants are limited by a ramp rate and technical minimum and maximum capacities, which are implemented as a linear function to consider start-up costs \cite{Farahmand2012}.
+The power generation of \ac{RESE} technologies is represented by a yearly profile using hourly temporal resolution and installed capacity per node. 
+Storages are power- and capacity limited. Furthermore, \ac{PHS} must follow an annual pattern to map realistic operating behaviour as a long-term storage unit. In addition, \ac{PHS} have a natural inflow that increases its \ac{SOC} representing rainfall and meltwater.

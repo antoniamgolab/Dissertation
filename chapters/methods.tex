@@ -1,0 +1,18 @@
+\chapter{Methods}\label{methods}
+In this chapter, the methodology and the mathematical formulation of the model are described. Furthermore, the use cases and scenarios examined to answer the research questions are outlined. Section \ref{sec:methods_methodology} comprehensively examines the methodology to implement the two-stage electricity market model. This includes the integration of sector coupling to the hydrogen market, \ac{EV}s, the redispatch model and the \ac{SEW} calculation. Section \ref{sec:methods_mathemical} includes the mathematical formulation of this methodology. The section is divided into the formulation of the dispatch model with the main constraints, the subsequent redispatch model and the ex-post calculation of \ac{SEW} and its components. The use cases and scenarios to answer the research questions are described in Section \ref{sec:methods_scenarios}.
+\section{Methodology and model functionalities}\label{sec:methods_methodology}
+\input{chapters/methods_Overview}
+\input{chapters/methods_SC}
+\input{chapters/methods_EV}
+\input{chapters/methods_Redispatch}
+\input{chapters/methods_SEW}
+\section{Mathematical formulation}\label{sec:methods_mathemical}
+This section describes the mathematical formulation of the two-stage optimisation model. To calculate the optimal dispatch, maximising \ac{SEW}, while neglecting physical restrictions of the transmission grid within bidding zones a reduced set of nodes ($N$) is used. In the subsequent redispatch the full set of nodes ($N^\mathrm{All}$) and all transmission lines are used to evaluate congestion. 
+
+
+In both optimisation models the decision variables are written in lowercase, and exogenously defined constants are written in uppercase. If a variable is a constant or a decision variable may differ between the dispatch model and the subsequent redispatch model.
+\input{chapters/model_Dispatch}
+\input{chapters/model_Redispatch}
+\input{chapters/model_Welfare}
+\input{chapters/model_Nomenclature}
+\input{chapters/model_Scenarios}

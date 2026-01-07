@@ -1,0 +1,17 @@
+\chapter{References}\label{references}
+
+\begingroup
+\setlength{\emergencystretch}{1em}
+%\printbibliography[heading=bibintoc] % remove, if using BibTeX instead of biblatex
+\defbibfilter{books}{type=book or type=incollection or type=thesis}
+% \defbibfilter{books}{type=book or type=thesis}
+% books
+\printbibliography[filter=books, heading=subbibintoc, title={Books}]
+% articles
+\printbibliography[type=article, heading=subbibintoc, title={Journal Articles}]
+% conference papers
+\printbibliography[type=inproceedings, heading=subbibintoc, title={Conference Papers}]
+% others
+\printbibliography[nottype=article, nottype=book, nottype=inproceedings, nottype=incollection, nottype=thesis, heading=subbibintoc, title={Other sources}]
+%\printbibliography[nottype=article, nottype=book, heading=subbibintoc, title={Other sources}]
+\endgroup

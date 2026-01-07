@@ -1,0 +1,124 @@
+\chapter{Supplementary results to hydrogen sector coupling}\label{sec:additional_results_RQ2}
+\section{Hydrogen types}\label{sec:results_hydogen_types}
+Figure \ref{fig:Hydrogen_types} depicts the proportion of green, pink and yellow hydrogen in the total production across all scenarios.
+
+
+The proportion of each type of hydrogen dependents heavily on the scenarios. Pink hydrogen reaches a peak of 58\% in the \textit{Production-2030-50} scenario in 2030. In general, higher hydrogen prices reduce the share of pink hydrogen, while increasing the amount of hydrogen produced (Appendix \ref{sec:results_hydrogen_prod}). An exception occurs in the scenarios with a hydrogen price of 0 \euro{}/MWh\textsubscript{H\textsubscript{2}} because the production is triggered by electricity price peaks and not by electrolyser \ac{PS}. Green hydrogen accounts for the majority of the produced hydrogen while yellow hydrogen has little impact. The pink hydrogen is nearly entirely produced in France (Figure \ref{fig:Generation_increase_2030_200} and \ref{fig:Generation_increase_2040_200}). All other countries mostly produce green hydrogen.
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=1.0\textwidth]{graphics/RQ2/result_figures/Hydrogen_types.pdf}
+      \caption{Share of produced green- pink- and yellow hydrogen}
+      \label{fig:Hydrogen_types}
+\end{figure}
+\FloatBarrier
+Overall green hydrogen accounts for most hydrogen produced, while yellow hydrogen has little impact. However, pink hydrogen sets up a high share of overall production. In the scenarios, pink hydrogen is nearly entirely produced in France. However, the results indicate that hydrogen from nuclear power plants could play an important role depending on political and regulatory decisions.
+\FloatBarrier
+\section{Hydrogen production}\label{sec:results_hydrogen_prod}
+Figures \ref{fig:Hydrogen_production_total_2030} and \ref{fig:Hydrogen_production_total_2040} show that the maximum total hydrogen production remains constant in all scenarios. The hydrogen production at a hydrogen price of 200 \euro{}/MWh\textsubscript{H\textsubscript{2}} remains nearly the same in 2030 and 2040. 
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=1.0\textwidth]{graphics/RQ2/result_figures/Hydrogen_production_total_2030.pdf}\\[-8pt]
+        \caption{Total hydrogen production, 2030}
+        \label{fig:Hydrogen_production_total_2030}
+\includegraphics[width=1.0\textwidth]{graphics/RQ2/result_figures/Hydrogen_production_total_2040.pdf}\\[-8pt]
+        \caption{Total hydrogen production, 2040}
+        \label{fig:Hydrogen_production_total_2040}
+\end{figure}
+\FloatBarrier
+As a result, full-load hours of electrolysers in 2030 (Figure \ref{fig:Full_load_production_only_2030} and \ref{fig:Full_load_with_fc_2030}) are higher than those in 2040 (Figure \ref{fig:Full_load_production_only_2040} and \ref{fig:Full_load_with_fc_2040}). However, by 2040 the hydrogen production at hydrogen prices up to 100 \euro{}/MWh\textsubscript{H\textsubscript{2}} increases compared to 2030.
+\begin{figure}[h]
+\centering
+\includegraphics[width=1.0\textwidth]{graphics/RQ2/result_figures/Full_load_production_only_2030.pdf}
+      \caption{Electrolyser full-load hours without fuel cell utilization, 2030}
+      \label{fig:Full_load_production_only_2030}
+\end{figure}
+\FloatBarrier
+\begin{figure}[h]
+\centering
+\includegraphics[width=1.0\textwidth]{graphics/RQ2/result_figures/Full_load_with_fc_2030.pdf}\\[-8pt]
+        \caption{Electrolyser full-load hours with fuel cell utilization, 2030}
+        \label{fig:Full_load_with_fc_2030}
+\includegraphics[width=1.0\textwidth]{graphics/RQ2/result_figures/Full_load_production_only_2040.pdf}\\[-8pt]
+      \caption{Electrolyser full-load hours without fuel cell utilization, 2040}
+      \label{fig:Full_load_production_only_2040}
+\end{figure}
+\FloatBarrier
+\begin{figure}[h]
+\centering
+\includegraphics[width=1.0\textwidth]{graphics/RQ2/result_figures/Full_load_with_fc_2040.pdf}
+        \caption{Electrolyser full-load hours with fuel cell utilization, 2040}
+        \label{fig:Full_load_with_fc_2040}
+\end{figure}
+\FloatBarrier
+High hydrogen prices are required to achieve 4000 full-load hours per year. Most national hydrogen strategies aim for this value \cite{Kanellopoulos2019, H2_Strat_Germany}.
+
+
+A detailed country-by-country examination of hydrogen production reveals that it changes between 2030 (Figure \ref{fig:Hydrogen_production_2030}) and 2040 (Figure \ref{fig:Hydrogen_production_2040}). For instance, it increases in Austria and France while falling in the Netherlands and Poland.
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=1.0\textwidth]{graphics/RQ2/result_figures/Hydrogen_production_2030.pdf}\\[-8pt]
+        \caption{Hydrogen production in each country, 2030}
+      \label{fig:Hydrogen_production_2030}
+\includegraphics[width=1.0\textwidth]{graphics/RQ2/result_figures/Hydrogen_production_2040.pdf}\\[-8pt]
+         \caption{Hydrogen production in each country, 2040}
+      \label{fig:Hydrogen_production_2040}
+\end{figure}
+\FloatBarrier
+\section{Hydrogen use}\label{sec:results_hydrogen_use}
+The use of fuel cells in all scenarios can be seen in Figure \ref{fig:Hydrogen_utilisation_total}.
+\begin{figure}[h]
+\centering
+\includegraphics[width=1.0\textwidth]{graphics/RQ2/result_figures/Hydrogen_utilisation_total.pdf}
+      \caption{Hydrogen utilization by fuel cells}
+      \label{fig:Hydrogen_utilisation_total}
+\end{figure}
+\FloatBarrier
+\section{Hydrogen storage capacity}\label{sec:appendix_hydrogen_storage}
+The model implementation does not limit the size of hydrogen storage. However, the required storage capacity is calculated ex-post. The storage capacity that is required to enable the optimal fuel cell use as calculated by the model is determined ex-post optimisation. The calculation method uses the dispatch of electrolysers to produce hydrogen, the use of hydrogen in fuel cells and the time sequence of this hydrogen production and use as components for calculating the required storage capacity. Figure \ref{fig:Storage_size_2030} depicts the required hydrogen storage capacity in 2030 and Figure \ref{fig:Storage_size_2040} depicts the required hydrogen storage capacity in 2040.
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=1.0\textwidth]{graphics/RQ2/result_figures/Storage_size_2030.pdf}
+      \caption{Hydrogen storage size needed, 2030}
+      \label{fig:Storage_size_2030}
+\end{figure}
+\begin{figure}[h]
+\centering
+\includegraphics[width=1.0\textwidth]{graphics/RQ2/result_figures/Storage_size_2040.pdf}
+        \caption{Hydrogen storage size needed, 2040}
+        \label{fig:Storage_size_2040}
+\end{figure}
+\FloatBarrier
+This is defined as the relationship between the installed storage- and electrolyser capacity. As a result. a monthly storage capacity is sufficient for all countries except Austria in 2030. Capacity requirements will rise in 2040 as the electrolyser capacity rises. High hydrogen prices of 200 \euro{}/MWh\textsubscript{H\textsubscript{2}} result in a drastically reduced capacity requirement in all scenarios. Storage capacity of several days to a week is adequate.
+\FloatBarrier
+\section{Additional electricity generation}\label{sec:results_add_electricity}
+The electricity generation increases due to sector coupling with electrolysers and fuel cells, and a hydrogen price of 200 \euro{}/MWh\textsubscript{H\textsubscript{2}} is shown in 2030 (Figure \ref{fig:Generation_increase_2030_200}) and 2040 (Figure \ref{fig:Generation_increase_2040_200}).
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=1.0\textwidth]{graphics/RQ2/result_figures/Generation_increase_2030_200.pdf}\\[-8pt]
+          \caption{Change in electricity generation, 2030}
+      \label{fig:Generation_increase_2030_200}
+\includegraphics[width=1.0\textwidth]{graphics/RQ2/result_figures/Generation_increase_2040_200.pdf}\\[-8pt]
+           \caption{Change in electricity generation, 2040}
+        \label{fig:Generation_increase_2040_200}
+\end{figure}
+\FloatBarrier
+\section{Natural gas substitution}\label{sec:results_meth_pot}
+Austria's hydrogen strategy mentions that blending hydrogen with natural gas is not a preferred option for hydrogen use. The demand in other sectors is prioritised \cite{H2_Strat_Austria}. However, hydrogen can be used for power generation not only by fuel cells but also by \ac{CCGT}. The possible share of hydrogen to substitute natural gas is shown in Figure \ref{fig:Gas_consumption_2030} for 2030 and Figure \ref{fig:Gas_consumption_2040} for 2040.  
+\begin{figure}[h]
+\centering
+\includegraphics[width=1.0\textwidth]{graphics/RQ2/result_figures/Gas_consumption_2030.pdf}
+      \caption{Natural gas consumption versus hydrogen production, 2030}
+      \label{fig:Gas_consumption_2030}
+\end{figure}
+\begin{figure}[h]
+\centering
+\includegraphics[width=1.0\textwidth]{graphics/RQ2/result_figures/Gas_consumption_2040.pdf}
+        \caption{Natural gas consumption versus hydrogen production, 2040}
+        \label{fig:Gas_consumption_2040}
+\end{figure}
+\FloatBarrier

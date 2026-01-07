@@ -1,0 +1,90 @@
+\section{Redispatch}\label{sec:results_RQ3}
+This section answers research question 3: What are the influences of customer integration as aggregated \ac{EV} fleet demand-side flexibility on congestion and needed redispatch measures? On the one hand, as flexible demand using smart-charging to minimise electricity costs, and on the other hand to balance redispatch needs. The presented results are based on \textit{Flexibility potential of aggregated electric vehicle fleets to reduce transmission congestions and redispatch needs: A case study in Austria} \cite{LoschanEV}. 
+\subsection{Redispatch measures}
+The total amount of electricity used to operate redispatch without demand-side flexibility for all aggregated nodes is shown in Figure \ref{fig:redispatch_thermal_PP_increase}. 
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=1.0\textwidth]{graphics/RQ3/energy_600k_noDSM.pdf}
+   \caption{Redispatch measures in the \textit{600k - no DSM} scenario}
+    \label{fig:redispatch_thermal_PP_increase}
+\end{figure}
+Negative electricity corresponds to \ac{RESE} curtailment and generation decrease. Thus, \ac{PV}, wind, and \ac{RoR} are only found herein. Positive electricity corresponds to a power increase and can only be executed by thermal power plants. Because not all thermal power plants cause CO\textsubscript{2} emissions, their use does not necessarily result in additional CO\textsubscript{2} emissions.
+
+
+Figure \ref{fig:redispatch_thermal_PP_increase_2} shows the influence of \ac{EV} demand-side flexibility on the needed electricity regulation to balance redispatch needs. This flexibility can reduce the generation increase and raise the generation reduction of gas turbines at several nodes (e.g. \textit{N 5} and \textit{7}) as well as wind and \ac{PV} curtailment. The \textit{EV DSM} areas of the bars are identical in both directions due to the compensation effect of the temporal demand shifts.
+\begin{figure}[h]
+\centering
+\includegraphics[width=1.0\textwidth]{graphics/RQ3/energy_600k_redis.pdf}
+     \caption{Redispatch measures in the \textit{600k - Redispatch DSM} scenario}
+    \label{fig:redispatch_thermal_PP_increase_2}
+\end{figure}
+\FloatBarrier
+\subsection{Renewable energy curtailment}\label{sec:results_RESE_curtail}
+Figure \ref{fig:redispatch_RESE_curtailment} shows that flexible demand as a redispatch measure leads to a reduction in \ac{RESE} curtailment regardless of the number of used vehicles. 
+
+
+Reduced curtailment increases their economic profitability and thus raises possible investment incentives. The sum of \ac{RESE} curtailment in the dispatch and redispatch is evaluated in Figure \ref{fig:overall_RESE_curtailment}). 
+
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=1.0\textwidth]{graphics/RQ3/redispatch_RESE_curtailment.pdf}
+    \caption{Curtailment of renewable energies as redispatch measure}
+    \label{fig:redispatch_RESE_curtailment}
+\end{figure}
+\FloatBarrier
+In that case, demand-side flexibility in the redispatch leads again to the lowest \ac{RESE}curtailment. In the scenario \textit{2M}, the flexibility use in the dispatch reduces the curtailment in the dispatch by 0.04 TWh. However, the negative effects, an \ac{RESE} curtailment increase of 0.59 TWh, in redispatch compensates for this positive effect.
+If flexible demand is used in the dispatch, the probability of transmission line congestion increases due to market-controlled charging. Thus, more frequent interventions are necessary.
+\begin{figure}[h]
+\centering
+\includegraphics[width=1.0\textwidth]{graphics/RQ3/overall_RESE_curtailment.pdf}
+    \caption{Curtailment of renewable energies within the dispatch and redispatch}
+    \label{fig:overall_RESE_curtailment}
+\end{figure}
+\FloatBarrier
+\subsection{Redispatch costs}
+Demand-side flexibility in the redispatch causes significant cost savings in comparison to the scenario without \ac{EV} flexibility (Figure \ref{fig:redispatch_costs}). The costs are reduced from 59 million \euro{} to 57 million \euro{} by 3.3\%, from 57 M\euro{} to 53 M\euro{} by 7.3\% and from from 56 M\euro{} to 48 M\euro{} by 13.9\% in the \textit{200k}, \textit{600k} and \textit{2M} \ac{EV} scenarios. 
+
+
+Demand-side flexibility in the dispatch in the \textit{200k} scenario does not cause additional costs. However, this flexibility increases the redispatch costs significantly in the \textit{600k} and \textit{2M} scenarios due to congestions caused by a high simultaneous \ac{EV} charging demand. Two million \ac{EV}s rise these costs from 56 M\euro{} to 160 M\euro{} by 186\%.
+
+\begin{figure}[h]
+    \centering
+     \includegraphics[width=1\textwidth]{graphics/RQ3/redispatch_costs.pdf}
+    \caption{Redispatch costs}
+    \label{fig:redispatch_costs}
+\end{figure}
+\FloatBarrier
+The redispatch costs per generation type for the scenario \textit{600k - Redispatch DSM} show that a large part of the costs are incurred by thermal power plants and not by \ac{RESE} curtailment (Figure \ref{fig:redispatch_costs_detail}). These high redispatch costs of thermal power plants arise due to the use of the least expensive generation units during the dispatch. Therefore, only the respective marginal generation unit or pricier ones are available to balance redispatch needs. 
+
+
+The share of \ac{PV} on the generation mix is remarkably high during summer due to the high penetration of \ac{PV} with an installed capacity of 12 GW in Austria. The geographic distribution of \ac{PV} systems is more even than that of other generation units such as thermal power plants. These \ac{PV} generation is almost always used in the dispatch due to their low \ac{SRMC}, which reduces the need for electricity imports at the respective nodes. As a consequence, these systems increase the consumption within their associated node and thus reduce the transmission grid use, the need for redispatch measures and the associated costs.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=1\textwidth]{graphics/RQ3/costs_600k_redis_detail.pdf}
+    \caption{Allocation of the redispatch costs}
+    \label{fig:redispatch_costs_detail}
+\end{figure}
+\FloatBarrier
+\subsection{CO\textsubscript{2} emissions}
+The necessity of redispatch measures and their provision by different technologies varies throughout the year, thus influencing the resulting CO\textsubscript{2} emissions. 
+As a redispatch measure, demand-side flexibility significantly reduces redispatch-caused emissions over the entire year in Austria (Figure \ref{fig:redispatch_emissions}).
+Overall, these emissions are as follows; 31 ktons instead of 39 ktons and therefore 20\% less for the \textit{200k} scenario, 20 ktons instead of 36 ktons, which is 44\% less for the \textit{600k} scenario and 4 ktons instead of 28 ktons, which is a reduction of 85\% for the \textit{2M} scenario. 
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=1.0\textwidth]{graphics/RQ3/redispatch_emissions.pdf}
+    \caption{Redispatch CO\textsubscript{2} emissions}
+    \label{fig:redispatch_emissions}
+\end{figure}
+\FloatBarrier
+By contrast, flexible demand during the dispatch leads to frequent congestion due to market-based charging. Thus, emissions increase because thermal power plants are used to a high extent to overcome transmission line congestion.
+
+
+An increasing number of \ac{EV}s leads to minimal \ac{RESE} curtailment, low CO\textsubscript{2} emissions and redispatch costs if demand-side flexibility is used in the redispatch (\textit{Scen. Redispatch DSM}) or not at all (\textit{Scen. no DSM}). However, the overall electricity demand increases due to the larger number of \ac{EV}s. Thermal power plants must compensate for this increase if available \ac{RESE} is insufficient. Consequently, additional thermal power plants are available for redispatch measures. 
+
+
+In contrast to \ac{RESE} curtailment, thermal power plant regulation reduces CO\textsubscript{2} emissions in the redispatch. Therefore, the CO\textsubscript{2} emissions in the redispatch decrease but are even higher in the dispatch. The downward regulation of thermal plants in the redispatch leads to a refund of their \ac{SRMC} in contrast to \ac{RESE} curtailment for which the market premium must be paid. Hence, redispatch costs, and CO\textsubscript{2} emissions are significantly influenced by the varying electricity mix.
+\FloatBarrier

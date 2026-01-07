@@ -1,0 +1,58 @@
+\subsection{Electric vehicle integration}\label{sec:EV_model}
+Another flexibility option integrated as demand-side flexibility into the model are \ac{EV}s. The methodology is based on \textit{Flexibility potential of aggregated electric vehicle fleets to reduce transmission congestions and redispatch needs: A case study in Austria} \cite{LoschanEV}. The \ac{EV} model implementation focuses on a description of \ac{EV}s as flexible demand into an \ac{LP} unit commitment model. These macroeconomic models, formulated as \ac{LP}, aim to maximise \ac{SEW} of the overall system. Hence, business models and profit maximisation of individual market participants should not be considered. Otherwise, the \ac{SEW} optimum could not be found. To achieve these goals, this type of electricity market models are typically implemented as a unit commitment model \cite{Dallinger2018}. 
+
+
+Individual \ac{CP} are aggregated to \ac{CT} such that the model can reasonably calculate the optimal dispatch or redispatch. Additionally, this strategy ensures that the technical limitations of the \ac{EV}s and their charging infrastructure will be considered, and no restrictions emerge for the user. 
+
+
+It reduces the number of decision variables significantly. This is done based on a statistical evaluation of real-world charging events \cite{Flammini2019}. \ac{CP}s with similar plug-in and plug-out times are summed up. These similarities can be described as a specific type of car user. Each \ac{CT} describes a specific time slot within which a certain number of vehicles are connected to a charging station. For example, some \ac{EV}s  are used for commuting to work. These vehicles are charged at the workplace. The rectangular function of \ac{CT} \textit{day} in Figure \ref{fig:plug-in statistic} describes this. The share of plugged-in \ac{EV}s is larger than zero from 7 am to 5 pm (10 hours). 2\% of the considered vehicles are plugged in at each of these hours within the whole timeframe of 24 hours. Consequently, this \ac{CT} includes a total share of 20\% ($10 h \cdot 2\%/h = 20 \%$) of all \acp{EV}. This finding does not indicate that each vehicle connects to the charging station for the full timeframe. However, only the sum of the vehicles corresponds to this behaviour due to the aggregation.
+
+\begin{figure}[ht]
+\centering
+   \begin{minipage}[b]{.49\linewidth} 
+    \includegraphics[width=1.0\textwidth]{graphics/RQ3/plug-in statistic.pdf}
+    \caption{Temporal distribution function of plugged-in vehicles}
+    \label{fig:plug-in statistic}
+   \end{minipage}
+   \begin{minipage}[b]{.49\linewidth} 
+    \includegraphics[width=1.0\textwidth]{graphics/RQ3/EV_demand.pdf}
+    \caption{Charging demand of 30 000 vehicles with all charging strategies}
+    \label{fig:EV_demand_200k}
+   \end{minipage}
+\end{figure}
+Thus, the sum of all \ac{CT}s defines the share of the considered \ac{EV}s that are connected with the charging infrastructure at each hour. Hence, the sum of all \ac{CT}s is 100\%. The joint consideration of numerous vehicles within a \ac{CT} reveals a similarity considering demand and flexibility potential. Consequently whether seven vehicles charge daily or one vehicle charges weekly leads to the same \ac{CT}. 
+
+
+The \ac{CT}s are the temporal distribution of the plugged-in vehicles that must be converted into an electricity demand. Charging strategies are used for this purpose. Three different charging strategies are used to calculate an electrical demand from the distribution function of the \ac{CT}s described above. 
+\begin{enumerate}
+\item [(i)] Strategy \textit{immediately}: Charging with the maximum available power allowed by the vehicle and the charging infrastructure. The corresponding demand of one \ac{EV} per \ac{CT} charging with a nominal charging power of 22 kW can be observed in Figure \ref{fig:uncontrolled_charging}. 
+\item [(ii)] Strategy \textit{peak-shaving}: Charging with a perfect smoothed demand over the entire plug-in time to prevent demand peaks (Figure \ref{fig:smoothed_charging}).  
+\item [(iii)] Strategy \textit{partly peak-shaving}: Charging the same way as with the strategy \textit{peak-shaving}, while the plug-in time is reduced by 60\%. 
+\end{enumerate}
+\begin{figure}[hb]
+\centering
+   \begin{minipage}[b]{.49\linewidth} 
+    \includegraphics[width=1\textwidth]{graphics/RQ3/uncontrolled_charging.pdf}
+    \caption{Strategy \textit{immediately}}
+    \label{fig:uncontrolled_charging}
+   \end{minipage}
+   \begin{minipage}[b]{.49\linewidth}
+    \includegraphics[width=1\textwidth]{graphics/RQ3/smoothed_charging.pdf}
+    \caption{Strategy \textit{peak-shaving}}
+    \label{fig:smoothed_charging}
+   \end{minipage}
+\end{figure}
+The multiplication of the \ac{CT} distribution with the number of \ac{EV}s, their demand, based on statistical data and the charging strategies results in the overall \ac{CD}. Each of these \ac{CD}s corresponds to one \ac{CT} block and is the weighted sum of the three charging strategies (E.g. 70\% \textit{immediately}, 20\% \textit{partly peak-shaving} and 10\% \textit{peak-shaving}). This \ac{CD}s serve as model input and can be regulated as demand-side flexibility. 
+
+
+Figure \ref{fig:EV_demand_200k} shows the resulting \ac{CD} for 30 000 \ac{EV}s over 24 h. The electricity demand of a specific \ac{CD} is always larger than zero, because of the partial use of the charging strategy \textit{peak-shaving}, whilst the car is plugged in. This implies the flexibility potential for the model. The comparison of Figures \ref{fig:plug-in statistic} and \ref{fig:EV_demand_200k} shows that a \ac{CD} only exists if \ac{EV}s of the respective \ac{CT} are connected to the charging infrastructure and that the demand is unevenly distributed due to a high proportion of the uncontrolled charging strategy \textit{immediately}.
+
+A graphic illustration of one \ac{CD} and the resulting flexibility potential is shown in Figure \ref{fig:flexibility_potential_detail}. The initial charging demand can be decreased or increased but must be balanced till the \ac{EV} is plugged out. In the figure, the initial electricity demand is the direct connection between the plug-in and the plug-out time. Hence, this represents the charging strategy \textit{peak-shaving} because the charging power is the lowest possible constant demand without the need for demand peaks. The demand-side flexibility is limited by technical constraints that correspond to the fastest possible charging and the latest possible start of the charging.
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.8\textwidth]{graphics/Flexibility_potential_detail.pdf}
+\caption{Graphic illustration of the demand-side flexibility implementation}
+\label{fig:flexibility_potential_detail}
+\end{figure}
+\FloatBarrier

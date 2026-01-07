@@ -1,0 +1,16 @@
+\appendix
+\chapter*{Appendices}
+
+% add to TOC
+\addcontentsline{toc}{chapter}{Appendices}
+% correct header
+\markboth{Appendices}{}
+% reset section numbering
+\renewcommand{\thechapter}{\Alph{chapter}}
+% reset table numbering
+%\setcounter{table}{0}
+%\renewcommand{\thetable}{\arabic{table}}
+
+\input{chapters/appendix_validation}
+\input{chapters/appendix_data}
+\input{chapters/appendix_results}

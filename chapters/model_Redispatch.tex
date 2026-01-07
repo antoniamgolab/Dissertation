@@ -1,0 +1,74 @@
+\subsection{Redispatch model}\label{sec:model_redispatch}
+
+After the dispatch model has minimised the overall electricity generation costs with an aggregated set of nodes ($N$) and transmissions lines (Figure \ref{fig:market_area}), these nodes are disaggregated (Figure \ref{fig:Nodes_redispatch}) ($N^\mathrm{All}$) before performing the cost minimal redispatch in Austria. Thus, the differences between the market-based optimum and the actual physical power flows that may lead to congested transmission lines and must be compensated are analysed.
+The previously dispatched power plants are assigned to the respective nodes using their existing generation schedules. The decision variables of the dispatch remain unchanged, as parameters, during the redispatch optimisation. 
+The redispatch needs are balanced cost-minimal by new decision variables that adjust the generation of thermal power plants, additional curtail \ac{RESE} and use the \ac{EV} demand-side flexibility. 
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=0.48\textwidth]{graphics/RQ3/Nodes_redispatch.jpg}
+    \caption{Disaggregated nodes and transmission lines within the redispatch}
+    \label{fig:Nodes_redispatch}
+\end{figure}
+
+\subsubsection{Objective function}
+The modification of generation schedules to balance redispatch needs is associated with costs. Costs that arise due to the increase in thermal power plant generation must be compensated. The costs of a thermal generation increase ($C^\mathrm{th Redis}$) as redispatch measure is the same as the local \ac{DA} market price ($P^\mathrm{CP}$). If the \ac{SRMC} of the generation unit is higher than this price, then these costs must be compensated (Equation \ref{equ:redis_thermal_costs}). Thermal power plant generation decrease leads to refund proportional to the respective \ac{SRMC}. 
+The dispatch model is based on the merit-order function. Consequently, the \ac{DA} market price will be zero or even negative during periods with a remarkably high share of \ac{RESE}. Redispatch costs are also calculated for the curtailment of \ac{PV}, wind and \ac{RoR} ($C^\mathrm{RES Redis}$) to ensure the economic participation in the redispatch market for \ac{RESE} from the operator viewpoint. These costs are either the fixed market premium ($P^\mathrm{Premium}$) for the specific technology or the local \ac{DA} price ($P^\mathrm{CP}$) if this is higher (\ref{equ:redis_RESE_costs}).
+\begin{flalign} 
+    &C^\mathrm{th Redis}_{t,\mathrm{th}} = \mathrm{max}\left(P^\mathrm{CP}_{t,n_{th}}, \mathrm{SRMC}_\mathrm{th}\right)
+    \label{equ:redis_thermal_costs} \\ \nonumber
+    &\forall t \in T, \forall \mathrm{th} \in \mathrm{TH} \\
+    &C^\mathrm{RES Redis}_{t,n} = \mathrm{max}\left( P^\mathrm{CP}_{n}, P^\mathrm{Premium}_{n}\right) \label{equ:redis_RESE_costs} \\ \nonumber  
+    &\forall t \in T, \forall n \in N^\mathrm{All}
+\end{flalign} 
+
+The redispatch costs, that are minimised for Austria (Equation \ref{equ:redispatch_objective_function}), arise from costs of thermal power plant generation schedule modification (generation increase: $q^\mathrm{+ Redis}_{t,\mathrm{th}}$, generation decrease: $q^\mathrm{- Redis}_{t,th}$) and \ac{RESE} curtailment ($\mathrm{spill}^\mathrm{RESE}_\mathrm{Redis}$). \ac{EV} demand regulation does not lead to additional costs.
+\begin{flalign}
+    &\underset{q^\mathrm{+ Redis}, q^\mathrm{- Redis}, \mathrm{spill}^\mathrm{RESE}_\mathrm{Redis}}{\mathrm{min}}
+    \label{equ:redispatch_objective_function} \\ \nonumber
+    &\sum_{t \in T} \sum_{\mathrm{th} \in \mathrm{TH}_\mathrm{AT}} \left( q^\mathrm{+ Redis}_{t,\mathrm{th}}  \cdot C^\mathrm{th Redis}_{t,\mathrm{th}} 
+        - q^\mathrm{- Redis}_{t,\mathrm{th}}  \cdot \mathrm{SRMC}_\mathrm{th} \right)\\  \nonumber
+    &+ \sum_{t \in T}\sum_{n \in N^\mathrm{All}_\mathrm{AT}}
+        \mathrm{spill}^\mathrm{RESE}_\mathrm{Redis_{t,n}} \cdot C^\mathrm{RES Redis}_{t,n}
+\end{flalign}
+
+\subsubsection{Constraints}
+\paragraph*{Demand equilibrium - Austria}\mbox{}\\
+The demand compensation constraint (Equation \ref{equ:dispatch_kirchhoff}) is expanded by the additional redispatch decision variables (Equation \ref{equ:redispatch_kirchhoff}). The generation schedules are taken over from the dispatch; thus, the redispatch regulation must be used if necessary. This constraint is only used within Austria because the redispatch evaluation is conducted in this country. In contrast to the market-based dispatch, all transmission lines and nodes in Austria are considered ($N^\mathrm{All}_\mathrm{AT}$). The nodes are still aggregated in all other countries; therefore, no local congestion management is necessary. However, redispatch measures within Austria will marginally change the power flow over the whole market area and all transmission lines.
+\begin{flalign} \label{equ:redispatch_kirchhoff}
+&D_{t,n} + D^\mathrm{up}_{t,n} - D^\mathrm{down}_{t,n} + d^\mathrm{EV}_{t,n} + \displaystyle\sum\limits_{e \in E_{n}} D^\mathrm{el}_{H_{2_{t,e}}} = \\ \nonumber
+&\displaystyle\sum\limits_{\mathrm{th} \in \mathrm{TH}_{n}} Q_{t,\mathrm{th}} + q^\mathrm{+ Redis}_{t,\mathrm{th}} - q^\mathrm{- Redis}_{t,\mathrm{th}} + \displaystyle\sum\limits_{\mathrm{fc} \in \mathrm{FC}_{n}} Q^\mathrm{el}_{H_{2_{t,\mathrm{fc}}}} \\ \nonumber
+&+ \displaystyle\sum\limits_{\mathrm{ps} \in \mathrm{PS}_{n}} (Q^\mathrm{tu}_{t,\mathrm{ps}} - Q^\mathrm{pu}_{t,\mathrm{ps}}) + \displaystyle\sum\limits_{\mathrm{st} \in \mathrm{ST}_{n}} (Q^\mathrm{out}_{t,\mathrm{st}} - Q^\mathrm{in}_{t,\mathrm{st}}) \\ \nonumber 
+&+ Q^\mathrm{RESE}_{t,n} - \mathrm{Spill}^\mathrm{RESE}_{t,n} - \mathrm{spill}^\mathrm{RESE}_\mathrm{Redis_{t,n}} - \mathrm{exch}_{t,n} + \mathrm{NSE}_{t,n} \\ \nonumber
+&\forall t \in T, \forall n \in N^\mathrm{All}_\mathrm{AT} 
+\end{flalign}
+\paragraph*{Electricity supply - Austria}\mbox{}\\
+The sum of generated electricity and \ac{EV} demand regulation within Austria is constant before and after the congestion management (Equation \ref{equ:redis_energy_equilibrium}).
+\begin{flalign} \label{equ:redis_energy_equilibrium}
+    &\displaystyle\sum\limits_{n \in N^\mathrm{All}_\mathrm{AT}} d^\mathrm{EV +}_{t,n} + \displaystyle\sum\limits_{\mathrm{th} \in \mathrm{TH}_{N^\mathrm{All}_\mathrm{AT}}} q^\mathrm{- Redis}_{t,\mathrm{th}} 
+     + \displaystyle\sum\limits_{n \in N^\mathrm{All}_\mathrm{AT}} \mathrm{spill}^\mathrm{RESE}_{\mathrm{Redis}_{t,n}} \\ \nonumber
+     &= \displaystyle\sum\limits_{n \in N^\mathrm{All}_\mathrm{AT}} d^\mathrm{EV -}_{t,n} + \displaystyle\sum\limits_{\mathrm{th} \in \mathrm{TH}_{N^\mathrm{All}_\mathrm{AT}}} q^\mathrm{+ Redis}_\mathrm{t,th} \\ \nonumber 
+     &\forall t \in T
+\end{flalign}
+\paragraph*{Electricity supply - other control areas}\mbox{}\\
+All other control areas expect Austria are restrictively aggregated as a sum for their thermal power plant generation (Equation \ref{equ:redis_energy_equilibrium_other}). 
+Consequently, these areas can compensate for the differing exchanges over the interconnectors created by congestion management in Austria. The exchanges with Austria are in general consistent with the ones determined in the dispatch, but other transmission lines are possibly used.
+\begin{flalign} \label{equ:redis_energy_equilibrium_other}
+&\sum_{\mathrm{th} \in \mathrm{TH}_{n}} q^\mathrm{- Redis}_{t,\mathrm{th}}
+= \sum_{\mathrm{th} \in \mathrm{TH}_{n}} q^\mathrm{+ Redis}_{t,\mathrm{th}} \\ \nonumber
+&\forall t \in T, \forall n \in N^\mathrm{All}_\mathrm{\setminus AT} 
+\end{flalign}
+\paragraph*{Generation regulation - thermal power plants}\mbox{}\\
+The generation of the thermal power plants can be increased (Equation \ref{equ:redis_thermal_1}) or decreased (Equation \ref{equ:redis_thermal_2}) based on the generation schedules in the dispatch. However, neither the limits of their technical capacity nor the power gradient may be exceeded.
+\begin{flalign} \label{equ:redis_thermal_1}
+    &q^\mathrm{+ Redis}_{t,\mathrm{th}} \geq 0 \\ \label{equ:redis_thermal_2}
+    &q^\mathrm{- Redis}_{t,\mathrm{th}} \geq 0 \\ \nonumber
+    &\forall t \in T, \forall \mathrm{th} \in \mathrm{TH} 
+\end{flalign}
+\paragraph*{Generation regulation - renewable energies}\mbox{}\\
+The curtailment of \ac{RESE} as a redispatch measure (Equation \ref{equ:redis_RESE_curtail}) must consider the curtailment that was already performed in the dispatch.
+\begin{flalign} \label{equ:redis_RESE_curtail}
+    &0 \leq \mathrm{spill}^\mathrm{RESE}_{\mathrm{Redis}_{t,n}} \leq Q^\mathrm{RESE}_{t,n} - \mathrm{Spill}^\mathrm{RESE}_{t,n} \\
+    &\forall t \in T, \forall n \in N^\mathrm{All} \nonumber
+\end{flalign}
+The use of the storage units, sector coupling and \ac{NSE}, remain unchanged as planned in the dispatch. Readjusting them within the redispatch is not implemented as part of this work. The nodes' exchanges are calculated again considering the new disaggregated transmission grid.

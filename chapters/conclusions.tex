@@ -1,0 +1,94 @@
+\chapter{Conclusions and outlook}\label{conclusions}
+In this thesis two, a two-stage fundamental European electricity market model is developed. This includes a dispatch model that calculates the market clearing while maximising \ac{SEW}. Following the dispatch, the cost-optimal redispatch is calculated. Using this, the effects of flexibility use on transmission grid congestion and redispatch needs are evaluated. With this two-stage model, the influence of flexibility not only on the electricity market but also on the physical transmission grid is shown. Particular emphasis is given to the flexibility integration of hydrogen markets and individual transport with \ac{EV}s. 
+
+
+This optimisation model allows the evaluation of competitive and synergistic effects between various flexibility options provided by different stakeholders. Regulated grid operators implement grid infrastructure capacities, producers implement storage and hydrogen production, and end-users provide demand-side flexibility. Moreover, welfare shifts initiated by hydrogen sector coupling between the market participants are evaluated. Finally, the redispatch model evaluates the effects of \ac{EV} demand-side flexibility on redispatch measures. Both when they are used in dispatch as smart charging technology and when they are used in redispatch to overcome congestion. The modelling approach integrates these flexibility options directly into the market clearing to find an optimum without requiring several model iterations.
+
+
+This work has several limitations that could be tackled in future work and gives a starting point to several research questions that are coupled to this thesis. Five ideas for possible future research questions are discussed as follows:
+
+\paragraph*{Investment model}\mbox{}\\
+This thesis evaluates the changes in \ac{PS} and, consequently, the effects on revenue for several stakeholders through the widespread integration of hydrogen production through electrolysis. The resulting investment incentives induce a long-term change in the power plant fleet, subject to the hydrogen price. Hence, the described results represent a short-term optimum based on policy and the regulatory environment. Future work can extend the model to an investment model to examine the resulting investments. This evaluation of the investment incentives can be done in shorter time steps of a couple of years coupled with a subsequent reaction to them. 
+
+
+\paragraph*{Hydrogen policy and regulatory framework}\mbox{}\\
+The evaluation of the hydrogen types produced without regulatory limitations shows that yellow hydrogen accounts for only a minor portion of the produced hydrogen. However, the scenarios assume an electricity market dominated by \ac{RESE}. Until these expansion goals are met, the share of yellow hydrogen could be significantly higher, resulting in higher CO\textsubscript{2} emissions. Furthermore, pink hydrogen accounts for a significant portion of total hydrogen production. This pink hydrogen is nearly entirely produced in France. Although it has a large potential for decarbonisation, its production and use heavily rely on political and regulatory decisions and social acceptance. In addition, blue and turquoise hydrogen produced using natural gas could influence the dispatch of the electrolysers. Furthermore, direct coupling between a specific generation unit and a specific electrolyser, besides the market, will affect the results. The model could be extended to implement this policy framework and additional technologies to evaluate their effects. 
+
+
+\paragraph*{Correlation between hydrogen production and the natural gas price}\mbox{}\\
+The described integration of blue and turquoise hydrogen will represent the correlation of hydrogen production to the natural gas price even more. An approach implementing a cross-price elasticity between the natural gas price and the hydrogen price will affect the use of \ac{CCGT} and hydrogen production. This can show direct substitution effects. In addition, the implementation of European cross-border hydrogen trade can be analysed. The additional infrastructure allowing energy trade besides electricity can bring valuable insights into the interaction between hydrogen and electricity trade, mainly if congestion occurs.
+
+
+\paragraph*{Electrification of the commercial fleet and implementation of a traffic flow model}\mbox{}\\
+However, not only the implementation of hydrogen sector coupling and the \ac{EV}s provide several ideas for future work. While this thesis implements private \ac{EV}s, considering the electrification of the commercial will add additional flexibility with a different spatial distribution. This spatial distribution could be analysed more in detail by implementing a traffic flow model into the electricity market model. This will change the spatial distribution of flexibility and their temporal availability. 
+
+
+\paragraph*{Extended redispatch market}\mbox{}\\
+This thesis focuses on redispatch measures in Austria. Therefore, further efforts could address the effects of cross-border redispatch if the provided flexibility is used not only within one control area but in a European congestion management market. In addition, \ac{EV}s as \ac{V2G} units, as well as decentralised battery storage units, which are installed in combination with \ac{PV} systems, can participate in the congestion management market. \ac{PV} systems are used not only for temporal demand shifting but also as bidirectional electricity storage units due to the possibility of feeding into the grid. This allows to evaluate the effects of several flexibility options to balance redispatch needs and show interactions between them. 
+\begin{comment}
+This thesis proposes methods for integrating various flexibility options into the European electricity market, with different stakeholders providing these flexibilities. Regulated grid operators implement grid infrastructure capacities, producers implement storage and hydrogen production, and end-users provide demand-side flexibility. An electricity market with a high share of \ac{RESE} is used to demonstrate the benefits of additional flexibility, evaluating these benefits from a system perspective referencing increases in \ac{SEW}. We also examine the effects on different stakeholders in the electricity market. For this purpose, thermal, \ac{RESE}, and storage \ac{PS}, \ac{CS}, and \ac{CR} are calculated ex-post optimisation. 
+
+
+The applied methodology directly integrates flexibility into the electricity market. A unit commitment market is required to achieve this outcome in real markets. Hydrogen sector coupling, storage, and demand-side flexibility require price signals for implementation. In particular, accurate use of information about the influence of electricity demand and the resulting market clearing price necessitates a fully integrated market. Furthermore, exact generation and demand prediction models must be employed. Demand bids could fulfil this as aspect of the electricity market design if the required information is available.
+
+
+The benefits are evaluated in the \ac{DA} electricity market. Some types of flexibility, i.e. storage, can generate higher revenue for example on intraday or balancing service markets. Consequently, it is not ensured that flexibility would be used as proposed in this study; however, flexibility on alternative markets does not preclude applications on the \ac{DA} market. Such flexibility can be temporarily used on one or the other market depending on the current price and expected electricity price volatility. Moreover, the model maximises the \ac{SEW} of the entire system. Thus, we employ flexibility referencing the objective of achieving a holistic optimum. From the operators' perspective, higher revenue can be achieved through alternative marketing strategies. Electricity prices can be revised in a planned manner if the units are sufficiently large or if they are pooled. This can be evaluated using an agent-based electricity market model.
+
+
+The results show that several combinations of flexibility types compete regarding associated \ac{SEW} increase benefits, indicating a reduction in individual revenue. Moreover, integrating additional flexibility of the same type always corresponds to reduced individual revenue and decreased investment incentives. If these are insufficient for implementation, some of the increased \ac{SEW} can be leveraged to establish subsidy schemes to stimulate investments. This makes sense if certain flexibility options are needed for specific reasons in the market, but their need is not reflected in market price signals.
+
+
+The results of the flexibility options presented in this study are heavily dependent on investment costs. An approach was chosen based on publicly available investment costs, which were sufficient for the aim of this work to better understand the overall inter-dependencies between the flexibility options and technologies. Future research can conduct a more accurate quantitative evaluation of specific units including specific power-to-energy ratios, investment costs, \ac{OM} costs, and operation constraints.
+
+
+This thesis proposes a method for implementing a sector coupling between the European electricity market and national hydrogen markets. Electrolysers, fuel cells and other high efficiency hydrogen to electricity converters such as \ac{CCGT} function as conversion technologies. Those allow energy trade between these markets. The modified \ac{PS}, \ac{CS} and \ac{SEW} trade-offs are analysed. Moreover, the types of hydrogen produced and the altered overall electricity mix are investigated. \\
+
+
+The methodology optimises the electricity and hydrogen  market jointly to achieve a holistic \ac{SEW} optimum. A unit commitment market is required to achieve this in real markets. Especially, the dependence of the electrolyser’s electricity demand on the market clearing price necessitates a fully integrated market with very precise generation and demand prediction models in use. Demand bids could do this as part of the electricity market design. 
+
+
+The methodology used to integrate the hydrogen market is not limited to hydrogen. Rather, with appropriate parameter selection and conversion technologies it can be easily adapted to integrate other sectors. While this research focuses on integrating hydrogen via electrolysis and fuel cells, future work may include hydrogen methanation as part of modelling framework. Methane is also used in conventional gas turbines to generate electricity and heat. The methanation process’s additional losses will necessitate higher electricity price spreads than fuel cells, but it can provide vast amounts of installed capacity.  Electricity, hydrogen, and heating sector coupling can generate enormous additional \ac{SEW} potential. This can have an impact on fuel cell utilization, particularly in Northern Europe during the winter. In this work the mixture potential of natural gas and hydrogen for use by \ac{CCGT} is evaluated ex-post. 
+
+
+The results indicate that the sector coupling of the electricity and hydrogen markets has enormous flexibility potential. This flexibility potential can be further increased by blue hydrogen through an additional market. Especially \ac{RESE} benefit from this if they dominate the generation mix. In turn, investment incentives are created, making their expansion even more appealing. If electricity price peaks occur, the use of hydrogen to generate electricity will significantly reduce them. Consequently, consumers benefit significantly from sector coupling in this case. Meanwhile, pure hydrogen production raises electricity prices to the detriment of consumers. Because of the unequal distribution of costs and benefits in the population, additional regulatory compensation measures may be required. The described \ac{RESE} investment incentives induce a long-term change in the power plant fleet, subject to the hydrogen price. Hence, the described results represent a short-term optimum, based on political goals. To examine the resulting investments, it is necessary to extend the model to an investment model. This can reevaluate the investment incentives in shorter time steps of a couple of years and react to them with investment decisions.
+
+
+Furthermore, the results show that yellow hydrogen accounts for only a minor portion of the generated hydrogen. However, the scenarios assume an electricity market dominated by \ac{RESE}. Until these expansion goals are met, the share of yellow hydrogen could be significantly higher, resulting in higher CO\textsubscript{2} emissions. Furthermore, pink hydrogen accounts for a significant portion of total hydrogen production. This pink hydrogen is nearly entirely produced in France. It has a large decarbonization potential, but its production and use are heavily reliant on political and regulatory decisions and social acceptance. The model currently has no policy or regulatory limitations implemented. The split of hydrogen production among the different types depends on the corresponding power plant fleet and thus on the scenario choice. Since the focus in this work is based on compliance with the \ac{NECP}, there is a strong focus on pink hydrogen in France while the other countries produce almost exclusively green hydrogen. The choice of an alternative power plant fleet would require the inclusion of additional constraints that would cause compliance with national legislation. This is easily possible in the used model, but not implemented in this work as the focus was explicitly on the effects of sector coupling without external policies or regulatory constraints. 
+
+
+This paper limits the hydrogen trades to national hydrogen markets with the same hydrogen price in each country. Further research could investigate into the potential of unrestricted cross-border trade. The results may be affected if not all hydrogen producers and consumers are connected, or if storage capacity is limited ex-ante rather than calculated ex-post. 
+
+
+If fuel cell \ac{SRMC} are lower than those of other power plants they are used instead of them. This implies that fuel cell \ac{PS} is highly dependent on primary energy prices such as natural gas and hydrogen prices. The used model assumes a fixed natural gas price with no dependency between the natural gas price and the hydrogen price. An additional sector coupling could be implemented to model this interaction and assess the impact of the natural gas price.
+
+
+This thesis proposes a novel method to integrate aggregated \ac{EV}s as demand-side flexibility into the European electricity market, wherein the market-based dispatch and redispatch are optimised and analysed. 
+
+
+Several benefits are generated through the integration of demand-side flexibility in the redispatch. However, the total amount of electricity to be regulated during the redispatch increases due to the rebound effect of demand shifts. The associated regulation effort of the aggregators and the \ac{TSO} requires a suitable IT infrastructure and standardised interfaces of the charging infrastructure. The use of cross-border flexibility would also substantially raise these IT requirements. 
+
+
+The analysis builds on the widespread participation of \ac{EV}s in the redispatch market, whereby it is not ensured that enough participants will allow externals to control the charging events of their vehicles. Nevertheless, the potential of distributed flexible demand within a market-based congestion management system in an electricity market with a high share of \ac{RESE} is demonstrated. 
+
+
+Redispatch costs are optimised within one control area, and adjacent areas are considered aggregated. Thus, cross-border redispatch is not evaluated to the full extent. Moreover, the redispatch costs and revenues from cross-border redispatch are not covered, but a qualitative analysis of these costs is possible. A holistic redispatch model would require a detailed power plant fleet of the entire market area, including all associated transmission lines. Generation units with identical \ac{SRMC} can no longer be distinguished from each other due to the aggregation of the power plants before dispatch and subsequent disaggregation before redispatch. Therefore, their assignment to a specific node is no longer possible. This issue is irrelevant in the current study because a set of nine nodes is used in the dispatch to derive local price signals for the redispatch market.  
+
+
+The thesis focuses on redispatch measures in Austria. Therefore, further efforts could address the effects on cross-border redispatch if the provided flexibility is used not only within one control area but in a European congestion management market. 
+The redispatch model can be extended to allow the exact allocation and differentiation of power plants with identical bids in the electricity market (\ac{SRMC}). This extension can be conducted by analysing these generation units, wherein their price bids are different due to slight variations of \ac{SRMC} or strategic bidding behaviour.
+The integration of other sectors than private transport into electricity market models (e.g. heating and hydrogen as demand-side flexibility) can demonstrate the sector with the best performance for redispatch measures. Furthermore, flexibility can be used to participate in the ancillary service markets. 
+In addition, \ac{EV}s as \ac{V2G} units, as well as decentralised battery storage units, which are installed in combination with \ac{PV} systems, can also participate in the congestion management market. \ac{PV} systems in combination with battery storage are not only used for temporal demand shifting but also as bidirectional electricity storage units due to the existing possibility of feeding these systems into the grid.
+
+
+
+
+FUTURE WORK:
+future work: hydrogen trade: Electricity versus hydrogen trade: This flexibility can support the electricity market, especially in congestion situations.
+
+The natural gas price as model input is the same for scenario and different hydrogen price. A cross price elasticity between the natural gas price and the hydrogen price will affect the use of \ac{CCGT} and hydrogen production. This would show direct substition effects. 
+
+The \ac{EV} fleets use the same \ac{CT}s independent of their actual location and population density. A more precise distinction between urban and rural areas will affect the available flexibility potential. This could be done by coupling a traffic flow model to two-stage optimisation model. 
+
+This thesis implements private \ac{EV}s in to the model. Consideration the electrification of the commercial will add additional flexibility with a different spatial distribution.
+\end{comment}
+

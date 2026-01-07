@@ -1,0 +1,354 @@
+\documentclass[%
+    % draft,
+    fontsize=11pt, % size of the main text
+    paper=A4, % paper format
+    parskip=full, % vertical space between paragraphs (no, full or half)
+    DIV=15, % calculates a good DIV value for type area; 66 characters/line is great (calc|N)
+    % headinclude=true, % is header part of margin space or part of page content?
+    % footinclude=true, % is footer part of margin space or part of page content?
+%    open=right, % "right" or "left": start new chapter on right or left page
+    appendixprefix=true, % adds appendix prefix; only for book-classes with \backmatter
+    bibliography=totoc, % adds the bibliography to table of contents (without number)
+    draft=false, % if true: included graphics are omitted and black boxes mark overfull boxes in margin space
+    BCOR=5mm, % binding correction (depends on how you bind the resulting printout.
+    oneside, % (oneside or twoside)
+    headheight=10.90016pt,
+    headinclude=true
+    % headsepline=true,
+]{scrbook}
+
+\newcommand{\mytitle}{\dots}
+\newcommand{\myauthor}{Dipl.-Ing.in. Antonia Golab}
+\newcommand{\myworktitle}{Dissertation}
+\newcommand{\mygrade}{Doktor der technischen Wissenschaften}
+\newcommand{\mystudy}{Electrical Engineering}
+\newcommand{\myuniversity}{Energy Economics Group \\[0mm] Faculty of Electrical Engineering and Information Technology \\[0mm] Technische Universität Wien}
+\newcommand{\myinstitute}{Institute of Energy Systems and Electrical Drives}
+\newcommand{\mysupervisor}{Prof.~Dr.~Johann Auer\\[-1mm] \small{Technische Universität Wien}}
+\newcommand{\reviewerOne}{Prof.\dots \\[-1mm] \small{Eidgenössische Technische Hochschule Zürich}}
+\newcommand{\reviewerTwo}{Prof.\dots \\[-1mm] \small{Norwegian University of Science and Technology}}
+\newcommand{\mysubmissiontown}{Vienna}
+\newcommand{\mysubmissionmonth}{May}
+\newcommand{\mysubmissionyear}{2024}
+\usepackage{empheq}
+
+%===========================================================================================
+% Dependencies
+%===========================================================================================
+
+% Acronyms
+\usepackage{comment}
+\usepackage{acro}
+\usepackage{comment}
+% Appendix
+\usepackage{appendix}
+\usepackage{changepage}
+% Bibliography
+\usepackage[
+    backend=biber, % using "biber" to compile references (instead of "biblatex")
+    style=ieee,
+    %style=authoryear, % alphabetic, authoryear, authoryear-icomp
+    maxbibnames=15,
+    maxcitenames=2,
+    mincitenames=1,
+    autocite=inline, % how to deal with autocite
+    dashed=false,
+    uniquelist=false, % if authors have the same name
+    uniquename=false, % if two authors have the same name 
+    dashed=false, % do *not* replace recurring reference authors with a dash
+    backref=true, % create backlings from references to citations
+    natbib=true, % offering natbib-compatible commands
+    hyperref=true, % using hyperref-package references
+]{biblatex}
+%\addbibresource{references.bib}
+\addbibresource{test.bib}
+% Enumeration
+\usepackage{enumitem}
+\usepackage[
+    margin=3.5cm,        % or 3cm for more space
+    includehead,
+    headheight=20pt,
+    headsep=5pt
+]{geometry}
+% Font & Encoding
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[ngerman, english]{babel} % last is default language
+\usepackage[babel=true,strict=true,english=american,german=guillemets]{csquotes}
+\usepackage{lmodern}
+\usepackage{longtable}
+\usepackage{placeins}
+\usepackage{lscape}
+\usepackage{fancyhdr}
+% Graphics
+\usepackage{graphicx}
+\usepackage{svg}
+\usepackage{xcolor}
+\usepackage{eso-pic} % for logo positioning on title page
+\usepackage[absolute]{textpos} % use showboxes for draft mode
+\usepackage{soul}
+
+% Zur Farbmarkierung während des Entwurfs
+\usepackage[breakable]{tcolorbox}
+\newcommand{\coloredline}[2]{
+    \begin{tcolorbox}[
+        colback=white, % Hintergrundfarbe des Textes
+        colframe=#1,   % Rahmenfarbe
+        arc=0mm,       % Eckenradius
+        boxsep=0pt,    % Abstand zum Text
+        left=3pt,      % Abstand zur linken Linie
+        right=3pt,     % Abstand zur rechten Seite
+        top=3pt,       % Abstand zur oberen Seite
+        bottom=3pt,    % Abstand zur unteren Seite
+        boxrule=1pt,    % Rahmendicke
+        breakable
+    ]
+    #2
+    \end{tcolorbox}
+}
+
+% Math
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{mathtools}
+\usepackage{calc}
+\usepackage{color}
+\usepackage{xcolor,colortbl}
+\usepackage{rotating}
+\usepackage{accents} 
+\usepackage{float}
+\usepackage{makecell}
+\usepackage{subcaption}
+\usepackage{setspace}
+\usepackage{rotating}
+\usepackage{tikz}
+% Referencing
+\usepackage{hyperref} % needs to be used before cleverref
+\usepackage[noabbrev, capitalise]{cleveref}
+\usepackage{nameref}
+\usepackage[bottom]{footmisc} % see also: http://www.komascript.de/node/858
+\usepackage{footnotehyper} % for footnotes in tables to work
+\usepackage[
+    margin=1cm,
+    includehead,
+    headheight=40pt,
+    headsep=10pt
+]{geometry}
+\RedeclareSectionCommand[
+  beforeskip=0pt,
+  afterskip=1\baselineskip
+]{chapter}
+% Style
+% usepackage{scrlayer-scrpage} % advanced page style using KOMA
+
+% Tables
+\usepackage{tabularx}
+\usepackage{booktabs}
+\usepackage{threeparttable}
+\usepackage{supertabular}
+\usepackage{multirow}
+\usepackage{caption}
+
+% Units
+\usepackage[useregional]{datetime2}
+\usepackage{siunitx}
+\usepackage{eurosym}
+% Define a custom style with headers
+\fancypagestyle{myheaderstyle}{
+  \fancyhf{}  % clear all headers/footers
+  \fancyhead[L]{\textit{Graphical Abstract}}
+  \fancyhead[C]{}
+  \fancyhead[R]{}
+  \fancyfoot[C]{\thepage}
+  \renewcommand{\headrulewidth}{0pt}  % header line
+  \renewcommand{\footrulewidth}{0pt}    % no footer line
+}
+%===========================================================================================
+% Options
+%===========================================================================================
+
+% Colors
+\definecolor{DispositionColor}{RGB}{30,103,182} % used for links and so forth in screen-version
+\definecolor{myblack}{gray}{0}
+\definecolor{mygray}{gray}{0.25}
+\definecolor{eeg_green}{RGB}{0, 128, 65}
+\definecolor{tu_blue}{RGB}{0, 102, 153}
+
+% Fonts
+\renewcommand{\headfont}{\normalfont\sffamily\itshape\color{myblack}}
+\renewcommand{\pnumfont}{\normalfont\sffamily\color{myblack}}
+\addtokomafont{disposition}{\color{myblack}}
+\addtokomafont{caption}{\color{myblack}\footnotesize}
+\addtokomafont{captionlabel}{\color{myblack}}
+
+% Footnotes in tables
+\makesavenoteenv{tabularx} % for footnotes in tables to work
+\makesavenoteenv{table}
+
+% Avoid pages with single figures
+\renewcommand{\floatpagefraction}{.7} % The default is .6
+
+% Hyperref setup
+\hypersetup{
+%    bookmarks=true, % show bookmarks bar?
+    unicode=false, % non-Latin characters in Acrobat’s bookmarks
+    pdftoolbar=true, % show Acrobat’s toolbar?
+    pdfmenubar=true, % show Acrobat’s menu?
+    pdffitwindow=false, % window fit to page when opened
+    pdfstartview={FitH}, % fits the width of the page to the window
+    pdftitle={\mytitle}, % title
+    pdfauthor={\myauthor}, % author
+    % pdfsubject={Subject}, % subject of the document
+    pdfcreator={\myauthor}, % creator of the document
+    pdfproducer={\myauthor}, % producer of the document
+    % pdfkeywords={keyword1} {key2} {key3}, % list of keywords
+    pdfnewwindow=true, % links in new window
+    colorlinks=true, % false: boxed links; true: colored links
+    linkcolor=myblack, % color of internal links (change box color with linkbordercolor)
+    citecolor=myblack, % color of links to bibliography
+    filecolor=myblack, % color of file links
+    urlcolor=myblack, % color of external links
+    linkbordercolor=myblack, % color of boxes (link)
+    urlbordercolor=myblack, % color of boxes (url)
+    citebordercolor=myblack,
+    menubordercolor=myblack,
+    runbordercolor=myblack, 
+}
+
+% Named items with references
+\makeatletter
+\newcommand{\labitem}[2]{%
+\def\@itemlabel{\textbf{#1}}
+\item
+\def\@currentlabel{#1}\label{#2}}
+\makeatother
+
+% Research Question
+\newtheorem{researchquestion}{Research Question}
+\crefname{researchquestion}{Research Question}{Research Questions}
+
+% Style
+\linespread{1.1}
+\parindent 0pt
+\allowdisplaybreaks
+\raggedbottom
+\setcounter{secnumdepth}{3} % manually for section numbering
+
+
+%===========================================================================================
+% Units
+%===========================================================================================
+%\usepackage[noframe]{showframe}
+\DeclareSIUnit{\EUR}{\text{\euro}}
+\DeclareSIUnit{\kw}{kW}
+\DeclareSIUnit{\kwh}{kWh}
+\DeclareSIUnit{\mw}{MW}
+\DeclareSIUnit{\mwh}{MWh}
+\DeclareSIUnit{\gw}{GW}
+\DeclareSIUnit{\gwh}{GWh}
+\DeclareSIUnit{\unit}{Unit}
+
+\newcommand{\EURperMW}[1]{\SI[per-mode=symbol]{#1}{\EUR\per\mw}}
+\newcommand{\EURperMWh}[1]{\SI[per-mode=symbol]{#1}{\EUR\per\mwh}}
+\newcommand{\kW}[1]{\SI{#1}{\kw}}
+\newcommand{\kWh}[1]{\SI{#1}{\kwh}}
+\newcommand{\MW}[1]{\SI{#1}{\mw}}
+\newcommand{\MWh}[1]{\SI{#1}{\mwh}}
+\newcommand{\GW}[1]{\SI{#1}{\gw}}
+\newcommand{\GWh}[1]{\SI{#1}{\gwh}}
+\newcommand{\Unit}[1]{\SI{#1}{\unit}}
+\newcommand{\hr}[1]{\SI{#1}{\hour}}
+\newcommand{\co}{CO$_2$}
+\newcommand{\kgperMWh}[1]{\SI[per-mode=symbol]{#1}{\kilogram\per\mwh}}
+\newcommand{\perh}[1]{\SI[per-mode=symbol]{#1}{\per\hour}}
+
+
+%===========================================================================================
+% Document
+%===========================================================================================
+
+\input{chapters/acronyms}
+
+%\fancypagestyle{plain}{\pagestyle{myheaderstyle}} 
+\begin{document}
+    \input{chapters/title}
+    
+    %\pagenumbering{Roman} 
+    % \input{chapter}{Abstract}
+    % \addcontentsline{toc}
+    
+    
+    \newgeometry{margin=2.5cm, includehead, headheight=20pt, headsep=10pt,
+    bottom=4cm,      % <-- more space at bottom
+    footskip=1.5cm   % <-- distance from text to footer
+    }
+    \input{chapters/abstract}
+    % \addcontentsline{toc}{chapter}{Kurzfassung}
+    % \input{chapters/kurzfassung}
+    \newpage
+    \clearpage  % finish abstract page
+\pagestyle{myheaderstyle}
+% Temporarily use smaller margins for the landscape figure
+\newgeometry{margin=1.5cm, includehead, headheight=40pt, headsep=10pt}
+
+\begin{sidewaysfigure}
+\centering
+\includegraphics[width=1.0\textwidth]{graphics/RQs/overview_problems.pdf}
+\caption{\hl{we have here a repetition of RQ1 in problem statement; needs change!} Overview of most important building blocks of the thesis.}
+\label{fig:overview}
+\end{sidewaysfigure}
+
+\clearpage
+\restoregeometry  % <-- back to normal margins
+
+    \begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{graphics/RQs/contributions.pdf}
+    \caption{Contributions of Papers 1---4, each reflecting one core research question (RQ1---4): Each research question extends the scientific literature for a different application segment of battery-electric vehicles. The application segments differ in long-distance vs. regional transport as well as between passenger cars and commercial fleet applications. This figure illustrates the relative allocation of the research questions and therefore the scope of this thesis.}
+    \label{fig:method_scope}
+    \end{figure}
+    \begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{graphics/RQs/method_scope.pdf}
+    \caption{Overview on the temporal scale, and geographic scope and scale as well as addressed application segments of battery-electric vehicles of the methods designed to answer RQ1---4.}
+    \label{fig:method_scope}
+    \end{figure}
+    
+    \clearpage  % finish these pages
+    \pagestyle{plain}
+    \tableofcontents
+    \cleardoublepage
+    \newpage
+    \chapter*{Graphical abstracts}
+    \pagenumbering{arabic}
+    \addcontentsline{toc}{chapter}{Abbreviations}
+
+    
+% \input{chapters/abbreviations}
+\input{chapters/A_introduction}
+\input{chapters/B_state_of_the_art}
+
+\input{chapters/C_methods}
+\input{chapters/D_results}
+\input{chapters/E_synthesis}
+
+\input{chapters/F_conclusionandoutlook}
+
+\appendix
+\section{Model validation}
+
+
+\printbibliography
+% \bibliographystyle{plain}  % or: unsrt, alpha, abbrv, ieeetr, etc.
+% \bibliography{references}   % without .bib extension
+% \input{chapters/state_of_the_art}
+% \input{chapters/methods}
+%  \input{chapters/results}
+%  \input{chapters/discussion}
+%  \input{chapters/conclusions}
+%   \input{chapters/list_of_papers}
+% \input{chapters/references}
+% \input{chapters/appendix}
+\end{document}

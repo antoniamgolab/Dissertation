@@ -1,0 +1,230 @@
+\chapter{Validation of the two-stage European electricity market model}\label{appendix_model}
+\section{Socio-economic welfare calculation}\label{sec:validation_SEW}
+This section demonstrates the accurate model implementation and verifies the ex-post optimisation calculation of \ac{SEW} and its components. For this validation, six scenarios with a one node system are implemented. The scenarios are presented in Figure \ref{fig:validation_one_node} and the associated parameters are listed in Table \ref{table:validation_parameter}.
+\begin{figure}[h]
+\centering
+\begin{subfigure}[c]{.46\textwidth}
+    \centering
+    \includegraphics[width=3cm]{graphics/RQ1/Validation_1.pdf}
+    \caption{Baseline}
+    \label{fig:Baseline}
+\end{subfigure}\hspace{.01\textwidth}
+\begin{subfigure}[c]{.46\textwidth}
+    \centering
+    \includegraphics[width=3cm]{graphics/RQ1/Validation_2.pdf}
+    \caption{Thermal power plant expansion}
+    \label{fig:Thermal_power_plant_expansion}
+\end{subfigure}
+\begin{subfigure}[c]{.46\textwidth}
+    \centering
+    \includegraphics[height=3cm]{graphics/RQ1/Validation_3.pdf}
+    \caption{Renewable energy expansion}
+    \label{fig:Renewable_energy_expansion}
+\end{subfigure}\hspace{.01\textwidth}
+\begin{subfigure}[c]{.46\textwidth}
+    \centering
+    \includegraphics[height=3cm]{graphics/RQ1/Validation_4.pdf}
+    \caption{Demand-side flexibility integration}
+    \label{fig:Demand-side_flexibility_integration}
+\end{subfigure}
+\begin{subfigure}[c]{.46\textwidth}
+    \centering
+    \includegraphics[height=3cm]{graphics/RQ1/Validation_5.pdf}
+    \caption{Storage expansion}
+    \label{fig:Storage_expansion}
+\end{subfigure}\hspace{.01\textwidth}
+\begin{subfigure}[c]{.46\textwidth}
+    \centering
+    \includegraphics[height=3cm]{graphics/RQ1/Validation_6.pdf}
+    \caption{Hydrogen sector coupling}
+    \label{fig:Hydrogen_sector_coupling}
+\end{subfigure}
+\caption{Socio-economic welfare calculation validation using one node models}
+\label{fig:validation_one_node}
+\end{figure}
+\begin{landscape}
+\begin{table}
+\centering
+\small
+\begin{tabular}{llllllll}
+\hline
+\textbf{Scenario}  & \begin{tabular}[c]{@{}l@{}}\textbf{RESE}\\\textbf{generation}\\\textbf{in TWh}\end{tabular} & \begin{tabular}[c]{@{}l@{}}\textbf{Gas}\\\textbf{power}\\textbf{in GW}\end{tabular} & \begin{tabular}[c]{@{}l@{}}\textbf{Oil}\\\textbf{power}\\\textbf{in GW}\end{tabular} & \begin{tabular}[c]{@{}l@{}}\textbf{Storage}\\\textbf{power/capacity}\\\textbf{in GW/GWh}\end{tabular} & \begin{tabular}[c]{@{}l@{}}\textbf{Electrolyser and}\\\textbf{fuel cell}\\\textbf{power in GW}\end{tabular} & \begin{tabular}[c]{@{}l@{}}\textbf{Inflexible}\\\textbf{demand}\\\textbf{in TWh}\end{tabular} & \begin{tabular}[c]{@{}l@{}}\textbf{Flexible}\\\textbf{demand}\\\textbf{in TWh}\end{tabular} \\ \hline
+Baseline  & 0.67 & 0.276 & 0.9  & 0/0   & 0 & 11.7  & 0    \\ \hline
+Add. Gas  & 0.67  & 0.552  & 0.9  & 0/0   & 0 & 11.7  & 0    \\ \hline
+Add. RESE & 8.43  & 0.276 & 0.9  & 0/0   & 0 & 11.7  & 0    \\ \hline
+Add. DSM & 8.43  & 0.276 & 0.9  & 0/0   & 0 & 8.76  & 2.94    \\ \hline
+Add. Storage & 8.43  & 0.276 & 0.9  & 0.5/0.5   & 0 & 11.7  & 0    \\ \hline
+Add. Hydrogen & 8.43 & 0.276 & 0.9  & 0.5/0.5   & 0.5 & 11.7  & 0    \\ \hline
+Two nodes - gas & 1.34 & 1.104 & 1.8  & 0/0   & 0 & 23.4  & 0    \\ \hline
+Baseline II & 17.53 & 1.104 & 1.8  & 0/0   & 0 & 23.4 & 0    \\ \hline
+\begin{tabular}[c]{@{}l@{}}Add.\\transmission \end{tabular} & 17.53 & 1.104 & 1.8  & 0/0   & 0 & 23.4 & 0 \\\hline
+\end{tabular}
+\caption{Socio-economic welfare validation scenario parameters}
+\label{table:validation_parameter}
+\end{table}
+\end{landscape}
+The \textit{Baseline} scenario implements thermal power plants and \ac{RESE} generation (\ref{fig:Baseline}). The thermal power plants are \ac{CCGT} with low \ac{SRMC} and oil power plants with higher \ac{SRMC}. Storage, hydrogen sector coupling, and demand-side flexibility are not implemented in this scenario but are added in subsequent scenarios. 
+
+
+In addition, to one node models, a two node model is used to demonstrate the effects of \ac{SEW} calculation in more than one bidding zone. Further, the effects of transmission line expansion and trade between bidding zones are examined (Figure \ref{fig:Baseline_II}).
+\begin{figure}
+\centering
+   \begin{minipage}[b]{.49\linewidth} 
+      \includegraphics[width=1\textwidth]{graphics/RQ1/Validation_7.pdf}
+    \caption{Baseline II}
+    \label{fig:Baseline_II}
+   \end{minipage}
+   \hspace{0.0\linewidth}
+   \begin{minipage}[b]{0.49\linewidth}
+        \includegraphics[width=1\textwidth]{graphics/RQ1/Validation_8.pdf}
+    \caption{Transmission line expansion}
+    \label{fig:Transmission_line_expansion}
+   \end{minipage}
+\end{figure}
+Further the results of the European electricity market model (Table \ref{table:validation_results}) are processed to demonstrate the correct implementation of the ex-post calculation method (Table \ref{table:validation}). \ac{SEW} is calculated as the sum of \ac{PS}, \ac{CS}, \ac{CR} minus system costs. These systems costs are \textit{Startup costs}, \textit{Missing Inflow costs}, and \textit{\ac{DSM} costs}. \ac{NSE} costs are already included through the change in electricity price when demand is not covered, as \ac{WTP} is set to \ac{VoLL} in this scenario. 
+
+
+The difference in \ac{SEW} between the scenarios and the Baseline scenario (column \textit{\ac{SEW} Benefit}) is calculated to evaluate the \ac{SEW} increase from the implementation and expansion of various technologies. The dual approach to calculating the individual surpluses is the use of the generation costs. This corresponds directly to the objective function of the model. The difference to the \textit{Baseline} scenario are listed in the \textit{Cost Benefit} column. Because generation costs only include costs on the electricity market, \ac{SEW} benefits from the hydrogen market must also be considered. The electrolyser \ac{PS} (Table \ref{table:validation_results}) is added to the \textit{Cost Benefit} (Table \ref{table:validation}). The results of all scenarios are presented in Table \ref{table:validation}. Results that proof the accurate implementation are written in \textbf{bold}. The various scenarios include all technologies, while the parameters are chosen to verify all model functionalities.
+\begin{landscape}
+\begin{table}[h]
+\centering
+\tiny
+\begin{tabular}{lllllllllll}
+\hline
+\textbf{Scenario}  & \begin{tabular}[c]{@{}l@{}}\textbf{Thermal}\\\textbf{PS}\end{tabular} & \begin{tabular}[c]{@{}l@{}}\textbf{RESE}\\\textbf{PS}\end{tabular} & \begin{tabular}[c]{@{}l@{}}\textbf{Electrolyser}\\\textbf{PS}\end{tabular} & \begin{tabular}[c]{@{}l@{}}\textbf{Fuel cell}\\\textbf{PS}\end{tabular} & \begin{tabular}[c]{@{}l@{}}\textbf{Storage}\\\textbf{PS}\end{tabular} & \begin{tabular}[c]{@{}l@{}}\textbf{Startup}\\\textbf{costs}\end{tabular} & \begin{tabular}[c]{@{}l@{}}\textbf{Missing}\\\textbf{inflow}\\\textbf{costs}\end{tabular} & \begin{tabular}[c]{@{}l@{}}\textbf{DSM}\\\textbf{costs}\end{tabular} & \begin{tabular}[c]{@{}l@{}}\textbf{CS}\end{tabular} & \begin{tabular}[c]{@{}l@{}}\textbf{Congestion}\\\textbf{rent}\end{tabular} \\ \hline
+Baseline  & 77 883  & 2 779  & /  & /   & / & 0  & 0 & 0 & 26 602 & / \\ \hline
+Add. Gas  & 360   & 123    & /  & /   & /  & 0  & 0 & 0 & 114 852 & /\\ \hline
+Add. RESE & 116  & 1 006  & / & / & / & 4 & 0  & 0 & 115 360 & /  \\ \hline
+Add. DSM & 123  & 1 158  & / & / & / & 1 & 0  & 0 & 115 244 & /  \\ \hline
+Add. Storage & 117  & 1 041   & / & / & 11 & 3 & 0  & 0 & 115 326 & /   \\ \hline
+Add. Hydrogen & 117  & 1 166  & -1 & 7 & 7 & 3 & 0  & 0 & 115 214 & /  \\ \hline
+Two nodes - gas & 720  & 246  & /  & /   & / & 0 & 0 & 0 & 229 704 & / \\ \hline
+Baseline II & 374  & 352  & /  & /   & / & 2  & 0 & 0 & 231 544 & /  \\ \hline
+\begin{tabular}[c]{@{}l@{}}Add.\\transmission \end{tabular} & 239  & 1 434  & / & / & / & 8 & 0  & 0 & 231 241 & 238  \\ \hline
+\end{tabular}
+\caption{Results of the validation scenarios}
+\label{table:validation_results}
+\end{table}
+\end{landscape}
+
+\begin{table}
+\centering
+\small
+\begin{tabular}{llllll}
+\hline
+\textbf{Scenario} &
+\begin{tabular}[c]{@{}l@{}}\textbf{SEW}\\\textbf{in M\euro{}}\end{tabular} & 
+\begin{tabular}[c]{@{}l@{}}\textbf{SEW}\\\textbf{Benefit}\\\textbf{in M\euro{}}\end{tabular} & 
+\begin{tabular}[c]{@{}l@{}}\textbf{Generation}\\\textbf{costs}\\\textbf{in M\euro{}}\end{tabular} & 
+\begin{tabular}[c]{@{}l@{}}\textbf{Cost}\\\textbf{Benefit}\\\textbf{in M\euro{}}\end{tabular} & 
+\begin{tabular}[c]{@{}l@{}}\textbf{Cost Benefit}\\with\\\textbf{electrolyser PS}\\\textbf{in M\euro{}}\end{tabular} \\ \hline
+Baseline  & 107 264 & / & 9 735 & /  & /  \\ \hline
+Add. Gas  & 115 335 & \textbf{8 071} & 1 664 &\textbf{8 071}  & / \\ \hline
+Add. RESE  & 116 478 & \textbf{9 214}   & 521 & \textbf{9 214}  & /\\ \hline
+Add. DSM  & 116 524 & \textbf{9 260}  & 475 & \textbf{9 260} & / \\ \hline
+Add. Storage & 116 492 & \textbf{9 228}  & 507 & \textbf{9 228} & /\\ \hline
+Add. Hydrogen & 116 507 & \textbf{9 243}  & 491 & 9 244 & \textbf{9 243} \\ \hline
+\begin{tabular}[c]{@{}l@{}}Two nodes\\gas\end{tabular} & \textbf{230 670} & /  & \textbf{3 328} & / & / \\ \hline
+Baseline II & 232 268 & / & 1 731  & / & / \\ \hline
+\begin{tabular}[c]{@{}l@{}}Add.\\transmission \end{tabular} 
+& 233 144 & \textbf{876} & 855 & \textbf{876} & - \\ \hline
+\end{tabular}
+\caption{Validation results}
+\label{table:validation}
+\end{table}
+The \textit{Baseline} scenario (Figure \ref{fig:Baseline}) generates a thermal \ac{PS}, \ac{RESE} \ac{PS} and a \ac{CS} resulting in 107 264 M\euro{} \ac{SEW}, while the generation costs are 9 735 M\euro{} (Table \ref{table:validation}). 
+
+
+An additional \ac{CCGT} with 276 MW is installed in the \textit{Add. Gas} scenario (Figure \ref{fig:Thermal_power_plant_expansion}). As this additional capacity drastically lowers electricity prices, \ac{PS} reduces while \ac{CS} increases. This leads to 115 335 M\euro{} \ac{SEW}, representing an 8 071 M\euro{} increase compared with the \textit{Baseline} scenario. Comparing generation costs reveals the same benefit of 8 071 M\euro{}, validating the model and \ac{SEW} calculation. 
+
+
+\ac{RESE} generation is expanded instead of \ac{CCGT} in the \textit{Add. \ac{RESE}} scenario (Figure \ref{fig:Renewable_energy_expansion}). The volatile \ac{RESE} generation profile leads to 4 M\euro{} thermal power plant start-up costs. This scenario confirms that external costs, that are not part of the \ac{CS}, \ac{PS}, and \ac{CR} are considered correctly.
+
+
+The \textit{Add. \ac{DSM}} scenario further expands the \textit{Add. \ac{RESE}} scenario. A share of the overall electricity demand is implemented flexible but total electricity demand remains the same (Figure \ref{fig:Demand-side_flexibility_integration}). This scenario validates that the ex-post \ac{CS} calculation correctly manages demand-side flexibility.
+
+
+An alternative expansion to the \textit{Add. \ac{RESE}} scenario is conducted in the \textit{Add. Storage} scenario, introducing storage into the model and presenting the correct calculation of its \ac{PS} (Figure \ref{fig:Storage_expansion}). 
+
+
+An additional coupling between electricity and hydrogen markets is conducted in the \textit{Add. Hydrogen} scenario (Figure \ref{fig:Hydrogen_sector_coupling}). The generation cost approach only includes benefits on the electricity market; hence, the electrolyser \ac{PS} on the hydrogen market must be added to analyse the overall \ac{SEW} benefit. 
+
+
+The \textit{Two nodes - gas} scenario includes two identical nodes that use the same dataset as the \textit{Add. Gas} scenario. The results reveal that the \ac{SEW} doubles between the one and two node models from 115 335 M\euro{} to 230 670 M\euro{}. The same is evident for the generation costs, which double from 1 664 M\euro{} to 3 328 M\euro{}. Because these two nodes are identical a transmission line between them would not affect the results.
+
+
+The \textit{Baseline II} scenario includes two nodes with a different installed power plant fleet (Figure \ref{fig:Baseline_II}). Therefore, the clearing price is not always identical in these two nodes. By including a transmission line with a 1000 MW \ac{NTC} limit, electricity trade between the nodes will lead to more frequent price convergence. As the transmission capacity is limited, congestion occurs several times. This congestion leads to price divergence, resulting in a \ac{CR} of the respective transmission line, which is part of the \ac{SEW} benefit. The \textit{Add. transmission} scenario validates the correct \ac{CR} calculation (Figure \ref{fig:Transmission_line_expansion}). 
+
+
+The \ac{SEW} increase corresponds to generation cost decrease in all scenarios, confirming that the model and the ex-post calculations are correctly implemented.
+\section{Two-stage European electricity market model}
+The dispatch and the redispatch model are validated separately to prove their functionality without interactions between them.
+\subsection{Dispatch model}\label{sec:validation_dispatch}
+While the accurate \ac{SEW} calculation is verified in Appendix \ref{sec:validation_SEW} the model validation using historical data can be found in \cite{Dallinger2018}. The validation of the dispatch model is performed without redispatch after the market clearing. The \ac{EV} model and sector coupling to the hydrogen market is not implemented. Hence, demand-side flexibility provided by \ac{EV}s and endogenous electricity demand by electrolysers is impossible. The electricity generation from 2013 is compared with published electricity market data from the \textit{Yearly Statistics and Adequacy Retrospect} report from 2013 published by \ac{ENTSOE}. 
+\subsection{Redispatch model}
+The redispatch model validation is done in two ways. 
+
+
+Firstly, the validation of the redispatch model was conducted using a small test model, with an exogenously defined dispatch and \ac{DA} price (Figure \ref{fig:redispatch_validation_model}). The parameters of the dispatch and the resulting values after the redispatch are listed in table \ref{table:redispatch_validation}. A generation decrease as redispatch measures is marked red, while an increase is marked green. The \ac{AC} transmission lines between the nodes N, NW, NE, SW and SE are limited with 395 MW \ac{NTC} capacity. The \ac{AC} transmission lines between nodes SW, S and SE are limited to 329 MW, while the \ac{DC} transmission line has a capacity of 1000 MW. All \ac{AC} transmission lines are modelled with the same susceptance. Hence, an easy verifiable load flow is generated. The \ac{DC} line is not used until the capacity of the \ac{AC} lines is insufficient. This is modelled with an \ac{DC} line utilisation price of 0.05 \euro{}/MWh. The power plants at node N and SE have an installed capacity of 600 MW, while in Node SW a capacity of 2000 MW is installed. The \ac{RESE} at Node SW is curtailable but cannot increase the generation. Power increase and decrease of each power plant leads to the same costs and revenues, while \ac{RESE} curtailment is free of charge.
+
+
+In the test model, there are two possibilities for the \ac{AC} power flow from one node to every other node. Because the susceptance of the transmission lines is the same, the load flow over these two routes is divided inversely proportional to the number of transmission line segments. 
+
+
+The load flow can be easily replicated in hour 1, because no redispatch is necessary for that hour. Due to the location of generation and demand, 960 MW must be transferred from node SW to node SE. Hence, 4/6 of the AC load will flow from node SW via node S to node SE. 2/6 of the \ac{AC} load will flow from Node SW via Node NW, Node N and Node NE to Node SE. Because the line from node SW to node S is limited to 329 MW, only 329 MW will flow through it. Due to the calculated distribution of the load flow, only half of it will take the route via node S ($\frac{2/6}{4/6}$). Hence, 494 MW (329 + 165) are transported via the \ac{AC} lines, and the remaining 466 MW via the \ac{DC} line. 
+
+
+In hour 6, the line capacities are insufficient to transport the generation in nodes SW and N to the load in node SE. Thus, the generation in node SW is curtailed from 4000 MW to 1263 MW, and the capacity of the DC power is utilised to the maximum of 1000 MW. The generation in node SE is increased to the maximum possible 600 MW as the demand is located there. Generation in node N is increased to 461 MW. Hence, the transmission line from node N to node NE is 100\% utilised. Further generation increase is not possible due to congestion. This results in 2276 MW \ac{NSE}. 
+
+
+These results for all timesteps are listed in Table \ref{table:redispatch_validation}. 
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=1.0\textwidth]{graphics/RQ3/Redispatch_model_validation.pdf}
+    \caption{Setup of the redispatch validation model}
+    \label{fig:redispatch_validation_model}
+\end{figure}
+\begin{landscape}
+\begin{table}
+\centering
+\begin{tabular}{l|llllll|llllll} \hline
+& \multicolumn{6}{l|}{\textbf{Dispatch}}  & \multicolumn{6}{l}{\textbf{Redispatch}}           \\
+\begin{tabular}[c]{@{}l@{}}\textbf{Hour}\\\textbf{in h}\end{tabular} 
+& \multicolumn{2}{l}{\begin{tabular}[c]{@{}l@{}}\textbf{Load}\\\textbf{in MW}\end{tabular}} 
+& \begin{tabular}[c]{@{}l@{}}\textbf{RESE}\\\textbf{in MW}\end{tabular} 
+& \multicolumn{3}{l|}{\begin{tabular}[c]{@{}l@{}}\textbf{Power plant}\\\textbf{in MW}\end{tabular} }
+& {\begin{tabular}[c]{@{}l@{}}\textbf{NSE}\\\textbf{in MW}\end{tabular}} 
+& {\begin{tabular}[c]{@{}l@{}}\textbf{RESE}\\\textbf{in MW}\end{tabular}} 
+& \multicolumn{3}{l}{\begin{tabular}[c]{@{}l@{}}\textbf{Power plant}\\\textbf{in MW}\end{tabular}}       
+& {\begin{tabular}[c]{@{}l@{}}\textbf{DC load flow}\\\textbf{in MW}\end{tabular}} \\
+ & \textbf{SW}  & \textbf{SE}   & \textbf{SW}  & \textbf{N}   &\textbf{SW}                        & \textbf{SE}   & \textbf{SW and SE}   & \textbf{SW}  & \textbf{N}                          & \textbf{SW}                          & \textbf{SE}                         &                                                              \\ \hline
+1                                                   & 0                                   & 960                                & 960                                                  & 0                         & 0                         & 0                        & 0                                                   & {\color[HTML]{000000} 960}                           & 0                          & 0                           & 0                          & 466                                                          \\ \hline
+2                                                   & 450                                 & 450                                & 800                                                  & 0                         & 100                       & 0                        & 0                                                   & 800                                                  & 0                          & 100                         & 0                          & 0                                                            \\ \hline
+3                                                   & 400                                 & 400                                & 600                                                  & 0                         & 200                       & 0                        & 0                                                   & 600                                                  & 0                          & 200                         & 0                          & 0                                                            \\ \hline
+4                                                   & 1200                                & 0                                  & 0                                                    & 600                       & 0                         & 600                      & 0                                                   & 0                                                    & 600                        & 0                           & 600                        & 615                                                          \\ \hline
+5                                                   & 600                                 & 600                                & 600                                                  & 0                         & 600                       & 0                        & 0                                                   & 600                                                  & 0                          & 600                         & 0                          & 106                                                          \\ \hline
+6                                                   & 0                                   & 4600                               & 2000                                                 & 600                       & 2000                      & 0                        & {\color[HTML]{FE0000} 2276}                         & {\color[HTML]{FE0000} 1263}                          & {\color[HTML]{FE0000} 461} & {\color[HTML]{FE0000} 0}    & {\color[HTML]{009901} 600} & 1000                                                         \\ \hline
+7                                                   & 800                                 & 800                                & 800                                                  & 0                         & 800                       & 0                        & 0                                                   & 800                                                  & 0                          & 800                         & 0                          & 306                                                          \\ \hline
+8                                                   & 0                                   & 4600                               & 2000                                                 & 0                         & 2000                      & 600                      & {\color[HTML]{FE0000} 2276}                         & {\color[HTML]{FE0000} 1263}                          & {\color[HTML]{FE0000} 461} & {\color[HTML]{FE0000} 0}    & 600                        & 1000                                                         \\ \hline
+9                                                   & 1000                                & 2200                               & 1000                                                 & 600                       & 1000                      & 600                      & 0                                                   & 1000                                                 & {\color[HTML]{FE0000} 585} & {\color[HTML]{009901} 1015} & 600                        & 1000                                                         \\ \hline
+10                                                  & 900                                 & 900                                & 900                                                  & 0                         & 900                       & 0                        & 0                                                   & 900                                                  & 0                          & 900                         & 0                          & 406                                                          \\ \hline
+11                                                  & 1000                                & 1000                               & 1000                                                 & 0                         & 1000                      & 0                        & 0                                                   & 1000                                                 & 0                          & 1000                        & 0                          & 506                                                          \\ \hline
+12                                                  & 1100                                & 1100                               & 1100                                                 & 0                         & 1100                      & 0                        & 0                                                   & 1100                                                 & 0                          & 1100                        & 0                          & 606                                                          \\ \hline
+13                                                  & 0                                   & 600                                & 0                                                    & 600                       & 0                         & 0                        & 0                                                   & 0                                                    & 600                        & 0                           & 0                          & 15                                                           \\ \hline
+14                                                  & 0                                   & 5200                               & 2000                                                 & 600                       & 2000                      & 600                      & {\color[HTML]{FE0000} 2876}                         & {\color[HTML]{FE0000} 1263}                          & {\color[HTML]{FE0000} 461} & {\color[HTML]{FE0000} 0}    & 600                        & 1000                                                         \\ \hline
+15                                                  & 0                                   & 4600                               & 2000                                                 & 600                       & 2000                      & 0                        & {\color[HTML]{FE0000} 2276}                         & {\color[HTML]{FE0000} 1263}                          & {\color[HTML]{FE0000} 461} & {\color[HTML]{FE0000} 0}    & 600                        & 1000                                                         \\ \hline
+16                                                  & 1100                                & 1100                               & 0                                                    & 600                       & 1000                      & 600                      & 0                                                   & 0                                                    & 600                        & 1000                        & 600                        & 0                                                            \\ \hline
+17                                                  & 1200                                & 1200                               & 1200                                                 & 0                         & 1200                      & 0                        & 0                                                   & 1200                                                 & 0                          & 1200                        & 0                          & 706                                                          \\ \hline
+18                                                  & 0                                   & 4000                               & 2000                                                 & 0                         & 2000                      & 0                        & {\color[HTML]{FE0000} 1676}                         & {\color[HTML]{FE0000} 1263}                          & {\color[HTML]{009901} 461} & {\color[HTML]{FE0000} 0}    & {\color[HTML]{009901} 600} & 1000                                                         \\ \hline
+19                                                  & 1400                                & 1400                               & 1400                                                 & 0                         & 1400                      & 0                        & 0                                                   & 1400                                                 & 0                          & 1400                        & 0                          & 906                                                          \\ \hline
+20                                                  & 1300                                & 1300                               & 1300                                                 & 0                         & 1300                      & 0                        & 0                                                   & 1300                                                 & 0                          & 1300                        & 0                          & 806                                                          \\ \hline
+21                                                  & 1100                                & 1100                               & 1100                                                 & 0                         & 1100                      & 0                        & 0                                                   & 1100                                                 & 0                          & 1100                        & 0                          & 606                                                          \\ \hline
+22                                                  & 900                                 & 900                                & 900                                                  & 0                         & 900                       & 0                        & 0                                                   & 900                                                  & 0                          & 900                         & 0                          & 406                                                          \\ \hline
+23                                                  & 700                                 & 700                                & 700                                                  & 0                         & 700                       & 0                        & 0                                                   & 700                                                  & 0                          & 700                         & 0                          & 206                                                          \\ \hline
+24                                                  & 500                                 & 500                                & 500                                                  & 0                         & 500                       & 0                        & 0                                                   & 500                                                  & 0                          & 500                         & 0                          & 6       \\ \hline                                                    
+\end{tabular}
+\caption{Redispatch model validation}
+\end{table}
+\label{table:redispatch_validation}
+\end{landscape}
+Secondly, the influence of node and transmission line aggregation in the dispatch on the redispatch results is shown. The aggregation step before the dispatch model is skipped. Hence, a perfect foresight of the transmission grid use is provided during the dispatch. The remaining parameters and the data set are the same as used in this thesis to answer research question three. The objective function and the main constraints of the redispatch model focus on Austria and not on the entire electricity market. The model can regulate thermal power plants in all countries and change the power exchange between bidding zones. The perfect foresight prevents any congestion in Austria during the dispatch. Hence, the redispatch costs of Austria should never be positive, but negative because the model allows changes in the cross-border exchanges, but the total electricity balance remains unchanged. Austria could decrease the generation of considerably expensive thermal power plants and increase the generation of cheap ones to maintain a balanced overall generation. These less expensive power plants were not used during dispatch because the objective of the dispatch is not the cost minimisation for one control area but the overall system. Thus, generation units in Austria may generate and export some electricity from more expensive generation units to their neighbouring countries than they would to cover the demand of Austria. The results show that the redispatch costs are not negative or zero at every optimisation step as expected but positive at 61 days of the year and negligibly small in the scale of $10^{-14}$. The highest positive redispatch cost is $2.542 \cdot 10^{-14}$ \euro{} and, therefore, an acceptable calculation error.

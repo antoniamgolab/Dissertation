@@ -1,0 +1,149 @@
+\section{Hydrogen sector coupling}\label{sec:results_RQ2}
+This section answers research question 2: How do electricity and hydrogen prices affect \ac{SEW} shifts? On the one hand, between consumers and producers, and on the other hand, between the electricity and hydrogen markets. This includes hydrogen production, seasonal storage, and reconversion to electricity. The presented results are based on \textit{Hydrogen as Short-Term Flexibility and Seasonal Storage in a Sector-Coupled Electricity Market} \cite{LoschanH2}.
+\subsection{Price effects of Sector Coupling}\label{sec:results_price_effetcs}
+The integration of flexibility into the electricity market directly affects electricity prices. Figure \ref{fig:Annual_price_duration_2040} shows this using the scenarios \textit{Production-2040-0} and \textit{Complete-2040-200}. 
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=1.0\textwidth]{graphics/RQ2/result_figures/Annual_price_duration_2040.pdf}
+\caption{Price effects of sector coupling}
+\label{fig:Annual_price_duration_2040}
+\end{figure}
+\FloatBarrier
+Suppose the clearing price on the electricity market without hydrogen production is less than the bidding price for electricity on the electricity market ($P^\mathrm{bid}_\mathrm{el}$), an additional electricity demand occurs, which is limited by the capacity of the electrolyser (Section \ref{sec:method_SEW}). In addition, the electricity demand will only rise until the clearing price of the electricity market is not greater than the bidding price for electricity on the electricity market ($P^\mathrm{bid}_\mathrm{el}$). This price increase is caused by a shift in the merit order. This can be seen on the righthand side of the annual duration curves for electricity prices in Figure \ref{fig:Annual_price_duration_2040}. In turn, fuel cells are used when the electricity prices on the market are extremely high. If the fuel cell \ac{SRMC} are below the electricity clearing price, they are used to cover parts of the demand. The \ac{SRMC} are determined by the bidding price for hydrogen ($P^\mathrm{bid}_{H_2}$) and the fuel cell efficiency ($\eta_\mathrm{fc}$). The reduction of price peaks frequency can be seen on the lefthand side of the electricity price annual duration curves in Figure \ref{fig:Annual_price_duration_2040}.
+\FloatBarrier
+\subsection{Producer surplus}
+The following sections analyse the impact of sector coupling on the \ac{PS}. The plots depict the \ac{PS} increase or decrease compared to the reference scenarios (\textit{Production-2030-0} and \textit{Production-2040-0}). Additional results that are not directly within the scope of this thesis but required for the result interpretation can be found in Appendix \ref{sec:additional_results_RQ2}.
+\subsubsection{Thermal power plant}\label{sec:results_RQ2_thermalPP}
+This section depicts the \ac{PS} for various types of fossil fuel-fired power plants. \textit{Gas}, \textit{Oil}, \textit{Coal}, \textit{Lignite} and \textit{Nuclear} power plants are distinguished. Other generation types and power plants that are not precisely defined are examined as \textit{OtherNonRES}. All these power plants are dispatchable thermal power plants. Other thermal power plants that do not cause CO\textsubscript{2} emissions, like biomass, are evaluated in Section \ref{sec:results_RQ2_RESE}.
+
+
+The \textit{Production} scenarios result in a significant increase in nuclear power plant \ac{PS} in 2030 (Figure \ref{fig:PS_thermal_2030}). This is due to their extremely low \ac{SRMC}. The changed electricity generation reflects France’s significantly increased use of nuclear power plants to produce hydrogen (Appendix \ref{sec:results_add_electricity}). Pink hydrogen accounts for a sizable proportion of total hydrogen production (Appendix \ref{sec:results_hydogen_types}). The \ac{PS} increases for all types of thermal power plants if their respective \ac{SRMC} are less than the price bid to produce hydrogen on the electricity market ($P^\mathrm{bid}_\mathrm{el}$). In this case, these power plants are used to cover the demand. Hence, their \ac{PS} increases starting from 150 \euro{}/MWh\textsubscript{H\textsubscript{2}}. Otherwise, sector coupling does not increase their \ac{PS}. The electrolysers raise low electricity prices (Figure \ref{fig:Annual_price_duration_2040}), but they are still smaller than the SRMC of corresponding thermal power plants. In times of high electricity prices, no hydrogen is produced, and thus the electricity demand, the dispatch, and the \ac{PS} of the electricity producers remain unchanged.
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=1.0\textwidth]{graphics/RQ2/result_figures/PS_thermal_2030.pdf}
+      \caption{Change in thermal power plant producer surplus, 2030}
+      \label{fig:PS_thermal_2030}
+\end{figure}
+\FloatBarrier
+This changes if hydrogen can be used to generate electricity in the \textit{Complete} scenarios. Hydrogen is produced even at a hydrogen price of 0 \euro{}/MWh\textsubscript{H\textsubscript{2}} to lower electricity price peaks via fuel cells. On the one hand, these lower price peaks reduce the \ac{PS} of thermal power plants. On the other hand, price-setting power plants are replaced by fuel cells, further lowering the \ac{PS}. Consequently, fuel cells are becoming the new price-setting power plants. This is evident in scenarios with hydrogen prices up to 100 \euro{}/MWh\textsubscript{H\textsubscript{2}}. In this case fuel cell \ac{SRMC} are lower than those of other thermal power plants. Therefore, they are dispatched. From 150 \euro{}/MWh\textsubscript{H\textsubscript{2}} onwards, there is only minimally reduced \ac{PS} compared with the \textit{Production} scenarios.
+
+
+The \textit{Production} 2040 scenarios (Figure \ref{fig:PS_thermal_2040}) show similar results to those in 2030.
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=1.0\textwidth]{graphics/RQ2/result_figures/PS_thermal_2040.pdf}
+        \caption{Change in thermal power plant producer surplus, 2040}
+        \label{fig:PS_thermal_2040}
+\end{figure}
+\FloatBarrier
+If fuel cells are implemented, the thermal power plant \ac{PS} is drastically reduced. This is because of the extremely high price peaks in 2040 and times when demand cannot be fully compensated. The \ac{WTP} is reached several times as the electricity market clearing price. Fuel cells can avoid or significantly reduce these extreme price peaks, leading to a decrease in a thermal power plant \ac{PS}. 
+\FloatBarrier
+\subsubsection{Renewable energy}\label{sec:results_RQ2_RESE}
+In contrast to thermal power plants, \ac{RESE} \ac{PS} increases in 2030 (Figure \ref{fig:PS_RESE_2030}) and 2040 (Figure \ref{fig:PS_RESE_2040}) in all scenarios.
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=1.0\textwidth]{graphics/RQ2/result_figures/PS_RESE_2030.pdf}
+      \caption{Change in renewable energy producer surplus, 2030}
+      \label{fig:PS_RESE_2030}
+\end{figure}
+\FloatBarrier
+On the one hand, marginally small \ac{SRMC} of \ac{RESE} result in a \ac{PS} increase if the clearing price of electricity rises. On the other hand, \ac{RESE} curtailment is reduced, resulting in additional electricity generation and a \ac{PS} increase. In 2030, there is barely any difference in the \ac{PS} between hydrogen sector coupling with and without storage and fuel cells. 
+
+
+In contrast, in 2040, fuel cell use increases the \ac{PS} at a hydrogen price of 50 \euro{}/MWh\textsubscript{H\textsubscript{2}}. Hence, the \ac{PS} increase due to higher electricity prices and reduced curtailment outweighs the \ac{PS} reduction due to lower peak prices. Starting at 100 \euro{}/MWh\textsubscript{H\textsubscript{2}} hydrogen-to-electricity conversion results in a \ac{PS} reduction compared to pure hydrogen production due to lower electricity price peaks.      
+\begin{figure}[h]
+\centering
+\includegraphics[width=1.0\textwidth]{graphics/RQ2/result_figures/PS_RESE_2040.pdf}
+        \caption{Change in renewable energy producer surplus, 2040}
+        \label{fig:PS_RESE_2040}
+\end{figure}
+\FloatBarrier
+\subsubsection{Hydrogen}\label{sec:results_PS_hy}
+This section describes the \ac{PS} of hydrogen market participants, electrolysers and fuel cells. Although the installed electrolyser capacity increases by 163\% (Table \ref{table:hydrogen_data}), the electrolyser \ac{PS} does not increase from 2030 (Figure \ref{fig:PS_hydrogen_2030}) to 2040 (Figure \ref{fig:PS_hydrogen_2040}). 
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=1.0\textwidth]{graphics/RQ2/result_figures/PS_hydrogen_2030.pdf}
+      \caption{Hydrogen producer surplus, 2030}
+      \label{fig:PS_hydrogen_2030}
+\end{figure} 
+\FloatBarrier
+Per the definition of the sector coupling modelling approach, there is always an \ac{PS} increase in the \textit{Production} scenarios. Hydrogen is only produced if it increases the \ac{PS}. Integrating fuel cells in the \textit{Complete} scenarios changes this. In the scenarios without a hydrogen price (0 \euro{}/MWh\textsubscript{H\textsubscript{2}}), not an electrolyser \ac{PS} increase triggers the hydrogen production, but the fuel cell use to cover electricity price peaks. These price peaks are linked with electricity demand peaks. This results in an increased fuel cell \ac{PS} at lower hydrogen prices due to lower fuel cell \ac{SRMC}. In 2030, up to a hydrogen price of 100 \euro{}/MWh\textsubscript{H\textsubscript{2}} fuel cells will be used instead of thermal power plants. In 2040, the price peaks are even higher leading to fuel cell use even with higher hydrogen prices.
+\begin{figure}[h]
+\centering
+\includegraphics[width=1.0\textwidth]{graphics/RQ2/result_figures/PS_hydrogen_2040.pdf}
+        \caption{Hydrogen producer surplus, 2040}
+        \label{fig:PS_hydrogen_2040}
+\end{figure}
+\FloatBarrier
+\subsection{Electricity storage}
+This section describes the \ac{PS} of battery storages as short-term storage and \ac{PHS} as seasonal storages. 
+
+
+In 2030 (Figure \ref{fig:PS_storage_2030}) the battery storage \ac{PS} decreases while \ac{PHS} \ac{PS} increases. Moreover, sector coupling reduces the storage use in all countries except France (Appendix \ref{sec:results_add_electricity}). Thus, if mostly pink hydrogen is produced, storage use increases, while green hydrogen decreases its use. This arises because electrolysers are an alternative use to storage for low cost electricity. The different results for battery storages and \ac{PHS} are due to their different energy storage methods. While battery storages have to buy electricity from the market, \ac{PHS} have natural inflows from rain and meltwater. If the fuel cell \ac{SRMC} is lower than that of thermal power plants, their use reduces electricity price peaks and storage \ac{PS}. 
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=1.0\textwidth]{graphics/RQ2/result_figures/PS_storage_2030.pdf}
+      \caption{Change in storage unit producer surplus, 2030}
+      \label{fig:PS_storage_2030}
+\end{figure}
+\FloatBarrier
+Sector coupling results in a \ac{PS} reduction in all scenarios for both storage types in 2040 Figure \ref{fig:PS_storage_2040}). In the \textit{Complete} scenarios, lower peak prices result in significantly reduced \ac{PS}.
+\begin{figure}[h]
+\centering
+\includegraphics[width=1.0\textwidth]{graphics/RQ2/result_figures/PS_storage_2040.pdf}
+        \caption{Change in storage unit producer surplus, 2040}
+        \label{fig:PS_storage_2040}
+\end{figure} 
+\FloatBarrier
+\subsection{Consumer surplus}
+This section investigates the impact of sector coupling on \ac{CS}. All scenarios are compared to the corresponding reference scenario that does not include sector coupling. Sector coupling reduces the \ac{CS} in all scenarios in 2030 (Figure \ref{fig:CS_2030}) as electricity prices rise.
+
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=1.0\textwidth]{graphics/RQ2/result_figures/CS_2030.pdf}
+      \caption{Change in consumer surplus, 2030}
+      \label{fig:CS_2030}
+\end{figure}
+\FloatBarrier
+Fuel cells are used (Appendix \ref{sec:results_hydrogen_use}), but the electricity peak prices are not high enough to achieve a total \ac{CS} increase.
+
+
+In 2040 (Figure \ref{fig:CS_2040}), a share of the produced hydrogen is used by fuel cells to reduce high electricity prices. This results in a significant \ac{CS} increase in the \textit{Complete} scenarios. 
+\begin{figure}[h]
+\centering
+\includegraphics[width=1.0\textwidth]{graphics/RQ2/result_figures/CS_2040.pdf}
+        \caption{Change in consumer surplus, 2040}
+        \label{fig:CS_2040}
+\end{figure}
+\FloatBarrier
+\subsection{Socio-economic welfare}
+The individual  \ac{PS} and \ac{CS} components are summed up to analyse the overall \ac{SEW} benefit of sector coupling. The \ac{SEW} rises  due to sector coupling in both 2030 (Figure \ref{fig:SEW_2030}) and 2040 (Figure \ref{fig:SEW_2040}).
+
+
+The difference in 2030 (Figure \ref{fig:SEW_2030}) between pure hydrogen production (\textit{Production}) and a complete sector coupling with storage use (\textit{Complete}) is negligible. The \ac{SEW} increase in the \textit{Complete} scenarios is slightly higher up to a hydrogen price of 100 \euro{}/MWh\textsubscript{H\textsubscript{2}}. Although the thermal and the storage \ac{PS} is reduced, in particular, the higher electrolyser \ac{PS} results in an \ac{SEW} increase. Sector coupling benefits both thermal power plants and \ac{RESE}. 
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=1.0\textwidth]{graphics/RQ2/result_figures/SEW_2030.pdf}
+      \caption{Change in socio-economic welfare, 2030}
+      \label{fig:SEW_2030}
+\end{figure}
+\FloatBarrier
+In 2040 (Figure \ref{fig:SEW_2040}), there is a significant difference between scenarios involving hydrogen production (\textit{Production}) and complete sector coupling, including storage units and reconversion (\textit{Complete}). 
+
+
+In the \textit{Production} scenarios, there is a welfare shift from consumers to electricity producers analogous to 2030. Fuel cell utilisation reverses this. Consumers benefit while thermal power plants and storage units \ac{PS} decrease. However, because of their large share in the generation mix, \ac{RESE} benefit more than thermal power plants. 
+\begin{figure}[h]
+\centering
+\includegraphics[width=1.0\textwidth]{graphics/RQ2/result_figures/SEW_2040.pdf}
+        \caption{Change in socio-economic welfare, 2040}
+        \label{fig:SEW_2040}
+\end{figure}
+\FloatBarrier
