@@ -71,7 +71,7 @@ passenger cars along Austria’s highway network in
 
     
     Based on these scenario descriptions, we embed projections on changes in the modal split and developments in the BEV technology in European climate mitigation pathways for 2030.
-    Parameters $\epsilon$ and $\alpha$ are specified based on the climate change mitigation goals for Austria`s passenger transport sector described in the governmental document \enquote{Austria's Mobility Master Plan 2030} (\texit{AMMP}) \citep{Nachhaltig}. One of these key goals is to reduce motorized private transport by $31\%$ between the years 2018 and 2040 to meet the $1.5^\circ C$ target set by the Paris Agreement. In the SC scenario where strong societal and political engagement act together, this goal will be met by 2030. The AMMP further specifies that by 2030, $100\%$ of newly registered passenger vehicles must be exclusively powered by an electric engine. In the SC and TF scenarios, it is assumed that the share of new registrations of electric vehicles will gradually increase until 100\% in 2030 due to the strong awareness of the necessity of electromobility by the society. For the \texit{DT} and \texit{GD} scenarios, the steady growth rate as experienced in 2020-2021 is projected until 2030, which will result in an EV share of $27\%$\footnote{This was calculated under the assumption that the size of the Austrian car fleet will not grow further from today.}.
+    Parameters $\epsilon$ and $\alpha$ are specified based on the climate change mitigation goals for Austria`s passenger transport sector described in the governmental document \enquote{Austria's Mobility Master Plan 2030} (\textit{AMMP}) \citep{Nachhaltig}. One of these key goals is to reduce motorized private transport by $31\%$ between the years 2018 and 2040 to meet the $1.5^\circ C$ target set by the Paris Agreement. In the SC scenario where strong societal and political engagement act together, this goal will be met by 2030. The AMMP further specifies that by 2030, $100\%$ of newly registered passenger vehicles must be exclusively powered by an electric engine. In the SC and TF scenarios, it is assumed that the share of new registrations of electric vehicles will gradually increase until 100\% in 2030 due to the strong awareness of the necessity of electromobility by the society. For the \textit{DT} and \textit{GD} scenarios, the steady growth rate as experienced in 2020-2021 is projected until 2030, which will result in an EV share of $27\%$\footnote{This was calculated under the assumption that the size of the Austrian car fleet will not grow further from today.}.
     
     Table \ref{tab:technolog_params_future} presents the projected values. The presence of major technological breakthroughs is expressed by a significant development in the driving range of BEVs and increasing charging power, which is in line with the current major focus in BEV technology research on battery technology with the goal of allowing faster charging and longer trips \citep[][]{IRENA2019, Thielmann2020}. According \added{to} the study by \citet{Thielmann2020}, there is a great potential in battery storage research suggesting that technological breakthroughs in the next years could lead to the sale of BEVs with a driving range of up to $1000km$.  Based on this, the sale of BEVs with an average driving range of up to $800km$ is projected for 2030 in the TF and DT scenarios, whereas in the SC scenario, this range is assumed to be $450km$, being slightly larger than the ranges of BEVs currently on the market (see Table \ref{tab:top10} in Appendix \ref{app:param}). To reflect a weak extent of technical developments in the GD scenario, the increase in the average driving range of up to $600km$ is projected for 2030.
     
@@ -83,8 +83,6 @@ passenger cars along Austria’s highway network in
     \begin{table}[H]
     \centering
     \caption{Car fleet parameters and average technical parameters of an average BEV on the market in 2030 for different scenarios (BEV share $\epsilon$, share in road traffic $\alpha$, average driving range $\overline{dist}_{range, BEV}$, average charging power $\overline{P}_{charge, BEV}$).\label{tab:technolog_params_future}}
-    \newcolumntype{C}{>{\centering\arraybackslash}X}
-    
     \begin{tabularx}{\textwidth}{lCCCC}
     \toprule
                                      & \multicolumn{4}{c}{\textbf{Projections for 2030 under different scenarios}}                                                                                                                                                                                                                                \\ \cmidrule(l){2-5} 
@@ -137,7 +135,6 @@ Table \ref{tab:spec_res} and Figure \ref{fig:expansion_dt_2030} display the mode
     \centering
     % \begin{adjustwidth}{-\extralength}{0cm}
     \caption{Cost parameters and charging infrastructure attributes resulting from the expansion of the existing $\hat{P}_{CP}=350kW$ charging infrastructure under the \textit{Directed Transition} (\textit{DT}) scenario. \label{tab:spec_res}}
-    \newcolumntype{C}{>{\centering\arraybackslash}X}
     \begin{tabularx}{\textwidth}{@{}lcccccc@{}}
     \toprule
             & \begin{tabular}[c]{@{}c@{}}Nb. of charging\\  stations\end{tabular} & \begin{tabular}[c]{@{}c@{}}Total\\ capacity\end{tabular} & \begin{tabular}[c]{@{}c@{}}Specific \\capacity costs\end{tabular} & 
@@ -319,7 +316,6 @@ The required capacity for fast-charging is rising linearly with the share of BEV
 \begin{table}[H]
 \centering
 \caption{Key parameters describing the results of the sensitivity analyses on the driving range in the \textit{Techno-Friendly} (\textit{TF}) scenario and share of BEVs in the \textit{Societal Commitment} (\textit{SC}) scenario. \label{tab:tech}}
-\newcolumntype{C}{>{\centering\arraybackslash}X}
 \begin{tabularx}{\textwidth}{lcccccc}
 \toprule
                                                     & \multicolumn{3}{c}{\textbf{driving range $\overline{dist}_{range, BEV}$ (TF)}}  & \multicolumn{3}{c}{\textbf{share of BEV $\epsilon$ (SC)}}\\ \cmidrule(l){2-7} 

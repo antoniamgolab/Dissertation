@@ -39,7 +39,6 @@
 % Acronyms
 \usepackage{comment}
 \usepackage{acro}
-\usepackage{comment}
 % Appendix
 \usepackage{appendix}
 \usepackage{changepage}
@@ -52,24 +51,16 @@
     maxcitenames=2,
     mincitenames=1,
     autocite=inline, % how to deal with autocite
-    dashed=false,
-    uniquelist=false, % if authors have the same name
-    uniquename=false, % if two authors have the same name 
     dashed=false, % do *not* replace recurring reference authors with a dash
+    uniquelist=false, % if authors have the same name
+    uniquename=false, % if two authors have the same name
     backref=true, % create backlings from references to citations
     natbib=true, % offering natbib-compatible commands
     hyperref=true, % using hyperref-package references
 ]{biblatex}
-%\addbibresource{references.bib}
-\addbibresource{test.bib}
+\addbibresource{references.bib}
 % Enumeration
 \usepackage{enumitem}
-\usepackage[
-    margin=3.5cm,        % or 3cm for more space
-    includehead,
-    headheight=20pt,
-    headsep=5pt
-]{geometry}
 % Font & Encoding
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
@@ -122,7 +113,6 @@
 \usepackage{makecell}
 \usepackage{subcaption}
 \usepackage{setspace}
-\usepackage{rotating}
 \usepackage{tikz}
 % Referencing
 \usepackage{hyperref} % needs to be used before cleverref
@@ -150,6 +140,7 @@
 \usepackage{supertabular}
 \usepackage{multirow}
 \usepackage{caption}
+\newcolumntype{C}{>{\centering\arraybackslash}X}
 
 % Units
 \usepackage[useregional]{datetime2}
@@ -307,7 +298,7 @@
     \centering
     \includegraphics[width=1\textwidth]{graphics/RQs/contributions.pdf}
     \caption{Contributions of Papers 1---4, each reflecting one core research question (RQ1---4): Each research question extends the scientific literature for a different application segment of battery-electric vehicles. The application segments differ in long-distance vs. regional transport as well as between passenger cars and commercial fleet applications. This figure illustrates the relative allocation of the research questions and therefore the scope of this thesis.}
-    \label{fig:method_scope}
+    \label{fig:contributions}
     \end{figure}
     \begin{figure}[H]
     \centering

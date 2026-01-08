@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(wc:*)",
+      "Bash(pdflatex:*)",
+      "Bash(biber:*)",
+      "Bash(cat:*)",
+      "Bash(python:*)"
+    ]
+  }
+}
