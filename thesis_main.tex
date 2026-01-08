@@ -42,6 +42,12 @@
 % Appendix
 \usepackage{appendix}
 \usepackage{changepage}
+% Define lengths for wide tables (from journal templates)
+\newlength{\extralength}
+\setlength{\extralength}{1cm}
+\newlength{\fulllength}
+\setlength{\fulllength}{\textwidth}
+\addtolength{\fulllength}{2\extralength}
 % Bibliography
 \usepackage[
     backend=biber, % using "biber" to compile references (instead of "biblatex")
@@ -78,6 +84,8 @@
 \usepackage{eso-pic} % for logo positioning on title page
 \usepackage[absolute]{textpos} % use showboxes for draft mode
 \usepackage{soul}
+% Track changes
+\usepackage[final]{changes}  % use [final] to hide all markup, [draft] to show
 
 % Zur Farbmarkierung während des Entwurfs
 \usepackage[breakable]{tcolorbox}
@@ -101,6 +109,7 @@
 % Math
 \usepackage{amsfonts}
 \usepackage{amsmath}
+\usepackage{nicefrac}
 \usepackage{amssymb}
 \usepackage{amsthm}
 \usepackage{mathtools}
