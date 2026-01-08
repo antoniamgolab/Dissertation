@@ -456,9 +456,6 @@ INPUT C:\Users\simuser\AppData\Local\Programs\MiKTeX\tex\latex\lm\t1lmr.fd
 INPUT C:\Users\simuser\AppData\Local\Programs\MiKTeX\tex\latex\lm\t1lmr.fd
 INPUT C:\Users\simuser\AppData\Local\Programs\MiKTeX\tex\latex\lm\t1lmr.fd
 INPUT C:\Users\simuser\AppData\Local\Programs\MiKTeX\fonts\tfm\public\lm\ec-lmr10.tfm
-INPUT .\thesis_main.aux
-INPUT .\thesis_main.aux
-INPUT thesis_main.aux
 OUTPUT thesis_main.aux
 INPUT C:\Users\simuser\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmr10.tfm
 INPUT C:\Users\simuser\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmr10.tfm
@@ -654,8 +651,6 @@ INPUT .\chapters\C_methods.tex
 INPUT chapters\C_methods.tex
 INPUT C:\Users\simuser\AppData\Local\Programs\MiKTeX\fonts\tfm\public\lm\ec-lmssbo10.tfm
 INPUT C:\Users\simuser\AppData\Local\Programs\MiKTeX\fonts\enc\dvips\lm\lm-mathit.enc
-INPUT C:\Users\simuser\AppData\Local\Programs\MiKTeX\fonts\enc\dvips\lm\lm-mathsy.enc
-INPUT C:\Users\simuser\AppData\Local\Programs\MiKTeX\fonts\enc\dvips\lm\lm-rm.enc
 INPUT .\graphics\paper_1\modelling_framework.pdf
 INPUT .\graphics\paper_1\modelling_framework.pdf
 INPUT .\graphics\paper_1\modelling_framework.pdf
@@ -663,6 +658,8 @@ INPUT .\graphics\paper_1\modelling_framework.pdf
 INPUT .\graphics\paper_1\modelling_framework.pdf
 INPUT .\graphics\paper_1\modelling_framework.pdf
 INPUT C:\Users\simuser\AppData\Local\Programs\MiKTeX\fonts\tfm\public\lm\ec-lmbx9.tfm
+INPUT C:\Users\simuser\AppData\Local\Programs\MiKTeX\fonts\enc\dvips\lm\lm-mathsy.enc
+INPUT C:\Users\simuser\AppData\Local\Programs\MiKTeX\fonts\enc\dvips\lm\lm-rm.enc
 INPUT C:\Users\simuser\AppData\Local\Programs\MiKTeX\fonts\enc\dvips\lm\lm-mathex.enc
 INPUT C:\Users\simuser\AppData\Local\Programs\MiKTeX\fonts\tfm\public\lm\ec-lmri9.tfm
 INPUT .\graphics\paper_2\flowchart_sep25.drawio.pdf
