@@ -16,7 +16,16 @@
       "Bash(fi:*)",
       "Bash(done)",
       "Bash(echo:*)",
-      "Bash(xxd:*)"
+      "Bash(xxd:*)",
+      "Bash(ls:*)",
+      "Bash(for key in 7947231 9221963 CARLINI201974 acer_2024_mmr ag2022flexibility Auer2020 Borlaug2021 eu_mobility_strategy european_green_deal frieden2020collective GORANSSON2014860 iea_world_energy_statistics ietmeishner KARMALI2024101397 KONSTANTINOU2023100746 LEBROUHI2021103273 MANZOLLI2022124252 NOLL2022118079 orf2023 PILLAY201583 Plötz2022 Scherrer2024Requirements Shoman2023Public SPETH2024104078 statistik_at_kfz_bestand teoh2022)",
+      "Bash(do grep -A 20 \"{$key,\" literature.bib)",
+      "Bash(do grep -n \"{$key,\" literature.bib)",
+      "Bash(tr:*)",
+      "Bash(dir:*)",
+      "Bash(for key in \"9543135\" \"ASFINAG\" \"ec_driving_time_2023\" \"ioebenergiespeicher\" \"irena2019smart_charging\" \"NECP2022\" \"SCORRANO2021101022\" \"speth2021synthetic\" \"TYNDP2022\" \"umweltbundesamt_rep0808\" \"umweltbundesamt2024\" \"usp_lkw_fahrverbote\" \"usp_nutzfahrzeuge\" \"vmobil2023\" \"wienerlinien2024\")",
+      "Bash(do echo \"=== $key ===\")",
+      "Bash(xargs:*)"
     ]
   }
 }

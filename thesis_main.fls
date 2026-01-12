@@ -472,6 +472,9 @@ INPUT C:\Users\simuser\AppData\Local\Programs\MiKTeX\tex\latex\lm\t1lmr.fd
 INPUT C:\Users\simuser\AppData\Local\Programs\MiKTeX\tex\latex\lm\t1lmr.fd
 INPUT C:\Users\simuser\AppData\Local\Programs\MiKTeX\tex\latex\lm\t1lmr.fd
 INPUT C:\Users\simuser\AppData\Local\Programs\MiKTeX\fonts\tfm\public\lm\ec-lmr10.tfm
+INPUT .\thesis_main.aux
+INPUT .\thesis_main.aux
+INPUT thesis_main.aux
 OUTPUT thesis_main.aux
 INPUT C:\Users\simuser\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmr10.tfm
 INPUT C:\Users\simuser\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmr10.tfm
