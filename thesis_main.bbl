@@ -33,8 +33,8 @@
       \strng{authornamehash}{9aa80cbd4e27fcec08519169fe921f57}
       \strng{authorfullhash}{9aa80cbd4e27fcec08519169fe921f57}
       \strng{authorfullhashraw}{9aa80cbd4e27fcec08519169fe921f57}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{note}{Indicator published 06 November 2025}
@@ -49,6 +49,221 @@
       \endverb
       \verb{url}
       \verb https://www.eea.europa.eu/en/analysis/indicators/greenhouse-gas-emissions-from-transport
+      \endverb
+    \endentry
+    \entry{VANDERZWAAN2013562}{article}{}{}
+      \name{author}{3}{}{%
+        {{hash=4452a416ee1d3d9f8aedd48bfd2c933e}{%
+           family={{van der Zwaan}},
+           familyi={v\bibinitperiod},
+           given={Bob},
+           giveni={B\bibinitperiod}}}%
+        {{hash=1441ea63f4f20a79e2027b3098280a78}{%
+           family={Keppo},
+           familyi={K\bibinitperiod},
+           given={Ilkka},
+           giveni={I\bibinitperiod}}}%
+        {{hash=a287bd21e57d69c53a651985796cdbc5}{%
+           family={Johnsson},
+           familyi={J\bibinitperiod},
+           given={Filip},
+           giveni={F\bibinitperiod}}}%
+      }
+      \strng{namehash}{5e7d779db7ad4fe35713f0da3d6f883c}
+      \strng{fullhash}{98e513bff614609b416eefb70e1f0d7f}
+      \strng{fullhashraw}{98e513bff614609b416eefb70e1f0d7f}
+      \strng{bibnamehash}{98e513bff614609b416eefb70e1f0d7f}
+      \strng{authorbibnamehash}{98e513bff614609b416eefb70e1f0d7f}
+      \strng{authornamehash}{5e7d779db7ad4fe35713f0da3d6f883c}
+      \strng{authorfullhash}{98e513bff614609b416eefb70e1f0d7f}
+      \strng{authorfullhashraw}{98e513bff614609b416eefb70e1f0d7f}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{0301-4215}
+      \field{journaltitle}{Energy Policy}
+      \field{title}{How to decarbonize the transport sector?}
+      \field{volume}{61}
+      \field{year}{2013}
+      \field{pages}{562\bibrangedash 573}
+      \range{pages}{12}
+      \verb{doi}
+      \verb https://doi.org/10.1016/j.enpol.2013.05.118
+      \endverb
+      \verb{urlraw}
+      \verb https://www.sciencedirect.com/science/article/pii/S0301421513004734
+      \endverb
+      \verb{url}
+      \verb https://www.sciencedirect.com/science/article/pii/S0301421513004734
+      \endverb
+      \keyw{Transportation and Climate change,CO emissions abatement,Hydrogen versus electricity}
+    \endentry
+    \entry{Edelenbosch2017DecomposingTransport}{article}{}{}
+      \name{author}{12}{}{%
+        {{hash=a5a2e2ae12c21c83294d5c0677bf4ec7}{%
+           family={Edelenbosch},
+           familyi={E\bibinitperiod},
+           given={Oreane\bibnamedelima Y.},
+           giveni={O\bibinitperiod\bibinitdelim Y\bibinitperiod}}}%
+        {{hash=c280761bfd6e0c85f019b292f39134d3}{%
+           family={McCollum},
+           familyi={M\bibinitperiod},
+           given={David\bibnamedelima L.},
+           giveni={D\bibinitperiod\bibinitdelim L\bibinitperiod}}}%
+        {{hash=740acd230506dda7b17acb6cc4f1ce63}{%
+           family={Vuuren},
+           familyi={V\bibinitperiod},
+           given={Detlef\bibnamedelima P.},
+           giveni={D\bibinitperiod\bibinitdelim P\bibinitperiod},
+           prefix={van},
+           prefixi={v\bibinitperiod}}}%
+        {{hash=14266d27d3cf5ed79dce31c197edea8f}{%
+           family={Bertram},
+           familyi={B\bibinitperiod},
+           given={Christoph},
+           giveni={C\bibinitperiod}}}%
+        {{hash=f255b393be1459b7e64b33d18dd820df}{%
+           family={Carrara},
+           familyi={C\bibinitperiod},
+           given={Samuel},
+           giveni={S\bibinitperiod}}}%
+        {{hash=5e477a67fdbea6715da14e6512c2b890}{%
+           family={Daly},
+           familyi={D\bibinitperiod},
+           given={Hannah},
+           giveni={H\bibinitperiod}}}%
+        {{hash=05e9615b45dabbaea655b84220f15f41}{%
+           family={Fujimori},
+           familyi={F\bibinitperiod},
+           given={Shinichiro},
+           giveni={S\bibinitperiod}}}%
+        {{hash=472bf23476723558fd6a33ade057e83c}{%
+           family={Kitous},
+           familyi={K\bibinitperiod},
+           given={Alban},
+           giveni={A\bibinitperiod}}}%
+        {{hash=0d71c9126d6721d3fe6721063b51d049}{%
+           family={Kyle},
+           familyi={K\bibinitperiod},
+           given={Page},
+           giveni={P\bibinitperiod}}}%
+        {{hash=b12dbb996a63d2d1d0d2bee1ab2e3046}{%
+           family={Ó\bibnamedelima Broin},
+           familyi={Ó\bibinitperiod\bibinitdelim B\bibinitperiod},
+           given={Eoin},
+           giveni={E\bibinitperiod}}}%
+        {{hash=d8038127c28a00c30f8c04760ffe1a50}{%
+           family={Karkatsoulis},
+           familyi={K\bibinitperiod},
+           given={Panagiotis},
+           giveni={P\bibinitperiod}}}%
+        {{hash=4716eb8a3f347a9bea9d509eef922091}{%
+           family={Sano},
+           familyi={S\bibinitperiod},
+           given={Fuminori},
+           giveni={F\bibinitperiod}}}%
+      }
+      \strng{namehash}{a554f77ea9f1613f52e53dc15c8f1efe}
+      \strng{fullhash}{4a15b475ea849dd4cd1b4e8a1a8c04da}
+      \strng{fullhashraw}{4a15b475ea849dd4cd1b4e8a1a8c04da}
+      \strng{bibnamehash}{4a15b475ea849dd4cd1b4e8a1a8c04da}
+      \strng{authorbibnamehash}{4a15b475ea849dd4cd1b4e8a1a8c04da}
+      \strng{authornamehash}{a554f77ea9f1613f52e53dc15c8f1efe}
+      \strng{authorfullhash}{4a15b475ea849dd4cd1b4e8a1a8c04da}
+      \strng{authorfullhashraw}{4a15b475ea849dd4cd1b4e8a1a8c04da}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Transportation Research Part D: Transport and Environment}
+      \field{title}{Decomposing passenger transport futures: Comparing results of global integrated assessment models}
+      \field{volume}{55}
+      \field{year}{2017}
+      \field{pages}{281\bibrangedash 293}
+      \range{pages}{13}
+      \verb{doi}
+      \verb 10.1016/j.trd.2016.07.003
+      \endverb
+    \endentry
+    \entry{IEA2025GlobalEVOutlook}{report}{}{}
+      \name{author}{1}{}{%
+        {{hash=18fdbec513c87989c7580f31bb7f03ab}{%
+           family={{IEA}},
+           familyi={I\bibinitperiod}}}%
+      }
+      \list{institution}{1}{%
+        {International Energy Agency}%
+      }
+      \list{location}{1}{%
+        {Paris}%
+      }
+      \strng{namehash}{18fdbec513c87989c7580f31bb7f03ab}
+      \strng{fullhash}{18fdbec513c87989c7580f31bb7f03ab}
+      \strng{fullhashraw}{18fdbec513c87989c7580f31bb7f03ab}
+      \strng{bibnamehash}{18fdbec513c87989c7580f31bb7f03ab}
+      \strng{authorbibnamehash}{18fdbec513c87989c7580f31bb7f03ab}
+      \strng{authornamehash}{18fdbec513c87989c7580f31bb7f03ab}
+      \strng{authorfullhash}{18fdbec513c87989c7580f31bb7f03ab}
+      \strng{authorfullhashraw}{18fdbec513c87989c7580f31bb7f03ab}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{Licence: CC BY 4.0}
+      \field{title}{Global {EV} Outlook 2025}
+      \field{type}{techreport}
+      \field{year}{2025}
+      \verb{urlraw}
+      \verb https://www.iea.org/reports/global-ev-outlook-2025
+      \endverb
+      \verb{url}
+      \verb https://www.iea.org/reports/global-ev-outlook-2025
+      \endverb
+    \endentry
+    \entry{ICCT2024EUVehicleStats}{report}{}{}
+      \name{author}{3}{}{%
+        {{hash=72ba905daa0293300ee3a384100cc3db}{%
+           family={Monteforte},
+           familyi={M\bibinitperiod},
+           given={Michelle},
+           giveni={M\bibinitperiod}}}%
+        {{hash=363a69ed0eb7ab2df930ad5efd1ea961}{%
+           family={Mock},
+           familyi={M\bibinitperiod},
+           given={Peter},
+           giveni={P\bibinitperiod}}}%
+        {{hash=03fcd3e97bab68af7df99db2bd9b6a81}{%
+           family={Tietge},
+           familyi={T\bibinitperiod},
+           given={Uwe},
+           giveni={U\bibinitperiod}}}%
+      }
+      \list{institution}{1}{%
+        {International Council on Clean Transportation}%
+      }
+      \strng{namehash}{0cbe585e32e97e6a3edfb6188f4a23d3}
+      \strng{fullhash}{5bc1ca2682d1b7a53c36ff0ea1379f1a}
+      \strng{fullhashraw}{5bc1ca2682d1b7a53c36ff0ea1379f1a}
+      \strng{bibnamehash}{5bc1ca2682d1b7a53c36ff0ea1379f1a}
+      \strng{authorbibnamehash}{5bc1ca2682d1b7a53c36ff0ea1379f1a}
+      \strng{authornamehash}{0cbe585e32e97e6a3edfb6188f4a23d3}
+      \strng{authorfullhash}{5bc1ca2682d1b7a53c36ff0ea1379f1a}
+      \strng{authorfullhashraw}{5bc1ca2682d1b7a53c36ff0ea1379f1a}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{month}{12}
+      \field{note}{Accessed: 2026-01-09}
+      \field{title}{European Vehicle Market Statistics 2024/25}
+      \field{type}{techreport}
+      \field{year}{2024}
+      \verb{urlraw}
+      \verb https://theicct.org/publication/european-vehicle-market-statistics-2024-25/
+      \endverb
+      \verb{url}
+      \verb https://theicct.org/publication/european-vehicle-market-statistics-2024-25/
       \endverb
     \endentry
     \entry{ACEA2025VehiclesEuropeanRoads}{report}{}{}
@@ -68,8 +283,8 @@
       \strng{authornamehash}{5db68cd83f37baadcb84b91038953de7}
       \strng{authorfullhash}{5db68cd83f37baadcb84b91038953de7}
       \strng{authorfullhashraw}{5db68cd83f37baadcb84b91038953de7}
-      \field{sortinit}{2}
-      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{sortinit}{7}
+      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{month}{2}
@@ -82,53 +297,148 @@
       \verb https://www.acea.auto/files/ACEA-Report-Vehicles-on-European-roads-.pdf
       \endverb
     \endentry
-    \entry{GAZMEH2024104222}{article}{}{}
-      \name{author}{3}{}{%
-        {{hash=212d5993330f13bf2f01ad8874a557c9}{%
-           family={Gazmeh},
-           familyi={G\bibinitperiod},
-           given={Hossein},
-           giveni={H\bibinitperiod}}}%
-        {{hash=207b633a717ab362d4c7da9a541e2cff}{%
-           family={Guo},
-           familyi={G\bibinitperiod},
-           given={Yuntao},
-           giveni={Y\bibinitperiod}}}%
-        {{hash=7a211617c9086699adfcedced8ce8dd4}{%
-           family={Qian},
-           familyi={Q\bibinitperiod},
-           given={Xinwu},
-           giveni={X\bibinitperiod}}}%
+    \entry{EC2020SustainableMobility}{report}{}{}
+      \name{author}{1}{}{%
+        {{hash=a1b813a6e85874b4c945aec2cdbea74c}{%
+           family={{European Commission}},
+           familyi={E\bibinitperiod}}}%
       }
-      \strng{namehash}{d711dae3365786bea881a6c8f475cd6d}
-      \strng{fullhash}{6ede85cb626bfc14811177ee07a241b4}
-      \strng{fullhashraw}{6ede85cb626bfc14811177ee07a241b4}
-      \strng{bibnamehash}{6ede85cb626bfc14811177ee07a241b4}
-      \strng{authorbibnamehash}{6ede85cb626bfc14811177ee07a241b4}
-      \strng{authornamehash}{d711dae3365786bea881a6c8f475cd6d}
-      \strng{authorfullhash}{6ede85cb626bfc14811177ee07a241b4}
-      \strng{authorfullhashraw}{6ede85cb626bfc14811177ee07a241b4}
-      \field{sortinit}{3}
-      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \list{institution}{1}{%
+        {European Commission}%
+      }
+      \list{location}{1}{%
+        {Brussels}%
+      }
+      \strng{namehash}{a1b813a6e85874b4c945aec2cdbea74c}
+      \strng{fullhash}{a1b813a6e85874b4c945aec2cdbea74c}
+      \strng{fullhashraw}{a1b813a6e85874b4c945aec2cdbea74c}
+      \strng{bibnamehash}{a1b813a6e85874b4c945aec2cdbea74c}
+      \strng{authorbibnamehash}{a1b813a6e85874b4c945aec2cdbea74c}
+      \strng{authornamehash}{a1b813a6e85874b4c945aec2cdbea74c}
+      \strng{authorfullhash}{a1b813a6e85874b4c945aec2cdbea74c}
+      \strng{authorfullhashraw}{a1b813a6e85874b4c945aec2cdbea74c}
+      \field{extraname}{1}
+      \field{sortinit}{8}
+      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{issn}{1361-9209}
-      \field{journaltitle}{Transportation Research Part D: Transport and Environment}
-      \field{title}{Understanding the opportunity-centric accessibility for public charging infrastructure}
-      \field{volume}{131}
-      \field{year}{2024}
-      \field{pages}{104222}
-      \range{pages}{1}
-      \verb{doi}
-      \verb https://doi.org/10.1016/j.trd.2024.104222
-      \endverb
+      \field{month}{12}
+      \field{note}{Accessed: 2026-01-09}
+      \field{title}{Sustainable and Smart Mobility Strategy -- Putting {European} Transport on Track for the Future}
+      \field{type}{COM(2020) 789 final}
+      \field{year}{2020}
       \verb{urlraw}
-      \verb https://www.sciencedirect.com/science/article/pii/S1361920924001792
+      \verb https://transport.ec.europa.eu/transport-themes/mobility-strategy_en
       \endverb
       \verb{url}
-      \verb https://www.sciencedirect.com/science/article/pii/S1361920924001792
+      \verb https://transport.ec.europa.eu/transport-themes/mobility-strategy_en
       \endverb
-      \keyw{Public charging station,Accessibility,Opportunity-based accessibility,Equity,Electric vehicles}
+    \endentry
+    \entry{EC2021Fitfor55}{report}{}{}
+      \name{author}{1}{}{%
+        {{hash=a1b813a6e85874b4c945aec2cdbea74c}{%
+           family={{European Commission}},
+           familyi={E\bibinitperiod}}}%
+      }
+      \list{institution}{1}{%
+        {European Commission}%
+      }
+      \strng{namehash}{a1b813a6e85874b4c945aec2cdbea74c}
+      \strng{fullhash}{a1b813a6e85874b4c945aec2cdbea74c}
+      \strng{fullhashraw}{a1b813a6e85874b4c945aec2cdbea74c}
+      \strng{bibnamehash}{a1b813a6e85874b4c945aec2cdbea74c}
+      \strng{authorbibnamehash}{a1b813a6e85874b4c945aec2cdbea74c}
+      \strng{authornamehash}{a1b813a6e85874b4c945aec2cdbea74c}
+      \strng{authorfullhash}{a1b813a6e85874b4c945aec2cdbea74c}
+      \strng{authorfullhashraw}{a1b813a6e85874b4c945aec2cdbea74c}
+      \field{extraname}{2}
+      \field{sortinit}{9}
+      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{month}{7}
+      \field{note}{Accessed: 2026-01-09}
+      \field{title}{Fit for 55: Delivering the {EU}'s 2030 Climate Target on the Way to Climate Neutrality}
+      \field{type}{COM(2021) 550 final}
+      \field{year}{2021}
+      \verb{urlraw}
+      \verb https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52021DC0550
+      \endverb
+      \verb{url}
+      \verb https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52021DC0550
+      \endverb
+    \endentry
+    \entry{EU2023AFIR}{legislation}{}{}
+      \name{author}{2}{}{%
+        {{hash=04477f088e2d7fa909d6f010ddf08b41}{%
+           family={{European Parliament}},
+           familyi={E\bibinitperiod}}}%
+        {{hash=2be4a816598128ae272abd2cb54c8a67}{%
+           family={{Council of the European Union}},
+           familyi={C\bibinitperiod}}}%
+      }
+      \strng{namehash}{000a9a0d5f0f06101811874d891db3a2}
+      \strng{fullhash}{000a9a0d5f0f06101811874d891db3a2}
+      \strng{fullhashraw}{000a9a0d5f0f06101811874d891db3a2}
+      \strng{bibnamehash}{000a9a0d5f0f06101811874d891db3a2}
+      \strng{authorbibnamehash}{000a9a0d5f0f06101811874d891db3a2}
+      \strng{authornamehash}{000a9a0d5f0f06101811874d891db3a2}
+      \strng{authorfullhash}{000a9a0d5f0f06101811874d891db3a2}
+      \strng{authorfullhashraw}{000a9a0d5f0f06101811874d891db3a2}
+      \field{extraname}{1}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Official Journal of the European Union}
+      \field{month}{9}
+      \field{note}{Alternative Fuels Infrastructure Regulation (AFIR)}
+      \field{title}{Regulation ({EU}) 2023/1804 of the {European Parliament} and of the {Council} of 13 {September} 2023 on the Deployment of Alternative Fuels Infrastructure, and Repealing {Directive} 2014/94/{EU}}
+      \field{volume}{L 234}
+      \field{year}{2023}
+      \field{pages}{1\bibrangedash 47}
+      \range{pages}{47}
+      \verb{urlraw}
+      \verb http://data.europa.eu/eli/reg/2023/1804/oj
+      \endverb
+      \verb{url}
+      \verb http://data.europa.eu/eli/reg/2023/1804/oj
+      \endverb
+    \endentry
+    \entry{EU2024TENT}{legislation}{}{}
+      \name{author}{2}{}{%
+        {{hash=04477f088e2d7fa909d6f010ddf08b41}{%
+           family={{European Parliament}},
+           familyi={E\bibinitperiod}}}%
+        {{hash=2be4a816598128ae272abd2cb54c8a67}{%
+           family={{Council of the European Union}},
+           familyi={C\bibinitperiod}}}%
+      }
+      \strng{namehash}{000a9a0d5f0f06101811874d891db3a2}
+      \strng{fullhash}{000a9a0d5f0f06101811874d891db3a2}
+      \strng{fullhashraw}{000a9a0d5f0f06101811874d891db3a2}
+      \strng{bibnamehash}{000a9a0d5f0f06101811874d891db3a2}
+      \strng{authorbibnamehash}{000a9a0d5f0f06101811874d891db3a2}
+      \strng{authornamehash}{000a9a0d5f0f06101811874d891db3a2}
+      \strng{authorfullhash}{000a9a0d5f0f06101811874d891db3a2}
+      \strng{authorfullhashraw}{000a9a0d5f0f06101811874d891db3a2}
+      \field{extraname}{2}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Official Journal of the European Union}
+      \field{month}{6}
+      \field{note}{Revised TEN-T Regulation}
+      \field{title}{Regulation ({EU}) 2024/1679 of the {European Parliament} and of the {Council} of 13 {June} 2024 on {Union} Guidelines for the Development of the Trans-{European} Transport Network, Amending {Regulations} ({EU}) 2021/1153 and ({EU}) {No} 913/2010 and Repealing {Regulation} ({EU}) {No} 1315/2013}
+      \field{volume}{L 2024/1679}
+      \field{year}{2024}
+      \verb{urlraw}
+      \verb http://data.europa.eu/eli/reg/2024/1679/oj
+      \endverb
+      \verb{url}
+      \verb http://data.europa.eu/eli/reg/2024/1679/oj
+      \endverb
     \endentry
     \entry{HOPKINS2023113398}{article}{}{}
       \name{author}{4}{}{%
@@ -161,8 +471,8 @@
       \strng{authornamehash}{b24eaa5126f6eb2a4af109329affc426}
       \strng{authorfullhash}{e1c72101abaee62c266eb9b0e7490a1b}
       \strng{authorfullhashraw}{e1c72101abaee62c266eb9b0e7490a1b}
-      \field{sortinit}{4}
-      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{issn}{1364-0321}
@@ -182,6 +492,643 @@
       \verb https://www.sciencedirect.com/science/article/pii/S1364032123002551
       \endverb
       \keyw{Social equity","Social inequity","Electric vehicle","Electric vehicle charging infrastructure","Equitable","Charging infrastructure placement","Transport justice"}
+    \endentry
+    \entry{RAINIERI202352}{article}{}{}
+      \name{author}{3}{}{%
+        {{hash=5cadeeee8981b3d408f5f9dd9ff49ab1}{%
+           family={Rainieri},
+           familyi={R\bibinitperiod},
+           given={Giuseppe},
+           giveni={G\bibinitperiod}}}%
+        {{hash=33cc6461b34fed0e03da89c463ee288b}{%
+           family={Buizza},
+           familyi={B\bibinitperiod},
+           given={Chiara},
+           giveni={C\bibinitperiod}}}%
+        {{hash=1c29da8cb06fa60a79a220baa6b561c9}{%
+           family={Ghilardi},
+           familyi={G\bibinitperiod},
+           given={Alberto},
+           giveni={A\bibinitperiod}}}%
+      }
+      \strng{namehash}{c3a383eaaacde8f6a19d7d96e7bf2873}
+      \strng{fullhash}{e66d0923a6452bb3b8e893ef4a2b971a}
+      \strng{fullhashraw}{e66d0923a6452bb3b8e893ef4a2b971a}
+      \strng{bibnamehash}{e66d0923a6452bb3b8e893ef4a2b971a}
+      \strng{authorbibnamehash}{e66d0923a6452bb3b8e893ef4a2b971a}
+      \strng{authornamehash}{c3a383eaaacde8f6a19d7d96e7bf2873}
+      \strng{authorfullhash}{e66d0923a6452bb3b8e893ef4a2b971a}
+      \strng{authorfullhashraw}{e66d0923a6452bb3b8e893ef4a2b971a}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{1369-8478}
+      \field{journaltitle}{Transportation Research Part F: Traffic Psychology and Behaviour}
+      \field{title}{The psychological, human factors and socio-technical contribution: A systematic review towards range anxiety of battery electric vehicles' drivers}
+      \field{volume}{99}
+      \field{year}{2023}
+      \field{pages}{52\bibrangedash 70}
+      \range{pages}{19}
+      \verb{doi}
+      \verb https://doi.org/10.1016/j.trf.2023.10.001
+      \endverb
+      \verb{urlraw}
+      \verb https://www.sciencedirect.com/science/article/pii/S1369847823002012
+      \endverb
+      \verb{url}
+      \verb https://www.sciencedirect.com/science/article/pii/S1369847823002012
+      \endverb
+      \keyw{Range anxiety,Interface,Battery electric vehicle,Individual differences,Human factors}
+    \endentry
+    \entry{DU2024131374}{article}{}{}
+      \name{author}{3}{}{%
+        {{hash=e20ec1ccb8bbfdd23f0c1cb8d6291931}{%
+           family={Du},
+           familyi={D\bibinitperiod},
+           given={Zhili},
+           giveni={Z\bibinitperiod}}}%
+        {{hash=55ba0ca5dd986fe378ce3c542ad60862}{%
+           family={Zheng},
+           familyi={Z\bibinitperiod},
+           given={Lirong},
+           giveni={L\bibinitperiod}}}%
+        {{hash=8e1aabc3963c3fca898f42c12e85b05d}{%
+           family={Lin},
+           familyi={L\bibinitperiod},
+           given={Boqiang},
+           giveni={B\bibinitperiod}}}%
+      }
+      \strng{namehash}{4a51a32dd84c4ac9aa37ef4d82e98595}
+      \strng{fullhash}{8fa4f4e1e0cee450f58f32631ba05389}
+      \strng{fullhashraw}{8fa4f4e1e0cee450f58f32631ba05389}
+      \strng{bibnamehash}{8fa4f4e1e0cee450f58f32631ba05389}
+      \strng{authorbibnamehash}{8fa4f4e1e0cee450f58f32631ba05389}
+      \strng{authornamehash}{4a51a32dd84c4ac9aa37ef4d82e98595}
+      \strng{authorfullhash}{8fa4f4e1e0cee450f58f32631ba05389}
+      \strng{authorfullhashraw}{8fa4f4e1e0cee450f58f32631ba05389}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{The widespread adoption of electric vehicles has become pivotal in attaining emissions reduction objectives, and the rationale behind designing and situating charging stations determines the unfurling of electric vehicles. This scholarly work fully mines the geographical situational particulars underlying the functioning statistics of charging stations in Beijing during the period from January to March 2016. By incorporating the urban road network, we construct a charging stations accessibility index to investigate the influence of stations accessibility on utilization rates. The findings reveal a substantial positive relationship between the overall accessibility of charging stations and their utilization rates. However, the limited number of charging stations hinders the agglomeration effect from significantly boosting utilization rates. Moreover, the impact of charging station accessibility on utilization rates varies significantly across regions with different levels of development, indicating pronounced heterogeneity. The research conclusions of this paper provide useful suggestions for promoting the rational layout of charging stations.}
+      \field{issn}{0360-5442}
+      \field{journaltitle}{Energy}
+      \field{title}{Influence of charging stations accessibility on charging stations utilization}
+      \field{volume}{298}
+      \field{year}{2024}
+      \field{pages}{131374}
+      \range{pages}{1}
+      \verb{doi}
+      \verb https://doi.org/10.1016/j.energy.2024.131374
+      \endverb
+      \verb{urlraw}
+      \verb https://www.sciencedirect.com/science/article/pii/S0360544224011472
+      \endverb
+      \verb{url}
+      \verb https://www.sciencedirect.com/science/article/pii/S0360544224011472
+      \endverb
+      \keyw{Electric vehicle,Charging station accessibility,Utilization rate,Optimization,Driving distance}
+    \endentry
+    \entry{YE2024105908}{article}{}{}
+      \name{author}{3}{}{%
+        {{hash=acfa9d49bc162c4b12b862a2240f3381}{%
+           family={Ye},
+           familyi={Y\bibinitperiod},
+           given={Qiming},
+           giveni={Q\bibinitperiod}}}%
+        {{hash=edf70fc438046012605b0711144130d3}{%
+           family={Bansal},
+           familyi={B\bibinitperiod},
+           given={Prateek},
+           giveni={P\bibinitperiod}}}%
+        {{hash=a2d4d36cc54fd1f5f7ed9d2c469f61b1}{%
+           family={Adey},
+           familyi={A\bibinitperiod},
+           given={Bryan},
+           giveni={B\bibinitperiod}}}%
+      }
+      \strng{namehash}{ef2d6f7d72c405fe7e2186276ceccb9d}
+      \strng{fullhash}{5b4054ba79ddd05b710d388cf27c974b}
+      \strng{fullhashraw}{5b4054ba79ddd05b710d388cf27c974b}
+      \strng{bibnamehash}{5b4054ba79ddd05b710d388cf27c974b}
+      \strng{authorbibnamehash}{5b4054ba79ddd05b710d388cf27c974b}
+      \strng{authornamehash}{ef2d6f7d72c405fe7e2186276ceccb9d}
+      \strng{authorfullhash}{5b4054ba79ddd05b710d388cf27c974b}
+      \strng{authorfullhashraw}{5b4054ba79ddd05b710d388cf27c974b}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Long-term charging infrastructure planning is imperative to sustain the rapid adoption of electric vehicles (EVs) in line with climate goals. While the literature on spatial planning of charging infrastructure is well documented, the temporal dimension has received limited attention. This paper comprehensively reviews the literature on multi-period charging infrastructure planning under uncertainty. It examines the complex interplay between EV mobility and the energy sector. Four gaps are identified after examining 44 pertinent studies published from January 1990 to March 2024. Firstly, current models are predominantly deterministic and myopic, lacking a forward-looking approach to accommodate future uncertainties. Secondly, most studies rely on EVs’ aggregated mobility and charging patterns, leading to inaccurate charging demand forecasts and suboptimal plans. Addressing this requires integrating vehicle-level agent-based models that accurately depict EVs’ charging patterns, and their interactions with charging stations and the grid. Thirdly, the impact of improved charging infrastructure on EV adoption is generally ignored. Joint consideration of charging demand forecasting with infrastructure planning is essential to incorporate such infrastructure-demand feedback loops. Lastly, current planning frameworks show limited integration of grid expansion, operations, and renewable energy sources To address these gaps, we propose a dynamic programming-based framework and solution approach to this planning problem.}
+      \field{issn}{2210-6707}
+      \field{journaltitle}{Sustainable Cities and Society}
+      \field{title}{Multi-period Charging Infrastructure Planning under Uncertainty: Challenges and Opportunities}
+      \field{volume}{116}
+      \field{year}{2024}
+      \field{pages}{105908}
+      \range{pages}{1}
+      \verb{doi}
+      \verb https://doi.org/10.1016/j.scs.2024.105908
+      \endverb
+      \verb{urlraw}
+      \verb https://www.sciencedirect.com/science/article/pii/S2210670724007327
+      \endverb
+      \verb{url}
+      \verb https://www.sciencedirect.com/science/article/pii/S2210670724007327
+      \endverb
+      \keyw{Electric vehicles,Charging infrastructure,Grid expansion,Multi-stage planning,Renewable energy sources}
+    \endentry
+    \entry{bmk}{article}{}{}
+      \name{author}{1}{}{%
+        {{hash=97be40e216a97a8896f05c4e87b10591}{%
+           family={BMK},
+           familyi={B\bibinitperiod}}}%
+      }
+      \strng{namehash}{97be40e216a97a8896f05c4e87b10591}
+      \strng{fullhash}{97be40e216a97a8896f05c4e87b10591}
+      \strng{fullhashraw}{97be40e216a97a8896f05c4e87b10591}
+      \strng{bibnamehash}{97be40e216a97a8896f05c4e87b10591}
+      \strng{authorbibnamehash}{97be40e216a97a8896f05c4e87b10591}
+      \strng{authornamehash}{97be40e216a97a8896f05c4e87b10591}
+      \strng{authorfullhash}{97be40e216a97a8896f05c4e87b10591}
+      \strng{authorfullhashraw}{97be40e216a97a8896f05c4e87b10591}
+      \field{extraname}{1}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{{Mobilitätsmaster- plan 2030 für Österreich}}
+      \field{year}{2021}
+      \verb{file}
+      \verb :C\:/PhD/Forschung/Literatur/BMK_Mobilitaetsmasterplan2030_DE_UA.pdf:pdf
+      \endverb
+    \endentry
+    \entry{GAZMEH2024104222}{article}{}{}
+      \name{author}{3}{}{%
+        {{hash=212d5993330f13bf2f01ad8874a557c9}{%
+           family={Gazmeh},
+           familyi={G\bibinitperiod},
+           given={Hossein},
+           giveni={H\bibinitperiod}}}%
+        {{hash=207b633a717ab362d4c7da9a541e2cff}{%
+           family={Guo},
+           familyi={G\bibinitperiod},
+           given={Yuntao},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=7a211617c9086699adfcedced8ce8dd4}{%
+           family={Qian},
+           familyi={Q\bibinitperiod},
+           given={Xinwu},
+           giveni={X\bibinitperiod}}}%
+      }
+      \strng{namehash}{d711dae3365786bea881a6c8f475cd6d}
+      \strng{fullhash}{6ede85cb626bfc14811177ee07a241b4}
+      \strng{fullhashraw}{6ede85cb626bfc14811177ee07a241b4}
+      \strng{bibnamehash}{6ede85cb626bfc14811177ee07a241b4}
+      \strng{authorbibnamehash}{6ede85cb626bfc14811177ee07a241b4}
+      \strng{authornamehash}{d711dae3365786bea881a6c8f475cd6d}
+      \strng{authorfullhash}{6ede85cb626bfc14811177ee07a241b4}
+      \strng{authorfullhashraw}{6ede85cb626bfc14811177ee07a241b4}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{1361-9209}
+      \field{journaltitle}{Transportation Research Part D: Transport and Environment}
+      \field{title}{Understanding the opportunity-centric accessibility for public charging infrastructure}
+      \field{volume}{131}
+      \field{year}{2024}
+      \field{pages}{104222}
+      \range{pages}{1}
+      \verb{doi}
+      \verb https://doi.org/10.1016/j.trd.2024.104222
+      \endverb
+      \verb{urlraw}
+      \verb https://www.sciencedirect.com/science/article/pii/S1361920924001792
+      \endverb
+      \verb{url}
+      \verb https://www.sciencedirect.com/science/article/pii/S1361920924001792
+      \endverb
+      \keyw{Public charging station,Accessibility,Opportunity-based accessibility,Equity,Electric vehicles}
+    \endentry
+    \entry{TATTINI2018265}{article}{}{}
+      \name{author}{7}{}{%
+        {{hash=8efd27c3f306a6109ccaac873e11574e}{%
+           family={Tattini},
+           familyi={T\bibinitperiod},
+           given={Jacopo},
+           giveni={J\bibinitperiod}}}%
+        {{hash=828c78def9afa5947fc8469a7b066a97}{%
+           family={Ramea},
+           familyi={R\bibinitperiod},
+           given={Kalai},
+           giveni={K\bibinitperiod}}}%
+        {{hash=3a794e30a6410fe154ec6606c8479b56}{%
+           family={Gargiulo},
+           familyi={G\bibinitperiod},
+           given={Maurizio},
+           giveni={M\bibinitperiod}}}%
+        {{hash=c198cf52c33f63914aaaf1d54d010d21}{%
+           family={Yang},
+           familyi={Y\bibinitperiod},
+           given={Christopher},
+           giveni={C\bibinitperiod}}}%
+        {{hash=ffb389aafcb169ad837eef43cea50c08}{%
+           family={Mulholland},
+           familyi={M\bibinitperiod},
+           given={Eamonn},
+           giveni={E\bibinitperiod}}}%
+        {{hash=69a435636e52b1b65fe4557b06dd19e5}{%
+           family={Yeh},
+           familyi={Y\bibinitperiod},
+           given={Sonia},
+           giveni={S\bibinitperiod}}}%
+        {{hash=1d3470dc92738e34f83315a178f28208}{%
+           family={Karlsson},
+           familyi={K\bibinitperiod},
+           given={Kenneth},
+           giveni={K\bibinitperiod}}}%
+      }
+      \strng{namehash}{36448fd1ebb20119534db8f7b3e232c6}
+      \strng{fullhash}{b0d036243bde1bf9abf8fedaf30875b0}
+      \strng{fullhashraw}{b0d036243bde1bf9abf8fedaf30875b0}
+      \strng{bibnamehash}{b0d036243bde1bf9abf8fedaf30875b0}
+      \strng{authorbibnamehash}{b0d036243bde1bf9abf8fedaf30875b0}
+      \strng{authornamehash}{36448fd1ebb20119534db8f7b3e232c6}
+      \strng{authorfullhash}{b0d036243bde1bf9abf8fedaf30875b0}
+      \strng{authorfullhashraw}{b0d036243bde1bf9abf8fedaf30875b0}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{0306-2619}
+      \field{journaltitle}{Applied Energy}
+      \field{title}{Improving the representation of modal choice into bottom-up optimization energy system models - The MoCho-TIMES model}
+      \field{volume}{212}
+      \field{year}{2018}
+      \field{pages}{265\bibrangedash 282}
+      \range{pages}{18}
+      \verb{doi}
+      \verb https://doi.org/10.1016/j.apenergy.2017.12.050
+      \endverb
+      \verb{urlraw}
+      \verb https://www.sciencedirect.com/science/article/pii/S030626191731766X
+      \endverb
+      \verb{url}
+      \verb https://www.sciencedirect.com/science/article/pii/S030626191731766X
+      \endverb
+      \keyw{Modal choice,Transport,Mobility behaviour,Bottom-up energy system modeling,TIMES-MARKAL}
+    \endentry
+    \entry{SPAVEN2022133349}{article}{}{}
+      \name{author}{3}{}{%
+        {{hash=9d04063bf7f78d3e503867398ba2473f}{%
+           family={Spaven},
+           familyi={S\bibinitperiod},
+           given={Frederick},
+           giveni={F\bibinitperiod}}}%
+        {{hash=6d8214804e6fb811ed58f757c1b42e3c}{%
+           family={Liu},
+           familyi={L\bibinitperiod},
+           given={Yuanchang},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=eb9f54a385a0dc9a3e1a87be57d78513}{%
+           family={Baghdadi},
+           familyi={B\bibinitperiod},
+           given={Mehdi},
+           giveni={M\bibinitperiod}}}%
+      }
+      \strng{namehash}{ea566e3ba859e2971ef0c96c856be2fd}
+      \strng{fullhash}{5f60c5988cb745c463133d8e0968862e}
+      \strng{fullhashraw}{5f60c5988cb745c463133d8e0968862e}
+      \strng{bibnamehash}{5f60c5988cb745c463133d8e0968862e}
+      \strng{authorbibnamehash}{5f60c5988cb745c463133d8e0968862e}
+      \strng{authornamehash}{ea566e3ba859e2971ef0c96c856be2fd}
+      \strng{authorfullhash}{5f60c5988cb745c463133d8e0968862e}
+      \strng{authorfullhashraw}{5f60c5988cb745c463133d8e0968862e}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{0959-6526}
+      \field{journaltitle}{Journal of Cleaner Production}
+      \field{title}{Going further with smaller EVs: System-level battery range, emissions and charging infrastructure analysis}
+      \field{volume}{369}
+      \field{year}{2022}
+      \field{pages}{133349}
+      \range{pages}{1}
+      \verb{doi}
+      \verb https://doi.org/10.1016/j.jclepro.2022.133349
+      \endverb
+      \verb{urlraw}
+      \verb https://www.sciencedirect.com/science/article/pii/S0959652622029341
+      \endverb
+      \verb{url}
+      \verb https://www.sciencedirect.com/science/article/pii/S0959652622029341
+      \endverb
+      \keyw{Charging infrastructure,Transport decarbonisation,Embodied emissions,EV range,Long distance travel,Vehicle design}
+    \endentry
+    \entry{QIAN2024104400}{article}{}{}
+      \name{author}{4}{}{%
+        {{hash=c50431a812a99cbb9139538b2c478184}{%
+           family={Qian},
+           familyi={Q\bibinitperiod},
+           given={Lixian},
+           giveni={L\bibinitperiod}}}%
+        {{hash=57f7f0240f141850db99567185d1a24c}{%
+           family={Zhang},
+           familyi={Z\bibinitperiod},
+           given={Cheng},
+           giveni={C\bibinitperiod}}}%
+        {{hash=e8622380f54d2d9127e4610dfcfccc66}{%
+           family={Chen},
+           familyi={C\bibinitperiod},
+           given={Yuxin},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=13894668f6608f9f77016cb328a433b9}{%
+           family={Xiao},
+           familyi={X\bibinitperiod},
+           given={Zhiguo},
+           giveni={Z\bibinitperiod}}}%
+      }
+      \strng{namehash}{70f0283459896f72eb54560675522055}
+      \strng{fullhash}{ed00246722ff58d64ff34c6d21ff7b37}
+      \strng{fullhashraw}{ed00246722ff58d64ff34c6d21ff7b37}
+      \strng{bibnamehash}{ed00246722ff58d64ff34c6d21ff7b37}
+      \strng{authorbibnamehash}{ed00246722ff58d64ff34c6d21ff7b37}
+      \strng{authornamehash}{70f0283459896f72eb54560675522055}
+      \strng{authorfullhash}{ed00246722ff58d64ff34c6d21ff7b37}
+      \strng{authorfullhashraw}{ed00246722ff58d64ff34c6d21ff7b37}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{1361-9209}
+      \field{journaltitle}{Transportation Research Part D: Transport and Environment}
+      \field{title}{Spatial cross-side network effect of charging stations on electric vehicle adoption}
+      \field{volume}{136}
+      \field{year}{2024}
+      \field{pages}{104400}
+      \range{pages}{1}
+      \verb{doi}
+      \verb https://doi.org/10.1016/j.trd.2024.104400
+      \endverb
+      \verb{urlraw}
+      \verb https://www.sciencedirect.com/science/article/pii/S1361920924003572
+      \endverb
+      \verb{url}
+      \verb https://www.sciencedirect.com/science/article/pii/S1361920924003572
+      \endverb
+      \keyw{Electric vehicles,Infrastructure planning,Spatial cross-side network effects,Charging stations}
+    \endentry
+    \entry{SELENASHENG2022103256}{article}{}{}
+      \name{author}{6}{}{%
+        {{hash=40c70b4bd44311ee3fca3d62b3990b53}{%
+           family={Sheng},
+           familyi={S\bibinitperiod},
+           given={Selena\bibnamedelima Mingyue},
+           giveni={S\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+        {{hash=91691f64953288bf759625da001896f0}{%
+           family={Wen},
+           familyi={W\bibinitperiod},
+           given={Le},
+           giveni={L\bibinitperiod}}}%
+        {{hash=ae1b6322d4443965f0623d335d005ff4}{%
+           family={Sharp},
+           familyi={S\bibinitperiod},
+           given={Basil},
+           giveni={B\bibinitperiod}}}%
+        {{hash=cb482f65052ae3fd62547593e324f0d0}{%
+           family={Du},
+           familyi={D\bibinitperiod},
+           given={Bo},
+           giveni={B\bibinitperiod}}}%
+        {{hash=d170f6718f39b813d357fd9caa19418a}{%
+           family={Ranjitkar},
+           familyi={R\bibinitperiod},
+           given={Prakash},
+           giveni={P\bibinitperiod}}}%
+        {{hash=7057d66e6c34efe448f59640b110a7c6}{%
+           family={Wilson},
+           familyi={W\bibinitperiod},
+           given={Douglas},
+           giveni={D\bibinitperiod}}}%
+      }
+      \strng{namehash}{9d097b1877e486da2b5cd9a36a63ff25}
+      \strng{fullhash}{fac3cac9bb1080c10e6fb7c71dbbd187}
+      \strng{fullhashraw}{fac3cac9bb1080c10e6fb7c71dbbd187}
+      \strng{bibnamehash}{fac3cac9bb1080c10e6fb7c71dbbd187}
+      \strng{authorbibnamehash}{fac3cac9bb1080c10e6fb7c71dbbd187}
+      \strng{authornamehash}{9d097b1877e486da2b5cd9a36a63ff25}
+      \strng{authorfullhash}{fac3cac9bb1080c10e6fb7c71dbbd187}
+      \strng{authorfullhashraw}{fac3cac9bb1080c10e6fb7c71dbbd187}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{1361-9209}
+      \field{journaltitle}{Transportation Research Part D: Transport and Environment}
+      \field{title}{A spatio-temporal approach to electric vehicle uptake: Evidence from New Zealand}
+      \field{volume}{105}
+      \field{year}{2022}
+      \field{pages}{103256}
+      \range{pages}{1}
+      \verb{doi}
+      \verb https://doi.org/10.1016/j.trd.2022.103256
+      \endverb
+      \verb{urlraw}
+      \verb https://www.sciencedirect.com/science/article/pii/S1361920922000864
+      \endverb
+      \verb{url}
+      \verb https://www.sciencedirect.com/science/article/pii/S1361920922000864
+      \endverb
+      \keyw{Electric vehicle uptake,Public charging infrastructure,Early adoption effects,Driving range,Driving mode,Car ownership}
+    \endentry
+    \entry{Lanz2022}{article}{}{}
+      \name{author}{4}{}{%
+        {{hash=462e1c2afd66ea014fa6ce9c065fcc22}{%
+           family={Lanz},
+           familyi={L\bibinitperiod},
+           given={Lukas},
+           giveni={L\bibinitperiod}}}%
+        {{hash=1209b831f47dd146b1a2e459b16c4a6a}{%
+           family={Noll},
+           familyi={N\bibinitperiod},
+           given={Bessie},
+           giveni={B\bibinitperiod}}}%
+        {{hash=f9a3aea98de2689ba1862a7863b32b17}{%
+           family={Schmidt},
+           familyi={S\bibinitperiod},
+           given={Tobias\bibnamedelima S.},
+           giveni={T\bibinitperiod\bibinitdelim S\bibinitperiod}}}%
+        {{hash=d409f4d705202ff5e0bd34c13f9f9686}{%
+           family={Steffen},
+           familyi={S\bibinitperiod},
+           given={Bjarne},
+           giveni={B\bibinitperiod}}}%
+      }
+      \strng{namehash}{1398570339655780aa358cecac45522c}
+      \strng{fullhash}{d3efe62bf8db76f8644e6d0cf62bfde3}
+      \strng{fullhashraw}{d3efe62bf8db76f8644e6d0cf62bfde3}
+      \strng{bibnamehash}{d3efe62bf8db76f8644e6d0cf62bfde3}
+      \strng{authorbibnamehash}{d3efe62bf8db76f8644e6d0cf62bfde3}
+      \strng{authornamehash}{1398570339655780aa358cecac45522c}
+      \strng{authorfullhash}{d3efe62bf8db76f8644e6d0cf62bfde3}
+      \strng{authorfullhashraw}{d3efe62bf8db76f8644e6d0cf62bfde3}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{With rapidly decreasing purchase prices of electric vehicles, charging costs are becoming ever more important for the diffusion of electric vehicles as required to decarbonize transport. However, the costs of charging electric vehicles in Europe are largely unknown. Here we develop a systematic classification of charging options, gather extensive market data on equipment cost, and employ a levelized cost approach to model charging costs in 30 European countries (European Union 27, Great Britain, Norway, Switzerland) and for 13 different charging options for private passenger transport. The findings demonstrate a large variance of charging costs across countries and charging options, suggesting different policy options to reduce charging costs. A specific analysis on the impacts and relevance of publicly accessible charging station utilization is performed. The results reveal charging costs at these stations to be competitive with fuel costs at typical utilization rates exhibited already today.}
+      \field{issn}{2041-1723}
+      \field{journaltitle}{Nature Communications}
+      \field{number}{1}
+      \field{title}{Comparing the levelized cost of electric vehicle charging options in Europe}
+      \field{volume}{13}
+      \field{year}{2022}
+      \field{pages}{5277}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.1038/s41467-022-32835-7
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.1038/s41467-022-32835-7
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1038/s41467-022-32835-7
+      \endverb
+    \endentry
+    \entry{hildermeier2024power}{misc}{}{}
+      \name{author}{2}{}{%
+        {{hash=c6ef2fcd177cd54cdb26f2134f28784b}{%
+           family={Hildermeier},
+           familyi={H\bibinitperiod},
+           given={Julia},
+           giveni={J\bibinitperiod}}}%
+        {{hash=574928538c81942ac8285a16c2c00e0e}{%
+           family={Jahn},
+           familyi={J\bibinitperiod},
+           given={Andreas},
+           giveni={A\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Regulatory Assistance Project}%
+      }
+      \strng{namehash}{c6de8ffed1956f6b57edfa20c2329f05}
+      \strng{fullhash}{c6de8ffed1956f6b57edfa20c2329f05}
+      \strng{fullhashraw}{c6de8ffed1956f6b57edfa20c2329f05}
+      \strng{bibnamehash}{c6de8ffed1956f6b57edfa20c2329f05}
+      \strng{authorbibnamehash}{c6de8ffed1956f6b57edfa20c2329f05}
+      \strng{authornamehash}{c6de8ffed1956f6b57edfa20c2329f05}
+      \strng{authorfullhash}{c6de8ffed1956f6b57edfa20c2329f05}
+      \strng{authorfullhashraw}{c6de8ffed1956f6b57edfa20c2329f05}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{The power of moving loads: Cost analysis of megawatt charging in Europe}
+      \field{year}{2024}
+    \endentry
+    \entry{CROZIER2020114973}{article}{}{}
+      \name{author}{3}{}{%
+        {{hash=26250b1cc100bcbbbb3cbd919b77f4c4}{%
+           family={Crozier},
+           familyi={C\bibinitperiod},
+           given={Constance},
+           giveni={C\bibinitperiod}}}%
+        {{hash=55c90bbf5ea359d3c6cc8d96c34df4d8}{%
+           family={Morstyn},
+           familyi={M\bibinitperiod},
+           given={Thomas},
+           giveni={T\bibinitperiod}}}%
+        {{hash=d4193917be774fc69a8c5f72c555864d}{%
+           family={McCulloch},
+           familyi={M\bibinitperiod},
+           given={Malcolm},
+           giveni={M\bibinitperiod}}}%
+      }
+      \strng{namehash}{6f2586f35c234412259a55cb5e6faaac}
+      \strng{fullhash}{33f3f751f258986ca9afe147420d7fb8}
+      \strng{fullhashraw}{33f3f751f258986ca9afe147420d7fb8}
+      \strng{bibnamehash}{33f3f751f258986ca9afe147420d7fb8}
+      \strng{authorbibnamehash}{33f3f751f258986ca9afe147420d7fb8}
+      \strng{authornamehash}{6f2586f35c234412259a55cb5e6faaac}
+      \strng{authorfullhash}{33f3f751f258986ca9afe147420d7fb8}
+      \strng{authorfullhashraw}{33f3f751f258986ca9afe147420d7fb8}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{0306-2619}
+      \field{journaltitle}{Applied Energy}
+      \field{title}{The opportunity for smart charging to mitigate the impact of electric vehicles on transmission and distribution systems}
+      \field{volume}{268}
+      \field{year}{2020}
+      \field{pages}{114973}
+      \range{pages}{1}
+      \verb{doi}
+      \verb https://doi.org/10.1016/j.apenergy.2020.114973
+      \endverb
+      \verb{urlraw}
+      \verb https://www.sciencedirect.com/science/article/pii/S0306261920304852
+      \endverb
+      \verb{url}
+      \verb https://www.sciencedirect.com/science/article/pii/S0306261920304852
+      \endverb
+      \keyw{Distribution system,Electric vehicles,Smart charging,Transmission system}
+    \endentry
+    \entry{GOLAB2025134385}{article}{}{}
+      \name{author}{4}{}{%
+        {{hash=a068fba7d7937dcdce6457138f601fc9}{%
+           family={Golab},
+           familyi={G\bibinitperiod},
+           given={Antonia},
+           giveni={A\bibinitperiod}}}%
+        {{hash=1d8a959452cc3065eda5aafc9246337e}{%
+           family={Loschan},
+           familyi={L\bibinitperiod},
+           given={Christoph},
+           giveni={C\bibinitperiod}}}%
+        {{hash=3f18ca15652ed533b8f91f6c4702e57b}{%
+           family={Zwickl-Bernhard},
+           familyi={Z\bibinithyphendelim B\bibinitperiod},
+           given={Sebastian},
+           giveni={S\bibinitperiod}}}%
+        {{hash=9da1c1a85facf05ea675df143ad1bb23}{%
+           family={Auer},
+           familyi={A\bibinitperiod},
+           given={Hans},
+           giveni={H\bibinitperiod}}}%
+      }
+      \strng{namehash}{922be188cf45375c05064c49fb0f2c5f}
+      \strng{fullhash}{6240ff44d966ce3621571759ae4ab019}
+      \strng{fullhashraw}{6240ff44d966ce3621571759ae4ab019}
+      \strng{bibnamehash}{6240ff44d966ce3621571759ae4ab019}
+      \strng{authorbibnamehash}{6240ff44d966ce3621571759ae4ab019}
+      \strng{authornamehash}{922be188cf45375c05064c49fb0f2c5f}
+      \strng{authorfullhash}{6240ff44d966ce3621571759ae4ab019}
+      \strng{authorfullhashraw}{6240ff44d966ce3621571759ae4ab019}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{0360-5442}
+      \field{journaltitle}{Energy}
+      \field{title}{The value of flexibility of commercial electric vehicle fleets in the redispatch of congested transmission grids}
+      \field{volume}{316}
+      \field{year}{2025}
+      \field{pages}{134385}
+      \range{pages}{1}
+      \verb{doi}
+      \verb https://doi.org/10.1016/j.energy.2025.134385
+      \endverb
+      \verb{urlraw}
+      \verb https://www.sciencedirect.com/science/article/pii/S0360544225000271
+      \endverb
+      \verb{url}
+      \verb https://www.sciencedirect.com/science/article/pii/S0360544225000271
+      \endverb
+      \keyw{Charging flexibility,Commercial fleet charging,Battery-electric heavy-duty trucks,Congestion management,Redispatch}
     \endentry
     \entry{Metais2022}{article}{}{}
       \name{author}{5}{}{%
@@ -222,8 +1169,8 @@
       \strng{authornamehash}{695f5c24e4bd3f5bb61861f45062b428}
       \strng{authorfullhash}{ddeac229bd0ff0ff380dcb2dfec4d995}
       \strng{authorfullhashraw}{ddeac229bd0ff0ff380dcb2dfec4d995}
-      \field{sortinit}{5}
-      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{issn}{1364-0321}
@@ -272,8 +1219,8 @@
       \strng{authornamehash}{c95bb59eed75549745e8ac4f405b843d}
       \strng{authorfullhash}{c95bb59eed75549745e8ac4f405b843d}
       \strng{authorfullhashraw}{c95bb59eed75549745e8ac4f405b843d}
-      \field{sortinit}{7}
-      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{issn}{09658564}
@@ -337,8 +1284,8 @@
       \strng{authornamehash}{2253c3967f4d46c595396bdfb6c0008b}
       \strng{authorfullhash}{2b7bbd9025d1a3e0f1c26cf6453ebcbe}
       \strng{authorfullhashraw}{2b7bbd9025d1a3e0f1c26cf6453ebcbe}
-      \field{sortinit}{7}
-      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{issn}{2352152X}
@@ -384,8 +1331,8 @@
       \strng{authornamehash}{c722a9bdfaf774422a5f1f793514f332}
       \strng{authorfullhash}{c722a9bdfaf774422a5f1f793514f332}
       \strng{authorfullhashraw}{c722a9bdfaf774422a5f1f793514f332}
-      \field{sortinit}{8}
-      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{issn}{0378-7753}
@@ -430,8 +1377,8 @@
       \strng{authornamehash}{f86fab7c1557b51fc02a5a2b663ab8f1}
       \strng{authorfullhash}{f86fab7c1557b51fc02a5a2b663ab8f1}
       \strng{authorfullhashraw}{f86fab7c1557b51fc02a5a2b663ab8f1}
-      \field{sortinit}{9}
-      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Transport Reviews}
@@ -453,74 +1400,6 @@
       \verb{url}
       \verb https://doi.org/10.1080/01441649808717016
       \endverb
-    \endentry
-    \entry{TATTINI2018265}{article}{}{}
-      \name{author}{7}{}{%
-        {{hash=8efd27c3f306a6109ccaac873e11574e}{%
-           family={Tattini},
-           familyi={T\bibinitperiod},
-           given={Jacopo},
-           giveni={J\bibinitperiod}}}%
-        {{hash=828c78def9afa5947fc8469a7b066a97}{%
-           family={Ramea},
-           familyi={R\bibinitperiod},
-           given={Kalai},
-           giveni={K\bibinitperiod}}}%
-        {{hash=3a794e30a6410fe154ec6606c8479b56}{%
-           family={Gargiulo},
-           familyi={G\bibinitperiod},
-           given={Maurizio},
-           giveni={M\bibinitperiod}}}%
-        {{hash=c198cf52c33f63914aaaf1d54d010d21}{%
-           family={Yang},
-           familyi={Y\bibinitperiod},
-           given={Christopher},
-           giveni={C\bibinitperiod}}}%
-        {{hash=ffb389aafcb169ad837eef43cea50c08}{%
-           family={Mulholland},
-           familyi={M\bibinitperiod},
-           given={Eamonn},
-           giveni={E\bibinitperiod}}}%
-        {{hash=69a435636e52b1b65fe4557b06dd19e5}{%
-           family={Yeh},
-           familyi={Y\bibinitperiod},
-           given={Sonia},
-           giveni={S\bibinitperiod}}}%
-        {{hash=1d3470dc92738e34f83315a178f28208}{%
-           family={Karlsson},
-           familyi={K\bibinitperiod},
-           given={Kenneth},
-           giveni={K\bibinitperiod}}}%
-      }
-      \strng{namehash}{36448fd1ebb20119534db8f7b3e232c6}
-      \strng{fullhash}{b0d036243bde1bf9abf8fedaf30875b0}
-      \strng{fullhashraw}{b0d036243bde1bf9abf8fedaf30875b0}
-      \strng{bibnamehash}{b0d036243bde1bf9abf8fedaf30875b0}
-      \strng{authorbibnamehash}{b0d036243bde1bf9abf8fedaf30875b0}
-      \strng{authornamehash}{36448fd1ebb20119534db8f7b3e232c6}
-      \strng{authorfullhash}{b0d036243bde1bf9abf8fedaf30875b0}
-      \strng{authorfullhashraw}{b0d036243bde1bf9abf8fedaf30875b0}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{issn}{0306-2619}
-      \field{journaltitle}{Applied Energy}
-      \field{title}{Improving the representation of modal choice into bottom-up optimization energy system models - The MoCho-TIMES model}
-      \field{volume}{212}
-      \field{year}{2018}
-      \field{pages}{265\bibrangedash 282}
-      \range{pages}{18}
-      \verb{doi}
-      \verb https://doi.org/10.1016/j.apenergy.2017.12.050
-      \endverb
-      \verb{urlraw}
-      \verb https://www.sciencedirect.com/science/article/pii/S030626191731766X
-      \endverb
-      \verb{url}
-      \verb https://www.sciencedirect.com/science/article/pii/S030626191731766X
-      \endverb
-      \keyw{Modal choice,Transport,Mobility behaviour,Bottom-up energy system modeling,TIMES-MARKAL}
     \endentry
     \entry{LUH2024122412}{article}{}{}
       \name{author}{5}{}{%
@@ -559,8 +1438,8 @@
       \strng{authorfullhash}{87c0d1409a26e1466498b430e06f1a7d}
       \strng{authorfullhashraw}{87c0d1409a26e1466498b430e06f1a7d}
       \field{extraname}{1}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{issn}{0306-2619}
@@ -607,8 +1486,8 @@
       \strng{authornamehash}{51d040a8c348feabe2cb1183279d93e8}
       \strng{authorfullhash}{7676070acfe47e94b3ea43df8d932509}
       \strng{authorfullhashraw}{7676070acfe47e94b3ea43df8d932509}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{Various regulatory and fiscal policy instruments are in force to reduce the amount of greenhouse gases and local pollutants emitted by private cars. The incentives operate primarily-or exclusively-on the newest generation of cars. But how fast will technological developments affecting new vehicle models penetrate into the car fleet? The speed at which the adverse effects of private car use will be mitigated through the normal vehicle renewal process, or through an accelerated one, carries considerable interest. Suitable modelling tools are needed. This paper aims to demonstrate the usefulness and flexibility of a bottom-up stock-flow modelling approach to private car}
@@ -672,8 +1551,8 @@
       \strng{authorfullhash}{636ac3c52b953fe78f9030877f0911c7}
       \strng{authorfullhashraw}{636ac3c52b953fe78f9030877f0911c7}
       \field{extraname}{1}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{issn}{0360-5442}
@@ -740,8 +1619,8 @@
       \strng{authornamehash}{900a71d788dd063af0204ade940ef5c4}
       \strng{authorfullhash}{1172e5e8dcfad7c4fa333bd9b4c8faa1}
       \strng{authorfullhashraw}{1172e5e8dcfad7c4fa333bd9b4c8faa1}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{issn}{1366-5545}
@@ -797,8 +1676,8 @@
       \strng{authorfullhash}{a18d3594b204097816c4436ac5271854}
       \strng{authorfullhashraw}{a18d3594b204097816c4436ac5271854}
       \field{extraname}{2}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Energy Research \& Social Science}
@@ -834,8 +1713,8 @@
       \strng{authornamehash}{86d478def0da1a822e79c9348ee0ca51}
       \strng{authorfullhash}{c061b8cb8aa237061d6a36587f9e673b}
       \strng{authorfullhashraw}{c061b8cb8aa237061d6a36587f9e673b}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{issn}{0360-5442}
@@ -870,8 +1749,8 @@
       \strng{authornamehash}{d94a72c5e1f982a7114402bd15464196}
       \strng{authorfullhash}{d94a72c5e1f982a7114402bd15464196}
       \strng{authorfullhashraw}{d94a72c5e1f982a7114402bd15464196}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{epub}
@@ -892,8 +1771,8 @@
       \strng{authornamehash}{2be6e26dc7301a79d2fa2720abd5e8f7}
       \strng{authorfullhash}{2be6e26dc7301a79d2fa2720abd5e8f7}
       \strng{authorfullhashraw}{2be6e26dc7301a79d2fa2720abd5e8f7}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{howpublished}{\url{https://www.beoe.at/statistik/}}
@@ -915,9 +1794,9 @@
       \strng{authornamehash}{97be40e216a97a8896f05c4e87b10591}
       \strng{authorfullhash}{97be40e216a97a8896f05c4e87b10591}
       \strng{authorfullhashraw}{97be40e216a97a8896f05c4e87b10591}
-      \field{extraname}{1}
-      \field{sortinit}{2}
-      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{extraname}{2}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{howpublished}{\url{https://www.bmk.gv.at/themen/verkehrsplanung/statistik/oesterreich_unterwegs.html}}
@@ -964,8 +1843,8 @@
       \strng{authornamehash}{cf4fa4f75f80c94135c3065c67334877}
       \strng{authorfullhash}{59d76f7fd5bf3600d50a8b2b1699cf0f}
       \strng{authorfullhashraw}{59d76f7fd5bf3600d50a8b2b1699cf0f}
-      \field{sortinit}{2}
-      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{issn}{18618928}
@@ -1013,8 +1892,8 @@
       \strng{authornamehash}{4f7cfe8b34fa9b6af03adae276a39a5f}
       \strng{authorfullhash}{7fef8a9cd15aa7a2888703e97721a6c0}
       \strng{authorfullhashraw}{7fef8a9cd15aa7a2888703e97721a6c0}
-      \field{sortinit}{2}
-      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Arbeitsberichte Verkehrs-und Raumplanung}
@@ -1037,8 +1916,8 @@
       \strng{authorfullhash}{818a1ef0eb83ae3e4409436df634e578}
       \strng{authorfullhashraw}{818a1ef0eb83ae3e4409436df634e578}
       \field{extraname}{1}
-      \field{sortinit}{2}
-      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{howpublished}{\url{https://www.asfinag.at/verkehr-sicherheit/verkehrszahlung/}}
@@ -1060,9 +1939,9 @@
       \strng{authornamehash}{97be40e216a97a8896f05c4e87b10591}
       \strng{authorfullhash}{97be40e216a97a8896f05c4e87b10591}
       \strng{authorfullhashraw}{97be40e216a97a8896f05c4e87b10591}
-      \field{extraname}{2}
-      \field{sortinit}{2}
-      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{extraname}{3}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{howpublished}{\url{https://www.bmk.gv.at/themen/mobilitaet/mobilitaetsmasterplan/mmp2030.html}}
@@ -1104,8 +1983,8 @@
       \strng{authornamehash}{e6a72f6c6e71d818db176fd76003aa1a}
       \strng{authorfullhash}{4c63cca7f4c73287b3fabf9cdc54468b}
       \strng{authorfullhashraw}{4c63cca7f4c73287b3fabf9cdc54468b}
-      \field{sortinit}{2}
-      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{issn}{03014215}
@@ -1146,8 +2025,8 @@
       \strng{authornamehash}{ef81e407d2da6818f9d8b1f9ace25885}
       \strng{authorfullhash}{ef81e407d2da6818f9d8b1f9ace25885}
       \strng{authorfullhashraw}{ef81e407d2da6818f9d8b1f9ace25885}
-      \field{sortinit}{2}
-      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{title}{{Ladeinfrastruktur für Elektrofahrzeuge : Bedarf , Kosten und Auswirkungen auf die Energieversorgung in Österreich bis 2030}}
@@ -1180,8 +2059,8 @@
       \strng{authornamehash}{ca74f3c8d41ea8a00ba1309b6c318f89}
       \strng{authorfullhash}{ca74f3c8d41ea8a00ba1309b6c318f89}
       \strng{authorfullhashraw}{ca74f3c8d41ea8a00ba1309b6c318f89}
-      \field{sortinit}{2}
-      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{isbn}{9781728103952}
@@ -1212,8 +2091,8 @@
       \strng{authornamehash}{602f2591276bacf4409eba4a627cff11}
       \strng{authorfullhash}{602f2591276bacf4409eba4a627cff11}
       \strng{authorfullhashraw}{602f2591276bacf4409eba4a627cff11}
-      \field{sortinit}{2}
-      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{howpublished}{\url{ https://www.openstreetmap.org }}
@@ -1235,8 +2114,8 @@
       \strng{authorfullhash}{818a1ef0eb83ae3e4409436df634e578}
       \strng{authorfullhashraw}{818a1ef0eb83ae3e4409436df634e578}
       \field{extraname}{2}
-      \field{sortinit}{3}
-      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{note}{(accessed on 27 January 2022)}
@@ -1263,8 +2142,8 @@
       \strng{authornamehash}{4d5ccaea59eed787a392c21e2f4a478c}
       \strng{authorfullhash}{4d5ccaea59eed787a392c21e2f4a478c}
       \strng{authorfullhashraw}{4d5ccaea59eed787a392c21e2f4a478c}
-      \field{sortinit}{3}
-      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{howpublished}{\url{https://openentrance.eu/}}
@@ -1310,8 +2189,8 @@
       \strng{authornamehash}{91884839603e8ff27c6497b769503ab4}
       \strng{authorfullhash}{16f1fa0cdb135d70234b918daf5840d5}
       \strng{authorfullhashraw}{16f1fa0cdb135d70234b918daf5840d5}
-      \field{sortinit}{3}
-      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{number}{7}
@@ -1367,8 +2246,8 @@
       \strng{authornamehash}{4853e9b7b938b380ae8728471d79eed6}
       \strng{authorfullhash}{530ae9d02f516900e66a18ebf4f2bf6d}
       \strng{authorfullhashraw}{530ae9d02f516900e66a18ebf4f2bf6d}
-      \field{sortinit}{3}
-      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{issn}{0360-5442}
@@ -1407,8 +2286,8 @@
       \strng{authornamehash}{38306f978997aad6a1c6d797560291ed}
       \strng{authorfullhash}{38306f978997aad6a1c6d797560291ed}
       \strng{authorfullhashraw}{38306f978997aad6a1c6d797560291ed}
-      \field{sortinit}{3}
-      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Int. Renewable Energy Agency}
@@ -1491,8 +2370,8 @@
       \strng{authornamehash}{243124982d2f3f77dd606ebc4e0eeacd}
       \strng{authorfullhash}{f34dd4b54e4615939b67cca35355aae8}
       \strng{authorfullhashraw}{f34dd4b54e4615939b67cca35355aae8}
-      \field{sortinit}{3}
-      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Perspektiven - Policy Brief, No. 01 / 2020 (DE)}
@@ -1531,8 +2410,8 @@
       \strng{authornamehash}{26d69ca966df3dc6e2bae5fb257eccd1}
       \strng{authorfullhash}{26d69ca966df3dc6e2bae5fb257eccd1}
       \strng{authorfullhashraw}{26d69ca966df3dc6e2bae5fb257eccd1}
-      \field{sortinit}{3}
-      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{issn}{20326653}
@@ -1578,8 +2457,8 @@
       \strng{authornamehash}{4acb82ec9df3cb18578ab90bf42fbdaf}
       \strng{authorfullhash}{73cc969b39b9250d18b4c0137e235d23}
       \strng{authorfullhashraw}{73cc969b39b9250d18b4c0137e235d23}
-      \field{sortinit}{3}
-      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{issn}{03014215}
@@ -1630,8 +2509,8 @@
       \strng{authornamehash}{31aa74505141704e063f3c8f69e719a8}
       \strng{authorfullhash}{3b08c242ddeb37314e12d178bb7f60ef}
       \strng{authorfullhashraw}{3b08c242ddeb37314e12d178bb7f60ef}
-      \field{sortinit}{3}
-      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{title}{{On the energy efficiency of quick DC vehicle battery charging}}
@@ -1659,8 +2538,8 @@
       \strng{authorfullhash}{533195c920679b5848eb14c3f57cc69c}
       \strng{authorfullhashraw}{533195c920679b5848eb14c3f57cc69c}
       \field{extraname}{1}
-      \field{sortinit}{4}
-      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{howpublished}{\url{https://ec.europa.eu/eurostat/databrowser/view/tran_r_vehst__custom_16758639/default/table?lang=en}}
@@ -1683,8 +2562,8 @@
       \strng{authorfullhash}{533195c920679b5848eb14c3f57cc69c}
       \strng{authorfullhashraw}{533195c920679b5848eb14c3f57cc69c}
       \field{extraname}{2}
-      \field{sortinit}{4}
-      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{title}{Stock of vehicles by category, fuel type and NUTS 2 regions (road\_eqs\_zev)}
@@ -1715,8 +2594,8 @@
       \strng{authorfullhash}{533195c920679b5848eb14c3f57cc69c}
       \strng{authorfullhashraw}{533195c920679b5848eb14c3f57cc69c}
       \field{extraname}{3}
-      \field{sortinit}{4}
-      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{note}{Accessed: 2025-05-20}
@@ -1746,8 +2625,8 @@
       \strng{authornamehash}{0cb73c87a46fe309c12efd88d44a700f}
       \strng{authorfullhash}{0cb73c87a46fe309c12efd88d44a700f}
       \strng{authorfullhashraw}{0cb73c87a46fe309c12efd88d44a700f}
-      \field{sortinit}{4}
-      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{howpublished}{\url{https://cordis.europa.eu/project/id/233596}}
@@ -1770,8 +2649,8 @@
       \strng{authornamehash}{51c023bd9457fd77e4a822fdc5552efc}
       \strng{authorfullhash}{51c023bd9457fd77e4a822fdc5552efc}
       \strng{authorfullhashraw}{51c023bd9457fd77e4a822fdc5552efc}
-      \field{sortinit}{4}
-      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{howpublished}{\url{https://www.statista.com/statistics/454353/fleet-of-vehicles-in-use-in-spain-projection/}}
@@ -1795,8 +2674,8 @@
       \strng{authorfullhash}{62182ca58a739daa8ddd8a48b7b19abb}
       \strng{authorfullhashraw}{62182ca58a739daa8ddd8a48b7b19abb}
       \field{extraname}{1}
-      \field{sortinit}{4}
-      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{howpublished}{\url{https://www.statista.com/statistics/263610/gross-domestic-product-gdp-growth-in-spain/}}
@@ -1848,8 +2727,8 @@
       \strng{authornamehash}{716c753025a7eaf7295c176f6631b63e}
       \strng{authorfullhash}{daf9ebbab89a3e51c3f848494847118f}
       \strng{authorfullhashraw}{daf9ebbab89a3e51c3f848494847118f}
-      \field{sortinit}{4}
-      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{number}{246}
@@ -1897,8 +2776,8 @@
       \strng{authornamehash}{18ce0eef20e921c5ee2ece0067ce5347}
       \strng{authorfullhash}{254ad5fb3c0f7641007e7052d5222193}
       \strng{authorfullhashraw}{254ad5fb3c0f7641007e7052d5222193}
-      \field{sortinit}{4}
-      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{issn}{0967-070X}
@@ -1935,8 +2814,8 @@
       \strng{authorfullhash}{533195c920679b5848eb14c3f57cc69c}
       \strng{authorfullhashraw}{533195c920679b5848eb14c3f57cc69c}
       \field{extraname}{4}
-      \field{sortinit}{4}
-      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{sortinit}{7}
+      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{note}{Accessed: 2025-05-20}
@@ -1997,8 +2876,8 @@
       \strng{editornamehash}{4832c83baae9799f41bf8b240675deed}
       \strng{editorfullhash}{4832c83baae9799f41bf8b240675deed}
       \strng{editorfullhashraw}{4832c83baae9799f41bf8b240675deed}
-      \field{sortinit}{4}
-      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{sortinit}{7}
+      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{Environmental taxes and oil market fluctuations can increase road fuel prices significantly and are likely to play a big role in the future. This raises social justice issues, as some low-income households rely on cars for access to services and opportunities but struggle to afford related expenses. The impacts of fuel price increases are unevenly spatially distributed, as shown by transport, planning and urban research. We investigate spatial patterns of vulnerability to fuel price increases in Italy, a country where the problem is particularly pronounced due to high motorisation rate relative to income, and high fuel prices. We define vulnerability as the combination of high exposure (high car use), high sensitivity (low income) and low adaptive capacity (high car dependence). Based on municipality-level data on motorisation and the journey to work from the 2011 Italian Census and official income tax revenue data for 2012 (as a proxy for income) we derive a composite indicator of vulnerability. The results show: i) a co-location of low-income and high car use on the periphery of many Italian city regions; ii) stark interregional differences, with lower income levels in the South driving high levels of vulnerability, despite lower levels of car ownership and use.}
@@ -2033,8 +2912,8 @@
       \strng{authorfullhash}{533195c920679b5848eb14c3f57cc69c}
       \strng{authorfullhashraw}{533195c920679b5848eb14c3f57cc69c}
       \field{extraname}{5}
-      \field{sortinit}{5}
-      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{sortinit}{7}
+      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{note}{Last update: 16 June 2025; coverage years: 1995-2024}
@@ -2064,8 +2943,8 @@
       \strng{authornamehash}{31aa3dadd16b69b42330885c87cdbd67}
       \strng{authorfullhash}{31aa3dadd16b69b42330885c87cdbd67}
       \strng{authorfullhashraw}{31aa3dadd16b69b42330885c87cdbd67}
-      \field{sortinit}{5}
-      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{sortinit}{7}
+      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{howpublished}{\url{https://www.statista.com/statistics/285881/new-car-and-van-purchases-weekly-uk-household-expenditure-by-gross-income/}}
@@ -2087,8 +2966,8 @@
       \strng{authornamehash}{58edf6b645191aec22068f4b27f64feb}
       \strng{authorfullhash}{58edf6b645191aec22068f4b27f64feb}
       \strng{authorfullhashraw}{58edf6b645191aec22068f4b27f64feb}
-      \field{sortinit}{5}
-      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{sortinit}{7}
+      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{month}{8}
@@ -2117,8 +2996,8 @@
       \strng{authorfullhash}{62182ca58a739daa8ddd8a48b7b19abb}
       \strng{authorfullhashraw}{62182ca58a739daa8ddd8a48b7b19abb}
       \field{extraname}{2}
-      \field{sortinit}{5}
-      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{sortinit}{7}
+      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{note}{Accessed: 2025-05-20}
@@ -2162,8 +3041,8 @@
       \strng{authornamehash}{e8a72791902e26e5faef04e845e72298}
       \strng{authorfullhash}{0c07452ff59cbc1537978d32df9d1a93}
       \strng{authorfullhashraw}{0c07452ff59cbc1537978d32df9d1a93}
-      \field{sortinit}{5}
-      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{sortinit}{7}
+      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{issn}{1361-9209}
@@ -2241,8 +3120,8 @@
       \strng{authorfullhash}{df962351bdd365ba966a1eeceb829fac}
       \strng{authorfullhashraw}{df962351bdd365ba966a1eeceb829fac}
       \field{extraname}{1}
-      \field{sortinit}{5}
-      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{sortinit}{7}
+      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{howpublished}{Zenodo}
@@ -2285,8 +3164,8 @@
       \strng{authorfullhash}{739bf829fca84250a964dd8980304bbf}
       \strng{authorfullhashraw}{739bf829fca84250a964dd8980304bbf}
       \field{extraname}{2}
-      \field{sortinit}{5}
-      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{sortinit}{7}
+      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{issn}{1364-0321}
@@ -2346,8 +3225,8 @@
       \strng{authornamehash}{182552b9dce929b10054f35715d9b249}
       \strng{authorfullhash}{7cb1ea5f4a05938532ae9f4746cbc730}
       \strng{authorfullhashraw}{7cb1ea5f4a05938532ae9f4746cbc730}
-      \field{sortinit}{5}
-      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{sortinit}{8}
+      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Transport Policy}
@@ -2371,8 +3250,8 @@
       \strng{authornamehash}{dd1963bc6a3c07a7309752da3ee7f11b}
       \strng{authorfullhash}{dd1963bc6a3c07a7309752da3ee7f11b}
       \strng{authorfullhashraw}{dd1963bc6a3c07a7309752da3ee7f11b}
-      \field{sortinit}{6}
-      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{sortinit}{8}
+      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{note}{{Gobierno de España}}
@@ -2430,8 +3309,8 @@
       \strng{authorfullhash}{38d002a93b383818279e9557a0fff8af}
       \strng{authorfullhashraw}{38d002a93b383818279e9557a0fff8af}
       \field{extraname}{2}
-      \field{sortinit}{7}
-      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
+      \field{sortinit}{9}
+      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Energies}
@@ -2441,60 +3320,6 @@
       \field{year}{2017}
       \field{pages}{1468}
       \range{pages}{1}
-    \endentry
-    \entry{Lanz2022}{article}{}{}
-      \name{author}{4}{}{%
-        {{hash=462e1c2afd66ea014fa6ce9c065fcc22}{%
-           family={Lanz},
-           familyi={L\bibinitperiod},
-           given={Lukas},
-           giveni={L\bibinitperiod}}}%
-        {{hash=1209b831f47dd146b1a2e459b16c4a6a}{%
-           family={Noll},
-           familyi={N\bibinitperiod},
-           given={Bessie},
-           giveni={B\bibinitperiod}}}%
-        {{hash=f9a3aea98de2689ba1862a7863b32b17}{%
-           family={Schmidt},
-           familyi={S\bibinitperiod},
-           given={Tobias\bibnamedelima S.},
-           giveni={T\bibinitperiod\bibinitdelim S\bibinitperiod}}}%
-        {{hash=d409f4d705202ff5e0bd34c13f9f9686}{%
-           family={Steffen},
-           familyi={S\bibinitperiod},
-           given={Bjarne},
-           giveni={B\bibinitperiod}}}%
-      }
-      \strng{namehash}{1398570339655780aa358cecac45522c}
-      \strng{fullhash}{d3efe62bf8db76f8644e6d0cf62bfde3}
-      \strng{fullhashraw}{d3efe62bf8db76f8644e6d0cf62bfde3}
-      \strng{bibnamehash}{d3efe62bf8db76f8644e6d0cf62bfde3}
-      \strng{authorbibnamehash}{d3efe62bf8db76f8644e6d0cf62bfde3}
-      \strng{authornamehash}{1398570339655780aa358cecac45522c}
-      \strng{authorfullhash}{d3efe62bf8db76f8644e6d0cf62bfde3}
-      \strng{authorfullhashraw}{d3efe62bf8db76f8644e6d0cf62bfde3}
-      \field{sortinit}{7}
-      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{abstract}{With rapidly decreasing purchase prices of electric vehicles, charging costs are becoming ever more important for the diffusion of electric vehicles as required to decarbonize transport. However, the costs of charging electric vehicles in Europe are largely unknown. Here we develop a systematic classification of charging options, gather extensive market data on equipment cost, and employ a levelized cost approach to model charging costs in 30 European countries (European Union 27, Great Britain, Norway, Switzerland) and for 13 different charging options for private passenger transport. The findings demonstrate a large variance of charging costs across countries and charging options, suggesting different policy options to reduce charging costs. A specific analysis on the impacts and relevance of publicly accessible charging station utilization is performed. The results reveal charging costs at these stations to be competitive with fuel costs at typical utilization rates exhibited already today.}
-      \field{issn}{2041-1723}
-      \field{journaltitle}{Nature Communications}
-      \field{number}{1}
-      \field{title}{Comparing the levelized cost of electric vehicle charging options in Europe}
-      \field{volume}{13}
-      \field{year}{2022}
-      \field{pages}{5277}
-      \range{pages}{1}
-      \verb{doi}
-      \verb 10.1038/s41467-022-32835-7
-      \endverb
-      \verb{urlraw}
-      \verb https://doi.org/10.1038/s41467-022-32835-7
-      \endverb
-      \verb{url}
-      \verb https://doi.org/10.1038/s41467-022-32835-7
-      \endverb
     \endentry
     \entry{LAMONACA2022111733}{article}{}{}
       \name{author}{2}{}{%
@@ -2517,8 +3342,8 @@
       \strng{authornamehash}{7ee2d0cdc9e420ed5afeff5ecccea565}
       \strng{authorfullhash}{7ee2d0cdc9e420ed5afeff5ecccea565}
       \strng{authorfullhashraw}{7ee2d0cdc9e420ed5afeff5ecccea565}
-      \field{sortinit}{7}
-      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
+      \field{sortinit}{9}
+      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{issn}{1364-0321}
@@ -2570,8 +3395,8 @@
       \strng{authornamehash}{0600b6ba0d72c01500b0de0c6c2bf54e}
       \strng{authorfullhash}{82b438e77e48675d80a37f8e386b16a5}
       \strng{authorfullhashraw}{82b438e77e48675d80a37f8e386b16a5}
-      \field{sortinit}{7}
-      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
+      \field{sortinit}{9}
+      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{issn}{0965-8564}
@@ -2606,8 +3431,8 @@
       \strng{authornamehash}{9ebde992f20f09d1a8f606dedb764711}
       \strng{authorfullhash}{9ebde992f20f09d1a8f606dedb764711}
       \strng{authorfullhashraw}{9ebde992f20f09d1a8f606dedb764711}
-      \field{sortinit}{7}
-      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{howpublished}{\url{https://www.statista.com/statistics/1385003/spain-quarterly-public-ev-charging-point-volume-by-current-type/}}
@@ -2631,8 +3456,8 @@
       \strng{authorfullhash}{533195c920679b5848eb14c3f57cc69c}
       \strng{authorfullhashraw}{533195c920679b5848eb14c3f57cc69c}
       \field{extraname}{6}
-      \field{sortinit}{7}
-      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{howpublished}{\url{https://ec.europa.eu/eurostat/databrowser/view/road_eqs_zev/default/table?lang=en&category=road.road_eqs}}
@@ -2640,110 +3465,11 @@
       \field{title}{Number of zero-emission vehicles (ZEVs)}
       \field{year}{2025}
     \endentry
-    \entry{eve_basque_2025}{misc}{}{}
-      \name{author}{1}{}{%
-        {{hash=92983efbb60c923ba2883932f99b5fd3}{%
-           family={{Ente Vasco de la Energía}},
-           familyi={E\bibinitperiod}}}%
-      }
-      \strng{namehash}{92983efbb60c923ba2883932f99b5fd3}
-      \strng{fullhash}{92983efbb60c923ba2883932f99b5fd3}
-      \strng{fullhashraw}{92983efbb60c923ba2883932f99b5fd3}
-      \strng{bibnamehash}{92983efbb60c923ba2883932f99b5fd3}
-      \strng{authorbibnamehash}{92983efbb60c923ba2883932f99b5fd3}
-      \strng{authornamehash}{92983efbb60c923ba2883932f99b5fd3}
-      \strng{authorfullhash}{92983efbb60c923ba2883932f99b5fd3}
-      \strng{authorfullhashraw}{92983efbb60c923ba2883932f99b5fd3}
-      \field{extraname}{1}
-      \field{sortinit}{8}
-      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{month}{6}
-      \field{note}{Accessed: 2025-08-13}
-      \field{title}{The Basque Government warns that an additional 6,000 megawatts of new capacity are needed in the Basque electricity grid to undertake decarbonisation investments}
-      \field{year}{2025}
-      \verb{urlraw}
-      \verb https://www.eve.eus/en/news/news/the-basque-government-warns-that-an-additional-6000-megawatts-of-new-capacity-are-needed-in-the-basque-electricity-grid-to-undertake-decarbonisation-investments/
-      \endverb
-      \verb{url}
-      \verb https://www.eve.eus/en/news/news/the-basque-government-warns-that-an-additional-6000-megawatts-of-new-capacity-are-needed-in-the-basque-electricity-grid-to-undertake-decarbonisation-investments/
-      \endverb
-    \endentry
-    \entry{eve_basque_energy_strategy_2030}{misc}{}{}
-      \name{author}{1}{}{%
-        {{hash=92983efbb60c923ba2883932f99b5fd3}{%
-           family={{Ente Vasco de la Energía}},
-           familyi={E\bibinitperiod}}}%
-      }
-      \list{institution}{1}{%
-        {Ente Vasco de la Energía (EVE)}%
-      }
-      \list{location}{1}{%
-        {Bilbao, Spain}%
-      }
-      \strng{namehash}{92983efbb60c923ba2883932f99b5fd3}
-      \strng{fullhash}{92983efbb60c923ba2883932f99b5fd3}
-      \strng{fullhashraw}{92983efbb60c923ba2883932f99b5fd3}
-      \strng{bibnamehash}{92983efbb60c923ba2883932f99b5fd3}
-      \strng{authorbibnamehash}{92983efbb60c923ba2883932f99b5fd3}
-      \strng{authornamehash}{92983efbb60c923ba2883932f99b5fd3}
-      \strng{authorfullhash}{92983efbb60c923ba2883932f99b5fd3}
-      \strng{authorfullhashraw}{92983efbb60c923ba2883932f99b5fd3}
-      \field{extraname}{2}
-      \field{sortinit}{8}
-      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{howpublished}{PDF document}
-      \field{note}{Accessed: 2025-08-13}
-      \field{title}{Basque Energy Strategy 2030}
-      \field{year}{2017}
-      \verb{urlraw}
-      \verb https://www.eve.eus/assets/media/EVE-3E2030-Ingles.pdf
-      \endverb
-      \verb{url}
-      \verb https://www.eve.eus/assets/media/EVE-3E2030-Ingles.pdf
-      \endverb
-    \endentry
-    \entry{IEA2025GlobalEVOutlook}{report}{}{}
-      \name{author}{1}{}{%
-        {{hash=b33b47b3008c8c47f90a77e0c2dd3060}{%
-           family={{International Energy Agency}},
-           familyi={I\bibinitperiod}}}%
-      }
-      \list{institution}{1}{%
-        {IEA}%
-      }
-      \list{location}{1}{%
-        {Paris}%
-      }
-      \strng{namehash}{b33b47b3008c8c47f90a77e0c2dd3060}
-      \strng{fullhash}{b33b47b3008c8c47f90a77e0c2dd3060}
-      \strng{fullhashraw}{b33b47b3008c8c47f90a77e0c2dd3060}
-      \strng{bibnamehash}{b33b47b3008c8c47f90a77e0c2dd3060}
-      \strng{authorbibnamehash}{b33b47b3008c8c47f90a77e0c2dd3060}
-      \strng{authornamehash}{b33b47b3008c8c47f90a77e0c2dd3060}
-      \strng{authorfullhash}{b33b47b3008c8c47f90a77e0c2dd3060}
-      \strng{authorfullhashraw}{b33b47b3008c8c47f90a77e0c2dd3060}
-      \field{sortinit}{8}
-      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{note}{Licence: CC BY 4.0}
-      \field{title}{Global EV Outlook 2025}
-      \field{year}{2025}
-      \verb{urlraw}
-      \verb https://www.iea.org/reports/global-ev-outlook-2025
-      \endverb
-      \verb{url}
-      \verb https://www.iea.org/reports/global-ev-outlook-2025
-      \endverb
-    \endentry
   \enddatalist
   \missing{9543135}
   \missing{ASFINAG}
   \missing{Borlaug2021}
+  \missing{EC2019GreenDeal}
   \missing{NECP2022}
   \missing{SCORRANO2021101022}
   \missing{TYNDP2022}

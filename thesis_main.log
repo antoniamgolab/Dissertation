@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.11.26)  9 JAN 2026 09:12
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.11.26)  12 JAN 2026 08:55
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -317,7 +317,13 @@ Package: changepage 2009/10/20 v1.0c check page and change page layout
 )
 \extralength=\skip73
 \fulllength=\skip74
- (C:\Users\simuser\AppData\Local\Programs\MiKTeX\tex/latex/biblatex\biblatex.sty
+ (C:\Users\simuser\AppData\Local\Programs\MiKTeX\tex/latex/base\fontenc.sty
+Package: fontenc 2024/12/21 v2.1c Standard LaTeX package
+) (C:\Users\simuser\AppData\Local\Programs\MiKTeX\tex/latex/base\inputenc.sty
+Package: inputenc 2024/02/08 v1.3d Input encoding file
+\inpenc@prehook=\toks23
+\inpenc@posthook=\toks24
+) (C:\Users\simuser\AppData\Local\Programs\MiKTeX\tex/latex/biblatex\biblatex.sty
 Package: biblatex 2025/07/10 v3.21 programmable bibliographies (PK/MW)
  (C:\Users\simuser\AppData\Local\Programs\MiKTeX\tex/latex/kvoptions\kvoptions.sty
 Package: kvoptions 2022-06-15 v3.15 Key value format for package options (HO)
@@ -568,16 +574,10 @@ Package: blx-case-expl3 2025/07/10 v3.21 expl3 case changing code for biblatex
 Package: enumitem 2025/02/06 v3.11 Customized lists
 \labelindent=\skip97
 \enit@outerparindent=\dimen178
-\enit@toks=\toks23
+\enit@toks=\toks25
 \enit@inbox=\box60
 \enit@count@id=\count448
 \enitdp@description=\count449
-) (C:\Users\simuser\AppData\Local\Programs\MiKTeX\tex/latex/base\fontenc.sty
-Package: fontenc 2024/12/21 v2.1c Standard LaTeX package
-) (C:\Users\simuser\AppData\Local\Programs\MiKTeX\tex/latex/base\inputenc.sty
-Package: inputenc 2024/02/08 v1.3d Input encoding file
-\inpenc@prehook=\toks24
-\inpenc@posthook=\toks25
 ) (C:\Users\simuser\AppData\Local\Programs\MiKTeX\tex/generic/babel\babel.sty
 Package: babel 2025/07/13 v25.11 The multilingual framework for LuaLaTeX, pdfLaTeX and XeLaTeX
 \babel@savecnt=\count450
@@ -695,7 +695,7 @@ Package: longtable 2024-12-18 v4.23 Multi-page Table package (DPC)
 \c@LT@chunks=\count462
 \LT@p@ftn=\toks27
 )
-Class scrbook Info: longtable captions redefined on input line 77.
+Class scrbook Info: longtable captions redefined on input line 78.
  (C:\Users\simuser\AppData\Local\Programs\MiKTeX\tex/latex/placeins\placeins.sty
 Package: placeins 2005/04/18  v 2.2
 ) (C:\Users\simuser\AppData\Local\Programs\MiKTeX\tex/latex/graphics\lscape.sty
@@ -723,7 +723,7 @@ Class scrbook Warning: Usage of package `fancyhdr' together
 (scrbook)              `\addtokomafont' for the page style elements need
 (scrbook)              explicite user intervention to work.
 (scrbook)              Nevertheless, using requested
-(scrbook)              package `fancyhdr' on input line 81.
+(scrbook)              package `fancyhdr' on input line 82.
 
 (C:\Users\simuser\AppData\Local\Programs\MiKTeX\tex/latex/fancyhdr\fancyhdr.sty
 Package: fancyhdr 2025/02/07 v5.2 Extensive control of page headers and footers
@@ -1461,12 +1461,12 @@ Package: siunitx 2025-07-09 v3.4.14 A comprehensive (SI) units package
 Package: eurosym 1998/08/06 v1.1 European currency symbol ``Euro''
 \@eurobox=\box111
 )
-Package hyperref Info: Option `unicode' set `false' on input line 218.
-Package hyperref Info: Option `pdftoolbar' set `true' on input line 218.
-Package hyperref Info: Option `pdfmenubar' set `true' on input line 218.
-Package hyperref Info: Option `pdffitwindow' set `false' on input line 218.
-Package hyperref Info: Option `pdfnewwindow' set `true' on input line 218.
-Package hyperref Info: Option `colorlinks' set `true' on input line 218.
+Package hyperref Info: Option `unicode' set `false' on input line 219.
+Package hyperref Info: Option `pdftoolbar' set `true' on input line 219.
+Package hyperref Info: Option `pdfmenubar' set `true' on input line 219.
+Package hyperref Info: Option `pdffitwindow' set `false' on input line 219.
+Package hyperref Info: Option `pdfnewwindow' set `true' on input line 219.
+Package hyperref Info: Option `colorlinks' set `true' on input line 219.
 \c@researchquestion=\count552
  (chapters/acronyms.tex
 \c@g@acro@AC@int=\count553
@@ -1504,9 +1504,6 @@ Package hyperref Info: Option `colorlinks' set `true' on input line 218.
 \c@g@acro@VoLL@int=\count585
 \c@g@acro@WTP@int=\count586
 )
-
-Package biblatex Warning: Load 'inputenc' before biblatex.
-
 Package csquotes Info: Checking for multilingual support...
 Package csquotes Info: ... found 'babel' package.
 Class scrbook Info: loading recommended package `bookmark'.
@@ -1516,56 +1513,56 @@ Class scrbook Info: loading recommended package `bookmark'.
 (scrbook)           `bookmarkpackage=false' before \begin{document} and
 (scrbook)           you can avoid this message adding:
 (scrbook)             \usepackage{bookmark}
-(scrbook)           before \begin{document} on input line 275.
-(C:\Users\simuser\AppData\Local\Programs\MiKTeX\tex/latex/bookmark\bookmark.sty
+(scrbook)           before \begin{document} on input line 276.
+ (C:\Users\simuser\AppData\Local\Programs\MiKTeX\tex/latex/bookmark\bookmark.sty
 Package: bookmark 2023-12-10 v1.31 PDF bookmarks (HO)
  (C:\Users\simuser\AppData\Local\Programs\MiKTeX\tex/latex/bookmark\bkm-pdftex.def
 File: bkm-pdftex.def 2023-12-10 v1.31 bookmark driver for pdfTeX and luaTeX (HO)
 \BKM@id=\count587
 ))
-LaTeX Font Info:    Trying to load font information for T1+lmr on input line 275.
+LaTeX Font Info:    Trying to load font information for T1+lmr on input line 276.
  (C:\Users\simuser\AppData\Local\Programs\MiKTeX\tex/latex/lm\t1lmr.fd
 File: t1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 No file thesis_main.aux.
 \openout1 = `thesis_main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 275.
-LaTeX Font Info:    ... okay on input line 275.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 275.
-LaTeX Font Info:    ... okay on input line 275.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 275.
-LaTeX Font Info:    ... okay on input line 275.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 275.
-LaTeX Font Info:    ... okay on input line 275.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 275.
-LaTeX Font Info:    ... okay on input line 275.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 275.
-LaTeX Font Info:    ... okay on input line 275.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 275.
-LaTeX Font Info:    ... okay on input line 275.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 275.
-LaTeX Font Info:    ... okay on input line 275.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 275.
-LaTeX Font Info:    ... okay on input line 275.
-Package scrbase Info: activating english \partname on input line 275.
-Package scrbase Info: activating english \chaptername on input line 275.
-Package scrbase Info: activating english \appendixname on input line 275.
-Package scrbase Info: activating english \figurename on input line 275.
-Package scrbase Info: activating english \tablename on input line 275.
-Package scrbase Info: activating english \contentsname on input line 275.
-Package scrbase Info: activating english \listfigurename on input line 275.
-Package scrbase Info: activating english \listtablename on input line 275.
-Package scrbase Info: activating english \bibname on input line 275.
-Package scrbase Info: activating english \indexname on input line 275.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 276.
+LaTeX Font Info:    ... okay on input line 276.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 276.
+LaTeX Font Info:    ... okay on input line 276.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 276.
+LaTeX Font Info:    ... okay on input line 276.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 276.
+LaTeX Font Info:    ... okay on input line 276.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 276.
+LaTeX Font Info:    ... okay on input line 276.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 276.
+LaTeX Font Info:    ... okay on input line 276.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 276.
+LaTeX Font Info:    ... okay on input line 276.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 276.
+LaTeX Font Info:    ... okay on input line 276.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 276.
+LaTeX Font Info:    ... okay on input line 276.
+Package scrbase Info: activating english \partname on input line 276.
+Package scrbase Info: activating english \chaptername on input line 276.
+Package scrbase Info: activating english \appendixname on input line 276.
+Package scrbase Info: activating english \figurename on input line 276.
+Package scrbase Info: activating english \tablename on input line 276.
+Package scrbase Info: activating english \contentsname on input line 276.
+Package scrbase Info: activating english \listfigurename on input line 276.
+Package scrbase Info: activating english \listtablename on input line 276.
+Package scrbase Info: activating english \bibname on input line 276.
+Package scrbase Info: activating english \indexname on input line 276.
 (C:\Users\simuser\AppData\Local\Programs\MiKTeX\tex/latex/translations/dicts\translations-basic-dictionary-english.trsl
 File: translations-basic-dictionary-english.trsl (english translation file `translations-basic-dictionary')
 )
-Package translations Info: loading dictionary `translations-basic-dictionary' for `english'. on input line 275.
+Package translations Info: loading dictionary `translations-basic-dictionary' for `english'. on input line 276.
  (C:\Users\simuser\AppData\Local\Programs\MiKTeX\tex/latex/translations/dicts\translations-basic-dictionary-german.trsl
 File: translations-basic-dictionary-german.trsl (german translation file `translations-basic-dictionary')
 )
-Package translations Info: loading dictionary `translations-basic-dictionary' for `german'. on input line 275.
+Package translations Info: loading dictionary `translations-basic-dictionary' for `german'. on input line 276.
 Package biblatex Info: Trying to load language 'english'...
 Package biblatex Info: ... file 'english.lbx' found.
  (C:\Users\simuser\AppData\Local\Programs\MiKTeX\tex/latex/biblatex/lbx\english.lbx
@@ -1611,6 +1608,13 @@ Package biblatex Warning: The following entry could not be found
 Package biblatex Warning: The following entry could not be found
 (biblatex)                in the database:
 (biblatex)                Borlaug2021
+(biblatex)                Please verify the spelling and rerun
+(biblatex)                LaTeX afterwards.
+
+
+Package biblatex Warning: The following entry could not be found
+(biblatex)                in the database:
+(biblatex)                EC2019GreenDeal
 (biblatex)                Please verify the spelling and rerun
 (biblatex)                LaTeX afterwards.
 
@@ -1720,8 +1724,8 @@ Package biblatex Warning: The following entry could not be found
 (biblatex)                LaTeX afterwards.
 
 )
-Package biblatex Info: Reference section=0 on input line 275.
-Package biblatex Info: Reference segment=0 on input line 275.
+Package biblatex Info: Reference section=0 on input line 276.
+Package biblatex Info: Reference segment=0 on input line 276.
  (C:\Users\simuser\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count588
@@ -1742,14 +1746,14 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 48
 File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
 ))
 
-Package todonotes Warning: The length marginparwidth is less than 2cm and will most likely cause issues with the appearance of inserted todonotes. The issue can be solved by adding a line like \setlength {\marginparwidth }{2cm} prior to loading the todonotes package. on input line 275.
+Package todonotes Warning: The length marginparwidth is less than 2cm and will most likely cause issues with the appearance of inserted todonotes. The issue can be solved by adding a line like \setlength {\marginparwidth }{2cm} prior to loading the todonotes package. on input line 276.
 
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: hyperref package is loaded.
 Package caption Info: supertabular package is loaded.
 Package caption Info: threeparttable package is loaded.
 Package caption Info: End \AtBeginDocument code.
-Package hyperref Info: Link coloring ON on input line 275.
+Package hyperref Info: Link coloring ON on input line 276.
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
 *geometry* verbose mode - [ preamble ] result:
@@ -1884,35 +1888,35 @@ pdfTeX warning: pdflatex (file ./graphics/RQs/overview_problems.pdf): PDF inclus
 <graphics/RQs/overview_problems.pdf, id=59, 782.925pt x 351.23218pt>
 File: graphics/RQs/overview_problems.pdf Graphic file (type pdf)
 <use graphics/RQs/overview_problems.pdf>
-Package pdftex.def Info: graphics/RQs/overview_problems.pdf  used on input line 298.
+Package pdftex.def Info: graphics/RQs/overview_problems.pdf  used on input line 300.
 (pdftex.def)             Requested size: 709.68869pt x 318.39449pt.
-LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 301.
+LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 303.
 (C:\Users\simuser\AppData\Local\Programs\MiKTeX\tex/latex/lm\ot1lmr.fd
 File: ot1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for OML+lmm on input line 301.
+LaTeX Font Info:    Trying to load font information for OML+lmm on input line 303.
  (C:\Users\simuser\AppData\Local\Programs\MiKTeX\tex/latex/lm\omllmm.fd
 File: omllmm.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 301.
+LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 303.
  (C:\Users\simuser\AppData\Local\Programs\MiKTeX\tex/latex/lm\omslmsy.fd
 File: omslmsy.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 301.
+LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 303.
  (C:\Users\simuser\AppData\Local\Programs\MiKTeX\tex/latex/lm\omxlmex.fd
 File: omxlmex.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10.95> on input line 301.
+(Font)              <10.95> on input line 303.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 301.
+(Font)              <8> on input line 303.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 301.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 301.
+(Font)              <6> on input line 303.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 303.
  (C:\Users\simuser\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 301.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 303.
  (C:\Users\simuser\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
@@ -1923,7 +1927,7 @@ pdfTeX warning: pdflatex (file ./graphics/RQs/contributions.pdf): PDF inclusion:
 <graphics/RQs/contributions.pdf, id=85, 1200.40462pt x 784.85219pt>
 File: graphics/RQs/contributions.pdf Graphic file (type pdf)
 <use graphics/RQs/contributions.pdf>
-Package pdftex.def Info: graphics/RQs/contributions.pdf  used on input line 308.
+Package pdftex.def Info: graphics/RQs/contributions.pdf  used on input line 310.
 (pdftex.def)             Requested size: 455.24417pt x 297.64813pt.
 
 
@@ -1931,7 +1935,7 @@ pdfTeX warning: pdflatex (file ./graphics/RQs/method_scope.pdf): PDF inclusion: 
 <graphics/RQs/method_scope.pdf, id=86, 865.31276pt x 562.01968pt>
 File: graphics/RQs/method_scope.pdf Graphic file (type pdf)
 <use graphics/RQs/method_scope.pdf>
-Package pdftex.def Info: graphics/RQs/method_scope.pdf  used on input line 314.
+Package pdftex.def Info: graphics/RQs/method_scope.pdf  used on input line 316.
 (pdftex.def)             Requested size: 273.14928pt x 177.41446pt.
 
 
@@ -1966,51 +1970,98 @@ l.1 \chapter
 ]
 chapter 1.
 
-LaTeX Warning: Citation 'VANDERZWAAN2013562' on page 2 undefined on input line 6.
+LaTeX Warning: Citation 'EC2019GreenDeal' on page 2 undefined on input line 4.
 
-
-Overfull \hbox (77.98721pt too wide) in paragraph at lines 6--7
-\T1/lmr/m/n/10.95 optimal path-way for ef-fec-tively re-duc-ing fos-sil fuel de-mand in the trans-port sec-tor [].
- []
-
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <9> on input line 8.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <5> on input line 8.
 
 
 
 pdfTeX warning (ext4): destination with the same identifier (name{page.2}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.14 
-      [2
+l.9 
+     [2
 
 
 ]
-LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 42.
- (C:\Users\simuser\AppData\Local\Programs\MiKTeX\tex/latex/lm\ts1lmr.fd
-File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-)
 
 
 pdfTeX warning (ext4): destination with the same identifier (name{page.3}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.51     \item T
-                he \textbf{temporal scope}: The extent of the analysed perio... [3{C:/Users/simuser/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ts1.enc}]
+l.48 
+      [3]
 
 
 pdfTeX warning (ext4): destination with the same identifier (name{page.4}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.94     \item n
-                ational freight transport models [4]
+l.64 ...ncludehead, headheight=40pt, headsep=10pt}
+                                                   [4]
+*geometry* verbose mode - [ newgeometry ] result:
+* driver: pdftex
+* paper: <default>
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: includehead 
+* h-part:(L,W,R)=(42.67912pt, 512.14969pt, 42.67912pt)
+* v-part:(T,H,B)=(42.67912pt, 759.68869pt, 42.67912pt)
+* \paperwidth=597.50793pt
+* \paperheight=845.04694pt
+* \textwidth=512.14969pt
+* \textheight=709.68869pt
+* \oddsidemargin=-29.59087pt
+* \evensidemargin=-29.59087pt
+* \topmargin=-29.59087pt
+* \headheight=40.0pt
+* \headsep=10.0pt
+* \topskip=11.0pt
+* \footskip=47.6pt
+* \marginparwidth=38.88544pt
+* \marginparsep=12.8401pt
+* \columnsep=10.0pt
+* \skip\footins=10.0pt plus 4.0pt minus 2.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidefalse
+* \@mparswitchfalse
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+
+File: graphics/RQs/overview_problems.pdf Graphic file (type pdf)
+<use graphics/RQs/overview_problems.pdf>
+Package pdftex.def Info: graphics/RQs/overview_problems.pdf  used on input line 68.
+(pdftex.def)             Requested size: 709.68869pt x 318.39449pt.
+
 
 
 pdfTeX warning (ext4): destination with the same identifier (name{page.5}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.140 \end{itemize}
-                    [5]
+l.73 \clearpage
+                [5]
 
-[6]
+LaTeX Warning: Reference `fig:overview' on page 6 undefined on input line 200.
+
+
+LaTeX Warning: Reference `fig:contributions' on page 6 undefined on input line 202.
+
+File: graphics/RQs/contributions.pdf Graphic file (type pdf)
+<use graphics/RQs/contributions.pdf>
+Package pdftex.def Info: graphics/RQs/contributions.pdf  used on input line 205.
+(pdftex.def)             Requested size: 409.71696pt x 267.8881pt.
+
+
+[6
+
+
+
+]
 
 [7]
 
@@ -2033,6 +2084,10 @@ LaTeX Font Info:    Font shape `T1/lmss/bx/it' in size <14.4> not available
 
 
 {C:/Users/simuser/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathit.enc}]
+LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 21.
+ (C:\Users\simuser\AppData\Local\Programs\MiKTeX\tex/latex/lm\ts1lmr.fd
+File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
 
 LaTeX Warning: Reference `fig:method' on page 12 undefined on input line 35.
 
@@ -2042,21 +2097,16 @@ LaTeX Warning: Reference `fig:method' on page 12 undefined on input line 44.
 
 
 pdfTeX warning: pdflatex (file ./graphics/paper_1/modelling_framework.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<graphics/paper_1/modelling_framework.pdf, id=222, 594.30032pt x 503.96278pt>
+<graphics/paper_1/modelling_framework.pdf, id=268, 594.30032pt x 503.96278pt>
 File: graphics/paper_1/modelling_framework.pdf Graphic file (type pdf)
 <use graphics/paper_1/modelling_framework.pdf>
 Package pdftex.def Info: graphics/paper_1/modelling_framework.pdf  used on input line 46.
 (pdftex.def)             Requested size: 398.33858pt x 337.79172pt.
 
 
-[12{C:/Users/simuser/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathsy.enc}{C:/Users/simuser/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-rm.enc}{C:/Users/simuser/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathex.enc}]
+[12{C:/Users/simuser/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathsy.enc}{C:/Users/simuser/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-rm.enc}{C:/Users/simuser/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ts1.enc}{C:/Users/simuser/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathex.enc}]
 
 [13 <./graphics/paper_1/modelling_framework.pdf>]
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <9> on input line 62.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 62.
-
 
 LaTeX Warning: Reference `equ:max_cap' on page 14 undefined on input line 97.
 
@@ -2082,7 +2132,7 @@ LaTeX Warning: Reference `sec:math_model' on page 16 undefined on input line 125
 [16]
 
 pdfTeX warning: pdflatex (file ./graphics/paper_2/flowchart_sep25.drawio.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<graphics/paper_2/flowchart_sep25.drawio.pdf, id=303, 491.91779pt x 284.98468pt>
+<graphics/paper_2/flowchart_sep25.drawio.pdf, id=349, 491.91779pt x 284.98468pt>
 File: graphics/paper_2/flowchart_sep25.drawio.pdf Graphic file (type pdf)
 <use graphics/paper_2/flowchart_sep25.drawio.pdf>
 Package pdftex.def Info: graphics/paper_2/flowchart_sep25.drawio.pdf  used on input line 145.
@@ -2151,7 +2201,7 @@ LaTeX Warning: Reference `fig:model_overview' on page 26 undefined on input line
 
 
 pdfTeX warning: pdflatex (file ./graphics/paper_4/overview_model_3_steps.drawio.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<graphics/paper_4/overview_model_3_steps.drawio.pdf, id=403, 813.0375pt x 231.74579pt>
+<graphics/paper_4/overview_model_3_steps.drawio.pdf, id=448, 813.0375pt x 231.74579pt>
 File: graphics/paper_4/overview_model_3_steps.drawio.pdf Graphic file (type pdf)
 <use graphics/paper_4/overview_model_3_steps.drawio.pdf>
 Package pdftex.def Info: graphics/paper_4/overview_model_3_steps.drawio.pdf  used on input line 493.
@@ -2159,7 +2209,7 @@ Package pdftex.def Info: graphics/paper_4/overview_model_3_steps.drawio.pdf  use
 
 
 pdfTeX warning: pdflatex (file ./graphics/paper_4/overview_graphs.drawio.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<graphics/paper_4/overview_graphs.drawio.pdf, id=404, 989.61719pt x 278.96219pt>
+<graphics/paper_4/overview_graphs.drawio.pdf, id=449, 989.61719pt x 278.96219pt>
 File: graphics/paper_4/overview_graphs.drawio.pdf Graphic file (type pdf)
 <use graphics/paper_4/overview_graphs.drawio.pdf>
 Package pdftex.def Info: graphics/paper_4/overview_graphs.drawio.pdf  used on input line 500.
@@ -2172,7 +2222,7 @@ LaTeX Warning: Reference `fig:flexibility_potential_detail' on page 26 undefined
 [26 <./graphics/paper_4/overview_model_3_steps.drawio.pdf> <./graphics/paper_4/overview_graphs.drawio.pdf>]
 
 pdfTeX warning: pdflatex (file ./graphics/paper_4/flexibility_potential.drawio.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<graphics/paper_4/flexibility_potential.drawio.pdf, id=438, 496.9767pt x 282.0939pt>
+<graphics/paper_4/flexibility_potential.drawio.pdf, id=483, 496.9767pt x 282.0939pt>
 File: graphics/paper_4/flexibility_potential.drawio.pdf Graphic file (type pdf)
 <use graphics/paper_4/flexibility_potential.drawio.pdf>
 Package pdftex.def Info: graphics/paper_4/flexibility_potential.drawio.pdf  used on input line 510.
@@ -2282,7 +2332,7 @@ Overfull \hbox (15.52573pt too wide) in alignment at lines 144--144
 LaTeX Warning: No positions in optional float specifier.
                Default added (so using `tbp') on input line 149.
 
-<graphics/paper_1/expansion_image.pdf, id=565, 742.57423pt x 406.71252pt>
+<graphics/paper_1/expansion_image.pdf, id=610, 742.57423pt x 406.71252pt>
 File: graphics/paper_1/expansion_image.pdf Graphic file (type pdf)
 <use graphics/paper_1/expansion_image.pdf>
 Package pdftex.def Info: graphics/paper_1/expansion_image.pdf  used on input line 150.
@@ -2346,7 +2396,7 @@ Overfull \hbox (39.83383pt too wide) in paragraph at lines 254--255
 [][] 
  []
 
-<graphics/paper_1/cost_red.pdf, id=636, 594.22612pt x 349.51942pt>
+<graphics/paper_1/cost_red.pdf, id=681, 594.22612pt x 349.51942pt>
 File: graphics/paper_1/cost_red.pdf Graphic file (type pdf)
 <use graphics/paper_1/cost_red.pdf>
 Package pdftex.def Info: graphics/paper_1/cost_red.pdf  used on input line 263.
@@ -2369,7 +2419,7 @@ LaTeX Warning: Reference `tab:tech' on page 38 undefined on input line 275.
 
 
 [38]
-<graphics/paper_1/range_30.pdf, id=645, 526.43863pt x 241.03143pt>
+<graphics/paper_1/range_30.pdf, id=690, 526.43863pt x 241.03143pt>
 File: graphics/paper_1/range_30.pdf Graphic file (type pdf)
 <use graphics/paper_1/range_30.pdf>
 Package pdftex.def Info: graphics/paper_1/range_30.pdf  used on input line 282.
@@ -2380,7 +2430,7 @@ Package pdftex.def Info: graphics/paper_1/range_30.pdf  used on input line 282.
 
 LaTeX Warning: Reference `fig:constant_cp_1' on page 40 undefined on input line 286.
 
-<graphics/paper_1/steady_CS.pdf, id=725, 528.16891pt x 602.17471pt>
+<graphics/paper_1/steady_CS.pdf, id=770, 528.16891pt x 602.17471pt>
 File: graphics/paper_1/steady_CS.pdf Graphic file (type pdf)
 <use graphics/paper_1/steady_CS.pdf>
 Package pdftex.def Info: graphics/paper_1/steady_CS.pdf  used on input line 290.
@@ -2400,7 +2450,7 @@ LaTeX Warning: Reference `tab:tech' on page 41 undefined on input line 296.
 
 LaTeX Warning: Reference `fig:sa_2_1' on page 42 undefined on input line 298.
 
-<graphics/paper_1/infr_change.pdf, id=833, 565.85715pt x 457.93018pt>
+<graphics/paper_1/infr_change.pdf, id=878, 565.85715pt x 457.93018pt>
 File: graphics/paper_1/infr_change.pdf Graphic file (type pdf)
 <use graphics/paper_1/infr_change.pdf>
 Package pdftex.def Info: graphics/paper_1/infr_change.pdf  used on input line 310.
@@ -2419,7 +2469,7 @@ LaTeX Warning: Reference `fig: scenario_design' on page 42 undefined on input li
 
 LaTeX Warning: Reference `fig:nb_trips' on page 43 undefined on input line 372.
 
-<graphics/paper_2/stacked_bar_plot_trips_subplots_with_separate_y_axes.png, id=904, 1156.32pt x 578.16pt>
+<graphics/paper_2/stacked_bar_plot_trips_subplots_with_separate_y_axes.png, id=949, 1156.32pt x 578.16pt>
 File: graphics/paper_2/stacked_bar_plot_trips_subplots_with_separate_y_axes.png Graphic file (type png)
 <use graphics/paper_2/stacked_bar_plot_trips_subplots_with_separate_y_axes.png>
 Package pdftex.def Info: graphics/paper_2/stacked_bar_plot_trips_subplots_with_separate_y_axes.png  used on input line 379.
@@ -2476,7 +2526,7 @@ LaTeX Warning: Reference `fig: scenario_design' on page 47 undefined on input li
 
 
 pdfTeX warning: pdflatex (file ./graphics/paper_2/different_charging_infr_expansion_approaches.drawio.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<graphics/paper_2/different_charging_infr_expansion_approaches.drawio.pdf, id=992, 683.6742pt x 529.01637pt>
+<graphics/paper_2/different_charging_infr_expansion_approaches.drawio.pdf, id=1036, 683.6742pt x 529.01637pt>
 File: graphics/paper_2/different_charging_infr_expansion_approaches.drawio.pdf Graphic file (type pdf)
 <use graphics/paper_2/different_charging_infr_expansion_approaches.drawio.pdf>
 Package pdftex.def Info: graphics/paper_2/different_charging_infr_expansion_approaches.drawio.pdf  used on input line 651.
@@ -2495,12 +2545,12 @@ LaTeX Warning: Reference `fig: scenario_design' on page 49 undefined on input li
 
 LaTeX Warning: Reference `fig:reduction' on page 50 undefined on input line 703.
 
-<graphics/paper_2/detour_time_reduction_by_capacity_and_strategy_slow.pdf, id=1068, 711.13678pt x 277.51682pt>
+<graphics/paper_2/detour_time_reduction_by_capacity_and_strategy_slow.pdf, id=1111, 711.13678pt x 277.51682pt>
 File: graphics/paper_2/detour_time_reduction_by_capacity_and_strategy_slow.pdf Graphic file (type pdf)
 <use graphics/paper_2/detour_time_reduction_by_capacity_and_strategy_slow.pdf>
 Package pdftex.def Info: graphics/paper_2/detour_time_reduction_by_capacity_and_strategy_slow.pdf  used on input line 708.
 (pdftex.def)             Requested size: 455.24417pt x 177.65672pt.
-<graphics/paper_2/detour_time_reduction_by_capacity_and_strategy_fast.pdf, id=1069, 711.13678pt x 277.51682pt>
+<graphics/paper_2/detour_time_reduction_by_capacity_and_strategy_fast.pdf, id=1112, 711.13678pt x 277.51682pt>
 File: graphics/paper_2/detour_time_reduction_by_capacity_and_strategy_fast.pdf Graphic file (type pdf)
 <use graphics/paper_2/detour_time_reduction_by_capacity_and_strategy_fast.pdf>
 Package pdftex.def Info: graphics/paper_2/detour_time_reduction_by_capacity_and_strategy_fast.pdf  used on input line 713.
@@ -2520,7 +2570,7 @@ LaTeX Warning: Reference `tab:expansion_speed' on page 51 undefined on input lin
 
 LaTeX Warning: Reference `fig:ref_cap' on page 52 undefined on input line 744.
 
-<graphics/paper_2/charging_capacity_per_region.pdf, id=1101, 708.9687pt x 275.34871pt>
+<graphics/paper_2/charging_capacity_per_region.pdf, id=1144, 708.9687pt x 275.34871pt>
 File: graphics/paper_2/charging_capacity_per_region.pdf Graphic file (type pdf)
 <use graphics/paper_2/charging_capacity_per_region.pdf>
 Package pdftex.def Info: graphics/paper_2/charging_capacity_per_region.pdf  used on input line 748.
@@ -2531,7 +2581,7 @@ LaTeX Warning: Reference `res_1' on page 52 undefined on input line 753.
 
 
 [52 <./graphics/paper_2/charging_capacity_per_region.pdf>]
-<graphics/paper_2/rq_1_share_electric_vehicles_by_income_and_strategy.pdf, id=1116, 981.8391pt x 469.45389pt>
+<graphics/paper_2/rq_1_share_electric_vehicles_by_income_and_strategy.pdf, id=1159, 981.8391pt x 469.45389pt>
 File: graphics/paper_2/rq_1_share_electric_vehicles_by_income_and_strategy.pdf Graphic file (type pdf)
 <use graphics/paper_2/rq_1_share_electric_vehicles_by_income_and_strategy.pdf>
 Package pdftex.def Info: graphics/paper_2/rq_1_share_electric_vehicles_by_income_and_strategy.pdf  used on input line 758.
@@ -2540,7 +2590,7 @@ Package pdftex.def Info: graphics/paper_2/rq_1_share_electric_vehicles_by_income
 
 LaTeX Warning: Reference `res_add' on page 53 undefined on input line 763.
 
-<graphics/paper_2/rq1_max_diff_electrification_share_by_income_class.pdf, id=1117, 705.34108pt x 264.5082pt>
+<graphics/paper_2/rq1_max_diff_electrification_share_by_income_class.pdf, id=1160, 705.34108pt x 264.5082pt>
 File: graphics/paper_2/rq1_max_diff_electrification_share_by_income_class.pdf Graphic file (type pdf)
 <use graphics/paper_2/rq1_max_diff_electrification_share_by_income_class.pdf>
 Package pdftex.def Info: graphics/paper_2/rq1_max_diff_electrification_share_by_income_class.pdf  used on input line 767.
@@ -2578,17 +2628,17 @@ LaTeX Warning: Reference `fig:installed_capacity' on page 55 undefined on input 
 
 LaTeX Warning: Reference `res_2' on page 55 undefined on input line 781.
 
-<graphics/paper_2/rq_1_detour_time_development_by_case_and_type.pdf, id=1169, 825.38858pt x 499.44989pt>
+<graphics/paper_2/rq_1_detour_time_development_by_case_and_type.pdf, id=1212, 825.38858pt x 499.44989pt>
 File: graphics/paper_2/rq_1_detour_time_development_by_case_and_type.pdf Graphic file (type pdf)
 <use graphics/paper_2/rq_1_detour_time_development_by_case_and_type.pdf>
 Package pdftex.def Info: graphics/paper_2/rq_1_detour_time_development_by_case_and_type.pdf  used on input line 786.
 (pdftex.def)             Requested size: 341.43306pt x 206.60481pt.
-<graphics/paper_2/rq_1_fueled_energy_by_income_class_and_year_grid.pdf, id=1170, 734.76633pt x 1065.39363pt>
+<graphics/paper_2/rq_1_fueled_energy_by_income_class_and_year_grid.pdf, id=1213, 734.76633pt x 1065.39363pt>
 File: graphics/paper_2/rq_1_fueled_energy_by_income_class_and_year_grid.pdf Graphic file (type pdf)
 <use graphics/paper_2/rq_1_fueled_energy_by_income_class_and_year_grid.pdf>
 Package pdftex.def Info: graphics/paper_2/rq_1_fueled_energy_by_income_class_and_year_grid.pdf  used on input line 793.
 (pdftex.def)             Requested size: 341.43306pt x 495.07779pt.
-<graphics/paper_2/rq_1_installed_capacity_and_load_factor_centralized_densif.pdf, id=1171, 734.05199pt x 872.92169pt>
+<graphics/paper_2/rq_1_installed_capacity_and_load_factor_centralized_densif.pdf, id=1214, 734.05199pt x 872.92169pt>
 File: graphics/paper_2/rq_1_installed_capacity_and_load_factor_centralized_densif.pdf Graphic file (type pdf)
 <use graphics/paper_2/rq_1_installed_capacity_and_load_factor_centralized_densif.pdf>
 Package pdftex.def Info: graphics/paper_2/rq_1_installed_capacity_and_load_factor_centralized_densif.pdf  used on input line 803.
@@ -2607,12 +2657,12 @@ LaTeX Warning: Reference `fig:rq2_temp' on page 57 undefined on input line 808.
 
 
 [57 <./graphics/paper_2/rq_1_installed_capacity_and_load_factor_centralized_densif.pdf>]
-<graphics/paper_2/rq_2_electrification_share_by_scenario_and_region.pdf, id=1225, 841.92607pt x 414.81935pt>
+<graphics/paper_2/rq_2_electrification_share_by_scenario_and_region.pdf, id=1268, 841.92607pt x 414.81935pt>
 File: graphics/paper_2/rq_2_electrification_share_by_scenario_and_region.pdf Graphic file (type pdf)
 <use graphics/paper_2/rq_2_electrification_share_by_scenario_and_region.pdf>
 Package pdftex.def Info: graphics/paper_2/rq_2_electrification_share_by_scenario_and_region.pdf  used on input line 812.
 (pdftex.def)             Requested size: 455.24417pt x 224.30293pt.
-<graphics/paper_2/rq_2_vehicle_difference_temporal_development.pdf, id=1226, 853.50871pt x 419.8887pt>
+<graphics/paper_2/rq_2_vehicle_difference_temporal_development.pdf, id=1269, 853.50871pt x 419.8887pt>
 File: graphics/paper_2/rq_2_vehicle_difference_temporal_development.pdf Graphic file (type pdf)
 <use graphics/paper_2/rq_2_vehicle_difference_temporal_development.pdf>
 Package pdftex.def Info: graphics/paper_2/rq_2_vehicle_difference_temporal_development.pdf  used on input line 818.
@@ -2632,7 +2682,7 @@ LaTeX Warning: Reference `fig:rq2_3' on page 59 undefined on input line 841.
 
 LaTeX Warning: Reference `fig:rq2_5' on page 60 undefined on input line 843.
 
-<graphics/paper_2/rq2_bevs_by_origin_case_study_2030_2040_2050.pdf, id=1256, 740.98438pt x 989.85808pt>
+<graphics/paper_2/rq2_bevs_by_origin_case_study_2030_2040_2050.pdf, id=1299, 740.98438pt x 989.85808pt>
 File: graphics/paper_2/rq2_bevs_by_origin_case_study_2030_2040_2050.pdf Graphic file (type pdf)
 <use graphics/paper_2/rq2_bevs_by_origin_case_study_2030_2040_2050.pdf>
 Package pdftex.def Info: graphics/paper_2/rq2_bevs_by_origin_case_study_2030_2040_2050.pdf  used on input line 848.
@@ -2640,7 +2690,7 @@ Package pdftex.def Info: graphics/paper_2/rq2_bevs_by_origin_case_study_2030_204
 
 
 [60]
-<graphics/paper_2/rq2_charged_energy_by_origin_case_subplot.pdf, id=1261, 708.01949pt x 861.07697pt>
+<graphics/paper_2/rq2_charged_energy_by_origin_case_subplot.pdf, id=1304, 708.01949pt x 861.07697pt>
 File: graphics/paper_2/rq2_charged_energy_by_origin_case_subplot.pdf Graphic file (type pdf)
 <use graphics/paper_2/rq2_charged_energy_by_origin_case_subplot.pdf>
 Package pdftex.def Info: graphics/paper_2/rq2_charged_energy_by_origin_case_subplot.pdf  used on input line 854.
@@ -2648,7 +2698,7 @@ Package pdftex.def Info: graphics/paper_2/rq2_charged_energy_by_origin_case_subp
 
 
 [61 <./graphics/paper_2/rq2_bevs_by_origin_case_study_2030_2040_2050.pdf>]
-<graphics/paper_2/rq_2_baseline_utilization_rate.pdf, id=1274, 854.26329pt x 508.03418pt>
+<graphics/paper_2/rq_2_baseline_utilization_rate.pdf, id=1317, 854.26329pt x 508.03418pt>
 File: graphics/paper_2/rq_2_baseline_utilization_rate.pdf Graphic file (type pdf)
 <use graphics/paper_2/rq_2_baseline_utilization_rate.pdf>
 Package pdftex.def Info: graphics/paper_2/rq_2_baseline_utilization_rate.pdf  used on input line 860.
@@ -2798,7 +2848,7 @@ LaTeX Warning: Reference `fig:truck_highway_charging_peak' on page 68 undefined 
 
 LaTeX Warning: Reference `fig:dispatch_time' on page 69 undefined on input line 1012.
 
-<graphics/paper_4/peak_demand_service_areas.pdf, id=1346, 722.7pt x 433.62pt>
+<graphics/paper_4/peak_demand_service_areas.pdf, id=1389, 722.7pt x 433.62pt>
 File: graphics/paper_4/peak_demand_service_areas.pdf Graphic file (type pdf)
 <use graphics/paper_4/peak_demand_service_areas.pdf>
 Package pdftex.def Info: graphics/paper_4/peak_demand_service_areas.pdf  used on input line 1033.
@@ -2809,7 +2859,7 @@ LaTeX Warning: Citation 'ASFINAG' on page 69 undefined on input line 1034.
 
 LaTeX Warning: Citation 'ASFINAG' on page 69 undefined on input line 1034.
 
-<graphics/paper_4/average_load_profile_dispatch.pdf, id=1347, 867.24pt x 289.08pt>
+<graphics/paper_4/average_load_profile_dispatch.pdf, id=1390, 867.24pt x 289.08pt>
 File: graphics/paper_4/average_load_profile_dispatch.pdf Graphic file (type pdf)
 <use graphics/paper_4/average_load_profile_dispatch.pdf>
 Package pdftex.def Info: graphics/paper_4/average_load_profile_dispatch.pdf  used on input line 1058.
@@ -2834,22 +2884,26 @@ chapter 6.
 
 ]
 chapter without number
-LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 343.
+LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 345.
 (C:\Users\simuser\AppData\Local\Programs\MiKTeX\tex/latex/lm\t1lmtt.fd
 File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
+
+Package biblatex Warning: No driver for 'legislation'.
+(biblatex)                Using fallback driver on input line 345.
+
+
+Package biblatex Warning: No driver for 'legislation'.
+(biblatex)                Using fallback driver on input line 345.
+
+
 
 [73
 
 
 ]
-Overfull \hbox (6.57706pt too wide) in paragraph at lines 354--354
-\T1/lmr/m/n/10.95 Avail-able: [][]$\T1/lmtt/m/n/10.95 https : / / www . sciencedirect . com / science / article / pii / S0360544225010941$[][] 
- []
-
-
-Overfull \hbox (20.50853pt too wide) in paragraph at lines 354--354
-[]\T1/lmr/m/n/10.95 BMK, \T1/lmr/m/it/10.95 Öster-re-ich un-ter-wegs 2013/2014\T1/lmr/m/n/10.95 , [][]$\T1/lmtt/m/n/10.95 https : / / www . bmk . gv . at / themen / verkehrsplanung /
+Overfull \hbox (6.57706pt too wide) in paragraph at lines 356--356
+\T1/lmr/m/n/10.95 Avail-able: [][]$\T1/lmtt/m/n/10.95 https : / / www . sciencedirect . com / science / article / pii / S2210670724007327$[][] 
  []
 
 
@@ -2857,37 +2911,44 @@ Overfull \hbox (20.50853pt too wide) in paragraph at lines 354--354
 [74]
 
 [75]
-Overfull \hbox (8.08311pt too wide) in paragraph at lines 354--354
-\T1/lmr/m/n/10.95 cessed: May 19, 2025. [On-line]. Avail-able: [][]$\T1/lmtt/m/n/10.95 https : / / ec . europa . eu / eurostat / databrowser /
+Overfull \hbox (6.57706pt too wide) in paragraph at lines 356--356
+\T1/lmr/m/n/10.95 Avail-able: [][]$\T1/lmtt/m/n/10.95 https : / / www . sciencedirect . com / science / article / pii / S0360544225010941$[][] 
  []
 
 
-Overfull \hbox (8.9162pt too wide) in paragraph at lines 354--354
-\T1/lmtt/m/n/10.95 europa . eu / project / id / 233596$[][]\T1/lmr/m/n/10.95 , Funded by the Eu-ro-pean Union un-der FP7-TRANSPORT,
+Overfull \hbox (20.50853pt too wide) in paragraph at lines 356--356
+[]\T1/lmr/m/n/10.95 BMK, \T1/lmr/m/it/10.95 Öster-re-ich un-ter-wegs 2013/2014\T1/lmr/m/n/10.95 , [][]$\T1/lmtt/m/n/10.95 https : / / www . bmk . gv . at / themen / verkehrsplanung /
  []
 
 
 
 [76]
-Overfull \hbox (7.25494pt too wide) in paragraph at lines 354--354
-\T1/lmr/m/n/10.95 2025-05-20, 2024. [On-line]. Avail-able: [][]$\T1/lmtt/m/n/10.95 https : / / ec . europa . eu / eurostat / cache / metadata /
- []
-
-
-Overfull \hbox (6.57706pt too wide) in paragraph at lines 354--354
-\T1/lmr/m/n/10.95 Avail-able: [][]$\T1/lmtt/m/n/10.95 https : / / www . sciencedirect . com / science / article / pii / S1361920921004065$[][] 
- []
-
-
 
 [77]
-Overfull \hbox (0.5866pt too wide) in paragraph at lines 354--354
-[]\T1/lmr/m/n/10.95 Ente Vasco de la En-ergía, \T1/lmr/m/it/10.95 The basque gov-ern-ment warns that an ad-di-tional 6,000 megawatts
+Overfull \hbox (8.08311pt too wide) in paragraph at lines 356--356
+\T1/lmr/m/n/10.95 cessed: May 19, 2025. [On-line]. Avail-able: [][]$\T1/lmtt/m/n/10.95 https : / / ec . europa . eu / eurostat / databrowser /
+ []
+
+
+Overfull \hbox (8.9162pt too wide) in paragraph at lines 356--356
+\T1/lmtt/m/n/10.95 europa . eu / project / id / 233596$[][]\T1/lmr/m/n/10.95 , Funded by the Eu-ro-pean Union un-der FP7-TRANSPORT,
  []
 
 
 
 [78]
+Overfull \hbox (7.25494pt too wide) in paragraph at lines 356--356
+\T1/lmr/m/n/10.95 2025-05-20, 2024. [On-line]. Avail-able: [][]$\T1/lmtt/m/n/10.95 https : / / ec . europa . eu / eurostat / cache / metadata /
+ []
+
+
+Overfull \hbox (6.57706pt too wide) in paragraph at lines 356--356
+\T1/lmr/m/n/10.95 Avail-able: [][]$\T1/lmtt/m/n/10.95 https : / / www . sciencedirect . com / science / article / pii / S1361920921004065$[][] 
+ []
+
+
+
+[79]
 \Changes@OutFile=\write7
 \openout7 = `thesis_main.soc'.
 
@@ -2896,7 +2957,7 @@ Overfull \hbox (0.5866pt too wide) in paragraph at lines 354--354
 
 
 
-[79]
+[80]
 
 Package longtable Warning: Table widths have changed. Rerun LaTeX.
 
@@ -2922,13 +2983,16 @@ Package logreq Info: Writing requests to 'thesis_main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 58497 strings out of 468149
- 1333036 string characters out of 5430113
+ 58594 strings out of 468149
+ 1336742 string characters out of 5430113
  2190876 words of memory out of 5000000
- 85947 multiletter control sequences out of 15000+600000
+ 86026 multiletter control sequences out of 15000+600000
  735174 words of font info for 134 fonts, out of 8000000 for 9000
  1143 hyphenation exceptions out of 8191
  118i,19n,131p,11272b,2481s stack positions out of 10000i,1000n,20000p,200000b,200000s
+
+pdfTeX warning (dest): name{Hfootnote.8} has been referenced but does not exist, replaced by a fixed one
+
 
 pdfTeX warning (dest): name{Hfootnote.7} has been referenced but does not exist, replaced by a fixed one
 
@@ -2951,9 +3015,9 @@ pdfTeX warning (dest): name{Hfootnote.2} has been referenced but does not exist,
 pdfTeX warning (dest): name{Hfootnote.1} has been referenced but does not exist, replaced by a fixed one
 
 <C:/Users/simuser/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/simuser/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/simuser/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/simuser/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/simuser/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/simuser/AppData/Local/Programs/MiKTeX/fonts/type1/public/eurosym/feymo10.pfb><C:/Users/simuser/AppData/Local/Programs/MiKTeX/fonts/type1/public/eurosym/feymr10.pfb><C:/Users/simuser/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx10.pfb><C:/Users/simuser/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx9.pfb><C:/Users/simuser/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbxi10.pfb><C:/Users/simuser/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmcsc10.pfb><C:/Users/simuser/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmex10.pfb><C:/Users/simuser/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi10.pfb><C:/Users/simuser/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi6.pfb><C:/Users/simuser/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi8.pfb><C:/Users/simuser/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi9.pfb><C:/Users/simuser/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr10.pfb><C:/Users/simuser/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr17.pfb><C:/Users/simuser/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr5.pfb><C:/Users/simuser/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr6.pfb><C:/Users/simuser/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr8.pfb><C:/Users/simuser/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr9.pfb><C:/Users/simuser/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmri10.pfb><C:/Users/simuser/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmri9.pfb><C:/Users/simuser/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmss10.pfb><C:/Users/simuser/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmss12.pfb><C:/Users/simuser/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmssbo10.pfb><C:/Users/simuser/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmssbx10.pfb><C:/Users/simuser/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy10.pfb><C:/Users/simuser/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy6.pfb><C:/Users/simuser/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy8.pfb><C:/Users/simuser/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy9.pfb><C:/Users/simuser/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtt10.pfb>
-Output written on thesis_main.pdf (84 pages, 10691978 bytes).
+Output written on thesis_main.pdf (85 pages, 10709978 bytes).
 PDF statistics:
- 2058 PDF objects out of 2073 (max. 8388607)
- 324 named destinations out of 1000 (max. 500000)
- 725 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 2138 PDF objects out of 2487 (max. 8388607)
+ 342 named destinations out of 1000 (max. 500000)
+ 717 words of extra memory for PDF output out of 10000 (max. 10000000)
 

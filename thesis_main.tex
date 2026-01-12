@@ -48,6 +48,9 @@
 \newlength{\fulllength}
 \setlength{\fulllength}{\textwidth}
 \addtolength{\fulllength}{2\extralength}
+% Font & Encoding (must be before biblatex)
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
 % Bibliography
 \usepackage[
     backend=biber, % using "biber" to compile references (instead of "biblatex")
@@ -68,8 +71,6 @@
 % Enumeration
 \usepackage{enumitem}
 % Font & Encoding
-\usepackage[T1]{fontenc}
-\usepackage[utf8]{inputenc}
 \usepackage[ngerman, english]{babel} % last is default language
 \usepackage[babel=true,strict=true,english=american,german=guillemets]{csquotes}
 \usepackage{lmodern}

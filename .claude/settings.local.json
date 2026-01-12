@@ -8,7 +8,15 @@
       "Bash(python:*)",
       "mcp__ide__getDiagnostics",
       "Bash(grep:*)",
-      "Bash(comm -23:*)"
+      "Bash(comm -23:*)",
+      "Bash(while read key)",
+      "Bash(do if grep -q \"{$key,\" references.bib)",
+      "Bash(then echo \"FOUND: $key\")",
+      "Bash(else echo \"MISSING: $key\")",
+      "Bash(fi:*)",
+      "Bash(done)",
+      "Bash(echo:*)",
+      "Bash(xxd:*)"
     ]
   }
 }
