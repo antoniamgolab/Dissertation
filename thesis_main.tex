@@ -86,7 +86,7 @@
 \usepackage[absolute]{textpos} % use showboxes for draft mode
 \usepackage{soul}
 % Track changes
-\usepackage[final]{changes}  % use [final] to hide all markup, [draft] to show
+\usepackage[final,commandnameprefix=ifneeded]{changes}  % use [final] to hide all markup, [draft] to show
 
 % Zur Farbmarkierung während des Entwurfs
 \usepackage[breakable]{tcolorbox}
@@ -340,8 +340,7 @@
 \input{chapters/F_conclusionandoutlook}
 
 \appendix
-\section{Model validation}
-
+%\input{chapters/appendix}  % Uncomment when appendix content is ready
 
 \printbibliography
 % \bibliographystyle{plain}  % or: unsrt, alpha, abbrv, ieeetr, etc.
