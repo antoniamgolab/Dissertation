@@ -1,7 +1,30 @@
 \chapter{Methods}
     \section{Overview}
         \hl{Überblickstabelle/ ERklärung von Methodiken}
-    
+        For each addressed research question, a tailor-made methodological approach was developed. Within this, three distinct models are formulated. Research questions 2 and 3 are addressed using the same model, which is then adapted to each research question. Model 1 is a static charging station planning tool for highway networks. Model 2, addressing RQ 2 and 3, is for long-term charging infrastructure roll-out. Model 3 is designed to generate hourly charging profiles for regional and interregional travel. Table \ref{tab:methodology_overview} displays the core differences in method design. The main differences are in the functionalities and case studies which directly dictate temporal and geographic scopes and scales.
+            % \begin{table}[htbp]
+            % \centering
+            % \caption{Overview of methodological approaches employed in this thesis}
+            % \label{tab:methodology_overview}
+            % \small
+            % \begin{tabular}{p{1.5cm}p{1.5cm}p{2.5cm}p{1.8cm}p{1.5cm}p{2cm}p{1.5cm}}
+            % \toprule
+            % \textbf{Model} & \textbf{Paper/Study} & \textbf{Primary Functionality} & \textbf{Temporal Scope} & \textbf{Temporal Scale} & \textbf{Geographic Scope} & \textbf{Geographic Scale} \\
+            % \midrule
+            % [Model 1] & Paper I & Static capacity planning & Single planning year (2030) & Annual & Regional (Basque Country) & Municipal/grid cell \\
+            % \midrule
+            % [Model 2] & Paper II & BEV adoption dynamics + capacity expansion & Multi-year (2020-2040) & Yearly & Corridor (TEN-T Scand-Med) & Corridor segments \\
+            % \midrule
+            % \multirow{2}{1.5cm}{[Model 3]} & Paper III & Operational optimization with hourly profiles & Representative weeks & Hourly & National (Austria) & Grid nodes \\
+            % & Paper IV & [Your description] & [Your scope] & [Your scale] & [Your scope] & [Your scale] \\
+            % \bottomrule
+            % \end{tabular}
+            % \end{table}
+            \hl{there is a table here which is broken and cannot be compiled}
+            Model 1 builds on the graph-based charging infrastructure planning methods \cite{Metais2022}. The planning is for an exogenously defined charging demand for one time slice. The simplicity in temporal dynamics allows the high geographic resolution of the highway network, the demand, intersection, and service area nodes. In model 2, the scope is extended beyond charging capacity planning to include charging capacity planning alongside the adoption of BEVs. For this, year-by-year decisions are introduced, and geographic granularity is coarser. Model 4 is dedicated to the charger utilization at high temporal granularity. 
+
+            Further details on the model design and main modeling assumptions are explained in the following subchapters.
+            
     \section{\textit{Static charging infrastructure planning}} 
     MILP for fast-charging infrastructure sizing and allocation along highway networks (RQ1).
     \subsection{Problem description}
