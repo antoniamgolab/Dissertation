@@ -1,8 +1,282 @@
 \chapter{Discussion \& Synthesis of Results}
 \section{Contextualizing findings in existing literature}
+
+\subsection{Research Question 1}
+\noindent\fbox{\parbox{\dimexpr\textwidth-2\fboxsep-2\fboxrule}{%
+\vspace{0.5em}
+\textit{What are the required fast-charging capacities along Austria's highway network for battery-electric passenger cars under different decarbonization scenarios, and where are these allocated?}
+\vspace{0.5em}
+}}
+
+\paragraph*{Planned capacities}
+This optimization-based approach indicates that Austrian highways require 160-240 MW of fast-charging capacity distributed across 54-55 stations to serve passenger BEVs in 2030. Table~\ref{tab:capacity_comparison} contextualizes these findings against regulatory frameworks and comparable studies.
+
+ The AFIR mandates 600 kW of charging capacity every 60 km for light-duty vehicles along the European TEN-T core network by 2027 \cite{EU2023AFIR}. For Austria's 2,258 km highway network, this translates to a minimum requirement of 22.6 MW.
+
+Moreover, the AFIR mandates that public charging infrastructure should be continuously expanded based on at least 1.3 kW of power output per BEV \cite{EU2023AFIR}. Assuming 30\% electrification of Austria's current passenger car stock of 5.2 million vehicles yields approximately 1.56 million BEVs, translating to around 2 GW of required public charging infrastructure. According to \citet{iea_charging_location_2025}, fast chargers account for 5--6\% of public charging points globally, with highway charging representing a subset of this category. Analysis of Norwegian deployment patterns\footnote{Norway is globally an exception for the relative share of fast chargers.} shows that while highway chargers represent 20\% of total charging points, they account for 35\% of total installed capacity. This 1.75$\times$ capacity-to-points ratio reflects the higher power ratings of highway fast chargers compared to urban AC chargers. Applying this ratio suggests highway charging capacity of approximately 210 MW (6\% of points $\times$ 1.75 $\times$ 2,000 MW), which falls within the range estimated by our optimization approach.
+
+\citet{Jochem2019} estimated 15 charging sites with eight 150 kW points each for Austria under 15\% BEV electrification (18 MW, scaling to 36 MW at 30\%)—approximately one-tenth of our range. This divergence reflects fundamental methodological differences. Their Flow Refueling Location Model (FRLM) minimizes station counts for network coverage using origin-destination flows, with capacity sized via post-optimization queuing models. Our approach directly optimizes both location and capacity based on observed traffic counts, targeting demand fulfillment rather than minimal coverage. These methodological choices create opposing biases: traffic count-based approaches may overestimate by allocating capacity to all highway traffic rather than only inter-regional charging demand, while coverage-based models may underestimate by excluding low-volume flows (<5,000 cars/year) and prioritizing sparse networks. The authors acknowledge this limitation, noting their German FRLM results (128 stations) appear ``absurdly small'' compared to actual deployment (315 stations from one operator alone) \citep[p.~126]{Jochem2019}. Technical assumptions also differ: 350 kW versus 150 kW charging power, which compounds capacity differences for comparable utilization levels.
+
+
+The estimates presented here likely represent an upper bound due to optimistic fleet growth assumptions. While Austria's current BEV share stands at 3.8\%, our analysis assumes 30\% electrification by 2030. Under more conservative fleet projections (approximately 15\% electrification), required highway charging capacity would be proportionally lower, yielding 80--120 MW. However, this analysis already incorporates a 21\% demand reduction through optimized spatial and temporal charging flexibility, partially offsetting the aggressive fleet growth assumption. The resulting range of 80--240 MW thus brackets realistic capacity requirements between conservative fleet growth with demand optimization and ambitious electrification targets.
+
+The sizing methodologies also differ fundamentally between the two studies. \citet{Jochem2019} employ a two-stage approach: the Flow Refueling Location Model first determines station locations and demand allocation, then queuing models size individual stations to maintain target service levels (e.g., waiting times below 5 minutes). This queuing-based approach accounts for stochastic arrival patterns and is widely used in charging infrastructure planning \citep{wevj13090162}. In contrast, our methodology integrates location and capacity decisions within a single cost-optimization framework, sizing stations based on peak hour traffic loads with an assumed utilization target. While queuing models provide probabilistic guarantees on service quality under demand variability, our peak-based sizing enables direct cost-benefit optimization of capacity investments across the network.  
+
+\paragraph*{Geographic allocation}
+
+The optimized allocation distributes capacity across 54--55 charging sites. This aligns with observed deployment trends: 31 sites were operational at the time of model calibration, expanding to 47 sites at service areas by early 2026 \citep{ASFINAG_Rastanlagensuche}, suggesting continued convergence toward the modeled 55-site network. The highest modeled capacity for a single passenger BEV charging site is 4.9 MW, equivalent to approximately 14 charging points at 350 kW each. This capacity level has precedent in Austrian highway infrastructure: one existing service area features 4.8 MW of installed capacity across twelve 400 kW charging points, primarily targeting battery-electric trucks but demonstrating the technical and operational feasibility of multi-megawatt charging sites.
+
+The modeled geographic allocation is primarily driven by existing charging site locations, highway network topology, and a uniform maximum capacity constraint applied across all service areas. This uniform constraint does not reflect site-specific limitations such as available parking spaces or grid connection capacity, which may restrict deployment at individual locations. A notable spatial pattern emerges in the results: charging capacity concentrates near Austria's borders, particularly at network entry and exit points. This edge effect likely constitutes a modeling artifact arising from the constraint that all charging demand must be satisfied within the Austrian network, thereby neglecting the option for cross-border charging in neighboring countries. The allocation ensures at least one charging site per highway segment, defined by major junctions or service area spacing.
+
+\paragraph*{Drivers in decarbonization scenarios}
+Different scenarios were used to account for uncertainties in the possible developments in the transport sector. Further, sensitivity analyses were conducted on specific parameters. The focus was on uncertainties in the charging demand and technological parameters, reflecting diverging developments in the vehicle's battery technology, driving range and charging power.
+
+Investment costs scale nearly proportionally with charging demand. A 31\% demand reduction decreases total investment from 100 million EUR to 68 million EUR (32\% cost reduction), while a 17\% demand reduction yields 18 million EUR savings (18\% cost reduction). Higher charging power produces comparable cost benefits: increasing from the baseline 350 kW per charging point reduces required capacity similarly to demand reduction or vehicle efficiency improvements, as fewer charging points are needed to serve the same traffic volume.
+
+In contrast to this, we observe a limited impact on required capacities by the increase in driving range. This is in line with the observations by \citet{Wang2018} and \citet{NUGROHO2025101470}. 
+
+% What does this mean for the capacity planning? 
+
+\begin{table}[H]
+\centering
+\caption{Comparison of Fast-Charging Infrastructure Capacity Estimates for Austrian Highways}
+\label{tab:capacity_comparison}
+\small
+\begin{tabular}{@{}lcccp{4.5cm}@{}}
+\toprule
+\textbf{Approach} & \textbf{BEV Share} & \textbf{Capacity (MW)} & \textbf{Target Year} & \textbf{Key Assumptions \& Notes} \\
+\midrule
+
+\textbf{\citet{en15062147}} & 30\% & \textbf{160--240} & 2030 & 
+54--55 stations, 350kW points, traffic count-based, demand reduction 21\%, cost optimization \\
+
+\addlinespace
+
+\textbf{\citet{en15062147} (adjusted)} & 15\%\textsuperscript{a} & \textbf{80--120} & 2030 & 
+Adjusted for more realistic fleet growth trajectory, includes demand reduction \\
+
+\addlinespace
+
+\textbf{AFIR distance-based} & --- & \textbf{22.6} & 2027 & 
+600kW per 60km on TEN-T core, 2,258km network, minimum connectivity requirement \\
+
+\addlinespace
+
+\textbf{AFIR fleet-based} & 30\% & \textbf{$\sim$210} & 2030 & 
+1.3kW per BEV (1.56M BEVs), highway share 35\% of total capacity\textsuperscript{b}, public charging total: 2.03 GW \\
+
+\addlinespace
+
+\textbf{Jochem et al. (2019)} & 15\% & \textbf{18} & 2030 & 
+15 stations, 8 points/station, 150kW, FRLM approach, O/D flows, excludes flows $<$5,000 cars/year \\
+
+\addlinespace
+
+\textbf{Jochem (scaled to 30\%)} & 30\% & \textbf{36} & 2030 & 
+Linear scaling from 15\% scenario, likely underestimate per authors' own assessment\textsuperscript{c} \\
+
+\bottomrule
+\end{tabular}
+
+\vspace{0.3cm}
+\begin{minipage}{\textwidth}
+\footnotesize
+\textsuperscript{a} Accounts for actual electrification trajectory (current: 3.8\% in Austria). \\
+\textsuperscript{b} Based on IEA (2025) global average of 5--6\% highway share of charging points and Norwegian capacity ratio (1.75×). \\
+\textsuperscript{c} Authors note: ``our results [...] seem absurdly small. Today only a single platform provides already 315 FCS [for Germany vs. modeled 128]'' \citep[p.~126]{Jochem2019}.
+\end{minipage}
+
+\end{table}
+
+
+
+
+
+\newpage
+Overall, an constant number of points observed (\dots). Results show or indicate \textit{non-regret} locations. But these are also through the edge of network effect. 
+Range has limited effect mainly due to the network topology and at leat one charging station per segment is al
+Jochem et al plans 15 locations, while we plan \dots .
+
+The biggest charging station indicates \dots MW which, in the implementation, would be challenged by the limited space. Therefore redistribution in the implementation. Harder upper limits should be imposed. 
+also how does this relate to the 60 locations of asfinag? 
+\newpage 
+\paragraph*{What is actually relevant in the demand scenarios? }
+
+
+Outline of the discussion
+\begin{itemize}
+    \item Paragraph 1: \textbf{required charging capacities:} How do these values fit to values in literature? Why are these values different if they are? 
+    \begin{itemize}
+        \item there are no previous directly from literature to compare (maybe jochem values?)
+        \item vs. AFIR target per km of highway? fleet 
+        \item then ICCT for kw/BEV + indication for underestimation in AFIR targets
+        \item also maybe a comparison in absolute demand value of BEVs for the highway compared to the capacity planned and then also discuss this
+        \item compare to the asfinag data and investments into service areas (service areas alone + service areas + parking stations)/ how many would it be? 
+        \item What is the simplified approach of our? vs capacitated flow capturing vs. queuing theory 
+        \item c
+    \end{itemize}
+
+    \begin{table}[htbp]
+    \centering
+    \caption{Comparison of MW Requirements for Austrian Highway Fast Charging in 2030}
+    \label{tab:mw_comparison}
+    \small
+    \begin{tabularx}{\textwidth}{>{\raggedright\arraybackslash}p{3.5cm} >{\raggedright\arraybackslash}p{3cm} >{\raggedright\arraybackslash}p{2.5cm} >{\raggedright\arraybackslash}p{1.8cm} >{\raggedright\arraybackslash}X}
+    \toprule
+    \textbf{Approach} & \textbf{Methodology} & \textbf{Network Scope} & \textbf{MW Required} & \textbf{Notes} \\
+    \midrule
+    AFIR Distance-Based (LDVs) & 600 kW per pool every 60 km & TEN-T core ($\sim$1,169 km) & \textbf{$\sim$24 MW} & Minimum corridor coverage only; 40 pools $\times$ 0.6 MW \\
+    \addlinespace
+    AFIR Distance-Based (HDVs) & 3,600 kW per pool every 60 km & TEN-T core ($\sim$1,169 km) & \textbf{$\sim$144 MW} & Heavy-duty vehicles; 40 pools $\times$ 3.6 MW \\
+    \addlinespace
+    AFIR Fleet-Based (Total Public) & 1.3 kW per BEV nationwide & All public locations & \textbf{$\sim$1,014 MW} & Assumes 780,000 BEVs (15\% share); includes urban + highway \\
+    \addlinespace
+    Estimated Highway Share of Fleet-Based & $\sim$5\% of total public capacity & Highways only & \textbf{$\sim$50 MW} & Based on IEA data showing 4--6\% of charging points on highways \\
+    \addlinespace
+    Zwickl-Bernhard et al. (2022) & Optimization model for passenger cars & Full Austrian highway network (2,186 km) & \textbf{160 MW} & 146 MW additional + 14 MW existing; cost-optimal allocation \\
+    \addlinespace
+    Your Results & [To be specified] & [To be specified] & \textbf{[Your value]} & [Your methodology notes] \\
+    \bottomrule
+    \end{tabularx}
+    \end{table}
+    \item Paragraph 2: \textbf{geographic allocation:} -\textit{no regret locations indicated}; also by current infrastructure; but sizing of locations big! but there are certain which are due to: (A) the allocation at edge of network +  minimum infrastructure to supply that is robust to range; i.e, no regret; but what about the implementation of these? how big are the charging stations? (the capacity?) is this realistic? how do we create the space; redistribution essentially needed (current ASFINAG is doing this in austria[supporting the installation through upfront reinforcement of grid connection], to avoid unwanted exiting and entering traffic to the highways)
+    
+    \item Paragraph 3: The range thingy is in line with literature! \textit{What about the power levels?} / saturation of charging site requirements in response to higher ranges 
+
+    \item Paragraph 4: What uncertainties do we now have tested? what is the most impactful? what is most uncertain in \textit{reality}? given that we also considered modal shift etc. 
+
+    \item cross-boarder perspective is missing; therefore we see the boarder-allocated charging sites
+    \item competing trucks? for charger capacity
+    \item not included grid limitations + SPACe limitations 
+    \item 
+\end{itemize}
+
+\newpage
+\subsection{Adequacy and Robustness of Capacity Estimates}
+\begin{itemize}
+    \item Whether the 160-285 MW range across scenarios adequately covers the uncertainty space, or if more extreme scenarios are plausible
+    \item Confidence level in your estimates—what are the key sources of uncertainty?
+    \item How sensitive results are to assumptions that weren't varied in scenarios (e.g., circuity factors, charging behavior, seasonal variations)
+    \item Whether the 11x expansion from current 14 MW is realistic by 2030 or if implementation barriers will constrain actual deployment
+\end{itemize}
+
+\subsection{Spatial Allocation Logic and Patterns}
+\begin{itemize}
+    \item \textbf{Why these locations?} What drives the optimal allocation pattern—is it primarily traffic volume, network geometry, existing infrastructure, or geographic coverage requirements?
+    \item The Vienna concentration (10/24 new stations): Is this demand-driven, network topology-driven, or an artifact of model formulation?
+    \item The 34 "permanent stations" finding: What does this reveal about fundamental network requirements vs. scenario-dependent locations?
+    \item Border station requirements: Are these genuine optimal locations or boundary effects from your model formulation?
+\end{itemize}
+
+\subsection{Comparison to Current/Planned Infrastructure}
+\begin{itemize}
+    \item How your modeled allocation compares to actual deployment plans by Austria, charging operators, or AFIR requirements
+    \item Whether current infrastructure is well-positioned (11 of 34 permanent stations exist) or if significant repositioning is needed
+    \item Implications of path dependency—are we locked into suboptimal locations by existing investments?
+    \item Gap analysis: Where are the biggest mismatches between current/planned and optimal infrastructure?
+\end{itemize}
+
+\subsection{Scenario Differentiation and Key Drivers}
+\begin{itemize}
+    \item \textbf{Why such large cost differences (85\%)?} Decompose the drivers—is it primarily BEV share ($\epsilon$), charging power, range, or traffic reduction?
+    \item Your cost reduction analysis (Section \ref{sub:res_costred}) is critical here: charging power yields 34\% reduction, traffic reduction yields 18-32\%, range yields 0\%
+    \item Which scenario parameters are most influential vs. which are relatively inconsequential?
+    \item What does this reveal about where policy/technology efforts should focus?
+\end{itemize}
+
+\subsection{Temporal Dynamics and Deployment Pathway}
+\begin{itemize}
+    \item Your analysis is a 2030 snapshot—but how should deployment proceed from now until 2030?
+    \item Should all 54-68 stations be built immediately or phased? If phased, what's the optimal sequence?
+    \item The permanent 34 stations suggest an initial priority list—discuss this as a robust minimum network
+    \item How does the answer change if considering 2025, 2027, 2030, 2035 horizons?
+\end{itemize}
+
+\subsection{Demand Coverage and Service Quality}
+\begin{itemize}
+    \item You enforce complete demand coverage—discuss whether this is realistic/necessary or if 95-98\% coverage with lower costs might be preferable
+    \item What "adequate" coverage means: Is it just technical feasibility or does it include convenience, waiting times, range anxiety mitigation?
+    \item Trade-offs between coverage completeness and economic efficiency
+    \item Whether your model captures queuing/congestion effects (or if assuming adequate capacity means no waiting)
+\end{itemize}
+
+\subsection{Practical Feasibility and Implementation Barriers}
+\begin{itemize}
+    \item \textbf{Site availability}: Are all your optimal locations actually feasible (land availability, permitting, environmental constraints)?
+    \item \textbf{Grid capacity}: Can the electrical grid support 160-285 MW additional load at these specific locations?
+    \item \textbf{Financing}: €54-100 million investment—who pays? Public, private, PPP? Does financing model affect optimal allocation?
+    \item \textbf{Institutional coordination}: Highway operators, grid operators, charging operators, regulators—how does fragmented decision-making affect implementation?
+\end{itemize}
+
+\subsection{Generalizability and Transferability}
+\begin{itemize}
+    \item Which findings are Austria-specific (network topology, existing infrastructure, traffic patterns) vs. generalizable?
+    \item How would results differ for countries with different: highway network density, BEV adoption rates, renewable energy integration, grid capacity?
+    \item Can your methodology/findings inform planning in other contexts (other countries, urban networks, truck charging)?
+\end{itemize}
+
+\subsection{Model Limitations and Assumptions}
+\begin{itemize}
+    \item \textbf{Critical assumptions} that constrain your answer:
+    \begin{itemize}
+        \item 350 kW as standard charging power
+        \item Maximum 12 MW / 34 CP per station
+        \item Complete demand coverage requirement
+        \item Existing infrastructure constraint
+        \item No consideration of competing uses (truck charging, battery storage)
+    \end{itemize}
+    \item How relaxing these might change your capacity/allocation results
+    \item Data limitations (OD flows, traffic projections, charging behavior)
+\end{itemize}
+
+\subsection{Policy and Investment Implications}
+\begin{itemize}
+    \item What your results mean for current Austrian/EU policy (AFIR compliance, national plans)
+    \item Recommended policy priorities: Should policy focus on range, charging power, traffic reduction, or spatial coverage?
+    \item Public vs. private investment roles—which locations/scenarios require public intervention?
+    \item Regulatory considerations: standardization, grid access, pricing, interoperability
+\end{itemize}
+
+\subsection{Technology Evolution Considerations}
+\begin{itemize}
+    \item Your 2030 timeframe coincides with rapid technology change—how do emerging technologies (800V systems, megawatt charging, vehicle-to-grid) affect your conclusions?
+    \item The charging power sensitivity (34\% cost reduction) suggests technology development pathways matter more than you might initially expect
+    \item Should infrastructure be designed for 2030 needs or 2040 flexibility?
+\end{itemize}
+
+\subsection{Integration with Broader Transport Decarbonization}
+\begin{itemize}
+    \item Your results in context of Austria's overall transport decarbonization goals
+    \item Interaction with other measures (public transport, mode shift, truck electrification)
+    \item Whether highway fast-charging is the binding constraint for BEV adoption or if home/workplace charging matters more
+    \item Cost-effectiveness: Is €54-100M for highway infrastructure a good use of decarbonization funds compared to alternatives?
+\end{itemize}
 \section{Synthesis}
+\begin{itemize}
+    \item paper 1: comparison of different range-dependent developments= results in that we need stylized network analysis; that is case-study focused based on network topologies (future work?)
+    \item paper 1: boarder effects/ cross boarder perspective needed
+    \item paper 1: translating the results to reality (big charging points) assumption of model vs reality: space isssue 
+    \item paper 1: saturation effects due to network topology (also in line with the literature) 
+    \item paper 1: The "permanent stations" finding: 34 locations appear in all range scenarios, with only 11 being existing stations. Discuss whether this reveals fundamental network geometry constraints and what it means for near-term investment priorities. -- this can indicates the importance of no-regret investments
+    \item paper 1: Austria-specific vs. generalizable findings: Your results are for Austria's highway network. Discuss which findings (e.g., power>range, permanent stations, densification threshold) are likely generalizable vs. context-dependent.
+    \item paper 1: Cost benchmarking: Your €/BEV costs (€39-€72) and €/kW costs (~€368) should be contextualized. Discuss whether these are consistent with other studies/countries and what drives differences.
+    \item paper 1: also embed this into the Austria Mobility strategy 
+    \item paper 1: maybe also reference the asfinag plans 
+    \item paper 1: Whether the 160-285 MW range across scenarios adequately covers the uncertainty space, or if more extreme scenarios are plausible
+    \item paper 1: Confidence level in your estimates—what are the key sources of uncertainty?
+    \item paper 1: Whether the 11x expansion from current 14 MW is realistic by 2030 or if implementation barriers will constrain actual deployment
+\end{itemize}
+
+\section{Research question 2}
+
+\begin{itemize}
+    \item very few to none investigation of spatial patterns? relative allocations? on the adoption
+    \item cost-minimization approach / perspective
+    \item critically discuss the home charger assumption
+\end{itemize}
 does it make sense to look at these seperately?
-Overarching question: where are future charging loads? 2  aspects: utilization a
+Overarching question: where are future charging loads? 2  aspects
+\textit{I could do a general synthesis here. going back to the dimensions of my contributions circle --- regional, interregional, light-duty/heavy-duty }
 %\section{Findings referring to research questions}
 
 %\section{Limitations and strengths}

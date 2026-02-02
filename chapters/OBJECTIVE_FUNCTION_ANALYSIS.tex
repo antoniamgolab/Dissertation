@@ -1,0 +1,203 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{booktabs}
+\usepackage{amsmath}
+\usepackage{geometry}
+\usepackage{hyperref}
+\usepackage{xcolor}
+
+\geometry{margin=2.5cm}
+
+\title{Objective Function Analysis\\Basque Country Case Study}
+\author{TransComp Model Documentation}
+\date{January 2026}
+
+\begin{document}
+
+\maketitle
+
+\section{Overview}
+
+The optimization model's objective function value ($\sim$185.6 trillion EUR) is dominated by \textbf{budget constraint penalties}, not actual system costs. This document explains the breakdown and provides guidance for interpreting results.
+
+\section{Objective Function Breakdown}
+
+\subsection{Total Objective Value: $\sim$185.6 trillion EUR}
+
+\begin{table}[h]
+\centering
+\begin{tabular}{lrr}
+\toprule
+\textbf{Component} & \textbf{Contribution} & \textbf{\% of Objective} \\
+\midrule
+Budget penalties (discounted) & $\sim$137 trillion EUR & $\sim$74\% \\
+Other soft costs (VOT, LOS, etc.) & $\sim$48 trillion EUR & $\sim$26\% \\
+\textbf{Real physical costs} & \textbf{$\sim$64 billion EUR} & \textbf{0.035\%} \\
+\bottomrule
+\end{tabular}
+\caption{Objective function breakdown by component type}
+\end{table}
+
+\section{Real System Costs}
+
+Discounted at 5\% annual rate from base year 2020.
+
+\begin{table}[h]
+\centering
+\begin{tabular}{lrr}
+\toprule
+\textbf{Cost Component} & \textbf{Value} & \textbf{\% of Real Costs} \\
+\midrule
+Vehicle purchases & 55.4 billion EUR & 86\% \\
+Maintenance & 5.8 billion EUR & 9\% \\
+Energy/fuel & 3.1 billion EUR & 5\% \\
+Infrastructure & 44 million EUR & $<$0.1\% \\
+\midrule
+\textbf{TOTAL} & \textbf{64.3 billion EUR} & 100\% \\
+\bottomrule
+\end{tabular}
+\caption{Real system costs (discounted, 5\% rate)}
+\end{table}
+
+\section{Budget Penalty Mechanism}
+
+\subsection{How It Works}
+
+The model uses soft budget constraints with the formula:
+\begin{equation}
+\text{spending} \leq \text{budget} + \text{budget\_penalty\_plus} - \text{budget\_penalty\_minus}
+\end{equation}
+
+Where:
+\begin{itemize}
+    \item \texttt{budget\_penalty\_plus} = amount exceeding budget (penalized)
+    \item \texttt{budget\_penalty\_minus} = amount under budget (also penalized)
+    \item \textbf{Penalty coefficient = 10,000,000 EUR per EUR of violation}
+\end{itemize}
+
+\subsection{Why Such a Large Penalty?}
+
+The 10M EUR penalty is a ``big-M'' numerical trick to:
+\begin{enumerate}
+    \item Make budget constraints nearly binding (households almost never exceed)
+    \item Allow tiny violations for model feasibility
+    \item Ensure the solver can find solutions even with tight budgets
+\end{enumerate}
+
+\subsection{Actual Budget Violations} 
+
+\begin{table}[h]
+\centering
+\begin{tabular}{lrrr}
+\toprule
+\textbf{Income Group} & \textbf{Vehicles Purchased} & \textbf{Total Violation} & \textbf{Violation/Vehicle} \\
+\midrule
+Q1 (lowest) & 361,603 & 112M EUR & 310 EUR \\
+Q2 & 463,089 & 129M EUR & 278 EUR \\
+Q3 & 634,907 & 127M EUR & 200 EUR \\
+Q4 & 992,555 & 13.5M EUR & 14 EUR \\
+Q5 (highest) & 2,407,240 & 0 EUR & 0 EUR \\
+\bottomrule
+\end{tabular}
+\caption{Budget violations by income quintile}
+\end{table}
+
+\textbf{Total actual budget excess: 381 million EUR} (0.27\% of vehicle spending)
+
+In objective function: $381\text{M EUR} \times 10\text{M penalty} = 3{,}800$ trillion EUR (before discounting)
+
+\section{Implications for Sensitivity Analysis}
+
+\subsection{MIP Gap Interpretation}
+
+With objective $\sim$185.6 trillion EUR and MIP gap of 0.01\%:
+\begin{itemize}
+    \item Threshold for significance: $\sim$18.5 billion EUR difference
+    \item This is $\sim$300$\times$ the total infrastructure cost
+    \item Small \% changes in objective are dominated by penalty changes, not real cost changes
+\end{itemize}
+
+\subsection{VOT Sensitivity Results}
+
+\begin{table}[h]
+\centering
+\begin{tabular}{lr}
+\toprule
+\textbf{Metric} & \textbf{Value} \\
+\midrule
+Objective spread & $\sim$28 billion EUR (0.015\%) \\
+Significance threshold & $\sim$37 billion EUR (0.02\%) \\
+Result & Borderline significant \\
+\bottomrule
+\end{tabular}
+\caption{VOT sensitivity analysis summary}
+\end{table}
+
+\subsection{Alpha (Circuity) Sensitivity Results}
+
+\begin{table}[h]
+\centering
+\begin{tabular}{lr}
+\toprule
+\textbf{Metric} & \textbf{Value} \\
+\midrule
+Objective spread & $\sim$8 billion EUR (0.004\%) \\
+Significance threshold & $\sim$18 billion EUR (0.01\%) \\
+Result & NOT statistically significant \\
+\bottomrule
+\end{tabular}
+\caption{Alpha sensitivity analysis summary}
+\end{table}
+
+\section{Recommendations}
+
+\subsection{For Reporting Results}
+
+\begin{enumerate}
+    \item \textbf{Report real system costs separately} from objective value
+    \item \textbf{Focus on distributional outcomes} (who buys EVs, who uses which chargers) rather than total cost differences
+    \item \textbf{Frame sensitivity results} as showing model stability, not cost sensitivity
+\end{enumerate}
+
+\subsection{Suggested Framing}
+
+\begin{quote}
+``The sensitivity analysis reveals that total system costs are robust to variations in [parameter] ($<$0.02\% variation in objective), indicating model stability. However, distributional outcomes---particularly charging infrastructure access for lower-income groups---show meaningful variation across scenarios.''
+\end{quote}
+
+\subsection{For Future Model Runs}
+
+Consider:
+\begin{enumerate}
+    \item Reducing penalty coefficient if budget constraint violations are acceptable
+    \item Reporting a ``real cost'' metric alongside the objective
+    \item Using tighter MIP gaps only when comparing scenarios with expected large differences
+\end{enumerate}
+
+\section{Technical Details}
+
+\begin{table}[h]
+\centering
+\begin{tabular}{ll}
+\toprule
+\textbf{Parameter} & \textbf{Value} \\
+\midrule
+Discount rate & 5\% annual \\
+Time horizon & 2020--2060 (40 years) \\
+Investment periods & Every 5 years \\
+\texttt{budget\_penalty\_plus} & 10,000,000 EUR \\
+\texttt{budget\_penalty\_minus} & 10,000,000 EUR \\
+\texttt{budget\_penalty\_yearly\_plus} & 10,000,000 EUR \\
+\texttt{budget\_penalty\_yearly\_minus} & 10,000,000 EUR \\
+\bottomrule
+\end{tabular}
+\caption{Key model parameters}
+\end{table}
+
+\vspace{1cm}
+\noindent\rule{\textwidth}{0.4pt}
+
+\noindent\textit{Generated: January 2026}\\
+\noindent\textit{Case Study: cs\_concentrated\_revised\_2026-01-26\_00-48-33}
+
+\end{document}
