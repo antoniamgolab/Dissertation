@@ -93,184 +93,179 @@ Linear scaling from 15\% scenario, likely underestimate per authors' own assessm
 
 
 \newpage
-Overall, an constant number of points observed (\dots). Results show or indicate \textit{non-regret} locations. But these are also through the edge of network effect. 
-Range has limited effect mainly due to the network topology and at leat one charging station per segment is al
-Jochem et al plans 15 locations, while we plan \dots .
 
-The biggest charging station indicates \dots MW which, in the implementation, would be challenged by the limited space. Therefore redistribution in the implementation. Harder upper limits should be imposed. 
-also how does this relate to the 60 locations of asfinag? 
-\newpage 
-\paragraph*{What is actually relevant in the demand scenarios? }
+\subsection{Research question 2}
+\hl{not 100\% happy with this discussion yet}
+\noindent\fbox{\parbox{\dimexpr\textwidth-2\fboxsep-2\fboxrule}{%
+\vspace{0.5em}
+\textit{How does public charging infrastructure expansion influence BEV adoption spatially, both within regions across different income groups and across regional borders through spillover effects?}
+\vspace{0.5em}
+}}
+\paragraph*{Impact between spatial density and BEV adoption across income class levels}
+
+The scenarios differentiated by strategy in the spatial densification of charging infrastructure roll-out lead to distinct solutions for cost-optimal infrastructure expansion, the adoption of BEVs across consumer groups, and the allocation of charging processes to different types of chargers. The following relation is evident: Higher spatial density of public charging infrastructure leads to higher adoption among lower-income groups. This is observable during the years 2020-2045. 
+ This highlights the importance of accounting for income-related differences in consumer behavior when planning charging infrastructure and developing optimization frameworks for passenger car electrification. The particular feature that needs to be accounted for is the income-dependent willingness to detour and spend time recharging.   
 
 
-Outline of the discussion
+ 
+
+% Empirical studies have found that there are evident disparities in charging infrastructure deployment that correlate with household income levels in neighborhoods. 
+
+The results underscore the importance of planning public charging infrastructure with spatial equity considerations to ensure all neighborhoods have sufficient access. This aligns with the objectives of existing charging planning tools that prioritize equitable charger distribution \citep{BATIC2025135834, info16110933}. Our findings further emphasize that beyond just enabling uniform recharging conformity, neighborhood-level equity in charger deployment is crucial for supporting BEV adoption across all consumer groups. By contextualizing the localized infrastructure needs within the broader goals of transport electrification, spatial planners, planners for public charging infrastructure and policy makers can develop targeted strategies to address charging gaps that may disproportionately affect consumers of lower income.
+
+Moreover, our findings emphasize the importance of defining expansion goals that are not solely based on the capacity or charging point per BEV, but complementary requirements that are based on maximum spacing within the road transport network. Currently, the AFIR defines a BEV count-based definition at the country level and distance-based for highways \cite{transport2024afir}. 
+
+
+
+
+\paragraph*{Charger utilization}
+
+Despite facing both longer detour times to reach fast chargers and longer charging durations, cost-optimal solutions indicate BEV adoption in lower-income groups. This occurs because their lower valuation of time makes the time consumption of fast charging less costly in monetary terms than for higher-income groups. From the system perspective of meeting passenger car travel demand at minimum cost, BEV adoption by lower-income consumers using fast charging remains economically efficient, even accounting for these time costs. Overall, in the proposed optimization model, the expansion of public fast charging infrastructure is mainly driven by the constraint [REF constraint number], and by the achievable reduction in average detour time determined through the detour fueling time reduction function. 
+
+Throughout all scenarios, we observe that fast charger utilization only grows significantly after 2040. Realistically, this would lead to very high charging prices to cover installations, maintenance, and operation costs [REF]. The pricing and consumer-specific constraints to charging costs are not reflected in the modeling. 
+
+Therefore, the implementation of the 
+implementation of the cost-optimal allocation of the fast-charger capacities and utilization could be, therein, only achievable through lower prices that more effectively reflect the marginal costs of using these charger capacities versus higher prices for slow charging would reflect the convenience of these. Further, at limited public charging capacities --- due to the restricted speed in build-up or restrictions in available space --- fast charging deployment should be subsidized to achieve appropriate pricing of lower income classes, or charging caps should be used. This would not only reflect bettter on the system benefits, and reduce costs for charging but also increase the utilization of the fast chargers. But it is still important here, that this would make it only effective at high fast charger speeds [REF]. 
+Another limitation is here that the model does not reflect the reduced flexiblity through the slow charging process compared to the fast one. The latter interpretation only referes to the \textit{stiff} consideration of mobility patterns on no subjective valuation in the flexibility of car utilization [REF]. 
+
+Concerning the interpretation of the differences in scenarios, the following limitations are relevant to consider: Our approach to linking infrastructure capacity with access time operates at the NUTS-2 level\footnote{Sensitivity analyses examining the detour-reduction function are provided in Section \ref{sec:app_spatialdens}.}, which introduces two important simplifications.
+First, we treat the modeled regions as spatially homogeneous: charger locations are implicitly distributed uniformly, and we hold constant both road network characteristics and residential patterns. This abstraction overlooks variation in urban density and ignores the strategic placement of charging infrastructure at trip attractors (shopping centers, workplaces, etc.), which in practice substantially reduces access times without requiring additional detours.
+Second, our formulation does not capture congestion dynamics at individual charging sites. The model assumes drivers possess perfect information about charger availability and can always access their nearest station without queuing or searching for an available plug. In reality, sites with limited capacity may force drivers to visit multiple locations before finding an open charging point—a phenomenon analyzed by \cite{WOLBERTUS2021262}. We effectively assume zero probability of encountering occupied chargers, implying that drivers never incur additional search time beyond the initial detour.
+
+Another strict constraint that is most likely keeping the adoption number in the lower income classes low, is the restricted deployment of home chargers. While this strong assumption was indicated to explore the role of public charging infrastructure, in the limited access to home charging, realistic adoption numbers would be higher in the lower income classes as home charging provides great convinience. Nevertheless, this most likely does not impact the main insights. To address the impact of this limitation, we provide results on a sensitivity analysis on this in the Appendix \hl{\dots TODO}.
+
+
+% Therefore, based on our modeling, the fast charging opportunity does not need to be allocated 
+
+\begin{comment}
 \begin{itemize}
-    \item Paragraph 1: \textbf{required charging capacities:} How do these values fit to values in literature? Why are these values different if they are? 
-    \begin{itemize}
-        \item there are no previous directly from literature to compare (maybe jochem values?)
-        \item vs. AFIR target per km of highway? fleet 
-        \item then ICCT for kw/BEV + indication for underestimation in AFIR targets
-        \item also maybe a comparison in absolute demand value of BEVs for the highway compared to the capacity planned and then also discuss this
-        \item compare to the asfinag data and investments into service areas (service areas alone + service areas + parking stations)/ how many would it be? 
-        \item What is the simplified approach of our? vs capacitated flow capturing vs. queuing theory 
-        \item c
-    \end{itemize}
-
-    \begin{table}[htbp]
-    \centering
-    \caption{Comparison of MW Requirements for Austrian Highway Fast Charging in 2030}
-    \label{tab:mw_comparison}
-    \small
-    \begin{tabularx}{\textwidth}{>{\raggedright\arraybackslash}p{3.5cm} >{\raggedright\arraybackslash}p{3cm} >{\raggedright\arraybackslash}p{2.5cm} >{\raggedright\arraybackslash}p{1.8cm} >{\raggedright\arraybackslash}X}
-    \toprule
-    \textbf{Approach} & \textbf{Methodology} & \textbf{Network Scope} & \textbf{MW Required} & \textbf{Notes} \\
-    \midrule
-    AFIR Distance-Based (LDVs) & 600 kW per pool every 60 km & TEN-T core ($\sim$1,169 km) & \textbf{$\sim$24 MW} & Minimum corridor coverage only; 40 pools $\times$ 0.6 MW \\
-    \addlinespace
-    AFIR Distance-Based (HDVs) & 3,600 kW per pool every 60 km & TEN-T core ($\sim$1,169 km) & \textbf{$\sim$144 MW} & Heavy-duty vehicles; 40 pools $\times$ 3.6 MW \\
-    \addlinespace
-    AFIR Fleet-Based (Total Public) & 1.3 kW per BEV nationwide & All public locations & \textbf{$\sim$1,014 MW} & Assumes 780,000 BEVs (15\% share); includes urban + highway \\
-    \addlinespace
-    Estimated Highway Share of Fleet-Based & $\sim$5\% of total public capacity & Highways only & \textbf{$\sim$50 MW} & Based on IEA data showing 4--6\% of charging points on highways \\
-    \addlinespace
-    Zwickl-Bernhard et al. (2022) & Optimization model for passenger cars & Full Austrian highway network (2,186 km) & \textbf{160 MW} & 146 MW additional + 14 MW existing; cost-optimal allocation \\
-    \addlinespace
-    Your Results & [To be specified] & [To be specified] & \textbf{[Your value]} & [Your methodology notes] \\
-    \bottomrule
-    \end{tabularx}
-    \end{table}
-    \item Paragraph 2: \textbf{geographic allocation:} -\textit{no regret locations indicated}; also by current infrastructure; but sizing of locations big! but there are certain which are due to: (A) the allocation at edge of network +  minimum infrastructure to supply that is robust to range; i.e, no regret; but what about the implementation of these? how big are the charging stations? (the capacity?) is this realistic? how do we create the space; redistribution essentially needed (current ASFINAG is doing this in austria[supporting the installation through upfront reinforcement of grid connection], to avoid unwanted exiting and entering traffic to the highways)
+    \item from empirical and cost of ownership studies: barrier on the affordability of bevs 
+    \item from empirical studies: charging infrastructure is allocated in only early-adopter neighborhoods
+    \item from charging infrastructure capacity planning: strong neighborhood perspective; with endogenously given charging demand that \textit{needs the coverage}; so equity-aware charger planning 
     
-    \item Paragraph 3: The range thingy is in line with literature! \textit{What about the power levels?} / saturation of charging site requirements in response to higher ranges 
+    \item from vot-related studies: value of time tattini and luh: into system-optimization approach: consider the 
+    \item \textit{our paper:} insights towards more homogeneous distribution of income classes; and via the value of time; 
+    \begin{itemize}
+        \item we minimize costs for covering total, while considering consumer group related differences (VoT and budget constriants) 
+        \item includes tangible + intangible costs
+        \item the social planner covers costs 
+        \item under the imposed constraints, in charging infrastructure expansion, home charger availability, and adoption of new technology, as well as consumer-group-specific budget constraints.
+        \item therefore, what we gain from our results is: 
+        \begin{itemize}
+            \item (1) under high-fast charger density, we observe that for lower income groups, despite also the charging times of fast chargers, supports transition
+            \item (2) issue in reality: the pricing which is not captured by the model 
+            \item (3) two ways: either reduce prices of fast chargers, or increasingly build low density fast charger network 
+            \item (4) high density charger network (and affordable!) can trigger and support uptake in lower income groups
+        \end{itemize}
+         
+    \end{itemize}
+    \item \textit{So what is the benefit of our outcomes?}  
+\end{itemize}
 
-    \item Paragraph 4: What uncertainties do we now have tested? what is the most impactful? what is most uncertain in \textit{reality}? given that we also considered modal shift etc. 
 
-    \item cross-boarder perspective is missing; therefore we see the boarder-allocated charging sites
-    \item competing trucks? for charger capacity
-    \item not included grid limitations + SPACe limitations 
+This implies that value of ti
+
+\begin{itemize} 
+    \item Different outcomes in results and patterns among the scenario in the adoption of the 
+    \item indicates the relevance of the considerations that cross-impacts on the adoption of different income classes 
+    \item and more dense spatial density implicates more adoption in lower-income classes
+\end{itemize}
+\begin{itemize}
+    \item how does this match with the existing literature? 
+    \item does it match? it gives complementary/new insights! 
+    \item complementary to the neighborhood perspective: makes sense because its addressing the overarching strategy in deployment
+    \item what do we gain from this for the information? 
+    \item based on what we know \dots 
+    \item what do we know? 
+    \begin{itemize}
+        \item we know about evident disparities (from empricial research)
+        \item we know about that detour times are evidently weighting in the decision to charge (Luh implemented this in the modeling)
+        \item we know that there are income-level-related differences in the mobility patterns and transition to BEVs (tattini)
+        \item so we observe that early on spatially dense approaches are more supportive for low income 
+    \end{itemize}
+    \item in the implementation: singular deployment of charging stations 
+    \item fast charger: allocated to low income classes --- i.e. the value of time is very relevant here, the required time to be used for fast-charging is lower 
+\end{itemize}
+
+\textit{Under which limitations do we make this observation}
+
+\begin{itemize}
+    \item model: system-cost-optimization
+    \item only via budget constraints and penalties for purchase but not charging 
+    \item therefore we have a system optimal allocation which are dictated through the varying value of times.
+    \item therefore: system optimally it is more cost-effective to allocate the the utilization 
+    \item limitation: detour timing 
+    \item techno-economic optimization; purchase decision (in the empirical findings are not found to foresee the accessibility) 
+
+\end{itemize}
+
+\paragraph*{Charging infrastructure utilization}
+
+\begin{itemize}
+    \item Fast chargers more build due to also constraint on the share, but in the concentrated strategy: more expanded; also because of more expansion leads to lower detour time, which is then reached in 2050, and uptake visible in 2050
+    \item slow chargers play an important role, have higher utilization 
+    \item what are the differences driven by in the model? (\textit{discussion on limitations \dots })
+    \item home charging limitation
+    \item work charging limitations
+\end{itemize}
+
+\textit{WHat are indications for charging infrastructure expansion? the policy makers?}
+
+\begin{itemize}
+    \item fast charging: teh length of charging process not so determining 
+    \item pricing of fc should be subsidized, in the case of limited capacity expansions
+    \item do spatially dense charging infrastructure (positive impact is evident) 
     \item 
 \end{itemize}
 
-\newpage
-\subsection{Adequacy and Robustness of Capacity Estimates}
-\begin{itemize}
-    \item Whether the 160-285 MW range across scenarios adequately covers the uncertainty space, or if more extreme scenarios are plausible
-    \item Confidence level in your estimates—what are the key sources of uncertainty?
-    \item How sensitive results are to assumptions that weren't varied in scenarios (e.g., circuity factors, charging behavior, seasonal variations)
-    \item Whether the 11x expansion from current 14 MW is realistic by 2030 or if implementation barriers will constrain actual deployment
+
+\end{comment}
+
+
+\paragraph*{Cross-boarder effects}
+Enhanced charging deployment in Bizkaia generates spillover effects in both Araba and Gipuzkoa, though the magnitude remains modest (electrification share increases by at most 2.1\%) and varies substantially between the two neighboring regions.
+The asymmetric response across regions likely stems from differences in mobility patterns captured in the input data. When examining commuting-specific adoption versus fleet-wide electrification trends, a mechanism emerges: expanded destination-region capacity enables commuters to charge at their workplace or destination, thereby releasing origin-region infrastructure to serve local, non-commuting vehicle use. The elevated utilization rates observed for public charging infrastructure support this reallocation dynamic.
+However, fully characterizing these cross-regional dynamics and explaining the observed asymmetries would require addressing several methodological and data limitations.
+% \subsubsection{Limitations} \label{sec:lim_2}
+First, resolving the inconsistent spillover patterns demands methodological extensions in two directions: expanding the geographic scope to include many more regions would enable statistical analysis of spillover determinants, while isolating commuter flows from other trip purposes would clarify their specific contribution. The current framework optimizes system-wide infrastructure deployment and adoption trajectories subject to endogenous capacity decisions and fleet electrification rate constraints—assumptions that presume strong coordination between infrastructure availability and individual vehicle choices, potentially masking heterogeneous regional dynamics.
+Second, a critical data limitation concerns commuter trip volumes. Our baseline draws on 2010 calibrations from the ETISplus project \cite{ETISplus_233596} and extrapolates all trip categories proportionally to GDP growth, as temporal trends distinguishing commuting from other purposes remain unavailable. Spillover magnitudes are highly sensitive to these assumed commuter flows. Additionally, regional trip distance distributions lack validation from Austrian-specific mobility surveys, introducing further uncertainty.
+Despite these caveats, our findings align with empirical evidence of positive spatial spillovers \cite{QIAN2024104400, SELENASHENG2022103256}. We extend this literature by demonstrating spillover emergence within a forward-looking optimization framework that explicitly monetizes user time costs—a departure from retrospective empirical analyses. Like prior work documenting cross-regional effects during early adoption phases, we observe similar patterns in our prospective scenarios
+
+\begin{comment}
+    
+\begin{itemize} 
+    \item what do we now know more? how does this fit to the previous findings on this? 
+    \item mention empirical findings (main points)
+    \item only moderate
+    \item limitation: techno-economic optimization
+    \item no socially driven impacts, only techno-ecnomic
+    \item what drives these results? 
 \end{itemize}
 
-\subsection{Spatial Allocation Logic and Patterns}
+\end{comment}
+
+\subsection{Research Question 3}
+
+\subsection{Research Question 4}
+
 \begin{itemize}
-    \item \textbf{Why these locations?} What drives the optimal allocation pattern—is it primarily traffic volume, network geometry, existing infrastructure, or geographic coverage requirements?
-    \item The Vienna concentration (10/24 new stations): Is this demand-driven, network topology-driven, or an artifact of model formulation?
-    \item The 34 "permanent stations" finding: What does this reveal about fundamental network requirements vs. scenario-dependent locations?
-    \item Border station requirements: Are these genuine optimal locations or boundary effects from your model formulation?
+    \item comparison to literature (\citet{LI2021111962}: ratio to the peak shaving )
+    \item compared to the expected planned infrastructure in Austria (from the literature 
+    \item then include all reformulated from the discussion
+    \item how much of the demand stems from transit traffic? 
 \end{itemize}
 
-\subsection{Comparison to Current/Planned Infrastructure}
-\begin{itemize}
-    \item How your modeled allocation compares to actual deployment plans by Austria, charging operators, or AFIR requirements
-    \item Whether current infrastructure is well-positioned (11 of 34 permanent stations exist) or if significant repositioning is needed
-    \item Implications of path dependency—are we locked into suboptimal locations by existing investments?
-    \item Gap analysis: Where are the biggest mismatches between current/planned and optimal infrastructure?
-\end{itemize}
+The magnitude of light-duty truck and bus charging requirements is derived from region-specific attributes, particularly total population, whereas heavy-duty truck charging requirements are parameterized using traffic flow data. This methodology enables disaggregated representation of truck charging needs and facilitates differentiation between en-route recharging and depot-based charging at origin and destination regions. The merit of this framework is demonstrated by the marked heterogeneity in load distribution across Austrian regions, as well as the preponderance of heavy-duty truck charging in the aggregate demand profile of the commercial battery electric vehicle fleet.
+The temporal allocation of charging load is inferred from assumptions regarding vehicle downtime and recharging behavior. In this analysis, we postulated that highway charging infrastructure would constitute the favored recharging approach for heavy-duty trucks mandated to observe en-route rest periods. This assumption may introduce upward bias in projected daytime loads at motorway service areas. Conversely, our model excludes trucks that would rely exclusively on public infrastructure during daytime hours due to operators' lack of access to depot charging facilities. Our findings reveal substantial daytime charging activity across most Austrian regions, though peak demand predominantly occurs during nighttime hours. Weekend charging exhibits comparatively lower intensity and affords considerable operational leeway, given that recharging infrastructure of comparable capacity to weekday periods remains available.
+It warrants acknowledgment that these elevated charging load peaks may represent overstatements stemming from the exclusion of activation costs associated with commercial fleet flexibility provision and the assumption of universal participation in centrally coordinated charging schemes. Nevertheless, insights regarding varying electrification penetration rates within the commercial vehicle sector remain applicable to scenarios with differing levels of participation in coordinated charging programs.
 
-\subsection{Scenario Differentiation and Key Drivers}
-\begin{itemize}
-    \item \textbf{Why such large cost differences (85\%)?} Decompose the drivers—is it primarily BEV share ($\epsilon$), charging power, range, or traffic reduction?
-    \item Your cost reduction analysis (Section \ref{sub:res_costred}) is critical here: charging power yields 34\% reduction, traffic reduction yields 18-32\%, range yields 0\%
-    \item Which scenario parameters are most influential vs. which are relatively inconsequential?
-    \item What does this reveal about where policy/technology efforts should focus?
-\end{itemize}
-
-\subsection{Temporal Dynamics and Deployment Pathway}
-\begin{itemize}
-    \item Your analysis is a 2030 snapshot—but how should deployment proceed from now until 2030?
-    \item Should all 54-68 stations be built immediately or phased? If phased, what's the optimal sequence?
-    \item The permanent 34 stations suggest an initial priority list—discuss this as a robust minimum network
-    \item How does the answer change if considering 2025, 2027, 2030, 2035 horizons?
-\end{itemize}
-
-\subsection{Demand Coverage and Service Quality}
-\begin{itemize}
-    \item You enforce complete demand coverage—discuss whether this is realistic/necessary or if 95-98\% coverage with lower costs might be preferable
-    \item What "adequate" coverage means: Is it just technical feasibility or does it include convenience, waiting times, range anxiety mitigation?
-    \item Trade-offs between coverage completeness and economic efficiency
-    \item Whether your model captures queuing/congestion effects (or if assuming adequate capacity means no waiting)
-\end{itemize}
-
-\subsection{Practical Feasibility and Implementation Barriers}
-\begin{itemize}
-    \item \textbf{Site availability}: Are all your optimal locations actually feasible (land availability, permitting, environmental constraints)?
-    \item \textbf{Grid capacity}: Can the electrical grid support 160-285 MW additional load at these specific locations?
-    \item \textbf{Financing}: €54-100 million investment—who pays? Public, private, PPP? Does financing model affect optimal allocation?
-    \item \textbf{Institutional coordination}: Highway operators, grid operators, charging operators, regulators—how does fragmented decision-making affect implementation?
-\end{itemize}
-
-\subsection{Generalizability and Transferability}
-\begin{itemize}
-    \item Which findings are Austria-specific (network topology, existing infrastructure, traffic patterns) vs. generalizable?
-    \item How would results differ for countries with different: highway network density, BEV adoption rates, renewable energy integration, grid capacity?
-    \item Can your methodology/findings inform planning in other contexts (other countries, urban networks, truck charging)?
-\end{itemize}
-
-\subsection{Model Limitations and Assumptions}
-\begin{itemize}
-    \item \textbf{Critical assumptions} that constrain your answer:
-    \begin{itemize}
-        \item 350 kW as standard charging power
-        \item Maximum 12 MW / 34 CP per station
-        \item Complete demand coverage requirement
-        \item Existing infrastructure constraint
-        \item No consideration of competing uses (truck charging, battery storage)
-    \end{itemize}
-    \item How relaxing these might change your capacity/allocation results
-    \item Data limitations (OD flows, traffic projections, charging behavior)
-\end{itemize}
-
-\subsection{Policy and Investment Implications}
-\begin{itemize}
-    \item What your results mean for current Austrian/EU policy (AFIR compliance, national plans)
-    \item Recommended policy priorities: Should policy focus on range, charging power, traffic reduction, or spatial coverage?
-    \item Public vs. private investment roles—which locations/scenarios require public intervention?
-    \item Regulatory considerations: standardization, grid access, pricing, interoperability
-\end{itemize}
-
-\subsection{Technology Evolution Considerations}
-\begin{itemize}
-    \item Your 2030 timeframe coincides with rapid technology change—how do emerging technologies (800V systems, megawatt charging, vehicle-to-grid) affect your conclusions?
-    \item The charging power sensitivity (34\% cost reduction) suggests technology development pathways matter more than you might initially expect
-    \item Should infrastructure be designed for 2030 needs or 2040 flexibility?
-\end{itemize}
-
-\subsection{Integration with Broader Transport Decarbonization}
-\begin{itemize}
-    \item Your results in context of Austria's overall transport decarbonization goals
-    \item Interaction with other measures (public transport, mode shift, truck electrification)
-    \item Whether highway fast-charging is the binding constraint for BEV adoption or if home/workplace charging matters more
-    \item Cost-effectiveness: Is €54-100M for highway infrastructure a good use of decarbonization funds compared to alternatives?
-\end{itemize}
+\subsection{Synthesis}
+\textit{Is it worth studying further }
+\hl{I need to clarify: what is the detour time assumed for this case? because i obviously use constant ones \dots }
 \section{Synthesis}
 \begin{itemize}
-    \item paper 1: comparison of different range-dependent developments= results in that we need stylized network analysis; that is case-study focused based on network topologies (future work?)
-    \item paper 1: boarder effects/ cross boarder perspective needed
-    \item paper 1: translating the results to reality (big charging points) assumption of model vs reality: space isssue 
-    \item paper 1: saturation effects due to network topology (also in line with the literature) 
-    \item paper 1: The "permanent stations" finding: 34 locations appear in all range scenarios, with only 11 being existing stations. Discuss whether this reveals fundamental network geometry constraints and what it means for near-term investment priorities. -- this can indicates the importance of no-regret investments
-    \item paper 1: Austria-specific vs. generalizable findings: Your results are for Austria's highway network. Discuss which findings (e.g., power>range, permanent stations, densification threshold) are likely generalizable vs. context-dependent.
-    \item paper 1: Cost benchmarking: Your €/BEV costs (€39-€72) and €/kW costs (~€368) should be contextualized. Discuss whether these are consistent with other studies/countries and what drives differences.
-    \item paper 1: also embed this into the Austria Mobility strategy 
-    \item paper 1: maybe also reference the asfinag plans 
-    \item paper 1: Whether the 160-285 MW range across scenarios adequately covers the uncertainty space, or if more extreme scenarios are plausible
-    \item paper 1: Confidence level in your estimates—what are the key sources of uncertainty?
-    \item paper 1: Whether the 11x expansion from current 14 MW is realistic by 2030 or if implementation barriers will constrain actual deployment
-\end{itemize}
-
-\section{Research question 2}
-
-\begin{itemize}
     \item very few to none investigation of spatial patterns? relative allocations? on the adoption
+    \item strategies on the expansion need to be cohersly investigated by 
     \item cost-minimization approach / perspective
     \item critically discuss the home charger assumption
 \end{itemize}
