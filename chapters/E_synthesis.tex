@@ -15,7 +15,7 @@ This optimization-based approach indicates that Austrian highways require 160-24
 
 Moreover, the AFIR mandates that public charging infrastructure should be continuously expanded based on at least 1.3 kW of power output per BEV \cite{EU2023AFIR}. Assuming 30\% electrification of Austria's current passenger car stock of 5.2 million vehicles yields approximately 1.56 million BEVs, translating to around 2 GW of required public charging infrastructure. According to \citet{iea_charging_location_2025}, fast chargers account for 5--6\% of public charging points globally, with highway charging representing a subset of this category. Analysis of Norwegian deployment patterns\footnote{Norway is globally an exception for the relative share of fast chargers.} shows that while highway chargers represent 20\% of total charging points, they account for 35\% of total installed capacity. This 1.75$\times$ capacity-to-points ratio reflects the higher power ratings of highway fast chargers compared to urban AC chargers. Applying this ratio suggests highway charging capacity of approximately 210 MW (6\% of points $\times$ 1.75 $\times$ 2,000 MW), which falls within the range estimated by our optimization approach.
 
-\citet{Jochem2019} estimated 15 charging sites with eight 150 kW points each for Austria under 15\% BEV electrification (18 MW, scaling to 36 MW at 30\%)—approximately one-tenth of our range. This divergence reflects fundamental methodological differences. Their Flow Refueling Location Model (FRLM) minimizes station counts for network coverage using origin-destination flows, with capacity sized via post-optimization queuing models. Our approach directly optimizes both location and capacity based on observed traffic counts, targeting demand fulfillment rather than minimal coverage. These methodological choices create opposing biases: traffic count-based approaches may overestimate by allocating capacity to all highway traffic rather than only inter-regional charging demand, while coverage-based models may underestimate by excluding low-volume flows (<5,000 cars/year) and prioritizing sparse networks. The authors acknowledge this limitation, noting their German FRLM results (128 stations) appear ``absurdly small'' compared to actual deployment (315 stations from one operator alone) \citep[p.~126]{Jochem2019}. Technical assumptions also differ: 350 kW versus 150 kW charging power, which compounds capacity differences for comparable utilization levels.
+\citet{Jochem2019} estimated 15 charging sites with eight 150 kW points each for Austria under 15\% BEV electrification (18 MW, scaling to 36 MW at 30\%)—approximately one-tenth of our range. This divergence reflects fundamental methodological differences. Their Flow Refueling Location Model (FRLM) minimizes station counts for network coverage using origin-destination flows, with capacity sized via post-optimization queuing models. Our approach directly optimizes both location and capacity based on observed traffic counts, targeting demand fulfillment rather than minimal coverage. These methodological choices create opposing biases: traffic count-based approaches may overestimate by allocating capacity to all highway traffic rather than only inter-regional charging demand, while coverage-based models may underestimate by excluding low-volume flows (<5,000 cars/year) and prioritizing sparse networks. \hl{A further limitation of the traffic-flow-based approach is that it observes aggregate traffic volumes at network links rather than tracking individual vehicle routes. Consequently, the optimization does not know when or where a vehicle enters and exits the highway network. This means that, in principle, charging capacity could be allocated at locations that a vehicle passes only after it has already left the network, or at locations outside the vehicle's actual route. While the spatial resolution of the highway network and the constraint that demand must be served at the link where it is observed mitigate this issue in practice, the absence of explicit route information remains a structural limitation of flow-based as opposed to route-based formulations.} The authors acknowledge this limitation, noting their German FRLM results (128 stations) appear ``absurdly small'' compared to actual deployment (315 stations from one operator alone) \citep[p.~126]{Jochem2019}. Technical assumptions also differ: 350 kW versus 150 kW charging power, which compounds capacity differences for comparable utilization levels.
 
 
 The estimates presented here likely represent an upper bound due to optimistic fleet growth assumptions. While Austria's current BEV share stands at 3.8\%, our analysis assumes 30\% electrification by 2030. Under more conservative fleet projections (approximately 15\% electrification), required highway charging capacity would be proportionally lower, yielding 80--120 MW. However, this analysis already incorporates a 21\% demand reduction through optimized spatial and temporal charging flexibility, partially offsetting the aggressive fleet growth assumption. The resulting range of 80--240 MW thus brackets realistic capacity requirements between conservative fleet growth with demand optimization and ambitious electrification targets.
@@ -248,17 +248,92 @@ Despite these caveats, our findings align with empirical evidence of positive sp
 
 \subsection{Research Question 4}
 
-\begin{itemize}
-    \item comparison to literature (\citet{LI2021111962}: ratio to the peak shaving )
-    \item compared to the expected planned infrastructure in Austria (from the literature 
-    \item then include all reformulated from the discussion
-    \item how much of the demand stems from transit traffic? 
-    \item limitation: assumption on the equal electrification rate of local truck transport as well as long-distance 
-\end{itemize}
+\noindent\fbox{\parbox{\dimexpr\textwidth-2\fboxsep-2\fboxrule}{%
+\vspace{0.5em}
+\textit{What is the expected spatio-temporal distribution of charging demand from the commercial battery electric vehicle fleet in Austria in 2040?}
+\vspace{0.5em}
+}}
 
+\paragraph*{Estimated charging demand}
+The estimated annual charging demand of the commercial BEV fleet in Austria ranges from 7.4~TWh (\textit{LOW} scenario, 30\% HDT electrification) to 15.2~TWh (\textit{HIGH} scenario, 100\% HDT electrification), corresponding to 8--17\% of the projected total electricity demand in Austria in 2040. For comparison, \citet{LI2021111962} estimate that EV charging in China would increase national peak demand by 5.2--12.5\% under unmanaged charging scenarios, while finding that smart charging reduces required additional storage capacity by 6.8--14\%. While a direct demand comparison between China and Austria is limited by the vastly different fleet sizes and electricity systems, the share of total electricity demand attributable to commercial vehicle charging is of comparable magnitude. In our analysis, the commercial fleet alone---excluding private passenger BEVs---accounts for 8--17\% of total demand, highlighting the significance of commercial vehicle electrification for electricity system planning in a European transit country.
+
+\coloredline{yellow}{The Austrian Environment Agency's \textit{Transition Mobility 2040} scenario \cite{umweltbundesamt_rep0808} projects that total transport energy consumption in Austria can be reduced from approximately 376~PJ today to 127~PJ by 2040 under a climate-neutrality pathway ($\approx$35~TWh). The commercial fleet charging demand estimated in our \textit{HIGH} scenario (15.2~TWh) would thus represent approximately 43\% of this total transport energy budget. Even in the \textit{LOW} scenario (7.4~TWh), the commercial fleet alone accounts for 21\% of total transport energy. The \textit{Transition Mobility 2040} scenario assumes a fully zero-emission vehicle fleet by 2040, with heavy-duty trucks (SNF) composed of 85\% battery-electric or electric road system (ERS) vehicles and 15\% fuel cell electric vehicles (FCEV). This fleet composition is broadly consistent with our \textit{HIGH} scenario (100\% BEV electrification), though our analysis does not distinguish between BEV and ERS powertrains and assumes all vehicles charge from stationary infrastructure. The 15\% FCEV share assumed in the \textit{Transition Mobility 2040} scenario would reduce the stationary charging demand relative to a purely battery-electric fleet, suggesting that our \textit{HIGH} scenario may overestimate the demand from heavy-duty trucks to some extent.}
+
+Heavy-duty trucks dominate the commercial charging demand. In the \textit{HIGH} scenario, HDT charging accounts for 11.2~TWh of the total 15.2~TWh (74\%). The decomposition by traffic type reveals that 74.3\% of the HDT charging demand within Austria stems from transit and import/export traffic (Table~\ref{tab:snf_traffic_classification}). This underscores the importance of the traffic-flow-based methodology: a fleet-projection-based approach anchored to domestically registered vehicles would miss nearly three quarters of the HDT charging demand on Austrian highways.
+
+\paragraph*{Comparison with European truck charging infrastructure studies}
+\citet{SHOMAN2023103825} estimate daily charged energy for battery-electric long-haul trucks across European countries at 15\% fleet electrification. For Austria, they report a daily charged energy of 3.5~GWh and identify 71 charging areas, with approximately 1,169 CCS and 240 MCS charging points required. Linearly scaling our \textit{HIGH} scenario (40.9~GWh/d at 100\% electrification) to 15\% yields approximately 6.1~GWh/d. This is higher than the estimate by \citet{SHOMAN2023103825} by a factor of approximately 1.7. The difference is primarily attributable to the broader scope of our estimation: our methodology includes all HDT traffic types---inland, transit, and import/export---and encompasses the full range of heavy-duty vehicle weights, whereas \citet{SHOMAN2023103825} focus specifically on long-haul truck operations. Additionally, differences in assumptions on specific energy consumption, average loads, and the allocation between en-route and depot charging contribute to the divergence.
+
+\paragraph*{Comparison with planned infrastructure in Austria}
+The modeled peak power levels at highway service areas range between 7 and 29~MW for the \textit{HIGH} scenario. As a reference, the Austrian highway infrastructure operator ASFINAG has communicated plans to provide 5~MW of grid connection capacity at each service area by 2035/2040 \cite{ioebenergiespeicher}. This planned capacity corresponds to a commercial fleet electrification rate of approximately 30\% in our modeling framework. At higher electrification rates, the modeled peak power levels substantially exceed the planned grid connection capacities, particularly in the northeastern regions of Austria where transit traffic is concentrated. This indicates that grid reinforcement beyond current plans will be required to support full electrification of the commercial fleet.
+
+The AFIR defines dedicated HDV recharging infrastructure targets along the TEN-T network with progressively increasing requirements \cite{EU2023AFIR}. By end of 2025, publicly accessible recharging pools for heavy-duty vehicles must be deployed along at least 15\% of the TEN-T network length, each providing a minimum aggregate power of 1,400~kW with at least one 350~kW charging point. By end of 2027, coverage must extend to 50\% of the network, with pools on the TEN-T core network providing at least 2,800~kW and at least two 350~kW charging points. By end of 2030, full coverage is required: pools every 60~km on the TEN-T core network must provide at least 3,600~kW, while pools every 100~km on the comprehensive network must provide at least 1,500~kW. For Austria's highway network, the 2030 TEN-T core requirement of 3,600~kW per pool translates to a minimum of approximately 135~MW across the network (assuming roughly 38 pools at 60~km spacing over 2,258~km). Our modeled peak power levels of 7--29~MW per service area substantially exceed the per-pool AFIR minimums, reflecting the high concentration of freight traffic on Austrian transit corridors. Notably, even the aggregate AFIR minimum is an order of magnitude below the modeled total peak demand, underscoring that the regulation defines minimum connectivity rather than capacity adequate for full fleet electrification.
+
+\paragraph*{Methodology and temporal patterns}
 The magnitude of light-duty truck and bus charging requirements is derived from region-specific attributes, particularly total population, whereas heavy-duty truck charging requirements are parameterized using traffic flow data. This methodology enables disaggregated representation of truck charging needs and facilitates differentiation between en-route recharging and depot-based charging at origin and destination regions. The merit of this framework is demonstrated by the marked heterogeneity in load distribution across Austrian regions, as well as the preponderance of heavy-duty truck charging in the aggregate demand profile of the commercial battery electric vehicle fleet.
+
 The temporal allocation of charging load is inferred from assumptions regarding vehicle downtime and recharging behavior. In this analysis, we postulated that highway charging infrastructure would constitute the favored recharging approach for heavy-duty trucks mandated to observe en-route rest periods. This assumption may introduce upward bias in projected daytime loads at motorway service areas. Conversely, our model excludes trucks that would rely exclusively on public infrastructure during daytime hours due to operators' lack of access to depot charging facilities. Our findings reveal substantial daytime charging activity across most Austrian regions, though peak demand predominantly occurs during nighttime hours. Weekend charging exhibits comparatively lower intensity and affords considerable operational leeway, given that recharging infrastructure of comparable capacity to weekday periods remains available.
+
+\paragraph*{Limitations}
 It warrants acknowledgment that these elevated charging load peaks may represent overstatements stemming from the exclusion of activation costs associated with commercial fleet flexibility provision and the assumption of universal participation in centrally coordinated charging schemes. Nevertheless, insights regarding varying electrification penetration rates within the commercial vehicle sector remain applicable to scenarios with differing levels of participation in coordinated charging programs.
+
+A further limitation is the assumption of a uniform electrification rate across all truck transport segments. In practice, short-haul and regional truck operations are expected to electrify earlier than long-haul international transport due to lower range requirements and the availability of depot charging. Applying a uniform rate may overestimate the near-term charging demand from long-haul transit traffic while underestimating it for regional operations.
+
+\coloredline{yellow}{Moreover, the analysis does not account for modal shift from road to rail freight. The \textit{Transition Mobility 2040} scenario \cite{umweltbundesamt_rep0808} projects the truck share in Austrian freight transport to decline from 70\% to 62\% by 2040, with rail freight increasing from 27\% to 34\%. A comparable shift would reduce the volume of truck traffic on Austrian highways and consequently the charging demand at highway service areas. The magnitude of this effect would depend on which traffic segments---inland, transit, or import/export---are most affected by modal shift, a differentiation not addressed in the present analysis.}
+
+\begin{table}[H]
+\centering
+\caption{Quantitative comparison of commercial fleet charging demand and infrastructure estimates for Austria}
+\label{tab:rq4_comparison}
+\small
+\begin{tabular}{@{}p{3.2cm}ccp{5.5cm}@{}}
+\toprule
+\textbf{Source} & \textbf{Electrification} & \textbf{Metric} & \textbf{Key Assumptions \& Notes} \\
+\midrule
+
+\multicolumn{4}{@{}l}{\textit{Charging demand estimates}} \\
+\addlinespace
+
+This work (\textit{LOW}) & 30\% HDT & 7.4~TWh/a & All commercial fleet segments (HDT, LDT, bus); traffic-flow-based; Austria 2040 \\
+\addlinespace
+
+This work (\textit{HIGH}) & 100\% HDT & 15.2~TWh/a (40.9~GWh/d) & 74\% from HDT; 74.3\% of HDT demand from transit + import/export traffic \\
+\addlinespace
+
+This work (scaled) & 15\% HDT & $\sim$6.1~GWh/d & Linear scaling of \textit{HIGH} scenario for comparability with \citet{SHOMAN2023103825} \\
+\addlinespace
+
+\citet{SHOMAN2023103825} & 15\% BET & 3.5~GWh/d & Long-haul trucks only; 71 charging areas; 1,169 CCS + 240 MCS points \\
+\addlinespace
+
+Transition Mobility 2040\textsuperscript{a} & 100\%\textsuperscript{b} & 127~PJ/a ($\approx$35~TWh/a) & Total transport energy; 85\% BEV/ERS + 15\% FCEV for SNF \\
+
+\midrule
+
+\multicolumn{4}{@{}l}{\textit{Infrastructure capacity per service area}} \\
+\addlinespace
+
+This work (\textit{HIGH}) & 100\% HDT & 7--29~MW & Peak power at highway service areas; highest in NE Austria (transit corridors) \\
+\addlinespace
+
+ASFINAG (planned)\textsuperscript{c} & --- & 5~MW & Grid connection capacity per service area by 2035/2040 \\
+\addlinespace
+
+AFIR HDV (2030)\textsuperscript{d} & --- & 3.6~MW/pool & Minimum per pool every 60~km on TEN-T core; $\approx$135~MW aggregate for Austria \\
+
+\bottomrule
+\end{tabular}
+
+\vspace{0.3cm}
+\begin{minipage}{\textwidth}
+\footnotesize
+\textsuperscript{a} \citet{umweltbundesamt_rep0808}. Projects truck freight modal share declining from 70\% to 62\%, rail increasing from 27\% to 34\%. \\
+\textsuperscript{b} 100\% zero-emission fleet, but only 85\% require stationary charging (BEV/ERS); 15\% are FCEV. \\
+\textsuperscript{c} \cite{ioebenergiespeicher}. Corresponds to $\approx$30\% electrification in our modeling framework. \\
+\textsuperscript{d} \cite{EU2023AFIR}. Minimum connectivity requirement; 2025 interim target: 1,400~kW/pool along 15\% of TEN-T.
+\end{minipage}
+
+\end{table}
 
 \subsection{Synthesis}
 \textit{Is it worth studying further }
