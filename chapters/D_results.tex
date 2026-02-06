@@ -1060,9 +1060,13 @@ Scenario &  & \multicolumn{1}{l}{} & \multicolumn{1}{l}{} & Depot & \multicolumn
             \label{fig:dispatch_time}
         \end{figure}
 
+\subsubsection{Composition of heavy-duty truck charging demand by traffic type}
+
+The traffic-flow-based estimation of heavy-duty truck charging demand enables a decomposition by the type of traffic generating the demand within Austria. Table~\ref{tab:snf_traffic_classification} classifies the origin-destination flows from the ETISplus dataset into three categories: inland transport between Austrian regions, transit flows that neither originate nor terminate in Austria, and import/export flows with one end in Austria. Of the 319,447 origin-destination pairs considered, the vast majority (239,209) are transit flows. The total transport volume amounts to 529.5~Mio.~tons, of which transit and import/export contribute similar shares (175.4 and 185.0~Mio.~tons, respectively). In terms of ton-kilometers traveled within Austria, transit traffic accounts for 32.6~Mrd.~tkm (37.4\%), import/export for 32.2~Mrd.~tkm (36.9\%), and inland transport for 22.5~Mrd.~tkm (25.7\%). The resulting daily charging demand within Austria follows this distribution, with transit traffic generating 15.3~GWh/d and import/export 15.1~GWh/d, together accounting for 74.3\% of the total daily demand of 40.9~GWh/d.
+
 \begin{table}[htbp]
 \centering
-\caption{Classification of SNF charging demand in Austria by traffic type}
+\caption{Classification of heavy-duty truck charging demand in Austria by traffic type, based on ETIS+ 2030 transport flow projections. AT~tkm refers to ton-kilometers traveled within Austria. Daily demand represents electricity required for charging within Austria.}
 \label{tab:snf_traffic_classification}
 \begin{tabular}{lrrrrr}
 \toprule
@@ -1076,16 +1080,13 @@ Import/Export (AT $\leftrightarrow$ non-AT) & 79,078 & 185.0 & 32.2 & 15.1 & 36.
 \textbf{Total} & \textbf{319,447} & \textbf{529.5} & \textbf{87.3} & \textbf{40.9} & \textbf{100.0} \\
 \bottomrule
 \end{tabular}
-\begin{tablenotes}
-\small
-\item Note: Based on ETIS+ 2030 transport flow projections. AT tkm refers to ton-kilometers traveled within Austria. Daily demand represents electricity required for charging within Austria.
-\end{tablenotes}
 \end{table}
 
-% Alternative: Yearly demand table
+Table~\ref{tab:snf_yearly_demand} presents the annual charging demand for the \textit{HIGH} scenario (100\% HDT electrification), disaggregated by traffic type and charging location. The total annual HDT charging demand of 11.24~TWh is predominantly covered at depot locations during nighttime (10.97~TWh), while highway charging accounts for 0.27~TWh. Highway charging is concentrated in transit and import/export traffic (0.12~TWh each), whereas inland transport generates negligible highway charging demand (0.02~TWh). This reflects the shorter route segments of inland transport within Austria, for which depot charging at origin and destination is sufficient without en-route stops.
+
 \begin{table}[htbp]
 \centering
-\caption{Annual SNF charging demand in Austria by traffic type (100\% electrification)}
+\caption{Annual heavy-duty truck charging demand in Austria by traffic type under 100\% electrification. Annual values are calculated with 261 workdays and 95\% charging efficiency.}
 \label{tab:snf_yearly_demand}
 \begin{tabular}{lrrrr}
 \toprule
@@ -1099,16 +1100,13 @@ Import/Export (AT $\leftrightarrow$ non-AT) & 0.12 & 4.03 & 4.15 & 36.9 \\
 \textbf{Total} & \textbf{0.27} & \textbf{10.97} & \textbf{11.24} & \textbf{100.0} \\
 \bottomrule
 \end{tabular}
-\begin{tablenotes}
-\small
-\item Note: Annual values calculated with 261 workdays and 95\% charging efficiency. Depot day charging is zero for all categories due to short Austrian route segments.
-\end{tablenotes}
 \end{table}
 
-% Compact single table version
+Table~\ref{tab:snf_compact} summarizes the relationship between transport volume, ton-kilometers within Austria, and resulting annual charging demand by traffic type. Despite contributing the lowest transport volume (169.0~Mio.~t), inland traffic generates 2.9~TWh of annual demand due to shorter distances traveled entirely within the country. Transit traffic, with 175.4~Mio.~t and the highest share of Austrian ton-kilometers (32.6~Mrd.~tkm), results in 4.2~TWh. Import/export flows generate a comparable 4.1~TWh from 185.0~Mio.~t.
+
 \begin{table}[htbp]
 \centering
-\caption{SNF charging demand in Austria by traffic type}
+\caption{Heavy-duty truck charging demand in Austria by traffic type: transport volume, ton-kilometers within Austria, and resulting annual charging demand under 100\% electrification.}
 \label{tab:snf_compact}
 \begin{tabular}{lS[table-format=3.1]S[table-format=2.1]S[table-format=2.1]S[table-format=2.1]}
 \toprule
@@ -1124,20 +1122,24 @@ Import/Export & 185.0 & 32.2 & 4.1 & 36.9 \\
 \end{tabular}
 \end{table}
 
+\subsubsection{Regional charging demand profiles}
+
+Figure~\ref{fig:demand_curves_by_node} displays the weekly charging demand profiles disaggregated by Austrian federal state. The profiles reveal substantial regional differences in both the magnitude and temporal shape of charging demand. Regions with high shares of transit and long-haul truck traffic exhibit higher daytime peaks due to en-route highway charging, while regions with predominantly local commercial vehicle fleets show demand profiles dominated by nighttime depot charging. The weekday-weekend contrast is visible across all regions, with weekend charging demand being substantially lower. The relative magnitude of the charging demand varies across regions, reflecting the heterogeneous distribution of commercial vehicle fleets and transit traffic volumes across Austria.
+
 \begin{figure}[H]
             \centering
             \includegraphics[width=1\textwidth]{graphics/paper_4/input_demand_curves_by_node.pdf}
-            \caption{Charging demand profiles of the commercial BEV fleet by node.}
-            \label{fig:dispatch_time}
+            \caption{Weekly charging demand profiles of the commercial BEV fleet by Austrian federal state.}
+            \label{fig:demand_curves_by_node}
         \end{figure}
 
-
+Figure~\ref{fig:node_demand_composition} shows the composition of the weekly charging demand by fleet type for three selected locations in Austria. The stacked profiles illustrate the relative contributions of light-duty trucks, heavy-duty trucks, and buses to the total charging load at each location. The composition varies across the selected regions: locations along major transit corridors show a higher share of heavy-duty truck charging, whereas regions with large urban centers exhibit a more balanced composition due to the presence of bus fleets and light-duty commercial vehicles. The temporal patterns also differ by fleet type, with bus charging showing a more uniform daily pattern compared to the pronounced weekday peaks of truck charging.
 
 \begin{figure}[H]
             \centering
             \includegraphics[width=1\textwidth]{graphics/paper_4/node_demand_composition_weekly.pdf}
-            \caption{Charging demand by fleet type of three selected locations in Austria.}
-            \label{fig:dispatch_time}
+            \caption{Composition of the weekly charging demand by fleet type (light-duty trucks, heavy-duty trucks, buses) for three selected locations in Austria.}
+            \label{fig:node_demand_composition}
         \end{figure}
 
 %\subsection{The value of charging flexibility to congestion management}
