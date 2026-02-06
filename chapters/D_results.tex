@@ -1059,6 +1059,86 @@ Scenario &  & \multicolumn{1}{l}{} & \multicolumn{1}{l}{} & Depot & \multicolumn
             \caption{Aggregated charging demand profile of the commercialBEV fleet in the \textit{Baseline} and \textit{Dispatch} case study with the average day-ahead market price.}
             \label{fig:dispatch_time}
         \end{figure}
-    
-\subsection{The value of charging flexibility to congestion management}
+
+\begin{table}[htbp]
+\centering
+\caption{Classification of SNF charging demand in Austria by traffic type}
+\label{tab:snf_traffic_classification}
+\begin{tabular}{lrrrrr}
+\toprule
+\textbf{Traffic Type} & \textbf{Flows} & \textbf{Transport Volume} & \textbf{AT tkm} & \textbf{Daily Demand} & \textbf{Share} \\
+ & [-] & [Mio. t] & [Mrd. tkm] & [GWh/d] & [\%] \\
+\midrule
+Inland (AT $\rightarrow$ AT) & 1,160 & 169.0 & 22.5 & 10.5 & 25.7 \\
+Transit (non-AT $\rightarrow$ non-AT) & 239,209 & 175.4 & 32.6 & 15.3 & 37.4 \\
+Import/Export (AT $\leftrightarrow$ non-AT) & 79,078 & 185.0 & 32.2 & 15.1 & 36.9 \\
+\midrule
+\textbf{Total} & \textbf{319,447} & \textbf{529.5} & \textbf{87.3} & \textbf{40.9} & \textbf{100.0} \\
+\bottomrule
+\end{tabular}
+\begin{tablenotes}
+\small
+\item Note: Based on ETIS+ 2030 transport flow projections. AT tkm refers to ton-kilometers traveled within Austria. Daily demand represents electricity required for charging within Austria.
+\end{tablenotes}
+\end{table}
+
+% Alternative: Yearly demand table
+\begin{table}[htbp]
+\centering
+\caption{Annual SNF charging demand in Austria by traffic type (100\% electrification)}
+\label{tab:snf_yearly_demand}
+\begin{tabular}{lrrrr}
+\toprule
+\textbf{Traffic Type} & \textbf{Highway} & \textbf{Depot Night} & \textbf{Total} & \textbf{Share} \\
+ & [TWh/a] & [TWh/a] & [TWh/a] & [\%] \\
+\midrule
+Inland (AT $\rightarrow$ AT) & 0.02 & 2.87 & 2.89 & 25.7 \\
+Transit (non-AT $\rightarrow$ non-AT) & 0.12 & 4.08 & 4.20 & 37.4 \\
+Import/Export (AT $\leftrightarrow$ non-AT) & 0.12 & 4.03 & 4.15 & 36.9 \\
+\midrule
+\textbf{Total} & \textbf{0.27} & \textbf{10.97} & \textbf{11.24} & \textbf{100.0} \\
+\bottomrule
+\end{tabular}
+\begin{tablenotes}
+\small
+\item Note: Annual values calculated with 261 workdays and 95\% charging efficiency. Depot day charging is zero for all categories due to short Austrian route segments.
+\end{tablenotes}
+\end{table}
+
+% Compact single table version
+\begin{table}[htbp]
+\centering
+\caption{SNF charging demand in Austria by traffic type}
+\label{tab:snf_compact}
+\begin{tabular}{lS[table-format=3.1]S[table-format=2.1]S[table-format=2.1]S[table-format=2.1]}
+\toprule
+\textbf{Traffic Type} & {\textbf{Transport}} & {\textbf{AT tkm}} & {\textbf{Demand}} & {\textbf{Share}} \\
+ & {\textbf{[Mio. t]}} & {\textbf{[Mrd. tkm]}} & {\textbf{[TWh/a]}} & {\textbf{[\%]}} \\
+\midrule
+Inland (AT $\rightarrow$ AT) & 169.0 & 22.5 & 2.9 & 25.7 \\
+Transit & 175.4 & 32.6 & 4.2 & 37.4 \\
+Import/Export & 185.0 & 32.2 & 4.1 & 36.9 \\
+\midrule
+\textbf{Total} & \textbf{529.5} & \textbf{87.3} & \textbf{11.2} & \textbf{100.0} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{figure}[H]
+            \centering
+            \includegraphics[width=1\textwidth]{graphics/paper_4/input_demand_curves_by_node.pdf}
+            \caption{Charging demand profiles of the commercial BEV fleet by node.}
+            \label{fig:dispatch_time}
+        \end{figure}
+
+
+
+\begin{figure}[H]
+            \centering
+            \includegraphics[width=1\textwidth]{graphics/paper_4/node_demand_composition_weekly.pdf}
+            \caption{Charging demand by fleet type of three selected locations in Austria.}
+            \label{fig:dispatch_time}
+        \end{figure}
+
+%\subsection{The value of charging flexibility to congestion management}
 \hl{todo:discuss here with hans what makes sense to include?; vielleicht nur 4.4. hier aus paper reinnehmen}
