@@ -4,3 +4,6 @@
 - add appendix 
 - english or american? 
 - correct the "graphical abstract" figures to be aligned with the rest
+- add footnote at the mention of the first "WE"
+
+\textbf{TODO} \hl{include acronyms for BEV, OD}
