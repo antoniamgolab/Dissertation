@@ -1,0 +1,25 @@
+# Paper subfolders and zips
+Minimum_cost_fast_charging_infrastructure_planning_for_electric_vehicles_along_the_Austrian_high_level_road_network__1_/
+Public_Charger_Expansion__Impacts_Across_Income_Classes_and_Beyond_Regional_Borders*/
+Spatial_flexibility_potential_in_charging_load_allocation_for_inter_zonal_long_haul_truck_electrification*/
+The_value_of_flexibility_of_commercial_electric_vehicle_fleets_in_the_redispatch_of_congested_transmission_grids*/
+*.zip
+
+# LaTeX build artifacts
+%OUTDIR%/
+*.aux
+*.bbl
+*.bcf
+*.blg
+*.fdb_latexmk
+*.fls
+*.log
+*.run.xml
+*.synctex.gz
+*.toc
+*.loc
+*.soc
+*.bbl-SAVE-ERROR
+*.out
+*.lof
+*.lot
