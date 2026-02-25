@@ -25,7 +25,21 @@
       "Bash(dir:*)",
       "Bash(for key in \"9543135\" \"ASFINAG\" \"ec_driving_time_2023\" \"ioebenergiespeicher\" \"irena2019smart_charging\" \"NECP2022\" \"SCORRANO2021101022\" \"speth2021synthetic\" \"TYNDP2022\" \"umweltbundesamt_rep0808\" \"umweltbundesamt2024\" \"usp_lkw_fahrverbote\" \"usp_nutzfahrzeuge\" \"vmobil2023\" \"wienerlinien2024\")",
       "Bash(do echo \"=== $key ===\")",
-      "Bash(xargs:*)"
+      "Bash(xargs:*)",
+      "Bash(latexmk:*)",
+      "WebFetch(domain:www.sciencedirect.com)",
+      "WebSearch",
+      "WebFetch(domain:www.researchgate.net)",
+      "WebFetch(domain:www.virta.global)",
+      "WebFetch(domain:kempower.com)",
+      "WebFetch(domain:theicct.org)",
+      "WebFetch(domain:www.transportenvironment.org)",
+      "WebFetch(domain:nationale-leitstelle.de)",
+      "WebFetch(domain:netzerocompare.com)",
+      "WebFetch(domain:eur-lex.europa.eu)",
+      "WebFetch(domain:www.acea.auto)",
+      "WebFetch(domain:www.umweltbundesamt.at)",
+      "Bash(curl:*)"
     ]
   }
 }

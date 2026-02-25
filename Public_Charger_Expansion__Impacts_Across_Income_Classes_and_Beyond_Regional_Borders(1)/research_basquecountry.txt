@@ -1,0 +1,6 @@
+https://www.mdpi.com/1996-1073/17/21/5314
+https://www.mdpi.com/1999-4907/9/1/22
+https://repositorio.comillas.edu/xmlui/bitstream/handle/11531/41452/TFM%20-%20Diez%20Olleros%2C%20IAigo.pdf?sequence=1
+https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4253706
+https://www.sciencedirect.com/science/article/pii/S2210670724005444
+https://ieeexplore.ieee.org/abstract/document/9091834 - using accessibility index = inverse of distance between demand point and closest charging station
