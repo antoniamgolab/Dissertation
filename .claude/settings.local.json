@@ -39,7 +39,10 @@
       "WebFetch(domain:eur-lex.europa.eu)",
       "WebFetch(domain:www.acea.auto)",
       "WebFetch(domain:www.umweltbundesamt.at)",
-      "Bash(curl:*)"
+      "Bash(curl:*)",
+      "Bash(tail:*)",
+      "Bash(head:*)",
+      "Bash(cd D:\\\\AntoniaMariaG\\\\AntoniaMaria\\\\diss\\\\Dissertation:*)"
     ]
   }
 }
