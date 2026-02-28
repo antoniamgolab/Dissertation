@@ -6,5 +6,6 @@
 - correct the "graphical abstract" figures to be aligned with the rest
 - add footnote at the mention of the first "WE"
 - reference the four papers at the beginning of relevant sections
+- add AI statement
 
 \textbf{TODO} \hl{include acronyms for BEV, OD}
