@@ -54,9 +54,9 @@
     Fuel prices | technology costs | fueling infrastructure costs | route-related / location-specific costs\ldots
 };
 
-% MODEL BOX - centered vertically with inputs
-\node[modelbox, right=2.2cm of input3] (model) {
-    \textbf{\Large Optimization model}\\[8pt]
+% MODEL BOX - centered vertically with inputs, tall enough to span all input boxes
+\node[modelbox, right=2.2cm of input3, minimum height=10.5cm] (model) {
+    \begin{center}\textbf{\Large Optimization model}\end{center}\vspace{4pt}
     \begin{itemize}
         \setlength{\itemsep}{3pt}
         \item \textbf{Linear program}

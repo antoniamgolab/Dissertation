@@ -1,6 +1,6 @@
 \chapter{Methods}\label{ch:methods}
     \section{Overview}
-        The methodologies developed in this thesis address different aspects of the geographic allocation of charging capacities for electric vehicles. Three distinct optimization and modeling approaches are formulated, as each research question requires different model features and fleet representations. Model~1 determines the optimal placement and sizing of fast-charging stations along highway networks for a single planning year. Model~2 performs a joint optimization of the long-term transition of vehicle fleets and the deployment of charging infrastructure over a multi-year horizon. It is built around a core linear program that is extended with consumer income differentiation and detour time modeling for passenger cars (RQ2) and with state-of-charge tracking, mandatory break regulations, and modal shift for long-haul trucks (RQ3). Model~3 generates hourly charging demand profiles from traffic flow data to assess the temporal patterns of charging load at each location.
+        The methodologies developed in this thesis address different aspects of the geographic allocation of charging capacities for electric vehicles. Three distinct optimization and modeling approaches are formulated, as each research question requires different model features and fleet representations (Table~\ref{tab:methodology_overview}, Figure~\ref{fig:methodology_overview}). Model~1 determines the optimal placement and sizing of fast-charging stations along highway networks for a single planning year. Model~2 performs a joint optimization of the long-term transition of vehicle fleets and the deployment of charging infrastructure over a multi-year horizon. It is built around a core linear program that is extended with consumer income differentiation and detour time modeling for passenger cars (RQ2) and with state-of-charge tracking, mandatory break regulations, and modal shift for long-haul trucks (RQ3). Model~3 generates hourly charging demand profiles from traffic flow data to assess the temporal patterns of charging load at each location.
 
         The three models reflect a trade-off between spatial, temporal, and decision complexity. Model~1 operates at the highest spatial resolution (individual highway segments and service areas) but considers only a single year and takes charging demand as exogenous. Model~2 extends the scope to multi-year fleet turnover and joint optimization of infrastructure deployment at a coarser regional level. Model~3 shifts the focus to hourly temporal resolution to capture the intra-week patterns of charging demand relevant for electricity system integration. Table \ref{tab:methodology_overview} summarizes the key differences in scope and resolution.
 \begin{table}[htbp]
@@ -15,10 +15,9 @@
 \midrule
 \textbf{Method type} & MILP & LP / MILP & LP & Bottom-up estimation \\[4pt]
 \textbf{Vehicle segment} & Passenger cars & Passenger cars & Heavy-duty trucks & Commercial fleet (\ac{HDT}, LDV, buses) \\[4pt]
-\textbf{Charging type} & Fast charging only & Home, work, public (slow \& fast) & Public en-route (fast) & Depot, en-route, opportunity \\[4pt]
+\textbf{Charger type} & Fast charging only & Home, work, public (slow \& fast) & Public en-route (fast) & Depot, en-route, opportunity \\[4pt]
 \textbf{Demand representation} & Exogenous traffic flow (peak) & Endogenous fleet turnover \& adoption & Endogenous fleet turnover \& technology transition & Exogenous fleet size \& traffic data \\[4pt]
 \textbf{Infrastructure decisions} & Siting \& sizing of stations & Capacity expansion by type \& location & Capacity expansion by type \& location & None (demand only) \\[4pt]
-\textbf{Key extensions} & -- & \parbox{4.2cm}{Income-class consumer groups,\\ monetary budget, detour time\\ (MILP for level of service)} & \parbox{4.2cm}{SOC tracking along route,\\ mandatory driver breaks,\\ modal shift to rail} & \parbox{4.2cm}{Flexibility potential\\ estimation for electricity\\ system integration} \\[4pt]
 \textbf{Temporal scope} & Single year & Multi-year (2020--2050) & Multi-year (2020--2050) & Representative week \\[4pt]
 \textbf{Geographic scope} & Regional highway network & Federal state & International corridor & National \\[4pt]
 \textbf{Spatial resolution} & Service areas / grid cells & NUTS-2/3 regions & NUTS-2 regions & NUTS-2 regions \\[4pt]
@@ -34,40 +33,24 @@
         \label{fig:methodology_overview}
     \end{figure}
 
-            Figure \ref{fig:methodology_overview} illustrates how the three models relate to the central challenge of charging capacity planning. The three models are applied as stand-alone analyses. Figure~\ref{fig:method_scope} shows the temporal scales, geographic scopes, and vehicle segments for which each methodology is applied in this thesis. The following sections describe each model in detail. As the three models are independent, each section uses its own nomenclature; symbols may be reused across sections with different meanings. The methodological descriptions are based on the underlying journal publications \cite{en15062147, GOLAB2026PublicCharger, GOLAB2026SpatialTruck, GOLAB2025134385}.
-
-    \begin{figure}[htbp]
-        \centering
-        \includegraphics[width=0.85\textwidth]{graphics/RQs/method_scope.pdf}
-        \caption{Positioning of the four research questions along the dimensions of temporal scale, geographic scope, and spatial resolution. Color distinguishes the transport fleet in focus.}
-        \label{fig:method_scope}
-    \end{figure}
+            Figure \ref{fig:methodology_overview} illustrates how the three models relate to the central challenge of charging capacity planning. The three models are applied as stand-alone analyses. The following sections describe each model in detail. As the three models are independent, each section uses its own nomenclature; symbols may be reused across sections with different meanings. The methodological descriptions are based on the underlying journal publications \citep{en15062147, GOLAB2026PublicCharger, GOLAB2026SpatialTruck, GOLAB2025134385}.
 
     \section{\textit{Static charging infrastructure planning}} 
     MILP for fast-charging infrastructure sizing and allocation along highway networks (RQ1).
     \subsection{Problem description}
 
-    The model is designed to cost-optimally plan fast-charging infrastructure along highway networks. The planning encompasses the geographic allocation and the sizing of charging capacities. The model reflects optimal decisions from the perspective of an infrastructure planner seeking to determine a fast-charging infrastructure set-up for supporting long-distance travel with battery-electric passenger cars. This decision-making could, for example, apply to a highway network operator preparing tenders for charging service providers, or to a public authority defining minimum infrastructure requirements. The considered costs encompass two components: the onsite preparations to enable the support of large capacities at a location and the hardware and construction costs associated with the installation of individual charging points. The planning refers to a defined network topology described by intersections, distances along highway segments, and positions of service areas, where potential sites for charging stations are exclusively service areas.
+    The model is designed to cost-optimally plan fast-charging infrastructure along highway networks. The planning encompasses the geographic allocation and the sizing of charging capacities. The model reflects cost-optimal decisions from the perspective of an infrastructure planner seeking to determine a fast-charging infrastructure set-up for supporting long-distance travel with battery-electric passenger cars. This decision-making could, for example, apply to a highway network operator preparing tenders for charging service providers, or to a public authority defining minimum infrastructure requirements. The considered costs encompass two components: the onsite preparations to enable the support of large capacities at a location and the hardware and construction costs associated with the installation of individual charging points. The planning refers to a defined network topology described by intersections, distances along highway segments, and positions of service areas, where potential sites for charging stations are exclusively service areas.
+
+    \subsection{Model features and assumptions}
+    The underlying methodology is based on a graph representation of the highway network (Figure~\ref{fig:method}). Road connections between two junctions or between a junction and a network endpoint are referred to as \textit{segments}, and the vertices as \textit{nodes}. Two types of nodes are distinguished: nodes representing possible sites for charging station installation along segments (\textit{node type 1}), and nodes representing highway junctions or endpoints (\textit{node type 2}). At each node, a charging demand exists which can be covered at the node itself or at adjacent nodes within a defined range. The mixed-integer linear program allocates sites for charging station installation and determines the optimal number of charging points at each site.
 
     The charging infrastructure is planned in consideration of the traffic flow and technological parameters of the vehicle's battery. The following key assumptions related to the representation of charging demand are made:
     \begin{itemize}
-
-    
      \item The \ac{BEV} fleet traveling along the highway network is treated as a homogeneous quantity, allowing to consider accumulated charging demand and translating this into the optimal sizing of a charging station. Based on this assumption, the technical parameters of an \textit{average} \ac{BEV} are assumed, such as average driving range ($\overline{dist}_{range, BEV}$), energy consumption ($\overline{d}_{spec, BEV}$) and charging capacity ($\overline{P}_{charge,BEV}$).
- 
-    \item All charging demands, $\sum_{n, k}\hat{D}_{n_k}$, result from the energy consumption of \acp{BEV} driving along the highway and need to be compensated for in total by charging stations built along the highway network.
-
-    \item Highway charging infrastructure is primarily used by long-distance drivers as \ac{BEV} owners mostly charge at home or at work. 
-
-    \item A fast-charging infrastructure along a highway network is designed based on peak demands, including seasonal peak demand ($\hat{f}_{l_k}$) and hourly peak demand, during a day ($\gamma_h$).
-      
-   
-   
-    %\item Overall, the modeled charging infrastructure represents a minimum requirement to support long-distance travel with BEVs given current technological standards.  
-\end{itemize}
-    
-    \subsection{Model features and assumptions}
-    The underlying methodology is based on a graph representation of the highway network (Figure~\ref{fig:method}). Road connections between two junctions or between a junction and a network endpoint are referred to as \textit{segments}, and the vertices as \textit{nodes}. Two types of nodes are distinguished: nodes representing possible sites for charging station installation along segments (\textit{node type 1}), and nodes representing highway junctions or endpoints (\textit{node type 2}). At each node, a charging demand exists which can be covered at the node itself or at adjacent nodes within a defined range. The mixed-integer linear program allocates sites for charging station installation and determines the optimal number of charging points at each site.
+     \item All charging demands, $\sum_{n, k}\hat{D}_{n_k}$, result from the energy consumption of \acp{BEV} driving along the highway and need to be compensated for in total by charging stations built along the highway network.
+     \item Highway charging infrastructure is primarily used by long-distance drivers as \ac{BEV} owners mostly charge at home or at work.
+     \item A fast-charging infrastructure along a highway network is designed based on peak demands, including seasonal peak demand ($\hat{f}_{l_k}$) and hourly peak demand, during a day ($\gamma_h$).
+    \end{itemize}
 
 
 
@@ -76,7 +59,7 @@
 
     \subsection{Input-Output relations}
     Figure~\ref{fig:method} displays the input-output relations of the modeling framework. In order to capture the spatially granular charging demand along the highway network, the inputs are grouped into four categories: (i) the composition of the car fleet is represented through the share of \acp{BEV}, the share of long-distance drivers, and traffic load data; (ii) the technological characteristics of \acp{BEV} are captured through energy consumption, driving range, and charging power; (iii) constraints and costs of the charging infrastructure are included through the peak capacity of charging stations, grid connection constraints, and infrastructure costs; and (iv) the physical layout of the road network is represented through the graph topology described above. These inputs feed into a demand calculation step that derives the charging demand at each node of the network. The \textit{HighCharge} optimization model then determines at which nodes charging stations are installed and how many charging points each station is equipped with.
-\begin{figure}[h]
+\begin{figure}[H]
 \includegraphics[width=14 cm]{graphics/paper_1/modelling_framework.pdf}
 \caption{Overview of the modeling framework for RQ1. Input parameters feed into a demand calculation and the \textit{HighCharge} optimization model, which determines the allocation and sizing of charging infrastructure along the highway network.\label{fig:method}}
 \end{figure}   
@@ -147,7 +130,7 @@
     This core formulation serves as the foundation for both RQ2 and RQ3. For RQ2, it is extended with consumer-group differentiation by income class, monetary budget constraints, and a mixed-integer formulation linking charging infrastructure expansion to fueling detour times. For RQ3, it is extended with state-of-charge tracking along routes, travel time accounting under mandatory driver break regulations, and modal shift to rail.
     
     
-    \subsection{Model features and assumptions}
+    \subsection{Model features and assumptions}\label{sec:model_features}
         The basis of the methodology follows the classic formulation of the Network Design Problem \citep{Yang01071998}. Table \ref{tab:state-of-the-art-method} provides an overview of the state-of-the-art methods that are integrated here, together with corresponding extensions for the present work. The core model is formulated as a linear program with the objective of minimizing the total costs related to the vehicle stock, charging, and charging infrastructure, and other transportation costs, encompassing investments, operation and maintenance costs.
 
     The core features and functionalities of this model are:
@@ -162,21 +145,9 @@
         \item \textbf{Spatially flexible allocation of fueling activity:} For a given trip, there exists a set of different opportunities to fuel or charge, e.g., at work, at a public fueling station, or at home. The decision on where the fueling demand is covered is endogenous and can change annually.
     \end{itemize}
 
-    This core model is extended in two directions. For RQ2, the following features are added:
-    \begin{itemize}
-        \item \textbf{Consumer groups by different income-class levels and level of service measure:} Consumer-specific parameters allow differentiation between income class levels in two dimensions: the value of time (VoT) and the monetary budget. The VoT relates to the monetary value of travel time as perceived by the consumer. The travel time is the level of service (LoS) that is provided by a drivetrain technology, measured in hours. The value of time rises with the income level of a consumer. The monetary budget refers to the budget of a consumer that is spent on the purchase of a new vehicle and is defined together with a time horizon, reflecting the frequency of the purchase of a new vehicle.
+    Decarbonization of the transport sector is represented through a carbon price that is included in the cost of fossil fuels. This carbon price increases the relative cost of conventional drivetrain technologies over time, thereby driving the cost-optimal transition towards electric vehicles within the system cost minimization.
 
-        \item \textbf{Fueling detour time:} The detouring time needed to reach the closest fueling station is included as a decision variable that is tied to the expansion of the fueling infrastructure. This extends the core LP to a mixed-integer linear program and allows linking the investments in fueling infrastructure to an improved level of service.
-    \end{itemize}
-
-    For RQ3, the core model is extended with:
-    \begin{itemize}
-        \item \textbf{State of charge tracking:} The battery state of charge is tracked along the sequence of geographic locations visited on each route, constraining where trucks can charge based on battery capacity and energy consumption between stops.
-
-        \item \textbf{Travel time accounting under mandatory break regulations:} Travel time is accumulated along routes, accounting for driving time, charging time, and mandatory driver rest periods following EU driving time regulations. Charging at mandatory break locations incurs no additional time cost, while charging at other locations extends trip duration and thereby increases costs.
-
-        \item \textbf{Modal shift to rail:} Freight demand can be served by road or shifted to rail, subject to a corridor-wide maximum rail share and a rate-of-change constraint reflecting infrastructure deployment limits.
-    \end{itemize}
+    This core model is extended for RQ2 (Section~\ref{sec:rq2_extension}) and RQ3 (Section~\ref{sec:rq3_extension}) with application-specific features described in the respective sections.
 
 \begin{table}[H]
 \caption{Overview of integrated model functionalities drawn from state-of-the-art methodology. \textit{Fueling detour time} is set in italics to indicate that this model feature is not based on the existing state of the art and is, therefore, a novel extension. `-' implies that the included modeling feature is integrated without significant adaptations from the initial concepts. The listed sources are references to research papers that describe or apply these modeling approaches. }
@@ -211,9 +182,87 @@ Vehicle stock modeling                                                          
         \label{fig:core_model_flowchart}
     \end{figure}
 
+     Table \ref{tab:nomenclature_main} contains the relevant nomenclature used in the following equations.
+
+        \begin{scriptsize}
+\begin{longtable}{llll}
+\caption{Nomenclature (extended).}
+\label{tab:nomenclature_main}\\
+\hline
+Sets and indices                         & Description                                                          &         &               \\ \hline
+\endfirsthead
+%
+\endhead
+%
+\hline
+\endfoot
+%
+\endlastfoot
+%
+$y \in \mathcal{Y}$                      & year                                                                 &         &               \\
+$u \in \mathcal{U}$                      & consumer group                                                       &         &               \\
+$r \in \mathcal{R}$                      & \begin{tabular}[t]{@{}l@{}}trip between origin-destination\\ (OD) pair\end{tabular}                            &         &               \\
+$k \in \mathcal{K}$                      & travel paths                                                         &         &               \\
+$e \in \mathcal{E}$                      & geographic location                                                  &         &               \\
+$v \in \mathcal{V}$                      & type of vehicle                                                      &         &               \\
+$t \in \mathcal{T}_v$                    & \begin{tabular}[t]{@{}l@{}}drivetrain technology fueled\\ by a specific fuel\end{tabular}                     &         &               \\
+$g \in \mathcal{G}$                      & \begin{tabular}[t]{@{}l@{}}year that vehicle was introduced\\ to market\end{tabular}                           &         &               \\
+$l \in \mathcal{L}$                      & \begin{tabular}[t]{@{}l@{}}types of fueling infrastructure\\ (by capacity)\end{tabular}                        &         &               \\
+$i \in \mathcal{I}_l$ &  \multicolumn{3}{l}{index for detour time reduction potential for type of fueling infrastructure $l$ }\\
+$\mathcal{Y}^{exp}$                      & \begin{tabular}[t]{@{}l@{}}set of years of investment\\ decisions\end{tabular}                                 &         &               \\
+$\mathcal{K}_{e}$                        & \begin{tabular}[t]{@{}l@{}}set of paths that go\\ through edge $e$\end{tabular}                                &         &               \\
+$\mathcal{L}^{not home}$ & \multicolumn{3}{l}{fueling infrastructure that is not allocated at home of vehicle owner} \\
+$\mathcal{L}^{home}$ & fueling infrastructure that is allocated at home of vehicle owner & & \\
+$\mathcal{L}_{tk}$ & \multicolumn{3}{l}{types of infrastructure by drivetrain technology and availability for travel path} \\
+$\mathcal{L}^{vt}$ & \begin{tabular}[t]{@{}l@{}}types of fueling infrastructure available\\ for vehicle type $v$ and technology $t$\end{tabular} & & \\
+$\mathcal{E}_{k}$ & \begin{tabular}[t]{@{}l@{}}set of geographic locations\\ along travel path $k$\end{tabular} & & \\
+$\mathcal{E}_{kl}$ & \begin{tabular}[t]{@{}l@{}}geographic location along travel path\\ and available fueling type\end{tabular} & & \\
+$S^u_j$ & \multicolumn{3}{l}{\begin{tabular}[t]{@{}l@{}}$ = \{ y_m \in Y | j \in [m, m + \tau_u -1]\}, m=1, ..., |Y| -\tau _u +1 $ \\ subsets of time periods for which a monetary budget is defined by consumer group\end{tabular}}   \\
+\\\hline
+Decision variables                       &                                                                      & Unit    &               \\ \hline
+$f_{yurkvtg}$                           & number of person-trips                                               & -       & $[0,\infty[$  \\
+\textbf{$h_{yurvtg}$}                   & number of vehicles                                                   & -       & $[0, \infty[$ \\
+$h^{+}_{yurvtg}$                        & newly purchased vehicles                                             & -       & $[0,\infty[$  \\
+$h^{-}_{yurvtg}$                        & \begin{tabular}[t]{@{}l@{}}number of vehicles leaving\\ the vehicle stock\end{tabular}                         & -       & $[0, \infty[$ \\
+$s_{yurkvtgle}$                         & energy fueled                                                        & kWh     & $[0, \infty[$ \\
+$n_{yurkvtgle}$                         & \begin{tabular}[t]{@{}l@{}}number of fueling\\ vehicles\end{tabular}                                           &         & $[0, \infty[$ \\
+$b_{yurkvtle}$ & \begin{tabular}[t]{@{}l@{}}fueling detour time to reach closest available public charging \\ infrastructure\end{tabular} & h & $[0, \infty[$ \\
+$w_{yiel}$ & \begin{tabular}[t]{@{}l@{}}binary decision variable indicating whether detour reduction $i$ is\\ active\end{tabular} & - & $\{ 0, 1\}$ \\
+$q^{+,\mathrm{charg\_infr, home}}_{yurtle}$ & \begin{tabular}[t]{@{}l@{}}added charging infrastructure\\ at home\end{tabular}                              & kW      & $[0,\infty[$  \\
+$q^{+, \mathrm{charg\_infr}}_ {ytle}$     & \begin{tabular}[t]{@{}l@{}}added charging\\ infrastructure\end{tabular}                                        & kW      & $[0, \infty[$ \\
+$q^{\Delta +, \mathrm{charg\_infr}}_ {ytle}$ & \begin{tabular}[t]{@{}l@{}}continuous residual capacity beyond the selected discrete \\ capacity level $cap^{\mathrm{lb}}$\end{tabular} & kW & $[0, \infty[$ \\
+$\mathrm{budget}^{+}_{yur}$              & budget overrun                                                       & \euro   & $[0, \infty[$ \\
+$\mathrm{budget}^{-}_{yur}$              & budget underrun                                                      & \euro   & $[0, \infty[$ \\ \hline
+Parameters                               &                                                                      &         &               \\ \hline
+$\mathrm{LoS}^f_{ykvt}$                  & \begin{tabular}[t]{@{}l@{}}level of service for trip along path $k$ using vehicle type $v$\\ and technology $t$\end{tabular} & h & $[0, \infty[$ \\
+$\mathrm{VoT}_u$                         & value of time of consumer group $u$                                  & \euro/h & $[0, \infty[$ \\
+$\gamma_l$                               & \begin{tabular}[t]{@{}l@{}}factor between annual peak hour\\ and total annual demand\end{tabular}              & --      & $[0, 1]$ \\
+$Q^{\mathrm{charg\_infr}}_{tle}$           & \begin{tabular}[t]{@{}l@{}}Initial charging infrastructure\\ (not at home)\end{tabular}                       & kW      & $[0, \infty[$ \\
+$Q^{\mathrm{charg\_infr, home}}_{urtle}$  & \begin{tabular}[t]{@{}l@{}}Initial charging infrastructure\\ at home\end{tabular}                              & kW      & $[0, \infty[$ \\
+$\hat{Q}^{\mathrm{charg\_infr,home}}_{utle}$ & \begin{tabular}[t]{@{}l@{}}upper limit for charging infrastructure capacity\\ at home (by consumer group)\end{tabular} & kW & $[0, \infty[$ \\
+$\hat{Q}^{\mathrm{charg\_infr}}_{tle}$   & \begin{tabular}[t]{@{}l@{}}upper limit for charging infrastructure capacity\\ (not at home)\end{tabular} & kW      & $[0, \infty[$ \\
+$\alpha_{iel}$                           & \begin{tabular}[t]{@{}l@{}}reduction $i = 1, \dots, I$\\ of detour time\end{tabular}                           & --      & $[0, 1]$ \\
+$cap^{\mathrm{lb}}_{iel}$, $cap^{\mathrm{ub}}_{iel}$ & \begin{tabular}[t]{@{}l@{}}lower and upper bounds of capacity level $i$ which tie to a reduction of\\ detour time of $\alpha_{iel}$  \end{tabular} & kW & $[0, \infty[$ \\
+$\tau_u$ & \begin{tabular}[t]{@{}l@{}}number of years between consecutive vehicle purchase decisions, \\representing the vehicle replacement period\end{tabular} & a & $[0, \infty[$ \\
+$\beta$                                 & \begin{tabular}[t]{@{}l@{}}relative threshold for budget\\ under- or overrun\end{tabular}                      & --      & $[0, 1]$ \\
+$B^{\mathrm{init}}_{el}$                 & initial detour time                                                  & h       & $[0, \infty[$ \\
+$D^{\textrm{spec}}_{vtg}$                & \begin{tabular}[t]{@{}l@{}}specific energy\\ consumption\end{tabular}                                          & kWh/km  & $[0, \infty[$ \\
+$W_{vtg}$                                & load factor                                                          & persons/vehicle & $[0, \infty[$ \\
+$\mathrm{Cap}^{\mathrm{tank}}_{vtg}$     & tank capacity                                                        & kWh     & $[0, \infty[$ \\
+$L^{annual}_{vtg}$                       & annual range                                                         & km      & $[0, \infty[$ \\
+$L_{k}$                                  & length of path                                                       & km      & $[0, \infty[$ \\
+$C^{\mathrm{CAPEX}}_{yvtg}$              & \begin{tabular}[t]{@{}l@{}}expenditure costs\\ for vehicles\end{tabular}                                       & \euro/vehicle & $[0, \infty[$ \\
+$\mathrm{Budget}_u$                      & \begin{tabular}[t]{@{}l@{}}monetary budget of\\ consumer group\end{tabular}                                    & \euro/trip & $[0, \infty[$ \\
+$\mathrm{Lifetime}_{vtg}$               & \begin{tabular}[t]{@{}l@{}}maximum vehicle\\ lifetime\end{tabular}                                             & a       & $[0, \infty[$ \\
+$F_{yur}$                               & exogenous travel demand                                              & trips   & $[0, \infty[$ \\
+$\mathrm{speed}_{vt}$                   & \begin{tabular}[t]{@{}l@{}}average driving speed by vehicle type\\ and technology\end{tabular}                  & km/h    & $[0, \infty[$ \\
+$\mathrm{fueling\_time}_{ykvt}$         & \begin{tabular}[t]{@{}l@{}}fueling time for a trip\\ along path $k$\end{tabular}                               & h       & $[0, \infty[$ \\
+\hline
+\end{longtable}
+\end{scriptsize}
+
     \subsection{Mathematical formulation}
      In the following, we elaborate on the mathematical formulation of the core model and the extensions from state-of-the-art methodologies.
-     Table \ref{tab:nomenclature_main} contains the relevant nomenclature used in the following equations.
 
         \subsubsection*{Objective function}
         The objective function comprises costs for the vehicle stock (${C}^{\mathrm{vehicle\_stock, total}}$), required fueling (${C}^{\mathrm{fueling, total}}$), costs for fueling infrastructure (${C}^{\mathrm{infrastructure, total}}$), and intangible costs (${C}^{\mathrm{intangiblecosts, total}}$) as well as penalty costs (${C}^{\mathrm{penaltycosts, total}}$) that are introduced here to penalize the overrun or the underrun of monetary budgets of consumers. The objective function is defined as follows: 
@@ -235,82 +284,6 @@ Vehicle stock modeling                                                          
                 \end{split}
             \end{flalign}
         $s$ refers to the annual fueling demand.
-        \begin{scriptsize}
-\begin{longtable}{llll}
-\caption{Nomenclature (extended).}
-\label{tab:nomenclature_main}\\
-\hline
-Sets and indices                         & Description                                                          &         &               \\ \hline
-\endfirsthead
-%
-\endhead
-%
-\hline
-\endfoot
-%
-\endlastfoot
-%
-$y \in \mathcal{Y}$                      & year                                                                 &         &               \\
-$u \in \mathcal{U}$                      & consumer group                                                       &         &               \\
-$r \in \mathcal{R}$                      & trip between origin-destination (OD) pair                            &         &               \\
-$k \in \mathcal{K}$                      & travel paths                                                         &         &               \\
-$e \in \mathcal{E}$                      & geographic location                                                  &         &               \\
-$v \in \mathcal{V}$                      & type of vehicle                                                      &         &               \\
-$t \in \mathcal{T}_v$                    & drivetrain technology fueled by a specific fuel                     &         &               \\
-$g \in \mathcal{G}$                      & year that vehicle was introduced to market                           &         &               \\
-$l \in \mathcal{L}$                      & types of fueling infrastructure (by capacity)                        &         &               \\
-$i \in \mathcal{I}_l$ &  \multicolumn{3}{l}{index for detour time reduction potential for type of fueling infrastructure $l$ }\\
-$\mathcal{Y}^{exp}$                      & set of years of investment decisions                                 &         &               \\
-$\mathcal{K}_{e}$                        & set of paths that go through edge $e$                                &         &               \\
-$\mathcal{L}^{not home}$ & \multicolumn{3}{l}{fueling infrastructure that is not allocated at home of vehicle owner} \\
-$\mathcal{L}^{home}$ & fueling infrastructure that is allocated at home of vehicle owner & & \\
-$\mathcal{L}_{tk}$ & \multicolumn{3}{l}{types of infrastructure by drivetrain technology and availability for travel path} \\
-$\mathcal{L}^{vt}$ & types of fueling infrastructure available for vehicle type $v$ and technology $t$ & & \\
-$\mathcal{E}_{k}$ & set of geographic locations along travel path $k$ & & \\
-$\mathcal{E}_{kl}$ & geographic location along travel path and available fueling type & & \\
-$S^u_j$ & \multicolumn{3}{l}{\begin{tabular}[t]{@{}l@{}}$ = \{ y_m \in Y | j \in [m, m + \tau_u -1]\}, m=1, ..., |Y| -\tau _u +1 $ \\ subsets of time periods for which a monetary budget is defined by consumer group\end{tabular}}   \\
-\\\hline
-Decision variables                       &                                                                      & Unit    &               \\ \hline
-$f_{yurkvtg}$                           & number of person-trips                                               & -       & $[0,\infty[$  \\
-\textbf{$h_{yurvtg}$}                   & number of vehicles                                                   & -       & $[0, \infty[$ \\
-$h^{+}_{yurvtg}$                        & newly purchased vehicles                                             & -       & $[0,\infty[$  \\
-$h^{-}_{yurvtg}$                        & number of vehicles leaving the vehicle stock                         & -       & $[0, \infty[$ \\
-$s_{yurkvtgle}$                         & energy fueled                                                        & kWh     & $[0, \infty[$ \\
-$n_{yurkvtgle}$                         & number of fueling vehicles                                           &         & $[0, \infty[$ \\
-$b_{yurkvtle}$ & \begin{tabular}[t]{@{}l@{}}fueling detour time to reach closest available public charging \\ infrastructure\end{tabular} & h & $[0, \infty[$ \\
-$w_{yiel}$ & \begin{tabular}[t]{@{}l@{}}binary decision variable indicating whether detour reduction $i$ is\\ active\end{tabular} & - & $\{ 0, 1\}$ \\
-$q^{+,\mathrm{charg\_infr, home}}_{yurtle}$ & added charging infrastructure at home                              & kW      & $[0,\infty[$  \\
-$q^{+, \mathrm{charg\_infr}}_ {ytle}$     & added charging infrastructure                                        & kW      & $[0, \infty[$ \\
-$q^{\Delta +, \mathrm{charg\_infr}}_ {ytle}$ & \begin{tabular}[t]{@{}l@{}}continuous residual capacity beyond the selected discrete \\ capacity level $cap^{\mathrm{lb}}$\end{tabular} & kW & $[0, \infty[$ \\
-$\mathrm{budget}^{+}_{yur}$              & budget overrun                                                       & \euro   & $[0, \infty[$ \\
-$\mathrm{budget}^{-}_{yur}$              & budget underrun                                                      & \euro   & $[0, \infty[$ \\ \hline
-Parameters                               &                                                                      &         &               \\ \hline
-$\mathrm{LoS}^f_{ykvt}$                  & level of service for trip along path $k$ using vehicle type $v$ and technology $t$ & h & $[0, \infty[$ \\
-$\mathrm{VoT}_u$                         & value of time of consumer group $u$                                  & \euro/h & $[0, \infty[$ \\
-$\gamma_l$                               & factor between annual peak hour and total annual demand              & --      & $[0, 1]$ \\
-$Q^{\mathrm{charg\_infr}}_{tle}$           & Initial charging infrastructure (not at home)                       & kW      & $[0, \infty[$ \\
-$Q^{\mathrm{charg\_infr, home}}_{urtle}$  & Initial charging infrastructure at home                              & kW      & $[0, \infty[$ \\
-$\hat{Q}^{\mathrm{charg\_infr,home}}_{utle}$ & upper limit for charging infrastructure capacity at home (by consumer group) & kW & $[0, \infty[$ \\
-$\hat{Q}^{\mathrm{charg\_infr}}_{tle}$   & upper limit for charging infrastructure capacity (not at home)       & kW      & $[0, \infty[$ \\
-$\alpha_{iel}$                           & reduction $i = 1, \dots, I$ of detour time                           & --      & $[0, 1]$ \\
-$cap^{\mathrm{lb}}_{iel}$, $cap^{\mathrm{ub}}_{iel}$ & \begin{tabular}[t]{@{}l@{}}lower and upper bounds of capacity level $i$ which tie to a reduction of\\ detour time of $\alpha_{iel}$  \end{tabular} & kW & $[0, \infty[$ \\
-$\tau_u$ & \begin{tabular}[t]{@{}l@{}}number of years between consecutive vehicle purchase decisions, \\representing the vehicle replacement period\end{tabular} & a & $[0, \infty[$ \\
-$\beta$                                 & relative threshold for budget under- or overrun                      & --      & $[0, 1]$ \\
-$B^{\mathrm{init}}_{el}$                 & initial detour time                                                  & h       & $[0, \infty[$ \\
-$D^{\textrm{spec}}_{vtg}$                & specific energy consumption                                          & kWh/km  & $[0, \infty[$ \\
-$W_{vtg}$                                & load factor                                                          & persons/vehicle & $[0, \infty[$ \\
-$\mathrm{Cap}^{\mathrm{tank}}_{vtg}$     & tank capacity                                                        & kWh     & $[0, \infty[$ \\
-$L^{annual}_{vtg}$                       & annual range                                                         & km      & $[0, \infty[$ \\
-$L_{k}$                                  & length of path                                                       & km      & $[0, \infty[$ \\
-$C^{\mathrm{CAPEX}}_{yvtg}$              & expenditure costs for vehicles                                       & \euro/vehicle & $[0, \infty[$ \\
-$\mathrm{Budget}_u$                      & monetary budget of consumer group                                    & \euro/trip & $[0, \infty[$ \\
-$\mathrm{Lifetime}_{vtg}$               & maximum vehicle lifetime                                             & a       & $[0, \infty[$ \\
-$F_{yur}$                               & exogenous travel demand                                              & trips   & $[0, \infty[$ \\
-$\mathrm{speed}_{vt}$                   & average driving speed by vehicle type and technology                  & km/h    & $[0, \infty[$ \\
-$\mathrm{fueling\_time}_{ykvt}$         & fueling time for a trip along path $k$                               & h       & $[0, \infty[$ \\
-\hline
-\end{longtable}
-\end{scriptsize}
 
 Decision variable $f$ expresses the number of trips covered by a specific vehicle type and technology-fuel pair of a specific generation. The sum over all possible travel paths, vehicle types, technology-fuel pairs and vehicle generations equals the exogenously given travel demand:  
 
@@ -367,7 +340,7 @@ Decision variable $f$ expresses the number of trips covered by a specific vehicl
                  \sum_{r \in \mathcal{R}_u} \left( Q^{\mathrm{charg\_infr, home}}_{urtle}  + \sum_{y' \in \mathcal{Y}^{\textrm{exp}}_y} q^{+, \mathrm{charg\_infr, home}}_{yurtle} \right)\leq \hat{Q}^{\mathrm{charg\_infr,home}}_{utle} : \forall y, u, t, l, e
              \end{split}
          \end{flalign}
-    \subsection{MILP extension for regional application (RQ2)}
+    \subsection{MILP extension for regional application (RQ2)}\label{sec:rq2_extension}
         \subsubsection{Extended problem description and model features}
 
         The RQ2 extension addresses the role of public charging infrastructure roll-out in the adoption of \acp{BEV} across consumers of different income classes. Current \ac{BEV} adoption is concentrated among high-income households with access to home charging, while the long-term decarbonization of the passenger car fleet requires adoption across all socio-economic backgrounds. As \ac{BEV} adoption broadens, the central role of home charging shifts towards public charging infrastructure, whose spatial density and speed of deployment become determining factors for adoption.
@@ -375,6 +348,13 @@ Decision variable $f$ expresses the number of trips covered by a specific vehicl
         To capture these dynamics, the core model is extended in two ways. First, consumer groups differentiated by income class are introduced. Each consumer group is characterized by a specific value of time (VoT), a monetary budget for vehicle purchases, and a share of home ownership. The VoT monetizes the travel time perceived by the consumer and rises with income level. The monetary budget constrains the expenditures for vehicles and home charging infrastructure over a defined purchase cycle. This differentiation allows the model to endogenously determine \ac{BEV} adoption pathways that vary across income classes, reflecting their heterogeneous economic constraints and time valuations.
 
         Second, the detouring time needed to reach the closest charging station is introduced as an endogenous decision variable. This links the expansion of public charging infrastructure to the spatial density of the charger network and, consequently, to a reduction in consumers' total travel time. Because the detour time depends on the discrete number of charging stations deployed at a given location, this extension transforms the core LP into a mixed-integer linear program (MILP). The combination of income-specific parameters and endogenous detour time enables the analysis of how charging infrastructure deployment strategies affect \ac{BEV} adoption differently across income classes and across neighboring regions.
+
+        In summary, the RQ2 extension adds the following features to the core model:
+        \begin{itemize}
+            \item \textbf{Consumer groups by different income-class levels and level of service measure:} Consumer-specific parameters allow differentiation between income class levels in two dimensions: the value of time (VoT) and the monetary budget. The VoT relates to the monetary value of travel time as perceived by the consumer. The travel time is the level of service (LoS) that is provided by a drivetrain technology, measured in hours. The value of time rises with the income level of a consumer. The monetary budget refers to the budget of a consumer that is spent on the purchase of a new vehicle and is defined together with a time horizon, reflecting the frequency of the purchase of a new vehicle.
+
+            \item \textbf{Fueling detour time:} The detouring time needed to reach the closest fueling station is included as a decision variable that is tied to the expansion of the fueling infrastructure. This extends the core LP to a mixed-integer linear program and allows linking the investments in fueling infrastructure to an improved level of service.
+        \end{itemize}
 
         Figure \ref{fig:rq2_flowchart} provides an overview of the extended input-output relations. Compared to the core model (Figure \ref{fig:core_model_flowchart}), the additional inputs include income-class-specific parameters (VoT, monetary budgets, home ownership shares) and the initial detour time assumptions. The additional outputs include \ac{BEV} adoption shares by income class and the evolution of detour times by location.
 
@@ -450,23 +430,31 @@ Decision variable $f$ expresses the number of trips covered by a specific vehicl
         $\alpha_{iel}$ represents the $i$th reduction of the detour time at capacity level $[cap^{\mathrm{lb}}_{iel},\; cap^{\mathrm{ub}}_{iel}]$. The conditional definition of $b$ involves a product of the binary variable $w$ and continuous variables. Rather than reformulating this via explicit big-M constraints, the implementation uses indicator constraints, which are natively supported by the JuMP modeling language in Julia. Indicator constraints allow the conditional logic to be passed directly to the solver, avoiding the numerical difficulties associated with choosing appropriate big-M values.
 
         {For better understanding of the computation of this equation, we provide the following example: At location $e$, there are 1000 fueling events for a specific trip, vehicle type, and technology ($n_{yurkvtgle} = 1000$). Due to the total installed public charging capacity at location $e$, the reduction $\alpha_{(i=7)el}$ is active which reduces the initial detouring time $B^{\mathrm{init}}_{el}$ by 80\%. $B^{\mathrm{init}}_{el}$ equals 60 minutes. Based on this, the total detouring time is $b = 60\,\mathrm{min} \cdot (1-0.8) \cdot 1000 = 12{,}000\,\mathrm{min}$.}
-    \subsection{Extension for long-distance transport (RQ3)}
+    \subsection{Extension for long-distance transport (RQ3)}\label{sec:rq3_extension}
 
         \subsubsection{Extended problem description and model features}
 
         The RQ3 extension addresses the spatial patterns of charging load distribution in inter-zonal long-haul truck electrification. As \acp{BET} travel along international corridors passing through multiple electricity market zones, their charging demand can be allocated flexibly across geographic locations. This spatial flexibility arises because charging costs vary along the corridor due to differences in electricity prices and network connection fees between countries. The cost-optimal geographic allocation of charging loads is therefore not fixed a priori but emerges endogenously from the optimization.
 
-        To capture these dynamics, the core model is extended with several features that govern the geographic allocation of charging demand along routes:
-
+        To capture these dynamics, the core model is extended with the following features:
         \begin{itemize}
-            \item \textbf{State of charge tracking:} The battery state of charge is modeled in the spatial dimension along the sequence of geographic locations visited on each route. The amount of charged energy and the maximum driving distance without charging are governed by the vehicle's battery capacity and state of charge.
+            \item \textbf{State of charge tracking:} The battery state of charge is tracked along the sequence of geographic locations visited on each route, constraining where trucks can charge based on battery capacity and energy consumption between stops.
 
-            \item \textbf{Mandatory break regulations:} The maximum driving hours of truck drivers are considered. The travel time along the route is endogenously tracked, and mandatory breaks are imposed at geographic locations where they must be taken by the latest permissible time. Charging during mandatory breaks incurs no additional time cost, while charging at other locations extends trip duration and thereby increases costs.
+            \item \textbf{Travel time accounting under mandatory break regulations:} Travel time is accumulated along routes, accounting for driving time, charging time, and mandatory driver rest periods following EU driving time regulations. Charging at mandatory break locations incurs no additional time cost, while charging at other locations extends trip duration and thereby increases costs.
 
-            \item \textbf{Geographically varying charging costs:} Variable charging costs differ geographically based on market-zone-dependent electricity prices. Additionally, geographically varying annual network fees are considered in the capacity expansion of charging infrastructure.
+            \item \textbf{Modal shift to rail:} Freight demand can be served by road or shifted to rail, subject to a corridor-wide maximum rail share and a rate-of-change constraint reflecting infrastructure deployment limits.
 
-            \item \textbf{Modal shift to rail:} Freight demand can be served by road or shifted to rail transport. The modal shift is bounded by a corridor-wide maximum rail share and a rate-of-change constraint reflecting the pace at which intermodal terminal capacity and rail network upgrades can realistically be deployed.
+            \item \textbf{Geographically varying charging costs:} Variable charging costs differ by location based on market-zone-dependent electricity prices. Additionally, geographically varying annual network fees are considered in the capacity expansion of charging infrastructure.
         \end{itemize}
+
+        Figure \ref{fig:rq3_flowchart} provides an overview of the extended input-output relations. Compared to the core model (Figure \ref{fig:core_model_flowchart}), the additional inputs include battery and charging parameters (capacity, charging power, SOC constraints), mandatory break regulations following EU driving time rules, modal shift parameters for road-to-rail substitution, and geographically varying electricity prices and network fees. The additional outputs include the charging load distribution by market zone, state of charge and travel time profiles along routes, and the modal split between road and rail.
+
+        \begin{figure}[h]
+            \centering
+            \includegraphics[width=\textwidth]{graphics/rq3_flowchart.pdf}
+            \caption{Extended input-output relations of the optimization model for the long-distance freight transport application (RQ3), including state of charge tracking, mandatory break regulations, modal shift, and geographically varying charging costs.}
+            \label{fig:rq3_flowchart}
+        \end{figure}
 
         \subsubsection{Extended mathematical formulation}
 
