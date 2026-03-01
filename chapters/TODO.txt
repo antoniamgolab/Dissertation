@@ -1,11 +1,10 @@
 - BEV abbreviations
-- paper als bib tex einfügen
+- paper als bib tex einfügen-- check
 - clean references
 - add appendix 
 - english or american? 
-- correct the "graphical abstract" figures to be aligned with the rest
-- add footnote at the mention of the first "WE"
-- reference the four papers at the beginning of relevant sections
+- correct the "graphical abstract" figures to be aligned with the rest 
+- reference the four papers at the beginning of relevant sections 
 - add AI statement
 
 \textbf{TODO} \hl{include acronyms for BEV, OD}
