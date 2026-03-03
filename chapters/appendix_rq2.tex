@@ -473,7 +473,7 @@ To introduce the relationship between installed charging infrastructure capacity
 
 \section{Computational Details}\label{app:rq2_computational}
 
-The model is implemented in Julia using JuMP~1.9 \citep{Lubin2023} and solved with Gurobi~12.0 \citep{gurobi}. Simulations are performed on an AMD Ryzen Threadripper 7980X (64 cores, 3.20~GHz base clock, 5.2~GHz boost) with 512~GB RAM.
+The model is implemented in Julia using JuMP~1.9 \citep{Lubin2023} and solved with Gurobi~12.0 \citep{gurobi}. Simulations are performed on an AMD Ryzen Threadripper 7980X (64 cores, 3.20~GHz base clock, 5.2~GHz boost) with 512~GB RAM. The model comprises approximately 32 million continuous variables and 189 binary variables. After presolve, the problem is reduced to approximately 2 million variables. A single scenario solves in approximately 6.5 hours, terminating at an MIP gap below 0.005\%.
 
 The source code and input data are publicly available at: \url{https://github.com/antoniamgolab/iDesignRES_transcompmodel}.
 
