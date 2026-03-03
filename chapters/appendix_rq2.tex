@@ -1,5 +1,7 @@
 \chapter{Supplementary Material for Contribution 2 (RQ2)}\label{app:rq2}
 
+The content of this appendix is based on \citet{GOLAB2026PublicCharger}.
+
 \section{Extended Nomenclature}\label{app:rq2_nomenclature}
 
 Table~\ref{tab:nomenclature_rq2} lists the extended nomenclature for the transport sector decarbonization model described in Section~\ref{sec:rq2_results}.
@@ -40,26 +42,26 @@ $h_{yurkvtg}$ & number of vehicles & -- & $[0, \infty[$ \\
 $h^{+}_{yurkvtg}$ & newly purchased vehicles & -- & $[0,\infty[$ \\
 $h^{-}_{yurkvtg}$ & \begin{tabular}[t]{@{}l@{}}number of vehicles leaving\\ the vehicle stock\end{tabular} & -- & $[0, \infty[$ \\
 $s_{yurkvtgle}$ & energy fueled & kWh & $[0, \infty[$ \\
-$n_{yurkvtgle}$ & number of fueling vehicles & -- & $[0, \infty[$ \\
-$b_{yurkvtle}$ & \begin{tabular}[t]{@{}l@{}}fueling detour time to reach closest\\ available public charging infrastructure\end{tabular} & h & $[0, \infty[$ \\
-$w_{yeli}$ & \begin{tabular}[t]{@{}l@{}}binary decision variable indicating whether\\ detour reduction $i$ is active\end{tabular} & -- & $\{0, 1\}$ \\
-$z_{yrkvtle,i}$ & \begin{tabular}[t]{@{}l@{}}decision variable substituting\\ the multiplication $b \times w$\end{tabular} & h & $[0, \infty[$ \\
-$q^{+,\mathrm{fuel\_infr, home}}_{yrte}$ & added fueling infrastructure at home & kW & $[0,\infty[$ \\
-$q^{+, \mathrm{fuel\_infr}}_ {ytle}$ & added fueling infrastructure & kW & $[0, \infty[$ \\
-$q^{\Delta +, \mathrm{fuel\_infr}}_ {ytle}$ & \begin{tabular}[t]{@{}l@{}}relative difference of fueling capacity\\ expansion to fixed capacity size values\end{tabular} & kW & $[0, \infty[$ \\
+$n_{yurklge}$ & \begin{tabular}[t]{@{}l@{}}number of fueling vehicles\\ (aggregated over $v,t$; cf.\ $n_{yurkvtgle}$ in main text)\end{tabular} & -- & $[0, \infty[$ \\
+$b_{yiel}$ & \begin{tabular}[t]{@{}l@{}}VoT-weighted detour cost at location $e$\\ for charging type $l$ in year $y$\\ (monetized form of $b_{yurkvtle}$ from main text)\end{tabular} & \euro & $[0, \infty[$ \\
+$w_{yiel}$ & \begin{tabular}[t]{@{}l@{}}binary decision variable indicating whether\\ detour reduction $i$ is active\end{tabular} & -- & $\{0, 1\}$ \\
+$q^{+,\mathrm{charg\_infr, home}}_{yrte}$ & added fueling infrastructure at home & kW & $[0,\infty[$ \\
+$q^{+, \mathrm{charg\_infr}}_ {ytle}$ & added fueling infrastructure & kW & $[0, \infty[$ \\
+$q^{\Delta +, \mathrm{charg\_infr}}_ {ytle}$ & \begin{tabular}[t]{@{}l@{}}relative difference of fueling capacity\\ expansion to fixed capacity size values\end{tabular} & kW & $[0, \infty[$ \\
 $\mathrm{budget}^{+}_{yur}$ & budget overrun & \euro & $[0, \infty[$ \\
 $\mathrm{budget}^{-}_{yur}$ & budget underrun & \euro & $[0, \infty[$ \\
 \\\hline
 Parameters & Description & Unit & Domain \\ \hline
 $\mathrm{LoS}$ & level of service & h & $[0, \infty[$ \\
 $\mathrm{VoT}$ & value of time & \euro/h & $[0, \infty[$ \\
-$\gamma_l$ & \begin{tabular}[t]{@{}l@{}}factor between annual peak hour\\ and total annual demand\end{tabular} & \% & $[0, 100]$ \\
-$Q^{\mathrm{fuel\_infr, not home}}_{urte}$ & initial fueling infrastructure (not home) & kW & $[0, \infty[$ \\
-$Q^{\mathrm{fuel\_infr, home}}_{urtle}$ & initial fueling infrastructure at home & kW & $[0, \infty[$ \\
-$\hat{Q}^{\mathrm{max}}_{yule}$ & \begin{tabular}[t]{@{}l@{}}upper limit for charging infrastructure\\ capacity by consumer group\end{tabular} & kW & $[0, \infty[$ \\
-$\hat{Q}^{\mathrm{max}}_{yle}$ & \begin{tabular}[t]{@{}l@{}}upper limit for charging\\ infrastructure capacity\end{tabular} & kW & $[0, \infty[$ \\
+$\gamma_l$ & \begin{tabular}[t]{@{}l@{}}factor between annual peak hour\\ and total annual demand\end{tabular} & -- & $[0, 1]$ \\
+$Q^{\mathrm{charg\_infr, not home}}_{urte}$ & initial fueling infrastructure (not home) & kW & $[0, \infty[$ \\
+$Q^{\mathrm{charg\_infr, home}}_{urtle}$ & initial fueling infrastructure at home & kW & $[0, \infty[$ \\
+$\hat{Q}^{\mathrm{charg\_infr,home}}_{utle}$ & \begin{tabular}[t]{@{}l@{}}upper limit for home charging\\ infrastructure capacity by consumer group\end{tabular} & kW & $[0, \infty[$ \\
+$\hat{Q}^{\mathrm{charg\_infr}}_{tle}$ & \begin{tabular}[t]{@{}l@{}}upper limit for charging\\ infrastructure capacity\end{tabular} & kW & $[0, \infty[$ \\
 $\alpha_{iel}$ & reduction $i$ of detour time & \% & $[0, 100]$ \\
-$cap_{eli}$ & \begin{tabular}[t]{@{}l@{}}fixed lower bounds for capacity which tie\\ to a reduction of detour time of $\alpha_{i}$\end{tabular} & kWh & $[0, \infty[$ \\
+$cap^{\mathrm{lb}}_{iel}$ & \begin{tabular}[t]{@{}l@{}}lower bound of capacity level $i$\\ for detour time reduction $\alpha_{i}$\end{tabular} & kW & $[0, \infty[$ \\
+$cap^{\mathrm{ub}}_{iel}$ & \begin{tabular}[t]{@{}l@{}}upper bound of capacity level $i$\\ for detour time reduction $\alpha_{i}$\end{tabular} & kW & $[0, \infty[$ \\
 $\tau^u$ & \begin{tabular}[t]{@{}l@{}}vehicle replacement period\\ by consumer group\end{tabular} & a & $[0, \infty[$ \\
 $\beta$ & \begin{tabular}[t]{@{}l@{}}relative threshold for budget\\ under- or overrun\end{tabular} & \% & $[0, 100]$ \\
 $B^{\mathrm{init}}_{el}$ & initial detour time & h & $[0, \infty[$ \\
@@ -70,67 +72,375 @@ $L^{annual}_{vtg}$ & annual range & km & $[0, \infty[$ \\
 $L_{k}$ & length of path & km & $[0, \infty[$ \\
 $C^{\mathrm{CAPEX}}_{yvtg}$ & expenditure costs for vehicles & \euro & $[0, \infty[$ \\
 $\mathrm{Budget}_u$ & monetary budget of consumer group & \euro/trip & $[0, \infty[$ \\
+$H^{\mathrm{init}}_{urvtg}$ & initial vehicle stock & vehicles & $[0, \infty[$ \\
+$\Lambda_{vtg}$ & vehicle lifetime & a & $[0, \infty[$ \\
+$\mu_{yvt}$ & maximum market share of technology $t$ & -- & $[0, 1]$ \\
+$\sigma^{\mathrm{commuting}}_e$ & commuting share at location $e$ & -- & $[0, 1]$ \\
+$\sigma^{\mathrm{private}}_e$ & private trip share at location $e$ & -- & $[0, 1]$ \\
+$M$ & sufficiently large constant (big-M) & -- & $[0, \infty[$ \\
 \hline
 \end{longtable}
 \end{scriptsize}
 
 \section{Extended Mathematical Formulation}\label{app:rq2_math}
 
-This section provides the extended set of constraints of the transport sector decarbonization model.
+This section provides the complete set of constraints of the transport sector decarbonization model. Constraints that are also presented with detailed explanations in Section~\ref{sec:rq2_extension} are included here for reference.
+
+\textbf{Objective function:}
+
+The objective function comprises costs for the vehicle stock (${C}^{\mathrm{vehicle\_stock}}$), required fueling (${C}^{\mathrm{fueling}}$), costs for fueling infrastructure (${C}^{\mathrm{infrastructure}}$), intangible costs (${C}^{\mathrm{intangiblecosts}}$), penalty costs (${C}^{\mathrm{penaltycosts}}$), and the VoT-weighted detour cost ($b$). The explicit definitions of each cost component are provided in the following subsections of this appendix. All cost components are discounted to net present value using the discount rate $\delta$:
+
+\begin{flalign} \label{equ:app_obj_fun}
+    \begin{split}
+        \underset{f,h,h^{+}, h^{-},s,n,b,w,q^{+}, \textrm{budget}^+, \textrm{budget}^-}{minimize} \; z = \sum_{y} \frac{1}{(1+\delta)^{y-y_0}} \Big( {C}^{\mathrm{vehicle\_stock}}_{y} + {C}^{\mathrm{fueling}}_{y} \\ +  {C}^{\mathrm{infrastructure}}_{y} +{C}^{\mathrm{intangiblecosts}}_{y}  +{C}^{\mathrm{penaltycosts}}_{y} + \sum_{i,e,l} b_{yiel} \Big)
+    \end{split}
+\end{flalign}
+
+\textbf{Fueling infrastructure sizing:}
+
+Fueling infrastructure is expanded for each investment period $y' \in \mathcal{Y}^{\mathrm{exp}}$ and sized based on a peak-to-annual demand ratio $\gamma_l$. We differentiate between fueling infrastructure independent from the particular trip ($\mathcal{L}^{\mathrm{not\;home}}$) and home-based fueling infrastructure ($\mathcal{L}^{\mathrm{home}}$):
+
+\begin{flalign} \label{equ:app_cap_fuel_e}
+    \begin{split}
+        Q^{\mathrm{charg\_infr}}_{tle} + \sum_{y' \in \mathcal{Y}^{\mathrm{exp}}_y} q^{+, \mathrm{charg\_infr}}_{y'tle} \geq \gamma_l\sum_{r \in \mathcal{R}} \sum_{k \in \mathcal{K}_e} \sum_{u \in \mathcal{U}} \sum_{v \in \mathcal{V}} \sum_{g \in \mathcal{G}}  s_{yurkvtgle} \quad : \forall y,t,e,l \in \mathcal{L}^{\textrm{not home}} \\
+        Q^{\mathrm{charg\_infr, home}}_{urtle}  + \sum_{y' \in \mathcal{Y}^{\textrm{exp}}_y} q^{+, \mathrm{charg\_infr, home}}_{y'urtle} \geq \gamma_l\sum_{k \in \mathcal{K}_e} \sum_{v \in \mathcal{V}} \sum_{g \in \mathcal{G}}  s_{yurkvtgle} \quad : \forall y,u,t,r,e, l \in \mathcal{L}^{\mathrm{home}}
+    \end{split}
+\end{flalign}
 
 \textbf{Demand coverage:}
-\begin{equation} \label{equ:demand_cov}
+
+Decision variable $f$ expresses the number of trips covered by a specific vehicle type and technology-fuel pair of a specific generation. The sum over all possible travel paths, vehicle types, technology-fuel pairs and vehicle generations equals the exogenously given travel demand:
+
+\begin{equation} \label{equ:app_demand_cov}
     \begin{split}
-        \sum_{k \in \mathcal{K}_r} \sum_{v \in V} \sum_{t \in \mathcal{T}_v} \sum_{g \in \mathcal{G}} f_{yurkvtg} = F_{yur} \quad :  \forall y, u, r
+        \sum_{k \in \mathcal{K}_r} \sum_{v \in \mathcal{V}} \sum_{t \in \mathcal{T}_v} \sum_{g \in \mathcal{G}} f_{yurkvtg} = F_{yur} \quad :  \forall y, u, r
     \end{split}
 \end{equation}
 
+The right side of the equation expresses the coverage of the demand by different vehicle types and drive-train technologies of different generations.
+
 \textbf{Fleet sizing:}
-\begin{flalign} \label{equ:fleet_size_demand}
+
+Based on the trips covered by a vehicle type of a technology, the vehicle stock is sized as follows:
+
+\begin{flalign} \label{equ:app_fleet_size_demand}
     \begin{split}
-         h_{yurvtg} \geq \sum_{k \in \mathcal{K}_r}\frac{L_{k}}{W_{yvtg} L^{\mathrm{annual}}_{vtg}} f_{yurkvtg} \quad :\forall y,u,r,k,v,t,g
+         h_{yurvtg} \geq \sum_{k \in \mathcal{K}_r}\frac{L_{k}}{W_{vtg} L^{\mathrm{annual}}_{vtg}} f_{yurkvtg} \quad :\forall y,u,r,v,t,g
     \end{split}
 \end{flalign}
 
-\begin{flalign} \label{equ:fleet_size_change_1}
+\textbf{Vehicle stock balance with vintage tracking:}
+
+The vehicle stock of each generation $g$ is tracked using the carried-over stock variable $h^{\mathrm{exist}}$. The stock balance for each vintage is:
+
+\begin{flalign} \label{equ:app_fleet_size_change_1}
     \begin{split}
-         \sum_{p} h_{yurvtg} = \sum_{p} h_{(y-1)rvtg} + \sum_{p} h^{+}_{yurvtg} - \sum_{p} h^{-}_{yurvtg} \quad :\forall y\in \mathcal{Y}\setminus{\{0\}},u,r,v,t,g
+         h_{yurvtg} = h^{\mathrm{exist}}_{yurvtg} + h^{+}_{yurvtg} - h^{-}_{yurvtg} \quad :\forall y,u,r,v,t,\; g \leq y
     \end{split}
 \end{flalign}
 
-\begin{flalign} \label{equ:fleet_size_change_2}
+The carried-over stock $h^{\mathrm{exist}}$ represents the vehicles of generation $g$ that are inherited from the previous year. Its definition depends on the relationship between the model year $y$, the vehicle generation $g$, the initial year $y_0$, and the vehicle lifetime $\Lambda_{vtg}$:
+
+\begin{flalign} \label{equ:app_h_exist}
+    h^{\mathrm{exist}}_{yurvtg} = \begin{cases}
+        H^{\mathrm{init}}_{urvtg} & \text{if } y = y_0,\; g < y_0,\; y_0 - g \leq \Lambda_{vtg} \\[0.5ex]
+        h_{(y-1)urvtg} & \text{if } y > y_0,\; g < y,\; y - g \leq \Lambda_{vtg} \\[0.5ex]
+        0 & \text{if } g = y \;\text{(new generation)} \\[0.5ex]
+        0 & \text{if } y - g > \Lambda_{vtg} \;\text{(lifetime exceeded)}
+    \end{cases}
+\end{flalign}
+
+where $H^{\mathrm{init}}_{urvtg}$ is the exogenously given initial vehicle stock for pre-existing generations. For the initial year, pre-existing generations are initialized from data; for subsequent years, the stock is carried over from the previous year. Vehicles of generation $g = y$ (newly produced) have no carry-over. Vehicles that have exceeded their maximum lifetime $\Lambda_{vtg}$ are set to zero.
+
+New vehicle purchases are restricted to the current generation:
+
+\begin{flalign} \label{equ:app_h_plus_gen}
     \begin{split}
-         \sum_{p}  h^{-}_{yurvt(g=y-\textrm{Lifetime}^{max}_{vtg})} =\sum_{p}  h_{yrvt(g=y-\textrm{Lifetime}_{vtg})} \quad: \forall y,u,r,v,t
+         h^{+}_{yurvtg} = 0 \quad :\forall y, u, r, v, t, \; g \neq y
     \end{split}
 \end{flalign}
+
+Equation~\ref{equ:app_fleet_size_demand} expresses the sizing of the vehicle stock via a vehicle's annual range $L^{\mathrm{annual}}$ and load factor $W$. The stock balance (Equation~\ref{equ:app_fleet_size_change_1}) with the vintage-tracked carry-over (Equation~\ref{equ:app_h_exist}) governs the aging of the vehicle fleet. Vehicles exit the stock when their maximum lifetime is reached, and new purchases (Equation~\ref{equ:app_h_plus_gen}) are only possible for the current generation.
 
 \textbf{Fueling demand:}
+
+Fueling demand is derived from the number of trips $f$ and via the specific demand $D^{spec}$ of the vehicle:
+
 \begin{flalign} \label{equ:fuel_demand}
     \begin{split}
-        \sum_{l \in \mathcal{L}_{tk}} \sum_{e \in \mathcal{E}_{kl}} s_{yurkvtgle} \geq \sum_{e \in \mathcal{E}_{k} }  \gamma_l \frac{D^{\mathrm{spec}}_{gvt}}{W_{gvt}L_{k}} f_{yurkvtg}: \forall y,u,r,k,v,t,g
+        \sum_{l \in \mathcal{L}_{tk}} \sum_{e \in \mathcal{E}_{kl}} s_{yurkvtgle} \geq \frac{D^{\mathrm{spec}}_{vtg} \cdot L_{k}}{W_{vtg}} f_{yurkvtg} \quad : \forall y,u,r,k,v,t,g
     \end{split}
 \end{flalign}
 
 \textbf{Number of fueling vehicles:}
-\begin{flalign}
+
+$n$ indicates the number of fueling vehicles and is derived from the fueled energy, accounting for the usable state of charge $\mathrm{SOC}^{+,\mathrm{charging}}$:
+
+\begin{flalign} \label{equ:app_n_fueling}
     \begin{split}
-        \sum_{v,t} \frac{1}{\textrm{Cap}^{\mathrm{tank}}_{vtg}}s_{yurkvtgle} = n_{yurklge} \quad : \forall y,u,r,k,g,e, l \in \mathcal{L}^{vt}
+        n_{yurklge} \geq \sum_{v,t} \frac{1}{\mathrm{SOC}^{+,\mathrm{charging}} \cdot \textrm{Cap}^{\mathrm{tank}}_{vtg}}s_{yurkvtgle} \quad : \forall y,u,r,k,g,e, l \in \mathcal{L}^{vt}
     \end{split}
 \end{flalign}
 
 \textbf{Maximum capacity constraints:}
-\begin{flalign}
+
+The geographic allocation of the fueling demand is given by the summation over all geographic elements that are traveled by the vehicle. The summation over all geographic locations along the travel path and different types of fueling infrastructures $l$ ensures that the allocation of fueled energy along the path is an endogenous decision. The expansion of fueling capacities is also limited by maximum values:
+
+\begin{flalign} \label{equ:app_max_cap}
     \begin{split}
-        Q^{\mathrm{fuel\_infr}}_{tle} + \sum_{y' \in \mathcal{Y}^{\mathrm{exp}}_y} q^{+, \mathrm{fuel\_infr}}_{ytle} \leq \hat{Q}^{\mathrm{fuel\_infr}}_{tle} \quad : \forall y, t, l, e \\
-        \sum_{r \in \mathcal{R}_u} \left( Q^{\mathrm{fuel\_infr, home}}_{urtle}  + \sum_{y' \in \mathcal{Y}^{\textrm{exp}}_y} q^{+, \mathrm{fuel\_infr, home}}_{yurtle} \right)\leq \hat{Q}^{\mathrm{fuel\_infr,home}}_{utle} : \forall y, u, t, l, e
+        Q^{\mathrm{charg\_infr}}_{tle} + \sum_{y' \in \mathcal{Y}^{\mathrm{exp}}_y} q^{+, \mathrm{charg\_infr}}_{y'tle} \leq \hat{Q}^{\mathrm{charg\_infr}}_{tle} \quad : \forall y, t, l, e \\
+        \sum_{r \in \mathcal{R}_u} \left( Q^{\mathrm{charg\_infr, home}}_{urtle}  + \sum_{y' \in \mathcal{Y}^{\textrm{exp}}_y} q^{+, \mathrm{charg\_infr, home}}_{y'urtle} \right)\leq \hat{Q}^{\mathrm{charg\_infr,home}}_{utle} : \forall y, u, t, l, e
     \end{split}
 \end{flalign}
 
+\textbf{Intangible costs and level of service:}
+
+The intangible costs represent non-monetary costs monetized via the consumer-group-dependent value of time (VoT). In the MILP extension, the detour cost component is captured separately by the variable $b_{yiel}$ (see below), so the intangible costs reduce to the VoT-weighted travel time:
+
+\begin{flalign} \label{equ:app_intangible}
+    \begin{split}
+        {C}^{\mathrm{intangiblecosts, total}} =  \sum_{y,u,r,k,v,t,g} \mathrm{VoT}_{u} \cdot \mathrm{LoS}^{f}_{ykvt} \cdot f_{yurkvtg}
+    \end{split}
+\end{flalign}
+
+The level of service (LoS) is defined as the total travel time:
+
+\begin{flalign} \label{equ:app_los}
+    \begin{split}
+        \mathrm{LoS}^f_{ykvt} = \frac{L_k}{\mathrm{speed}_{vt}} + \mathrm{fueling\_time}_{ykvt} \quad :\forall y,k,v,t
+    \end{split}
+\end{flalign}
+
+\textbf{Monetary budget constraints:}
+
+Monetary budgets constrain expenditures for vehicles and home charging infrastructure per consumer group and purchase cycle $\mathcal{S}^u_j$:
+
+\begin{flalign} \label{equ:app_lower_constraint}
+    \begin{split}
+        \sum_{y \in \mathcal{S}^u_j} \left( \sum_{vtg}C^{\mathrm{CAPEX}}_{yvtg} \cdot h^{+}_{yurvtg} + \sum_{tl}\sum_{y' \in \mathcal{Y}^{\textrm{exp}}_{y}} q^{+, \mathrm{charg\_infr, home}}_{yurtle} \right) \\ \leq \beta \cdot \tau_u \cdot \mathrm{Budget}_{u} \cdot \sum_{y \in \mathcal{S}^u_j}\sum_{kvtg} f_{yurkvtg}    + \sum_{y \in \mathcal{S}^u_j} \mathrm{budget}^{+}_{yur}  \quad : \forall u,r,j
+    \end{split}
+\end{flalign}
+
+\begin{flalign} \label{equ:app_upper_constraint}
+    \begin{split}
+       \sum_{y \in \mathcal{S}^u_j} \left( \sum_{vtg}C^{\mathrm{CAPEX}}_{yvtg} \cdot h^{+}_{yurvtg} + \sum_{tl}\sum_{y' \in \mathcal{Y}^{\textrm{exp}}_{y}} q^{+, \mathrm{charg\_infr, home}}_{yurtle} \right) \\ \geq \beta \cdot \tau_u \cdot \mathrm{Budget}_{u} \cdot \sum_{y \in \mathcal{S}^u_j}\sum_{kvtg} f_{yurkvtg}    - \sum_{y \in \mathcal{S}^u_j} \mathrm{budget}^{-}_{yur}  \quad : \forall u,r,j
+    \end{split}
+\end{flalign}
+
+where $\mathrm{budget}^{+}_{yur}$ and $\mathrm{budget}^{-}_{yur}$ are decision variables for budget overrun and underrun, penalized in the objective function.
+
+\textbf{MILP detour time extension:}
+
+The total installed charging capacity is decomposed into a discrete component tied to detour-reduction levels and a continuous residual. Let the total installed capacity at location $e$ for charging type $l$ up to year $y$ be defined as the sum of the initial capacity $Q^{\mathrm{charg\_infr}}_{tle}$ and the cumulative expansion $\sum_{y'} q^{+, \mathrm{charg\_infr}}_{y'tle}$. This total capacity is linked to a discrete capacity level selected by the binary variable $w_{yiel}$:
+
+\begin{flalign} \label{equ:app_cap_decomp}
+    \begin{split}
+        Q^{\mathrm{charg\_infr}}_{tle} + \sum_{y' \in \mathcal{Y}^{\mathrm{exp}}_y} q^{+, \mathrm{charg\_infr}}_{y'tle} = \sum_i w_{yiel} \cdot cap^{\mathrm{lb}}_{iel} + \sum_{y' \in \mathcal{Y}^{\mathrm{exp}}_y} q^{\Delta+, \mathrm{charg\_infr}}_{y'tle} \quad : \forall y,t,e,l \in \mathcal{L}^{\textrm{not home}}
+    \end{split}
+\end{flalign}
+
+The left-hand side is the total installed capacity (initial plus cumulative expansion). The right-hand side decomposes it into a discrete component $cap^{\mathrm{lb}}_{iel}$, selected by the binary variable $w_{yiel}$, and a continuous residual $q^{\Delta+, \mathrm{charg\_infr}}$ that captures the capacity above the discrete threshold. The indicator constraint ensures that when level $i$ is active, the total capacity lies within the associated bounds:
+
+\begin{flalign} \label{equ:app_indicator}
+    \begin{split}
+        w_{yiel} = 1 \implies cap^{\mathrm{lb}}_{iel} \leq Q^{\mathrm{charg\_infr}}_{tle} + \sum_{y' \in \mathcal{Y}^{\mathrm{exp}}_y} q^{+, \mathrm{charg\_infr}}_{y'tle} \leq cap^{\mathrm{ub}}_{iel} \quad : \forall y,i,e,l \in \mathcal{L}^{\textrm{not home}}
+    \end{split}
+\end{flalign}
+
+Exactly one detour-reduction level is selected per location, year, and charging type:
+
+\begin{flalign} \label{equ:app_sum_w}
+    \begin{split}
+        \sum_i w_{yiel} = 1 \quad : \forall y, e, l  \in \mathcal{L}^{\textrm{not home}}
+    \end{split}
+\end{flalign}
+
+\textbf{VoT-weighted detour cost:}
+
+The detour cost captures the additional travel time needed to reach charging infrastructure, monetized via the consumer-specific VoT. Based on an initial detour time $B^{\mathrm{init}}_{el}$ and its reduction $\alpha_{iel}$ at the active capacity level $[cap^{\mathrm{lb}}_{iel},\; cap^{\mathrm{ub}}_{iel}]$, the decision variable $b_{yiel}$ is defined via an indicator constraint:
+
+\begin{flalign} \label{equ:app_vot_dt}
+    \begin{split}
+        w_{yiel} = 1 \implies b_{yiel} \geq B^{\mathrm{init}}_{el} \cdot (1-\alpha_{iel}) \cdot \sum_{u,r,k,g} \mathrm{VoT}_u \cdot n_{yurklge} \quad : \forall y, i, e, l \in \mathcal{L}^{\textrm{not home}}
+    \end{split}
+\end{flalign}
+
+The variable $b_{yiel}$ enters the objective function directly and represents the total monetized detour cost at location $e$ for charging type $l$ in year $y$. The implementation uses indicator constraints natively supported by the solver. For solvers without indicator support, the equivalent big-M reformulation is:
+
+\begin{flalign} \label{equ:app_bigM_lb}
+    \begin{split}
+        b_{yiel} \geq B^{\mathrm{init}}_{el} \cdot (1-\alpha_{iel}) \cdot \sum_{u,r,k,g} \mathrm{VoT}_u \cdot n_{yurklge} - M \cdot (1 - w_{yiel}) \quad : \forall y, i, e, l \in \mathcal{L}^{\textrm{not home}}
+    \end{split}
+\end{flalign}
+
+\begin{flalign} \label{equ:app_bigM_ub}
+    \begin{split}
+        b_{yiel} \leq M \cdot w_{yiel} \quad : \forall y, i, e, l \in \mathcal{L}^{\textrm{not home}}
+    \end{split}
+\end{flalign}
+
+where $M$ is a sufficiently large constant. Equation~\ref{equ:app_bigM_lb} activates the lower bound on $b_{yiel}$ when $w_{yiel} = 1$ and relaxes it otherwise. Equation~\ref{equ:app_bigM_ub} forces $b_{yiel} = 0$ when $w_{yiel} = 0$.
+
+The following additional constraints complete the formulation.
+
+\textbf{Technology stock transition rate:}
+
+The year-over-year change in the vehicle stock of a drivetrain technology $t$ is bounded to prevent unrealistically rapid technology transitions:
+
+\begin{flalign} \label{equ:app_tech_shift}
+    \begin{split}
+        \left| \sum_{v} \sum_g h_{yurvtg} - \sum_{v} \sum_g h_{(y-1)urvtg} \right| \leq \alpha^h_t \sum_{v,t',g} h_{yurvt'g} + \beta^h_t \sum_{v} \sum_g h_{(y-1)urvtg} \\ :\forall y \in \mathcal{Y}\setminus\{y_0\}, u, r, t
+    \end{split}
+\end{flalign}
+
+where $\alpha^h_t$ and $\beta^h_t$ are the maximum rate-of-change parameters relative to the total vehicle stock and the previous stock of the respective technology.
+
+\textbf{Vehicle-type stock transition rate:}
+
+The year-over-year change in the stock of an individual vehicle type $v$ and technology $t$ combination is similarly bounded:
+
+\begin{flalign} \label{equ:app_vtype_shift}
+    \begin{split}
+        \left| \sum_g h_{yurvtg} - \sum_g h_{(y-1)urvtg} \right| \leq \alpha^h \sum_{v',t',g} h_{yurv't'g} + \beta^h \sum_g h_{(y-1)urvtg} \\ :\forall y \in \mathcal{Y}\setminus\{y_0\}, u, r, v, t
+    \end{split}
+\end{flalign}
+
+\textbf{Market share constraints:}
+
+For vehicle technologies with exogenously defined market shares $\mu_{yvt}$, the share of newly purchased vehicles is fixed:
+
+\begin{flalign} \label{equ:app_market_share}
+    \begin{split}
+        \sum_{u,r,g} h^+_{yurvtg} = \mu_{yvt} \cdot \sum_{u,r,v',t',g} h^+_{yurv't'g} \quad :\forall (y, v, t) \in \mathcal{MS}
+    \end{split}
+\end{flalign}
+
+where $\mathcal{MS}$ denotes the set of year--technology--vehicle type combinations with defined market shares.
+
+\textbf{Trip purpose ratio:}
+
+The ratio between commuting and private trip vehicle stocks is fixed per geographic location to maintain the observed trip-purpose distribution:
+
+\begin{flalign} \label{equ:app_trip_ratio}
+    \begin{split}
+        \sigma^{\mathrm{commuting}}_e \cdot \sum_{\substack{r \in \mathcal{R}^{\mathrm{private}}_e \\ v,t}} h_{yurvtg} = \sigma^{\mathrm{private}}_e \cdot \sum_{\substack{r \in \mathcal{R}^{\mathrm{commuting}}_e \\ v,t}} h_{yurvtg} \quad :\forall y, e, g
+    \end{split}
+\end{flalign}
+
+where $\sigma^{\mathrm{commuting}}_e$ and $\sigma^{\mathrm{private}}_e$ are the exogenously given trip shares for commuting and private purposes at location $e$, and $\mathcal{R}^{\mathrm{commuting}}_e$ and $\mathcal{R}^{\mathrm{private}}_e$ denote the respective subsets of OD pairs originating at $e$.
+
+\textbf{BEV fleet growth:}
+
+The total BEV fleet within each consumer group must not decrease over time:
+
+\begin{flalign} \label{equ:app_bev_growth}
+    \begin{split}
+        \sum_{r \in \mathcal{R}_u} \sum_{v} \sum_{t \in \mathcal{T}^{\mathrm{BEV}}} \sum_g h_{yurvtg} \geq \sum_{r \in \mathcal{R}_u} \sum_{v} \sum_{t \in \mathcal{T}^{\mathrm{BEV}}} \sum_g h_{(y-1)urvtg} \\ :\forall y \in \mathcal{Y}\setminus\{y_0\}, u
+    \end{split}
+\end{flalign}
+
+\textbf{Minimum home charging share:}
+
+For consumer groups with a defined minimum home charging share $\sigma^{\mathrm{home}}_{yu}$, the energy charged at home must be at least a specified fraction of the total electricity consumed by that consumer group:
+
+\begin{flalign} \label{equ:app_min_home}
+    \begin{split}
+        \sum_{\substack{r \in \mathcal{R}_u,\, k,\, v,\, t,\, g \\ e = \mathrm{origin}(r),\; l \in \mathcal{L}^{\mathrm{home}}}} s_{yurkvtgle} \geq \sigma^{\mathrm{home}}_{yu} \cdot \sum_{\substack{r \in \mathcal{R}_u,\, k,\, v,\, t,\, g \\ e,\, l}} s_{yurkvtgle} \quad :\forall y, u
+    \end{split}
+\end{flalign}
+
+\textbf{Forced fast charging for long-distance trips:}
+
+Trips whose path length exceeds the usable driving range of the vehicle are restricted to fast charging infrastructure only:
+
+\begin{flalign} \label{equ:app_forced_fast}
+    \begin{split}
+        n_{yurklge} = 0 \quad :\forall y, u, r, k, l \notin \mathcal{L}^{\mathrm{fast}}, g, e \quad \text{if } L_k > \frac{\mathrm{SOC}^{+,\mathrm{driving}} \cdot \mathrm{Cap}^{\mathrm{tank}}_{vtg}}{D^{\mathrm{spec}}_{vtg}}
+    \end{split}
+\end{flalign}
+
+\textbf{Slow and fast charging expansion ratio:}
+
+The cumulative expansion of public slow charging infrastructure is bounded relative to the expansion of public fast charging at each location:
+
+\begin{flalign} \label{equ:app_slow_fast}
+    \begin{split}
+        \sum_{y' \in \mathcal{Y}^{\mathrm{exp}}_y} q^{+, \mathrm{charg\_infr}}_{y'(l=\mathrm{slow})e} \leq 2 \cdot \sum_{y' \in \mathcal{Y}^{\mathrm{exp}}_y} q^{+, \mathrm{charg\_infr}}_{y'(l=\mathrm{fast})e} \quad :\forall y \in \mathcal{Y}^{\mathrm{exp}}, e
+    \end{split}
+\end{flalign}
+
+\textbf{Infrastructure expansion rate limits:}
+
+The expansion of public charging infrastructure is bounded by initial-period capacity limits and subsequent growth rate constraints:
+
+\begin{flalign} \label{equ:app_infr_expansion}
+    \begin{split}
+        &q^{+, \mathrm{charg\_infr}}_{y_0 le} \leq \overline{q}^{\mathrm{init}} \quad :\forall e, l \in \mathcal{L}^{\mathrm{pub}} \\
+        &q^{+, \mathrm{charg\_infr}}_{yle} - q^{+, \mathrm{charg\_infr}}_{(y-\Delta y)le} \leq \rho \cdot \Delta y \cdot \left(Q^{\mathrm{charg\_infr, init}}_{le} + \sum_{y' < y} q^{+, \mathrm{charg\_infr}}_{y'le}\right) \\
+        &\qquad :\forall y \in \mathcal{Y}^{\mathrm{exp}}\setminus\{y_0\}, e, l \in \mathcal{L}^{\mathrm{pub}}
+    \end{split}
+\end{flalign}
+
+where $\overline{q}^{\mathrm{init}}$ is the maximum new infrastructure investment in the initial period and $\rho$ is the maximum growth rate per investment period.
+
+\section{Model Parametrization}\label{app:rq2_parametrization}
+
+Table~\ref{tab:model_constants_rq2} summarizes the key constants and parametric assumptions used in the model formulation. Values marked as ``input data'' are read from the scenario-specific input files and may vary across sensitivity analyses.
+
+\begin{scriptsize}
+\begin{longtable}{llrl}
+\caption{Model constants and parametric assumptions.}
+\label{tab:model_constants_rq2}\\
+\hline
+Symbol & Description & Value & Unit \\ \hline
+\endfirsthead
+\multicolumn{4}{l}{\textit{Continued from previous page}} \\
+\hline
+Symbol & Description & Value & Unit \\ \hline
+\endhead
+\hline
+\endfoot
+\endlastfoot
+\multicolumn{4}{l}{\textbf{Vehicle and battery}} \\ \hline
+$\mathrm{SOC}^{+,\mathrm{charging}}$ & Usable battery capacity for charging & 0.8 & -- \\
+$\mathrm{SOC}^{+,\mathrm{driving}}$ & Usable battery capacity for driving range & 0.8 & -- \\
+$W_{vtg}$ & Load factor (persons per vehicle) & 1.4 & pers./veh. \\
+$L^{\mathrm{annual}}_{vtg}$ & Annual driving range & 11\,600 & km/a \\
+\\\hline
+\multicolumn{4}{l}{\textbf{Fleet dynamics}} \\ \hline
+$\alpha^h,\; \beta^h$ & \begin{tabular}[t]{@{}l@{}}Maximum stock transition rate\\(vehicle type)\end{tabular} & 0.1 & -- \\
+$\alpha^h_t,\; \beta^h_t$ & \begin{tabular}[t]{@{}l@{}}Maximum stock transition rate\\(drivetrain technology)\end{tabular} & 0.1 & -- \\
+$\sigma^{\mathrm{home}}_{yu}$ & \begin{tabular}[t]{@{}l@{}}Minimum home charging share\\(Q1--Q3 / Q4--Q5)\end{tabular} & 0.0 / 0.30 & -- \\
+$\tau_u$ & \begin{tabular}[t]{@{}l@{}}Vehicle purchase cycle\\(Q1 / Q2 / Q3 / Q4 / Q5)\end{tabular} & 10 / 8 / 6 / 4 / 2 & a \\
+\\\hline
+\multicolumn{4}{l}{\textbf{Infrastructure constraints}} \\ \hline
+& Slow/fast charging expansion ratio & 2 & -- \\
+$\rho$ & \begin{tabular}[t]{@{}l@{}}Maximum public infrastructure\\growth rate per period\end{tabular} & 0.3 & -- \\
+$\gamma_l$ & \begin{tabular}[t]{@{}l@{}}Peak-to-annual demand ratio\\(home / work / public fast / public slow / fossil)\end{tabular} & \begin{tabular}[t]{@{}r@{}}0.05 / 0.20 /\\ 0.25 / 0.25 / 0.10\end{tabular} & -- \\
+$\Delta y$ & Investment period length & 5 & a \\
+\\\hline
+\multicolumn{4}{l}{\textbf{Economic}} \\ \hline
+$\delta$ & Discount rate & 0.05 & -- \\
+$\beta$ & Budget tolerance factor & input data & -- \\
+\\\hline
+\multicolumn{4}{l}{\textbf{Temporal scope}} \\ \hline
+$y_0$ & Initial year & 2020 & -- \\
+$Y$ & Model horizon & 41 & a \\
+\hline
+\end{longtable}
+\end{scriptsize}
+
 \section{Pre-processing of Travel Data}\label{app:rq2_travel_data}
 
-The trip data used in the case study is based on Austrian mobility survey data. Trip lengths were segregated by urban and rural context, using Vienna values for urban areas and suburban values for rural areas \citep{tomschy2016osterreich}.
+\subsection{Trip Lengths by Purpose}
 
-The clustering of trips to vehicles introduces a constraint linking commuting and private vehicle stocks. This constraint ensures consistency between the number of vehicles used for commuting and private purposes within the same geographic region:
+Two groups for the environmental setting of a trip are introduced: \textit{urban} and \textit{rural}. The segregation is based on the population distribution between cities with population size greater than 100{,}000 people of the Basque community, together with the respective mode share between urban and rural areas (20\%/50\% of trips by private car). This, together with the information on the trip purpose, serves as information to approximate the path length.
+
+These assumptions are drawn from a survey on mobility for Austria \citep{tomschy2016osterreich}, as this survey contains detailed information on average trip lengths by purpose for all NUTS-2 regions in Austria. Specifically, for urban areas, trip lengths recorded for Vienna are used, and for rural areas, the trip lengths recorded for suburban areas are used due to the high population density in the Basque Country.
+
+\subsection{Clustering of Trips to Vehicles}
+
+The clustering of trips to vehicles introduces a constraint linking commuting and private vehicle stocks. To consider the technology decision vehicle-based rather than trip-based, the share of technology must follow a ratio related to the application of the vehicles. Trips are grouped by income class and origin to $M$ route clusters, resulting in sets of routes $\mathcal{R}_{m}$. Based on empirical values on the relative frequency of trips per purpose, the vehicle stocks are related to each other with the following constraint:
 \begin{flalign}
     \begin{split}
          \zeta_1 h_{yur(p=\textrm{commuting})kvtg} \leq  \zeta_2 h_{yur(p=\textrm{private})kvtg} \quad :\forall y, u, k, v, t, g,  r \in \mathcal{R}^{m},  m = 1, 2, \dots, M
@@ -175,6 +485,14 @@ A sensitivity analysis is conducted on the circuity parameter $\mu$, which trans
     \centering
     \includegraphics[width=0.8\textwidth]{graphics/paper_2/mean_circuity_plot.pdf}
     \caption{Circuity values for European cities published by \citet{COSTA2025106087}.}\label{fig:circuity_ass_rq2}
+\end{figure}
+
+The resulting alternative detour fueling time curves for the tested circuity values are displayed in Figure~\ref{fig:alternative_g_SA_rq2}. The sensitivity analysis is conducted based on the densification scenario $n^{\mathrm{points~per~site}} = 10$.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{graphics/paper_2/detour_time_curves_alpha_sensitivity_balanced.pdf}
+    \caption{Tested detour fueling time curves for different values of circuity $\mu$.}\label{fig:alternative_g_SA_rq2}
 \end{figure}
 
 Figure~\ref{fig:SA_bev_adoption_rq2} displays the distribution of electrification shares across the tested circuity values. No direct correlation is found between the increase of $\mu$ and either utilization or adoption by income class level.
@@ -243,7 +561,30 @@ Figures~\ref{fig:validation_slow_rq2} and~\ref{fig:validation_fast_rq2} display 
 
 \section{Sensitivity Analysis: Value of Time}\label{app:rq2_vot}
 
-The value of time (VoT) represents the monetary value that consumers assign to the time spent detouring to reach a charging station. Based on the Victoria Transport Policy Institute recommendation (50\% of hourly wage rate for personal travel), VoT values are derived for each income class. Table~\ref{tab:vot_rq2} displays the base case values, adjusted from Danish quintile data to Spanish income ratios.
+\subsection{Quantification of Value of Time}\label{app:rq2_vot_quantification}
+
+The value of time (VoT) represents the monetary value that consumers assign to the time spent detouring to reach a charging station. The Victoria Transport Policy Institute recommends valuing personal travel, including commuting, at approximately 50\% of the hourly wage rate \citep{litman2023travel}. For transit under comfortable conditions, recommended values range from 25--35\% of wage, while crowded conditions can justify values up to 100\%. Similarly, a recent World Bank meta-analysis of VoT studies in low- and middle-income countries found that VoT corresponds to approximately 50\% of after-tax wages \citep{wardman2023meta}.
+
+Table~\ref{tab:danish_vot_rq2} shows that the Danish VoT values used in the original source \citep{TATTINI2018265} fall within these empirically supported ranges, with VoT/wage ratios spanning from 13\% (Q1) to 63\% (Q5).
+
+\begin{table}[H]
+    \centering
+    \caption{Danish value of time by income quintile.}
+    \label{tab:danish_vot_rq2}
+    \begin{tabular}{lcc}
+    \toprule
+    Quintile & VoT (\euro/h) & VoT/Avg Wage (\%) \\
+    \midrule
+    Q1 & 6.60 & 13 \\
+    Q2 & 12.77 & 26 \\
+    Q3 & 18.93 & 38 \\
+    Q4 & 25.10 & 50 \\
+    Q5 & 31.27 & 63 \\
+    \bottomrule
+    \end{tabular}
+\end{table}
+
+Income quintile share ratios (S80/S20) reported in Eurostat \citep{eurostat_ilc_di11} show different inequality levels between Denmark and Spain. To better reflect Spanish income distribution while maintaining the empirically grounded VoT/wage relationship from the Danish study, the VoT values are adjusted according to Spain's income ratio. Table~\ref{tab:vot_rq2} presents the adjusted values.
 
 \begin{table}[H]
     \centering
@@ -265,7 +606,25 @@ The value of time (VoT) represents the monetary value that consumers assign to t
     \end{tabular}
 \end{table}
 
-The sensitivity analysis tests absolute shifts of $\pm 3$~\euro/h and relative compression/expansion of VoT differences between income classes (factors of 0.5, 0.75, 1.25, and 1.5). Figure~\ref{fig:vot_scenarios_rq2} illustrates the tested VoT scenarios.
+As an additional validation, the Spanish Independent Authority for Fiscal Responsibility (AIRef) uses VoT values of 12.1~\euro/h for short-distance and 15.0~\euro/h for long-distance travel \citep{deRus2020}, as shown in Table~\ref{tab:vot_airef_rq2}. These values fall within the third quintile range, supporting the reasonableness of the income-differentiated estimates.
+
+\begin{table}[H]
+    \centering
+    \caption{Value of time by trip type \citep{deRus2020}.}
+    \label{tab:vot_airef_rq2}
+    \begin{tabular}{lr}
+    \toprule
+    Trip Type & VoT (\euro/h) \\
+    \midrule
+    Urban commuting & 12.1 \\
+    Intercity commuting & 15.0 \\
+    \bottomrule
+    \end{tabular}
+\end{table}
+
+\subsection{Sensitivity Analysis of Value of Time}
+
+The sensitivity analysis tests absolute shifts of $\pm 3$~\euro/h, which correspond approximately to the absolute differences between VoT values for inter-city versus urban car trips in Spain \citep{WARDMAN201693}, and relative compression/expansion of VoT differences between income classes (factors of 0.5, 0.75, 1.25, and 1.5). Figure~\ref{fig:vot_scenarios_rq2} illustrates the tested VoT scenarios.
 
 \begin{figure}[H]
     \centering

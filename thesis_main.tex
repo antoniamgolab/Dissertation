@@ -18,14 +18,14 @@
 ]{scrbook}
 
 \newcommand{\mytitle}{Spatial modeling of charging infrastructure for the traffic flow-based charging demand of battery-electric vehicle fleets}
-\newcommand{\myauthor}{Dipl.-Ing.in. Antonia Golab}
+\newcommand{\myauthor}{Dipl.-Ing.\textsuperscript{in} Antonia Golab}
 \newcommand{\myworktitle}{Dissertation}
-\newcommand{\mygrade}{Doktor der technischen Wissenschaften}
+\newcommand{\mygrade}{Doktorin der technischen Wissenschaften}
 \newcommand{\mystudy}{Electrical Engineering}
 \newcommand{\myuniversity}{Energy Economics Group \\[0mm] Faculty of Electrical Engineering and Information Technology \\[0mm] Technische Universität Wien}
 \newcommand{\myinstitute}{Institute of Energy Systems and Electrical Drives}
 \newcommand{\mysupervisor}{Prof.~Dr.~Johann Auer\\[-1mm] \small{Technische Universität Wien}}
-\newcommand{\reviewerOne}{Prof.~Dr.~Sonja Wogrin \\[-1mm] \small{Technische Universität Graz}}
+\newcommand{\reviewerOne}{Prof.\textsuperscript{in}~Dr.\textsuperscript{in}~Sonja Wogrin \\[-1mm] \small{Technische Universität Graz}}
 \newcommand{\reviewerTwo}{Prof.~Dr.~Patrick Plötz \\[-1mm] \small{Karlsruher Institut für Technologie}}
 \newcommand{\mysubmissiontown}{Vienna}
 \newcommand{\mysubmissionmonth}{March}
@@ -126,6 +126,7 @@
 \usepackage{subcaption}
 \usepackage{setspace}
 \usepackage{tikz}
+\usetikzlibrary{calc}
 % Referencing
 \usepackage{hyperref} % needs to be used before cleverref
 \usepackage[noabbrev, capitalise]{cleveref}
@@ -322,12 +323,14 @@
     
     \clearpage  % finish these pages
     \pagestyle{plain}
+    \pagenumbering{Roman}
     \tableofcontents
     \cleardoublepage
     \newpage
-    \pagenumbering{arabic}
     \addcontentsline{toc}{chapter}{Abbreviations}
     \printacronyms[name=Abbreviations, heading=chapter*]
+    \clearpage
+    \pagenumbering{arabic}
 
 \input{chapters/A_introduction}
 \input{chapters/B_state_of_the_art}
@@ -342,8 +345,11 @@
 
 \appendix
 
+\input{chapters/appendix_ai_declaration}
 \input{chapters/appendix_rq1}
 \input{chapters/appendix_rq2}
+\input{chapters/appendix_rq3}
+\input{chapters/appendix_rq4}
 % \bibliographystyle{plain}  % or: unsrt, alpha, abbrv, ieeetr, etc.
 % \bibliography{references}   % without .bib extension
 % \input{chapters/state_of_the_art}

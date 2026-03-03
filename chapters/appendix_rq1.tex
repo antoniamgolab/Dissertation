@@ -1,8 +1,10 @@
 \chapter{Supplementary Material for Contribution 1 (RQ1)}\label{app:rq1}
 
+The content of this appendix is based on \citet{en15062147}.
+
 \section{Nomenclature}
 
-Table~\ref{tab:nomenclature_rq1} lists the complete nomenclature for the fast-charging infrastructure allocation model described in Section~\ref{sec:rq1_results}.
+Table~\ref{tab:nomenclature_rq1} lists the complete nomenclature for the fast-charging infrastructure allocation model described in Section~\ref{sec:rq1_methods}.
 
 \begin{scriptsize}
 \begin{longtable}{llll}
@@ -26,13 +28,14 @@ $Y_{l_k}$ & \begin{tabular}[t]{@{}l@{}}number of charging points\\ at node $l_k$
 $\hat{E}_{l_k}^{charged, n_k}$ & \begin{tabular}[t]{@{}l@{}}charged energy at node $l_k$\\ of demand from node $n_k$ during peak hour\end{tabular} & kWh/h & $[0, \infty[$ \\
 $\hat{D}_{l_k}^{in, n_k}$ & \begin{tabular}[t]{@{}l@{}}energy demand from node $n_k$,\\ incoming to node $l_k$ during peak hour\end{tabular} & kWh/h & $[0, \infty[$ \\
 $\hat{D}_{l_k}^{out, n_k}$ & \begin{tabular}[t]{@{}l@{}}energy demand from node $n_k$, not\\ covered and outgoing from $l_k$ during peak hour\end{tabular} & kWh/h & $[0, \infty[$ \\
+$\hat{D}_{l_k}^{demand, n_k}$ & \begin{tabular}[t]{@{}l@{}}energy demand at node $l_k$ originating\\ from demand source $n_k$ during peak hour\end{tabular} & kWh/h & $[0, \infty[$ \\
 \\\hline
 Parameters -- car fleet & Description & Unit & Domain \\ \hline
 $\epsilon$ & share of BEVs in total passenger car fleet & \% & $[0, 1]$ \\
 $\mu$ & share of cars traveling long-distance & \% & $[0, 1]$ \\
 $\gamma_h$ & \begin{tabular}[t]{@{}l@{}}share of daily car count traveling\\ during peak hour\end{tabular} & \% & $[0, 1]$ \\
-$\hat{f}_{n_k}$ & \begin{tabular}[t]{@{}l@{}}maximum daily amount of cars passing\\ at node $n$ in direction $k$ during a year\end{tabular} & 1/24h & $[0, \infty[$ \\
-$\alpha$ & \begin{tabular}[t]{@{}l@{}}share of overall road traffic load compared\\ with year of survey of traffic counts\end{tabular} & \% & $[0, \infty[$ \\
+$\hat{f}_{n_k}$ & \begin{tabular}[t]{@{}l@{}}maximum daily amount of cars passing\\ at node $n$ in direction $k$ during a year\end{tabular} & vehicles/day & $[0, \infty[$ \\
+$\alpha$ & \begin{tabular}[t]{@{}l@{}}scaling factor of overall road traffic load\\ relative to year of survey of traffic counts\end{tabular} & -- & $[0, \infty[$ \\
 \\\hline
 Parameters -- BEV technology & Description & Unit & Domain \\ \hline
 $\overline{d}_{spec, BEV}$ & \begin{tabular}[t]{@{}l@{}}average specific energy demand\\ per km of BEVs\end{tabular} & kWh/km & $[0, \infty[$ \\
@@ -47,9 +50,10 @@ $c_{Y}$ & \begin{tabular}[t]{@{}l@{}}investment costs for installation\\ of one 
 \\\hline
 Derived parameters & Description & Unit & Domain \\ \hline
 $dist_{ns_k}$ & \begin{tabular}[t]{@{}l@{}}distance of node $n$ along\\ segment $s$ in direction $k$\end{tabular} & km & $[0, \infty[$ \\
-$GRNN_{s_k}(dist)$ & \begin{tabular}[t]{@{}l@{}}GRNN function of peak daily traffic\\ load along segment $s$ in direction $k$\end{tabular} & -- & $[0, \infty[$ \\
+$GRNN_{s_k}(dist)$ & \begin{tabular}[t]{@{}l@{}}GRNN function of peak daily traffic\\ load along segment $s$ in direction $k$\end{tabular} & vehicles/day & $[0, \infty[$ \\
 $\hat{D}_{n_k}$ & \begin{tabular}[t]{@{}l@{}}average energy demand at node $n$\\ in direction $k$ during peak hour\end{tabular} & kWh/h & $[0, \infty[$ \\
 $dist_{max}$ & \begin{tabular}[t]{@{}l@{}}maximum distance between\\ charging stations\end{tabular} & km & $[0, \infty[$ \\
+$s_{l_k}$ & \begin{tabular}[t]{@{}l@{}}highway segment to which node $l$\\ in direction $k$ belongs\end{tabular} & -- & $\{0, \dots, M\}$ \\
 $r_{l_k, l_k'}$ & \begin{tabular}[t]{@{}l@{}}rationing parameter for demand\\ flow split at junction nodes\end{tabular} & -- & $[0, 1]$ \\
 \hline
 \end{longtable}
@@ -110,3 +114,35 @@ For the quantification of the scenarios used in the analysis, projections on the
 \section{Details on Data Preparation for the Austrian Case Study}\label{app:rq1_data_prep}
 
 The underlying data pre-processing procedures of this work encompassed the preparation of the graph representation of the Austrian high-level road network and the potential sites for the installment of charging stations. Geographic data representing the Austrian highways and motorways was obtained based on OpenStreetMap data \cite{OpenStreetMap}. For this, all \textit{way} instances with tags \textit{highway=`motorway'} and \textit{highway=`trunk'} were retrieved and further processed using ArcGIS Pro \cite{desktop2011release} in order to obtain a clean shape representation of the road network, including the representation of both driving directions through parallel lines. Geographic data implying positions of service areas were retrieved using tags \textit{highway=`services'} and \textit{highway=`rest\_area'}. This geographic information was paired with data on service areas obtained through ASFINAG \cite{asfinagrastanlagen} which provide information on the driving direction a service area is accessible from and on the services offered on-site.
+
+\section{Model Validation}\label{app:validation_rq1}
+
+The model is validated by modeling present-day infrastructure requirements and comparing the results with the setup of the existing infrastructure. The current infrastructure requirements are modeled using input parameters displayed in Table \ref{tab:val}. In Figure \ref{fig:comp}, the capacities of the currently installed fast-charging infrastructure along Austria's highways (as of December 2021) are illustrated along with a comparison to the model output. Table \ref{tab:validation} presents the numbers of fast-charging points of different peak power levels and total capacity.
+
+\begin{table}[h]
+\centering
+\caption{Comparison of existing fast-charging infrastructure along the Austrian highway network (as of December 2021) and model output based on the number of charging stations and summed peak power levels ($\hat{P}_{CP}$).\label{tab:validation}}
+
+\begin{tabularx}{\textwidth}{@{}lcc@{}}
+\toprule
+                                                  & Existing infrastructure & Model output \\ \midrule
+Nb. charging stations                   & 31                      & 43           \\
+Nb. charging points with $\hat{P}_{CP} = 44$ kW (AC)& 8 &  -           \\
+Nb. charging points with $\hat{P}_{CP} = 50$ kW (DC)&     72                    & -            \\
+Nb. charging points with $\hat{P}_{CP} = 75$ kW (DC)&      4                   & -            \\
+Nb. charging points with $\hat{P}_{CP} = 150$ kW (DC)&        22                 & 98         \\
+Nb. charging points with $\hat{P}_{CP} = 350$ kW (DC) &         40                & -            \\ \midrule
+Total capacity (MW) & 20.1 & 14.7\\
+\bottomrule
+\end{tabularx}
+
+\end{table}
+
+\begin{figure}[h]
+\includegraphics[width=14 cm]{graphics/paper_1/comparison_image.pdf}
+\caption{Model validation for Model 1 (RQ1). Visual comparison of the capacities, i.e., summed peak power of all onsite charging points, in existing fast-charging infrastructure (\textbf{top}) and the modeled infrastructure (\textbf{bottom}) using the values displayed in Table \ref{tab:val}. \label{fig:comp}}
+\end{figure}
+
+While the overall number of charging stations is in a similar range, a gap exists between the total installed capacity estimated by the model and the existing capacity. There are several possible reasons for this. First, the proposed modeling framework aims to design a minimum required charging infrastructure for a given point in time; no pre-planned charging capacities with regard to future developments are modeled. In existing infrastructure, this is not the case, as, for example, IONITY has installed most of its charging points with $\hat{P}_{CP}=350$ kW while currently only few cars on the market are able to charge at a power level above 150 kW. Therefore, in this context, the modeled infrastructure reflects the minimum requirements for a fast-charging infrastructure. Moreover, the difference could stem from the fact that the model assumes charging points of a singular peak power level and all \acp{BEV} of the Austrian car fleet having the same technical parameters, which makes it difficult to directly compare existing and modeled capacity because the charging points of different peak power levels have different efficiencies and the average charging capacity varies significantly among car models.
+
+The difference in the location distribution of capacities can be attributed to the model assumption that the proportion of long-distance travelers among highway traffic is equal throughout the whole highway network. Further, local differences of the cost parameter $c_X$ are neglected, whereas in reality this cost component significantly varies depending on the location. Another reason for the difference in site allocation is that within the model, all energy demand is required to be covered within the geographic boundary of Austria; charging stations lying right outside the country's borders are not considered. Therefore, the model tends to install charging stations at service areas that are closest to the end points of the highway network. Another striking difference between existing and modeled fast-charging infrastructure is the accumulation of many small charging stations in the vicinity of Vienna in the modeled infrastructure. Some of them may stem from the tendency of installing charging infrastructure near borders, whereas others are most likely placed there due to the dense topology of the highway network around Vienna.
