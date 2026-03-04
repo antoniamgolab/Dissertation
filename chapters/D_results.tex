@@ -1259,33 +1259,20 @@ The representation of the commercial fleet is focused on three fleet types: \ac{
             % https://www.oesterreich.gv.at/themen/mobilitaet/kfz/Seite.061800.html#KlasseN
             The \ac{LDT} fleet classified as vehicles that have a maximum total weight of 3.5 tons \cite{usp_nutzfahrzeuge}. The Austrian vehicle fleet of this type amounted to a size of around 510,000 vehicles by the end of 2023 and is expected to be 535,000 by 2040 in decarbonization scenarios by \citet{umweltbundesamt_rep0808}. According to \cite{SCORRANO2021101022}, the \added{average} daily range of a light-duty vehicle operated in Germany is 70km on average. We adopted this value for Austria. Further assumptions for the vehicle are summarized in Table \ref{tab:parameters_ldv}. Based on this, we assume the routes of vehicles of this fleet type to only within one Federal State and, therefore, the charging profile of the \ac{LDT} fleet is modeled based on the operational pattern of \textit{local transport}. 
 
-            The core assumptions for the modeling of a charging profile of light-duty vehicles are the following:
-            \begin{itemize}
-                \item \textbf{Charging strategy:} Vehicles are charged during nighttime and weekends. Recharging is done at depots. During weekends, the vehicles have a substantially higher flexibility in the recharging processes. The charging process is performed at the lowest possible power level and is evenly distributed during the plug-in period. Departure times are evenly distributed between 7 am and 9 am, and arrival times are between 16 pm and 18 pm.
-                \item \textbf{Geographic scaling:} The expected amount of \ac{LDT} is distributed proportionally to the population size.
-            \end{itemize}
-            Assumptions on charging infrastructure sizing are provided in Appendix~\ref{app:rq4_infra_sizing}. 
+            The assumed charging strategy is that vehicles are charged during nighttime and weekends at depots, with the charging process performed at the lowest possible power level and evenly distributed during the plug-in period. Departure times are evenly distributed between 7~am and 9~am, and arrival times between 4~pm and 6~pm. The expected number of \ac{LDT} is distributed proportionally to the population size of each Federal State.
+            % Assumptions on charging infrastructure sizing are provided in Appendix~\ref{app:rq4_infra_sizing}. 
 
             \paragraph*{Heavy-duty truck}
             The \ac{HDT} has a total weight greater than 3.5 tons. Technical assumptions for this fleet are summarized in Table \ref{tab:parameters_hdv}. Origin-destination flow data on the European level is used here to capture charging demand from national as well as transit transport. The ETISplus dataset provides estimations of the annual tons transported by trucks in the year 2030 \cite{speth2021synthetic}. We apply the charging profile generation for \textit{interregional transport} here under the following considerations:
             
-            \begin{itemize}
-                \item \textbf{Charging strategy:} For this we consider that the European regulation dictates a maximum driving shift of 4.5 hours. \acp{HDT} are charged at depots and highway service areas \cite{ec_driving_time_2023}. Further, in Austria, a regulation prohibits driving between 10 pm and 5 am for multiple transport segments \cite{usp_lkw_fahrverbote}. During Saturdays and Sundays, the operation of heavy-duty transport is also restricted. For trips that take longer than 4.5 hours, the 45-minute break takes place at a highway service area, and during this time, the \ac{HDT} is connected to a megawatt charging station and is fully charging. The remaining energy demand is covered at the origin and the destination depots during nighttime. For trips shorter than 4.5 hours, charging is fully compensated at depots. Recharging happens also at depots during the day if the driving range is not sufficient to be covered with one charged battery. During trips that take multiple days, charging demand is also compensated at service areas during nighttime. 
-
-            \end{itemize}
+            The assumed charging strategy considers that European regulation dictates a maximum driving shift of 4.5~hours \cite{ec_driving_time_2023}, and that in Austria, driving is prohibited between 10~pm and 5~am for multiple transport segments \cite{usp_lkw_fahrverbote} as well as on Saturdays and Sundays. \acp{HDT} are charged at depots and highway service areas. For trips longer than 4.5~hours, the mandatory 45-minute break takes place at a highway service area, during which the \ac{HDT} is connected to a megawatt charging station at full power. The remaining energy demand is covered at origin and destination depots during nighttime. For trips shorter than 4.5~hours, charging is fully compensated at depots. Additional depot charging during daytime occurs if the driving range is insufficient for a single battery charge. During multi-day trips, charging demand is also covered at service areas during nighttime.
             Assumptions on charging infrastructure sizing and temporal distribution of fast-charging are provided in Appendix~\ref{app:rq4_infra_sizing}.
             
         \paragraph*{Busses}
         For the bus fleet, we consider the application case for public transport in both cities and rural regions. Similar to the modeling of light-duty vehicles, the routes of buses do not go through multiple regions. Table \ref{tab:parameters_bus} comprises technical assumptions for an average bus in public transport.
 
-            The charging profiles for busses are estimated based on the following:
-            \begin{itemize}
-                \item \textbf{Charging strategy:} Most charging demand is covered during night time at the bus depot. If required, busses enter the depot for fast charging during daytime. The operation is assumed to be similar during each day of the week.
-                % \item \textbf{Charging locations:} All busses are charged in a bus depot.
-                % \item \textbf{Temporal distribution:} All busses are assumed to operate similarly each day of the week. They are preferably charged at night, outside of the main operating hours. City buses have a higher daily consumption than applied in rural areas, which exceeds the size of the battery pack. Therefore, city buses compensate for this through fast charging during the day in the depot. 
-                \item \textbf{Geographic scaling:} City busses are considered for Austrian cities that surpass the population size of 100,000. For each city, the size of the bus fleet is scaled using the population size. The bus fleet in rural areas is sized using the total area of the rural region within a federal state.
-            \end{itemize}
-            Assumptions on charging infrastructure sizing are provided in Appendix~\ref{app:rq4_infra_sizing}.
+            The assumed charging strategy is that most charging demand is covered during nighttime at the bus depot; if required, buses enter the depot for fast charging during daytime. The operation is assumed to be similar during each day of the week. City buses are considered for Austrian cities that surpass a population of 100,000, with each city's bus fleet scaled by population size. The bus fleet in rural areas is sized using the total area of the rural region within a Federal State.
+            % Assumptions on charging infrastructure sizing are provided in Appendix~\ref{app:rq4_infra_sizing}.
 
         \begin{table}[]
         \centering
@@ -1360,29 +1347,23 @@ The representation of the commercial fleet is focused on three fleet types: \ac{
         % Please add the following required packages to your document preamble:
         % \usepackage{booktabs}
         % \usepackage{graphicx}
-        \begin{table}[]
-        \centering
-        \caption{Electrification scenarios for the commercial fleet in Austria in 2040.}
-        \label{tab:parameters_scenario}
-        \begin{tabular}{@{}lrrr@{}}
-        \toprule
-                        & \multicolumn{3}{l}{Share of electrification in fleet} \\ \cmidrule(l){2-4} 
-        Scenario & \multicolumn{1}{l}{Light-duty vehicles} & \multicolumn{1}{l}{Heavy-duty vehicles} & \multicolumn{1}{l}{Busses} \\
-        \textit{LOW}    & 100\%            & 30\%             & 100\%           \\
-        \textit{MEDIUM} & 100\%            & 50\%             & 100\%           \\
-        \textit{HIGH}   & 100\%            & 100\%            & 100\%           \\ \bottomrule
-        \end{tabular}%
         
-        \end{table}
-         \subsubsection{Scenarios and case studies}
-            In the application to the Austrian electricity system in 2040, we explore two different dimensions: On the one side, the variation in the share of electrification of the commercial fleet in 2040, and, on the other side, the role of the commercial \ac{BEV} fleet in the electricity market. Table \ref{tab:parameters_scenario} displays the shares of electrification for the three considered electrification scenarios, \textit{LOW}, \textit{MEDIUM}, and \textit{HIGH}. The three case studies for market participation describe:
-    \subsubsection{Electricity market 2040} 
-        All 13 countries (Austria, Germany, Netherlands, Belgium, Luxembourg, Czech Republic, Slovenia, Switzerland, Poland, Slovakia, Hungary, Italy, and France) within the optimized area are expected to fulfill the European national energy and climate plans \cite{NECP2022} by 2030 and continue to compensate for the rising electricity demand by expanding generation capacities in 2040. According to Austria's national energy and climate plans, RESE compensates for 100\% of the yearly electricity demand. The used \textit{National Trends} dataset, provided by the European Network of Transmission System Operators for Electricity is based on the fulfillment of these plans \cite{TYNDP2022}. It includes a power plant fleet with RESE, fossil fuel-fired power plants (coal, oil, lignite, and combined-cycle gas turbines, and other types of thermal power plants that do not emit CO\textsubscript{2} (nuclear, biogas, biomass, and fuel cells).
-            \begin{itemize}
-                \item \textbf{Baseline:} The charging demand of the commercial \ac{BEV} fleet is inflexible.
-                \item \textbf{Dispatch:} The flexibility of the charging of the commercial \ac{BEV} fleet is optimized in the dispatch.
-                \item \textbf{Redispatch:} The flexibility of the commercial \ac{BEV} fleet charging is utilized in redispatch measures.  
-            \end{itemize}
+         \subsection{Scenarios on the electrification of the commercial fleet}
+            We explore the variation in the share of electrification of the commercial fleet in 2040. Table \ref{tab:parameters_scenario} displays the shares of electrification for the three considered electrification scenarios, \textit{LOW}, \textit{MEDIUM}, and \textit{HIGH}. 
+            \begin{table}[H]
+                \centering
+                \caption{Electrification scenarios for the commercial fleet in Austria in 2040.}
+                \label{tab:parameters_scenario}
+                \begin{tabular}{@{}lrrr@{}}
+                \toprule
+                                & \multicolumn{3}{l}{Share of electrification in fleet} \\ \cmidrule(l){2-4} 
+                Scenario & \multicolumn{1}{l}{Light-duty vehicles} & \multicolumn{1}{l}{Heavy-duty vehicles} & \multicolumn{1}{l}{Busses} \\
+                \textit{LOW}    & 100\%            & 30\%             & 100\%           \\
+                \textit{MEDIUM} & 100\%            & 50\%             & 100\%           \\
+                \textit{HIGH}   & 100\%            & 100\%            & 100\%           \\ \bottomrule
+                \end{tabular}%
+                
+                \end{table}
 \subsection{Spatio-temporal demand distribution}
     Table \ref{tab:results_charging_load} summarizes the total values for annual load estimates for the commercial \ac{BEV} fleet under different electrification scenarios in Austria for 2040. The annual charging demands are 7.4 TWh / 9.6 TWh / 15.2 TWh. This makes up for 8 \%  /  11 \% / 16.9\% of the estimated total electricity load in 2040. The highest charging load stems from the charging of \acp{HDT} which is mostly allocated to depot locations. In the electrification scenarios \textit{MEDIUM} and \textit{HIGH} which indicate a respective electrification rate of 50\% and 100\% of the \ac{HDT} fleet, the fleet is the clear dominant demand segment with 5.6 TWh/ 11.2 TWh of annual charging demand. 
 
