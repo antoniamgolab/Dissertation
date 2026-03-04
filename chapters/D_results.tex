@@ -1354,22 +1354,22 @@ The representation of the commercial fleet is focused on three fleet types: \ac{
                 \centering
                 \caption{Electrification scenarios for the commercial fleet in Austria in 2040.}
                 \label{tab:parameters_scenario}
-                \begin{tabular}{@{}lrrr@{}}
+                \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}lccc@{}}
                 \toprule
-                                & \multicolumn{3}{l}{Share of electrification in fleet} \\ \cmidrule(l){2-4} 
-                Scenario & \multicolumn{1}{l}{Light-duty vehicles} & \multicolumn{1}{l}{Heavy-duty vehicles} & \multicolumn{1}{l}{Busses} \\
+                 & \multicolumn{3}{c}{Share of electrification in fleet} \\ \cmidrule(l){2-4}
+                Scenario & Light-duty vehicles & Heavy-duty vehicles & Buses \\
+                \midrule
                 \textit{LOW}    & 100\%            & 30\%             & 100\%           \\
                 \textit{MEDIUM} & 100\%            & 50\%             & 100\%           \\
                 \textit{HIGH}   & 100\%            & 100\%            & 100\%           \\ \bottomrule
-                \end{tabular}%
-                
+                \end{tabular*}
                 \end{table}
 \subsection{Spatio-temporal demand distribution}
     Table \ref{tab:results_charging_load} summarizes the total values for annual load estimates for the commercial \ac{BEV} fleet under different electrification scenarios in Austria for 2040. The annual charging demands are 7.4 TWh / 9.6 TWh / 15.2 TWh. This makes up for 8 \%  /  11 \% / 16.9\% of the estimated total electricity load in 2040. The highest charging load stems from the charging of \acp{HDT} which is mostly allocated to depot locations. In the electrification scenarios \textit{MEDIUM} and \textit{HIGH} which indicate a respective electrification rate of 50\% and 100\% of the \ac{HDT} fleet, the fleet is the clear dominant demand segment with 5.6 TWh/ 11.2 TWh of annual charging demand. 
 
         Figure \ref{fig:truck_highway_charging_peak} displays peak power levels along the highway for the \textit{HIGH} scenario. Positions of service areas along the Austrian highway network are shown together with the coloring indicating approximated peak power levels. The peak power level at a service area is deducted from the estimated accumulated load within the Federal state which is then equally distributed among all existing service areas. It is important to note here that this image is an estimation of the peak power distribution aimed to illustrate geographical variations and an estimate for peak power levels at service areas in 2040. The figure indicates a wide range in required power levels at highway service areas, between 7 and 29 MW. The illustration suggests distinctly higher power levels at the service areas located in the Northeast than in the Western regions of Austria. 
         
-        The accumulated demand profile for the charging of the commercial \ac{BEV} fleet is visible in Figure \ref{fig:dispatch_time} for the whole of Austria. The figure displays an average week of charging load. During daytime time, most charging at highway service areas by the \ac{HDT} fleet around noon is conducted. The load peaks at night time around midnight due to accumulated night charging of the \ac{LDT} fleet, city, and regional busses, and the \ac{HDT} fleet. During weekend days, the charging demand is substantially lower than during work days as vehicle operation is mostly performed during workdays. Fleet operators of vehicles that are not operated during the weekend recharge the vehicle for the next operation between Friday night and Monday morning and have, therefore, also higher flexibility in the recharging process while still having similar charging infrastructure as used during a workday available.  
+        The accumulated demand profile for the charging of the commercial \ac{BEV} fleet is visible in Figure \ref{fig:dispatch_time} for the whole of Austria. The figure displays an average week of charging load. During daytime time, most charging at highway service areas by the \ac{HDT} fleet around noon is conducted. The load peaks at night time around midnight due to accumulated night charging of the \ac{LDT} fleet, city, and regional busses, and the \ac{HDT} fleet. During weekend days, the charging demand is substantially lower than during work days as vehicle operation is mostly performed during workdays. Fleet operators of vehicles that are not operated during the weekend recharge the vehicle for the next operation between Friday night and Monday morning and have, therefore, also higher flexibility in the recharging process while still having similar charging infrastructure as used during a workday available. Figure~\ref{fig:dispatch_time} also shows the resulting charging profile when charging flexibility is coordinated with day-ahead market prices; the implications of this coordination for the electricity system are discussed in detail in Appendix~\ref{app:rq4_dispatch}.
         
         % The colors of the region indicate the total power level per kilometer of highway infrastructure existing in the region. \dots While most charging demand is happening in \dots The highest charging power levels at service areas are in \dots, indicating high local peaks. \dots This coincides also with the TEN-T \dots 
 
@@ -1416,7 +1416,7 @@ Scenario &  & \multicolumn{1}{l}{} & \multicolumn{1}{l}{} & Depot & \multicolumn
         \begin{figure}[H]
             \centering
             \includegraphics[width=1\textwidth]{graphics/paper_4/average_load_profile_dispatch.pdf}
-            \caption{Aggregated charging demand profile of the commercial \ac{BEV} fleet in the \textit{Baseline} and \textit{Dispatch} case study with the average day-ahead market price.}
+            \caption{Aggregated weekly charging demand profile of the commercial \ac{BEV} fleet under baseline assumptions and with market-price-coordinated charging, together with the average day-ahead market price.}
             \label{fig:dispatch_time}
         \end{figure}
 
