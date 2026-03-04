@@ -240,6 +240,18 @@
 \raggedbottom
 \setcounter{secnumdepth}{3} % manually for section numbering
 
+% Force start on right (odd) page for double-sided printing
+\makeatletter
+\newcommand{\cleartorightpage}{%
+  \clearpage
+  \ifodd\c@page\else
+    \thispagestyle{empty}%
+    \mbox{}%
+    \clearpage
+  \fi
+}
+\makeatother
+
 
 %===========================================================================================
 % Units
@@ -279,12 +291,16 @@
 \begin{document}
 
     \input{chapters/title}
-    
-    %\pagenumbering{Roman} 
+
+    \pagenumbering{Roman}
     % \input{chapter}{Abstract}
     % \addcontentsline{toc}
-    
-    
+
+    \clearpage
+    \thispagestyle{empty}
+    \mbox{}
+    \clearpage
+
     \newgeometry{margin=2.5cm, includehead, headheight=20pt, headsep=10pt,
     bottom=4cm,      % <-- more space at bottom
     footskip=1.5cm   % <-- distance from text to footer
@@ -321,15 +337,14 @@
     % \label{fig:method_scope}
     % \end{figure}
     
-    \clearpage  % finish these pages
+    \cleartorightpage  % TOC starts on right page for double-sided printing
     \pagestyle{plain}
-    \pagenumbering{Roman}
     \tableofcontents
     \cleardoublepage
     \newpage
     \addcontentsline{toc}{chapter}{Abbreviations}
     \printacronyms[name=Abbreviations, heading=chapter*]
-    \clearpage
+    \cleartorightpage  % Introduction starts on right page for double-sided printing
     \pagenumbering{arabic}
 
 \input{chapters/A_introduction}

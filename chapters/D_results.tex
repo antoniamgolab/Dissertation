@@ -1256,7 +1256,6 @@ The following case study and results are taken from the journal publication by \
 The representation of the commercial fleet is focused on three fleet types: \ac{LDT}, \ac{HDT}, and buses. These are chosen based on their substantial fleet size and transport activity. Their electrification is therefore expected to play a significant role in the electricity system. Based on the mobility patterns of the different fleet types and expected charging strategies, future charging profiles are generated together with plug-in times and installed charging power. The charging profiles are generated for an average week in 2040, i.e. representing seven days in hourly resolution. In the geographic aggregation of charging profiles, Austria is represented by nine nodes ($|\mathcal{N}_1|=9$) mirroring the nine federal states of Austria.
 
             \paragraph*{Light-duty trucks}
-            % https://www.oesterreich.gv.at/themen/mobilitaet/kfz/Seite.061800.html#KlasseN
             The \ac{LDT} fleet is classified as vehicles that have a maximum total weight of 3.5 tons \cite{usp_nutzfahrzeuge}. The Austrian vehicle fleet of this type amounted to a size of around 510,000 vehicles by the end of 2023 and is expected to be 535,000 by 2040 in decarbonization scenarios by \citet{umweltbundesamt_rep0808}. According to \cite{SCORRANO2021101022}, the average daily range of a light-duty vehicle operated in Germany is 70~km. This value is adopted for Austria. Further assumptions are summarized in Table~\ref{tab:parameters_ldv}. Based on this, routes of vehicles of this fleet type are assumed to remain within one federal state and, therefore, the charging profile of the \ac{LDT} fleet is modeled based on the operational pattern of \textit{local transport}. 
 
             The assumed charging strategy is that vehicles are charged during nighttime and weekends at depots, with the charging process performed at the lowest possible power level and evenly distributed during the plug-in period. Departure times are evenly distributed between 7~am and 9~am, and arrival times between 4~pm and 6~pm. The expected number of \ac{LDT} is distributed proportionally to the population size of each federal state.
@@ -1290,8 +1289,6 @@ The representation of the commercial fleet is focused on three fleet types: \ac{
         \end{table}
 
 
-        % Please add the following required packages to your document preamble:
-
         \begin{table}[]
         \centering
         \caption{Parameter settings for heavy-duty vehicle charging demand modeling.}
@@ -1323,9 +1320,6 @@ The representation of the commercial fleet is focused on three fleet types: \ac{
         
         \end{table}
 
-        % Please add the following required packages to your document preamble:
-        %usepackage{booktabs}
-        % usepackage{graphicx}
         \begin{table}[]
         \centering
         \caption{Parameter settings for bus charging demand modeling in urban and rural areas.}
@@ -1343,10 +1337,7 @@ The representation of the commercial fleet is focused on three fleet types: \ac{
         \end{tabular}%
         
         \end{table}
-        % Please add the following required packages to your document preamble:
-        % \usepackage{booktabs}
-        % \usepackage{graphicx}
-        
+
          \subsection{Scenarios on the electrification of the commercial fleet}
             The variation in the share of electrification of the commercial fleet in 2040 is explored. Table~\ref{tab:parameters_scenario} displays the shares of electrification for the three considered electrification scenarios, \textit{LOW}, \textit{MEDIUM}, and \textit{HIGH}. 
             \begin{table}[H]
@@ -1364,7 +1355,7 @@ The representation of the commercial fleet is focused on three fleet types: \ac{
                 \end{tabular*}
                 \end{table}
 \subsection{Spatio-temporal demand distribution}
-    Table~\ref{tab:results_charging_load} summarizes the annual load estimates for the commercial \ac{BEV} fleet under different electrification scenarios in Austria for 2040. The annual charging demands are 7.4~TWh / 9.6~TWh / 15.2~TWh, accounting for 8\% / 11\% / 16.9\% of the estimated total electricity load in 2040. The highest charging load stems from the charging of \acp{HDT} which is mostly allocated to depot locations. In the electrification scenarios \textit{MEDIUM} and \textit{HIGH} which indicate a respective electrification rate of 50\% and 100\% of the \ac{HDT} fleet, the fleet is the clear dominant demand segment with 5.6 TWh/ 11.2 TWh of annual charging demand. 
+    Table~\ref{tab:results_charging_load} summarizes the annual load estimates for the commercial \ac{BEV} fleet under different electrification scenarios in Austria for 2040. The annual charging demands are 7.4~TWh / 9.6~TWh / 15.2~TWh, accounting for 8.2\% / 10.7\% / 16.9\% of the estimated total electricity load in 2040. The highest charging load stems from the charging of \acp{HDT} which is mostly allocated to depot locations. In the electrification scenarios \textit{MEDIUM} and \textit{HIGH} which indicate a respective electrification rate of 50\% and 100\% of the \ac{HDT} fleet, the fleet is the clear dominant demand segment with 5.6 TWh/ 11.2 TWh of annual charging demand. 
 
         Figure~\ref{fig:truck_highway_charging_peak} displays peak power levels along the highway for the \textit{HIGH} scenario. Positions of service areas along the Austrian highway network are shown together with the coloring indicating approximated peak power levels. The peak power level at a service area is derived from the estimated accumulated load within the federal state, which is then equally distributed among all existing service areas. It is important to note that this figure is an approximation of the peak power distribution aimed to illustrate geographical variations and provide an estimate for peak power levels at service areas in 2040. The figure indicates a wide range in required power levels at highway service areas, between 7 and 29~MW. The illustration suggests distinctly higher power levels at the service areas located in the northeast than in the western regions of Austria. 
         
@@ -1372,7 +1363,7 @@ The representation of the commercial fleet is focused on three fleet types: \ac{
         
 \begin{table}[H]
 \centering
-\caption{Annual charging demand of three commercial fleet types under different electrification rate assumptions for Austria in 2040.}
+\caption{Annual charging demand of three commercial fleet types under different electrification rate assumptions for Austria in 2040. HDV demand is further disaggregated by physical charging location.}
 \label{tab:results_charging_load}
 \resizebox{\textwidth}{!}{%
 \begin{tabular}{llrrcrrr}
@@ -1424,25 +1415,26 @@ Import/Export (AT $\leftrightarrow$ non-AT) & 79,078 & 185.0 & 32.2 & 15.1 & 36.
 }
 \end{table}
 
-Table~\ref{tab:snf_yearly_demand} presents the annual charging demand for the \textit{HIGH} scenario (100\% \ac{HDT} electrification), disaggregated by traffic type and charging location. The total annual \ac{HDT} charging demand of 11.24~TWh is predominantly covered at depot locations during nighttime (10.97~TWh), while highway charging accounts for 0.27~TWh. Highway charging is concentrated in transit and import/export traffic (0.12~TWh each), whereas inland transport generates negligible highway charging demand (0.02~TWh). This reflects the shorter route segments of inland transport within Austria, for which depot charging at origin and destination is sufficient without en-route stops.
+Table~\ref{tab:snf_yearly_demand} presents the annual charging demand for the \textit{HIGH} scenario (100\% \ac{HDT} electrification), disaggregated by traffic type and charging occasion. The total annual \ac{HDT} charging demand of 11.24~TWh is predominantly covered by end-of-trip charging after the driving day (10.97~TWh), while break charging during mandatory driving breaks accounts for 0.27~TWh. Break charging is concentrated in transit and import/export traffic (0.12~TWh each), whereas inland transport generates negligible break charging demand (0.02~TWh). This reflects the shorter route segments of inland transport within Austria, for which end-of-trip charging at origin and destination is sufficient without en-route stops.
 
 \begin{table}[htbp]
-\centering
-\caption{Annual heavy-duty truck charging demand in Austria by traffic type under 100\% electrification. Annual values are calculated with 261 workdays and 95\% charging efficiency.}
-\label{tab:snf_yearly_demand}
-\begin{tabular}{lrrrr}
-\toprule
-\textbf{Traffic Type} & \textbf{Highway} & \textbf{Depot Night} & \textbf{Total} & \textbf{Share} \\
- & [TWh/a] & [TWh/a] & [TWh/a] & [\%] \\
-\midrule
-Inland (AT $\rightarrow$ AT) & 0.02 & 2.87 & 2.89 & 25.7 \\
-Transit (non-AT $\rightarrow$ non-AT) & 0.12 & 4.08 & 4.20 & 37.4 \\
-Import/Export (AT $\leftrightarrow$ non-AT) & 0.12 & 4.03 & 4.15 & 36.9 \\
-\midrule
-\textbf{Total} & \textbf{0.27} & \textbf{10.97} & \textbf{11.24} & \textbf{100.0} \\
-\bottomrule
-\end{tabular}
-\end{table}
+  \centering
+  \caption{Annual heavy-duty truck charging demand in Austria by traffic type and charging occasion under 100\% electrification. Break charging refers to energy recharged during mandatory driving breaks ({>}4.5\,h driving time); end-of-trip charging covers the remaining energy demand recharged after the driving day.
+  Annual values are calculated with 261 workdays and 95\% charging efficiency.}
+  \label{tab:snf_yearly_demand}
+  \begin{tabular}{lrrrr}
+  \toprule
+  \textbf{Traffic Type} & \textbf{Break charging} & \textbf{End-of-trip charging} & \textbf{Total} & \textbf{Share} \\
+   & [TWh/a] & [TWh/a] & [TWh/a] & [\%] \\
+  \midrule
+  Inland (AT $\rightarrow$ AT) & 0.02 & 2.87 & 2.89 & 25.7 \\
+  Transit (non-AT $\rightarrow$ non-AT) & 0.12 & 4.08 & 4.20 & 37.4 \\
+  Import/Export (AT $\leftrightarrow$ non-AT) & 0.12 & 4.03 & 4.15 & 36.9 \\
+  \midrule
+  \textbf{Total} & \textbf{0.27} & \textbf{10.97} & \textbf{11.24} & \textbf{100.0} \\
+  \bottomrule
+  \end{tabular}
+  \end{table}
 
 \subsubsection{Regional charging demand profiles}
 

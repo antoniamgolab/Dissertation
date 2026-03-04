@@ -227,7 +227,15 @@ Monetary budgets constrain expenditures for vehicles and home charging infrastru
     \end{split}
 \end{flalign}
 
-where $\mathrm{budget}^{+}_{yur}$ and $\mathrm{budget}^{-}_{yur}$ are decision variables for budget overrun and underrun, penalized in the objective function.
+where $\mathrm{budget}^{+}_{yur}$ and $\mathrm{budget}^{-}_{yur}$ are decision variables for budget overrun and underrun, penalized in the objective function. The penalty cost term in the objective function is defined as:
+
+\begin{flalign} \label{equ:app_penalty_costs}
+    \begin{split}
+        {C}^{\mathrm{penaltycosts}}_{y} = M^{\mathrm{penalty}} \cdot \sum_{u,r} \left( \mathrm{budget}^{+}_{yur} + \mathrm{budget}^{-}_{yur} \right)
+    \end{split}
+\end{flalign}
+
+where $M^{\mathrm{penalty}}$ is a large penalty coefficient that ensures budget constraints are nearly binding while preserving model feasibility.
 
 \textbf{MILP detour time extension:}
 
@@ -422,6 +430,7 @@ $\Delta y$ & Investment period length & 5 & a \\
 \multicolumn{4}{l}{\textbf{Economic}} \\ \hline
 $\delta$ & Discount rate & 0.05 & -- \\
 $\beta$ & Budget tolerance factor & input data & -- \\
+$M^{\mathrm{penalty}}$ & Budget penalty coefficient & $10^{7}$ & \euro/\euro \\
 \\\hline
 \multicolumn{4}{l}{\textbf{Temporal scope}} \\ \hline
 $y_0$ & Initial year & 2020 & -- \\
