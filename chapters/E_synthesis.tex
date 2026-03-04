@@ -1,5 +1,5 @@
 \chapter{Discussion \& Synthesis of Results} \label{sec:discussion}
-This chapter discusses and synthesizes the findings of the four contributions presented in this thesis. Section~\ref{sec:contextualization} contextualizes the results of each research question within the existing literature, comparing estimates against policy targets and prior studies, and discussing the limitations of the applied methodologies. Section~\ref{sec:synthesis} synthesizes the findings across contributions, drawing out cross-cutting insights. Parts of this discussion have been adopted, reformulated, and extended from the respective journal publications.
+This chapter discusses and synthesizes the findings of the four contributions presented in this thesis. Section~\ref{sec:contextualization} contextualizes the results of each research question within the existing literature, comparing estimates against policy targets and prior studies, and discussing the limitations of the applied methodologies. Section~\ref{sec:synthesis} synthesizes the findings across contributions, drawing out cross-cutting insights. Parts of this discussion have been adopted, reformulated, and extended from the four respective journal publications.
 
 \section{Contextualizing findings in existing literature} \label{sec:contextualization}
 
@@ -45,47 +45,47 @@ The modeled geographic allocation is primarily driven by existing charging site 
 \paragraph*{Drivers in decarbonization scenarios}
 Different scenarios are used to account for uncertainties in the possible developments in the transport sector. Further, sensitivity analyses are conducted on specific parameters. The focus is on uncertainties in the charging demand and technological parameters, reflecting diverging developments in vehicle battery technology, driving range, and charging power.
 
-Investment costs scale nearly proportionally with charging demand. A 31\% demand reduction decreases total investment from 100 million EUR to 68 million EUR (32\% cost reduction), while a 17\% demand reduction yields 18 million EUR savings (18\% cost reduction). Higher charging power produces comparable cost benefits: increasing charging power beyond the baseline 350~kW per charging point reduces required capacity similarly to demand reduction or vehicle efficiency improvements, as fewer charging points are needed to serve the same traffic volume. By contrast, increasing driving range has a limited impact on required capacities. This is in line with the observations by \citet{Wang2018} and \citet{NUGROHO2025101470}. 
+Investment costs scale nearly proportionally with charging demand. A 31\% demand reduction decreases total investment from 100 million \euro to 68 million \euro (32\% cost reduction), while a 17\% demand reduction yields 18 million \euro savings (18\% cost reduction). Higher charging power produces comparable cost benefits: increasing charging power beyond the baseline 350~kW per charging point reduces required capacity similarly to demand reduction or vehicle efficiency improvements, as fewer charging points are needed to serve the same traffic volume. By contrast, increasing driving range has a limited impact on required capacities. This is in line with the observations by \citet{Wang2018} and \citet{NUGROHO2025101470}. 
 Overall, the two defining parameters for the estimation are, on the one hand, the share of long-distance-traveling passenger \acp{BEV} and, on the other hand, charging efficiency. 
 % What does this mean for the capacity planning? 
 
 \begin{table}[H]
 \centering
-\caption{Comparison of Fast-Charging Infrastructure Capacity Estimates for Austrian Highways}
+\caption{Comparison of fast-charging infrastructure capacity estimates for Austrian highways.}
 \label{tab:capacity_comparison}
 \small
-\begin{tabularx}{\textwidth}{@{}lcccX@{}}
+\begin{tabularx}{\textwidth}{@{}p{3.2cm}ccp{7.5cm}@{}}
 \toprule
-\textbf{Approach} & \textbf{\ac{BEV} Share} & \textbf{Capacity (MW)} & \textbf{Target Year} & \textbf{Key Assumptions} \\
+\textbf{Approach} & \textbf{\ac{BEV} share} & \textbf{Capacity (MW)} & \textbf{Key assumptions} \\
 \midrule
 
-\textbf{\citet{en15062147}} & 30\% & \textbf{160--240} & 2030 & 
-54--55 stations, 350kW points, traffic count-based, demand reduction 21\%, cost optimization \\
+\citet{en15062147} (2022) & 30\% & 160--240 &
+54--55 stations, 350\,kW points, traffic count-based, demand reduction 21\%, cost optimization (2030) \\
 
 \addlinespace
 
-\textbf{\citet{en15062147} (adjusted)} & 15\%\textsuperscript{a} & \textbf{80--120} & 2030 & 
-Adjusted for more realistic fleet growth trajectory, includes demand reduction \\
+\citet{en15062147} (2022, adj.) & 15\%\textsuperscript{a} & 80--120 &
+Adjusted for realistic fleet growth trajectory, includes demand reduction (2030) \\
 
 \addlinespace
 
-\textbf{AFIR distance-based} & --- & \textbf{22.6} & 2027 & 
-600kW per 60km on TEN-T core, 2,258km network, minimum connectivity requirement \\
+AFIR distance-based & --- & 22.6 &
+600\,kW per 60\,km on TEN-T core, 2{,}258\,km network, minimum connectivity (2027) \\
 
 \addlinespace
 
-\textbf{AFIR fleet-based} & 30\% & \textbf{$\sim$210} & 2030 & 
-1.3kW per \ac{BEV} (1.56M \acp{BEV}), highway share 35\% of total capacity\textsuperscript{b}, public charging total: 2.03 GW \\
+AFIR fleet-based & 30\% & $\sim$210 &
+1.3\,kW per \ac{BEV} (1.56M \acp{BEV}), highway share 35\%\textsuperscript{b}, total public: 2.03\,GW (2030) \\
 
 \addlinespace
 
-\textbf{Jochem et al. (2019)} & 15\% & \textbf{18} & 2030 & 
-15 stations, 8 points/station, 150kW, FRLM approach, O/D flows, excludes flows $<$5,000 cars/year \\
+\citet{Jochem2019} & 15\% & 18 &
+15 stations, 8 pts/station, 150\,kW, FRLM approach, excludes flows $<$5{,}000 cars/yr (2030) \\
 
 \addlinespace
 
-\textbf{Jochem (scaled to 30\%)} & 30\% & \textbf{36} & 2030 & 
-Linear scaling from 15\% scenario, likely underestimate per authors' own assessment\textsuperscript{c} \\
+\citet{Jochem2019} (scaled) & 30\% & 36 &
+Linear scaling from 15\%, likely underestimate per authors\textsuperscript{c} (2030) \\
 
 \bottomrule
 \end{tabularx}
@@ -106,6 +106,12 @@ Linear scaling from 15\% scenario, likely underestimate per authors' own assessm
 \newpage
 
 \subsection{Contribution 2 (RQ2)}
+\noindent\fbox{\parbox{\dimexpr\textwidth-2\fboxsep-2\fboxrule}{%
+\vspace{0.5em}
+\textbf{RQ2:} \textit{How does public charging infrastructure expansion influence the adoption of passenger \acp{BEV} across income groups and neighboring regions?}
+\vspace{0.5em}
+}}
+
 \noindent\fbox{\parbox{\dimexpr\textwidth-2\fboxsep-2\fboxrule}{%
 \vspace{0.5em}
 \textbf{RQ2.a:} \textit{To what extent does the spatial density of public charging infrastructure influence battery-electric vehicle adoption across consumers with different income levels?}
@@ -305,43 +311,43 @@ The AFIR defines progressively increasing HDV recharging infrastructure targets 
 
 \begin{table}[H]
 \centering
-\caption{Quantitative comparison of commercial fleet charging demand and infrastructure estimates for Austria}
+\caption{Quantitative comparison of commercial fleet charging demand and infrastructure estimates for Austria.}
 \label{tab:rq4_comparison}
 \small
-\begin{tabularx}{\textwidth}{@{}lccX@{}}
+\begin{tabularx}{\textwidth}{@{}p{3.2cm}cp{2.8cm}X@{}}
 \toprule
-\textbf{Source} & \textbf{Electrification} & \textbf{Metric} & \textbf{Key Assumptions \& Notes} \\
+\textbf{Source} & \textbf{Electrification} & \textbf{Metric} & \textbf{Key assumptions \& notes} \\
 \midrule
 
 \multicolumn{4}{@{}l}{\textit{Charging demand estimates}} \\
 \addlinespace
 
-This work (\textit{LOW}) & 30\% \ac{HDT} & 7.4~TWh/a & All commercial fleet segments (\ac{HDT}, \ac{LDT}, bus); traffic-flow-based; Austria 2040 \\
+This work (\textit{LOW}) & 30\% \ac{HDT} & 7.4~TWh/a & All commercial fleet segments; traffic-flow-based; Austria 2040 \\
 \addlinespace
 
-This work (\textit{HIGH}) & 100\% \ac{HDT} & 15.2~TWh/a (40.9~GWh/d) & 74\% from \ac{HDT}; 74.3\% of \ac{HDT} demand from transit + import/export traffic \\
+This work (\textit{HIGH}) & 100\% \ac{HDT} & 15.2~TWh/a (40.9~GWh/d) & 74\% from \ac{HDT}; 74.3\% of \ac{HDT} demand from transit + import/export \\
 \addlinespace
 
-This work (scaled) & 15\% \ac{HDT} & $\sim$6.1~GWh/d & Linear scaling of \textit{HIGH} scenario for comparability with \citet{SHOMAN2023103825} \\
+This work (scaled) & 15\% \ac{HDT} & $\sim$6.1~GWh/d & Linear scaling of \textit{HIGH} for comparability with \citet{SHOMAN2023103825} \\
 \addlinespace
 
-\citet{SHOMAN2023103825} & 15\% \ac{BET} & 3.5~GWh/d & Long-haul trucks only; 71 charging areas; 1,169 CCS + 240 MCS points \\
+\citet{SHOMAN2023103825} & 15\% \ac{BET} & 3.5~GWh/d & Long-haul trucks only; 71 areas; 1{,}169 CCS + 240 MCS points \\
 \addlinespace
 
-Transition Mobility 2040\textsuperscript{a} & 100\%\textsuperscript{b} & 127~PJ/a ($\approx$35~TWh/a) & Total transport energy; 85\% \ac{BEV}/ERS + 15\% FCEV for SNF \\
+Transition Mobility 2040\textsuperscript{a} & 100\%\textsuperscript{b} & 127~PJ/a ($\approx$35~TWh/a) & Total transport energy; 85\% \ac{BEV}/ERS + 15\% FCEV \\
 
 \midrule
 
 \multicolumn{4}{@{}l}{\textit{Infrastructure capacity per service area}} \\
 \addlinespace
 
-This work (\textit{HIGH}) & 100\% \ac{HDT} & 7--29~MW & Peak power at highway service areas; highest in NE Austria (transit corridors) \\
+This work (\textit{HIGH}) & 100\% \ac{HDT} & 7--29~MW & Peak power at highway service areas; highest in NE Austria \\
 \addlinespace
 
-ASFINAG (planned)\textsuperscript{c} & --- & 5~MW & Grid connection capacity per service area by 2035/2040 \\
+ASFINAG (planned)\textsuperscript{c} & --- & 5~MW & Grid connection per service area by 2035/2040 \\
 \addlinespace
 
-AFIR HDV (2030)\textsuperscript{d} & --- & 3.6~MW/pool & Minimum per pool every 60~km on TEN-T core; $\approx$135~MW aggregate for Austria \\
+AFIR HDV (2030)\textsuperscript{d} & --- & 3.6~MW/pool & Min.\ per pool every 60\,km on TEN-T core; $\approx$135\,MW for Austria \\
 
 \bottomrule
 \end{tabularx}
@@ -357,9 +363,9 @@ AFIR HDV (2030)\textsuperscript{d} & --- & 3.6~MW/pool & Minimum per pool every 
 
 \end{table}
 \newpage
-\section{Synthesis of Results} \label{sec:synthesis}
+\section{Synthesis of results} \label{sec:synthesis}
 
-The four contributions address different vehicle segments, geographic scopes, and planning dimensions. Yet they share a common analytical perspective: charging infrastructure planning at scales that extend beyond individual cities or regions — spanning national highway networks, international transport corridors, and cross-regional adoption dynamics. This section draws out three cross-cutting insights that emerge from considering the contributions jointly rather than in isolation.
+The four contributions of this thesis address different vehicle segments, geographic scopes, and planning dimensions. Yet they share a common analytical perspective: charging infrastructure planning at scales that extend beyond individual cities or regions — spanning national highway networks, international transport corridors, and cross-regional adoption dynamics. This section draws out three cross-cutting insights that emerge from considering the contributions jointly rather than in isolation.
 
 \paragraph*{Driving range and spatial density} As framed by the review paper by \citet{Metais2022}, the overcoming of \textit{range anxiety} is a primary design goal for most charging infrastructure capacity planning algorithms. Throughout the proposed model, the range of battery-electric vehicles is a core parameter determining the maximum distance between charging opportunities. The objective in most graph-based optimization algorithms applied for planning charging infrastructure at large scale focuses on establishing a minimum required set of charging sites (as in Contribution 1), while range dictates the maximum distance between them. Although battery capacities have grown to cover the vast majority of daily travel needs — largely rendering this anxiety no longer technically justified — and substantial charging infrastructure is deployed across European countries, the modeling tools applied in large-scale analyses remain largely unchanged, for both passenger and commercial vehicle fleets.
 In Contribution 1, range has no significant influence on siting decisions. In the regional consideration of both passenger and commercial \acp{BEV} addressed in Contributions 2 and 4, the impact of range on the relative siting of charging stations is inherently negligible by design. Results of Contribution 3 demonstrate that the expected range of long-haul trucks allows for substantial flexibility in the allocation of charging demand, suggesting that local electricity prices are more important determinants for infrastructure planning than range. Contribution 2 analytically demonstrates the benefit of increased spatial density of charging sites.

@@ -1,8 +1,8 @@
 \chapter{Supplementary Material for Contribution 3 (RQ3)}\label{app:rq3}
 
-The content of this appendix is based on \citet{GOLAB2026SpatialTruck}.
+The content of this appendix is based on \citet{GOLAB2026SpatialTruck} (2026).
 
-\section{Extended Nomenclature}\label{app:rq3_nomenclature}
+\section{Extended nomenclature}\label{app:rq3_nomenclature}
 
 Table~\ref{tab:nomenclature_rq3_app} lists the extended nomenclature for the long-distance freight transport decarbonization model described in Section~\ref{sec:rq3_extension}. Compared to the core model nomenclature (Table~\ref{tab:nomenclature_main}), consumer groups ($u$) and vehicle types ($v$) are dropped, as a single vehicle type (trucks) is considered. The technology index $t$ directly distinguishes ICEV and BET for road transport and rail. A mode index $m \in \mathcal{M}$ is introduced for road and rail transport. The flow variable $f_{yrmtg}$ represents annual freight tonnage rather than person-trips, and the payload $W_{tg}$ represents tonnes per vehicle rather than persons per vehicle.
 
@@ -95,7 +95,7 @@ $c^{\mathrm{terminal}}$ & rail terminal handling cost & \euro/t & $[0, \infty[$ 
 \end{longtable}
 \end{scriptsize}
 
-\section{Extended Mathematical Formulation}\label{app:rq3_math}
+\section{Extended mathematical formulation}\label{app:rq3_math}
 
 This section provides the complete set of constraints of the long-distance freight transport decarbonization model. Constraints that are also presented with detailed explanations in Section~\ref{sec:rq3_extension} are included here for reference. Compared to the RQ2 formulation (Appendix~\ref{app:rq2_math}), the key structural differences are: (i)~consumer groups ($u$) and vehicle types ($v$) are dropped; (ii)~a mode index $m$ distinguishes road and rail transport; (iii)~flow $f_{yrmtg}$ represents annual freight tonnage; (iv)~new state variables track the battery state of charge, travel time, and break time along routes. For road-specific constraints, $f_{yrtg}$ denotes the road-mode flow, i.e., $f_{yr(m=\mathrm{road})tg}$.
 
@@ -348,7 +348,7 @@ The expansion of public charging infrastructure is bounded by initial-period cap
 
 where $\overline{q}^{\mathrm{init}}$ is the maximum new infrastructure investment in the initial period and $\rho$ is the maximum growth rate per investment period.
 
-\section{Model Parametrization}\label{app:rq3_parametrization}
+\section{Model parametrization}\label{app:rq3_parametrization}
 
 Table~\ref{tab:model_constants_rq3} summarizes the key constants and parametric assumptions used in the RQ3 model formulation. Detailed cost parameters for vehicle technologies and charging infrastructure are provided in Tables~\ref{tab:ass_fleet_parameters} and~\ref{tab:fueling_rq3}, respectively. Country-specific grid charges are listed in Table~\ref{tab:elec_networkfees}.
 
@@ -404,17 +404,17 @@ $\Delta y$ & Investment period length & 4 & a \\
 \end{longtable}
 \end{scriptsize}
 
-\section{Pre-processing of Transport Data}\label{app:rq3_transport_data}
+\section{Pre-processing of transport data}\label{app:rq3_transport_data}
 
-\subsection{Network Construction and OD Pair Selection}
+\subsection{Network construction and OD pair selection}
 
 The case study network, transport demand data processing, and OD pair filtering are described in detail in Section~\ref{sec:rq3_results}. In summary, the network comprises 81 NUTS-2 regions across eight countries along the Scandinavian-Mediterranean TEN-T corridor. Transport demand is derived from the ETISplus database \citep{Speth2021} and scaled using a GDP-based growth rate (CAGR 0.4\%) \citep{eurostat2024roadfreight}. After filtering for international routes with at least 100~tonnes annual volume and 360~km length \citep{SHOMAN2023103825}, the dataset comprises 2{,}244 OD pairs. The optimization horizon is 2020--2060, with analysis focusing on 2020--2050.
 
-\subsection{Mandatory Break Location Determination}
+\subsection{Mandatory break location determination}
 
 The determination of mandatory break locations following EU Regulation~561/2006 is described in Section~\ref{sec:rq3_results}. Break locations are determined individually per route at the fixed average speed of 80~km/h, with 45-minute breaks after 4.5~hours of driving and 9-hour rest periods after 9~hours of daily driving.
 
-\subsection{Toll Rate Differentiation}
+\subsection{Toll rate differentiation}
 
 Distance-based toll rates follow the EU Eurovignette Directive minimum infrastructure charge, differentiated by vehicle emission class (Table~\ref{tab:app_rq3_toll_rates}). The 64\% reduction for zero-emission vehicles reflects the incentive structure of the directive.
 
@@ -431,7 +431,7 @@ BET (zero-emission) & 0.036\,\euro/km & 64\% reduction for zero-emission vehicle
 \end{tabular}
 \end{table}
 
-\section{SOC-aware Charging Benchmark}\label{app:rq3_soc_benchmark}
+\section{SOC-aware charging benchmark}\label{app:rq3_soc_benchmark}
 
 The SOC-aware benchmark estimates where along a route a battery-electric truck would need to charge, given mandatory driving break locations and finite battery capacity. Unlike a uniform distribution of charging across all break nodes, the SOC-aware rule accounts for the truck's state of charge and only charges when necessary.
 
@@ -456,7 +456,7 @@ The algorithm proceeds as follows for each origin-destination pair:
 
 This lazy charging strategy naturally delays charging toward mid- and late-route nodes, reflecting that trucks departing with a full battery can skip early breaks. For the case study corridor (generation 2032, $C_{\mathrm{bat}} = 1{,}187$~kWh, $e_{\mathrm{spec}} = 1.6$~kWh/km), approximately 43\% of mandatory break stops are skipped. The resulting distribution serves as a physically motivated reference against which cost-optimized and breaks-only allocations are compared.
 
-\section{Additional Results}\label{app:rq3_additional_results}
+\section{Additional results}\label{app:rq3_additional_results}
 
 This section presents supplementary results that complement the analysis in the main text. The figures illustrate the fleet transition dynamics, modal split evolution, and the effects of cross-border charging cost surcharges on the geographic allocation of charging infrastructure.
 
@@ -476,12 +476,12 @@ This section presents supplementary results that complement the analysis in the 
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.75\linewidth]{graphics/paper_3/at_surcharge_border_charging_reallocation_3years.pdf}
+    \includegraphics[width=0.55\linewidth]{graphics/paper_3/at_surcharge_border_charging_reallocation_3years.pdf}
     \caption{BET charging reallocation in the DE-AT-IT border region under Austrian electricity price and grid charge locational cost premiums for three time horizons (2032, 2040, 2048). Each panel shows stacked bars of charged energy (MWh) by country for reference scenarios (baseline, breaks constraint, fixed-fleet unconstrained) and graduated premium levels. Top rows: road-only; bottom rows: road with modal shift to rail.}
     \label{fig:app_rq3_surcharge_3years}
 \end{figure}
 
-\section{Computational Details}\label{app:rq3_computational}
+\section{Computational details}\label{app:rq3_computational}
 
 The model is implemented in Julia using JuMP~1.9 \citep{Lubin2023} and solved with Gurobi~12.0 \citep{gurobi}. Simulations are performed on an AMD Ryzen Threadripper 7980X (64 cores, 3.20~GHz base clock, 5.2~GHz boost) with 512~GB RAM.
 

@@ -35,7 +35,7 @@
         \label{fig:methodology_overview}
     \end{figure}
 
-            Figure \ref{fig:methodology_overview} illustrates how the three models relate to the central challenge of charging capacity planning. The three models are applied as stand-alone analyses. The following sections describe each model in detail. As the three models are independent, each section uses its own nomenclature; symbols may be reused across sections with different meanings. The methodological descriptions are based on the underlying journal publications,\citet{en15062147}, \citet{GOLAB2026PublicCharger}, \citet{GOLAB2026SpatialTruck} and \citet{GOLAB2025134385}. 
+            Figure \ref{fig:methodology_overview} illustrates how the three models relate to the central challenge of charging capacity planning. The three models are applied as stand-alone analyses. The following sections describe each model in detail. As the three models are independent, each section uses its own nomenclature; symbols may be reused across sections with different meanings. The methodological descriptions are based on the underlying journal publications, \citet{en15062147} (2022), \citet{GOLAB2026PublicCharger} (2026), \citet{GOLAB2026SpatialTruck} (2026), and \citet{GOLAB2025134385} (2025). 
 
     \section{Static charging infrastructure planning}\label{sec:rq1_methods}
     %MILP for fast-charging infrastructure sizing and allocation along highway networks (RQ1).
@@ -425,7 +425,7 @@ $\mathrm{fueling\_time}_{ykvt}$         & \begin{tabular}[t]{@{}l@{}}fueling tim
 
         $\alpha_{iel}$ represents the $i$th reduction of the detour time at capacity level $[cap^{\mathrm{lb}}_{iel},\; cap^{\mathrm{ub}}_{iel}]$. The indicator constraint enforces that when $w_{yiel} = 1$, $b_{yiel}$ captures the VoT-weighted detour time for all charging events at location $e$. The use of indicator constraints, which are natively supported by the JuMP modeling language in Julia, avoids the numerical difficulties associated with choosing appropriate big-M values.
 
-        {For better understanding of the computation of this equation, we provide the following example: At location $e$, there are 1000 charging events for consumers with $\mathrm{VoT}_u = \text{\EUR{15}/h}$ ($n_{yurkvtgle} = 1000$). Due to the total installed public charging capacity at location $e$, the reduction $\alpha_{(i=7)el}$ is active which reduces the initial detouring time $B^{\mathrm{init}}_{el}$ by 80\%. $B^{\mathrm{init}}_{el}$ equals 60 minutes. Based on this, the monetized detour cost is $b = 60\,\mathrm{min} \cdot (1-0.8) \cdot 1000 \cdot \text{\EUR{15}/h} = \text{\EUR{3,000}}$.}
+        {For better understanding of the computation of this equation, we provide the following example: At location $e$, there are 1000 charging events for consumers with $\mathrm{VoT}_u = \text{\euro{15}/h}$ ($n_{yurkvtgle} = 1000$). Due to the total installed public charging capacity at location $e$, the reduction $\alpha_{(i=7)el}$ is active which reduces the initial detouring time $B^{\mathrm{init}}_{el}$ by 80\%. $B^{\mathrm{init}}_{el}$ equals 60 minutes. Based on this, the monetized detour cost is $b = 60\,\mathrm{min} \cdot (1-0.8) \cdot 1000 \cdot \text{\euro{15}/h} = \text{\euro{3,000}}$.}
     \subsection{Extension for long-distance transport (RQ3)}\label{sec:rq3_extension}
 
         \subsubsection{Extended problem description and model features}
@@ -543,14 +543,14 @@ $\mathrm{fueling\_time}_{ykvt}$         & \begin{tabular}[t]{@{}l@{}}fueling tim
         \end{flalign}
         where $F^{\mathrm{rail}}_y$ and $F^{\mathrm{total}}_y$ denote total rail and total freight flows in year $y$, respectively. Parameters $\alpha_f$ and $\beta_f$ limit the period-over-period growth of rail, reflecting the pace at which intermodal terminal capacity and rail network upgrades can realistically be deployed.
 
-    \section{Bottom-up charging profile modeling: Traffic-flow-data-based charging profile modeling and flexibility potential estimation}
+    \section{Spatio-temporal charging demand modeling}
         \subsection{Problem description}
 
-        This methodology is part of a broader framework aimed at investigating the role of future electrified commercial vehicle fleets in electricity dispatch and redispatch. The central question is how the electrification of commercial fleets affects dispatch operations and redispatch costs, and how the demand-side flexibility potential of these fleets can be leveraged to reduce congestion management costs. The intended redispatch application essentially determines the required geographic and temporal resolution of the charging demand profiles: they must be spatially resolved at the level of federal states---matching the granularity of the transmission grid model---and temporally resolved at hourly granularity for a representative week. The methodological contribution of this thesis lies in the first building block of this framework: the bottom-up modeling of spatio-temporal charging demand profiles and the estimation of the associated demand-side flexibility potential (highlighted in Figures~\ref{fig:model_overview} and~\ref{fig:model_graphs}). The subsequent electricity market modeling, comprising the dispatch and redispatch stages, is part of the broader study presented in the underlying publication but is not a methodological contribution of this thesis.
+        This methodology is part of a broader framework for investigating how electrified commercial fleets affect dispatch operations and redispatch costs (Figure~\ref{fig:model_overview}). The methodological contribution of this thesis is the first building block: the bottom-up modeling of spatio-temporal charging demand profiles (highlighted in Figures~\ref{fig:model_overview} and~\ref{fig:model_graphs}). The intended redispatch application determines the required resolution---spatially at the federal-state level and temporally at hourly granularity for a representative week. The subsequent electricity market modeling is part of the broader study presented in the underlying publication but is not a contribution of this thesis.
 
-        Figure~\ref{fig:model_overview} gives an overview of the three building blocks of the framework. The charging demand profiles and flexibility estimates produced by the first block serve as input to two sequential electricity market models. The dispatch model optimizes day-ahead market clearing with the objective of social welfare maximization, covering Austria and neighbouring bidding zones. The subsequent redispatch model minimizes congestion management costs on the Austrian transmission grid. Both electricity market models have the functionality of coordinating the aggregate charging processes of the commercial \ac{BEV} fleet. Therefore, the framework is capable of simulating the centrally aggregate coordination of charging processes, their participation in the dispatch market, and the use of their flexibility for redispatch measures. It is important to note that, with this approach, demand-response of charging is not modeled separately---the optimization of the charging processes is directly integrated into the dispatch and redispatch optimizations.
+        Figure~\ref{fig:model_overview} gives an overview of the three building blocks of the framework. The charging demand profiles produced by the first block serve as input to the subsequent dispatch and redispatch models (see Appendix~\ref{app:rq4} for details on the electricity market integration and results).
 
-        Throughout the methodology, different types of geographic information are referred to. We introduce here three graphs to support the description of the methodology ($\mathcal{G} = \{ \mathcal{G}_1, \mathcal{G}_2, \mathcal{G}_3\}$; see Figure \ref{fig:model_graphs}). These mirror the three building blocks outlined in Figure \ref{fig:model_overview}. Graph $\mathcal{G}_1 = (\mathcal{N}_1, \mathcal{E}_1)$ represents a network of regions and route connections of the commercial vehicle fleet. At the visited nodes, different charging opportunities exist. $\mathcal{G}_2 = (\mathcal{N}_2, \mathcal{E}_2)$ functions as the basis for optimizing the dispatch, presenting market price zones. $\mathcal{G}_3$ is the representation of the transmission grid. These graphs overlap and values transferred between the layers are aggregated or disaggregated based on their geographic allocation.
+        The framework operates on three geographic layers ($\mathcal{G}_1, \mathcal{G}_2, \mathcal{G}_3$; see Figure~\ref{fig:model_graphs}), mirroring the three building blocks. The charging demand modeling presented here operates on $\mathcal{G}_1 = (\mathcal{N}_1, \mathcal{E}_1)$, a network of regions and route connections of the commercial vehicle fleet, where different charging opportunities exist at the visited nodes.
         \begin{figure}[h]
             \centering
             \begin{tikzpicture}
@@ -559,9 +559,9 @@ $\mathrm{fueling\_time}_{ykvt}$         & \begin{tabular}[t]{@{}l@{}}fueling tim
                 \draw[red!70!black, line width=1.5pt, rounded corners=4pt, densely dashed]
                     ($(img.south west)+(-1.5mm,-1.5mm)$)
                     rectangle
-                    ($(img.north west)!0.29!(img.north east)+(0mm,1.5mm)$);
+                    ($(img.north west)!0.34!(img.north east)+(0mm,1.5mm)$);
                 \node[red!70!black, font=\footnotesize\itshape, anchor=north]
-                    at ($(img.south west)!0.145!(img.south east)+(0,-2.5mm)$)
+                    at ($(img.south west)!0.17!(img.south east)+(0,-2.5mm)$)
                     {Contribution of this thesis};
             \end{tikzpicture}
             \caption{Overview of the building blocks of the framework. The dashed box highlights the building block that constitutes the methodological contribution of this thesis.}
@@ -584,17 +584,6 @@ $\mathrm{fueling\_time}_{ykvt}$         & \begin{tabular}[t]{@{}l@{}}fueling tim
             \caption{The three layers of geographic information used throughout the framework. The dashed box highlights the layer central to the contribution of this thesis.}
             \label{fig:model_graphs}
         \end{figure}
-        \subsubsection{Definition of the flexibility potential}
-        Figure \ref{fig:flexibility_potential_detail} describes the definition of the flexibility potential in the charging of vehicles graphically as a function of time and the state of charge: A vehicle is connected to a charging station for a defined period during which a certain amount of electricity must be charged. In the present example, the battery needs to be recharged until its maximum capacity, $\mathrm{SOC}^{\mathrm{BEV max}}$. An initial charging profile is given based on an assumption of the charging strategy of the vehicle. In the illustrated case, this charging strategy is charging at the lowest possible continuous power level ($\mathrm{CAP}^{\mathrm{BEV const}}$), distributing the charged energy evenly during the plug-in period (indicated with the dark red line). A maximum possible charging power, $\mathrm{CAP}^{\mathrm{BEV max}}$, defines the inclination of the green lines and, therefore, the
-        time span of the fastest possible charging process and the latest possible point in time at which the charging process must start in order to fully recharge. The orange line illustrates an example of a load curve with a variable power level, with the power level at the beginning and at the end being significantly higher than during the mid-part of the plug-in period. The area bounded by the green oblique lines indicates the extent of possible charging curves to reach $\mathrm{SOC}^{\mathrm{BEV max}}$ during the plug-in time period, which translates to the flexibility potential of the charging process. For example, in fast-charging processes where the charging happens at $\mathrm{CAP}^{\mathrm{BEV max}}$ and the plug-in period is closer to the point of "fastest achievable charging completion", flexibility is more limited.
-
-            \begin{figure}[h]
-                \centering
-                \includegraphics[width=0.8\textwidth]{graphics/paper_4/flexibility_potential.drawio.pdf}
-                \caption{Graphic illustration of the flexibility of a charging process}
-                \label{fig:flexibility_potential_detail}
-            \end{figure}
-
         \subsection{Charging demand estimation for local transport fleets}
         For the case of local transport, the charging demand of a vehicle is assigned to exclusively one node in $\mathcal{G}_1$. We aggregate all vehicles of a specific type to a fleet $f \in \mathcal{F}^{\mathrm{local}}$ and the energy demand for node $n$ is estimated as follows:
                 \begin{align}
@@ -610,7 +599,7 @@ For interregional transport, vehicles are assumed to travel between regions and 
                 \end{flalign}
         
             $k_i$ defines the number of vehicles traveling on the route $R_i$ in the observed period. The charging demand for this route is distributed between the locations positioned along the route and at the origin or destination nodes. The particular assignment of the magnitude of charging demand to the nodes, $ D^{BEV}_{f_i, n, l}$ depends further on the assumed charging strategy.
-         \paragraph{Nodal aggregation and temporal distribution}
+         \paragraph*{Nodal aggregation and temporal distribution}
             We aggregate the charging demand for each fleet type and the respective locations on node-level: 
             
             \begin{flalign}

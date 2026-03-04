@@ -1,6 +1,6 @@
 \chapter{Supplementary Material for Contribution 1 (RQ1)}\label{app:rq1}
 
-The content of this appendix is based on \citet{en15062147}.
+The content of this appendix is based on \citet{en15062147} (2022).
 
 \section{Nomenclature}
 
@@ -45,8 +45,8 @@ $\overline{P}_{charge, BEV}$ & average charging capacity of BEVs & kW & $[0, \in
 Parameters -- infrastructure & Description & Unit & Domain \\ \hline
 $\hat{P}_{CP}$ & peak power level of a charging point & kW & $[0, \infty[$ \\
 $P_{max}$ & \begin{tabular}[t]{@{}l@{}}maximum capacity installed\\ at a charging station\end{tabular} & kW & $[0, \infty[$ \\
-$c_{X}$ & \begin{tabular}[t]{@{}l@{}}investment costs for installation\\ of a charging station\end{tabular} & EUR & $[0, \infty[$ \\
-$c_{Y}$ & \begin{tabular}[t]{@{}l@{}}investment costs for installation\\ of one charging point\end{tabular} & EUR & $[0, \infty[$ \\
+$c_{X}$ & \begin{tabular}[t]{@{}l@{}}investment costs for installation\\ of a charging station\end{tabular} & \euro & $[0, \infty[$ \\
+$c_{Y}$ & \begin{tabular}[t]{@{}l@{}}investment costs for installation\\ of one charging point\end{tabular} & \euro & $[0, \infty[$ \\
 \\\hline
 Derived parameters & Description & Unit & Domain \\ \hline
 $dist_{ns_k}$ & \begin{tabular}[t]{@{}l@{}}distance of node $n$ along\\ segment $s$ in direction $k$\end{tabular} & km & $[0, \infty[$ \\
@@ -59,13 +59,13 @@ $r_{l_k, l_k'}$ & \begin{tabular}[t]{@{}l@{}}rationing parameter for demand\\ fl
 \end{longtable}
 \end{scriptsize}
 
-\section{Computational Details}
+\section{Computational details}
 
 The optimization model is implemented in Python~3.8 using Pyomo~6.2 as the algebraic modeling language and Gurobi~9.1.2 as the solver. The Austrian highway network is represented by 249 nodes (139 service areas and 110 junctions) along 55 highway segments. Depending on the assumed BEV driving range, the resulting mixed-integer linear program comprises approximately 1.3~million constraints. Solve times range from 650~seconds (at a driving range of 400~km) to 1{,}360~seconds (at 800~km), with a maximum optimality gap (MIPgap) of 0.2\%.
 
 The source code and input data are publicly available at: \url{https://github.com/antoniagolab/HighCharge}.
 
-\section{Determination of Average Technological Parameters for BEVs}\label{app:rq1_bev_params}
+\section{Determination of average technological parameters for BEVs}\label{app:rq1_bev_params}
 
 To evaluate the technological parameters of an average battery-electric vehicle (BEV) in the Austrian car fleet, the technological attributes of the most sold car models from the last three years were used. These are displayed in Table~\ref{tab:top10_rq1} with the respective number of sales. Using sale numbers as weights, the weighted averages for the driving range and charging capacity were evaluated.
 
@@ -101,7 +101,7 @@ Car model                        & Sales 2019 & Sales 2020 & Sales 2021 & $\over
 \end{adjustwidth}
 \end{table}
 
-\section{Details on Projected Developments for 2030}\label{app:rq1_projections}
+\section{Details on projected developments for 2030}\label{app:rq1_projections}
 
 For the quantification of the scenarios used in the analysis, projections on the development of BEV share had to be made. For the \textit{Societal Commitment} and \textit{Techno-Friendly} scenarios an \textit{optimistic} projection was made based on the decarbonization goals for the transport sector in the governmental document \enquote{Austria's Mobility Master Plan 2030} \citep{Nachhaltig}. A \textit{pessimistic} projection is made for the \textit{Directed Transition} and \textit{Gradual Development} scenarios based on the trend of new registrations of BEVs in the years between 2018 and 2020.
 
@@ -111,11 +111,11 @@ For the quantification of the scenarios used in the analysis, projections on the
 \caption{Projections of linearly increasing new registrations of BEVs (\textbf{left}, \textit{AMMP}=\textit{Austria Mobility Master Plan} \citep{Nachhaltig}) and based on this, developments of the share of BEVs (\textbf{right}).}\label{fig:bev_pen_proj}
 \end{figure}
 
-\section{Details on Data Preparation for the Austrian Case Study}\label{app:rq1_data_prep}
+\section{Details on data preparation for the Austrian case study}\label{app:rq1_data_prep}
 
 The underlying data pre-processing procedures of this work encompassed the preparation of the graph representation of the Austrian high-level road network and the potential sites for the installment of charging stations. Geographic data representing the Austrian highways and motorways was obtained based on OpenStreetMap data \cite{OpenStreetMap}. For this, all \textit{way} instances with tags \textit{highway=`motorway'} and \textit{highway=`trunk'} were retrieved and further processed using ArcGIS Pro \cite{desktop2011release} in order to obtain a clean shape representation of the road network, including the representation of both driving directions through parallel lines. Geographic data implying positions of service areas were retrieved using tags \textit{highway=`services'} and \textit{highway=`rest\_area'}. This geographic information was paired with data on service areas obtained through ASFINAG \cite{asfinagrastanlagen} which provide information on the driving direction a service area is accessible from and on the services offered on-site.
 
-\section{Model Validation}\label{app:validation_rq1}
+\section{Model validation}\label{app:validation_rq1}
 
 The model is validated by modeling present-day infrastructure requirements and comparing the results with the setup of the existing infrastructure. The current infrastructure requirements are modeled using input parameters displayed in Table \ref{tab:val}. In Figure \ref{fig:comp}, the capacities of the currently installed fast-charging infrastructure along Austria's highways (as of December 2021) are illustrated along with a comparison to the model output. Table \ref{tab:validation} presents the numbers of fast-charging points of different peak power levels and total capacity.
 

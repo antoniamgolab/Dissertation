@@ -1,8 +1,8 @@
 \chapter{Supplementary Material for Contribution 2 (RQ2)}\label{app:rq2}
 
-The content of this appendix is based on \citet{GOLAB2026PublicCharger}.
+The content of this appendix is based on \citet{GOLAB2026PublicCharger} (2026).
 
-\section{Extended Nomenclature}\label{app:rq2_nomenclature}
+\section{Extended nomenclature}\label{app:rq2_nomenclature}
 
 Table~\ref{tab:nomenclature_rq2} lists the extended nomenclature for the transport sector decarbonization model described in Section~\ref{sec:rq2_results}.
 
@@ -82,7 +82,7 @@ $M$ & sufficiently large constant (big-M) & -- & $[0, \infty[$ \\
 \end{longtable}
 \end{scriptsize}
 
-\section{Extended Mathematical Formulation}\label{app:rq2_math}
+\section{Extended mathematical formulation}\label{app:rq2_math}
 
 This section provides the complete set of constraints of the transport sector decarbonization model. Constraints that are also presented with detailed explanations in Section~\ref{sec:rq2_extension} are included here for reference.
 
@@ -383,7 +383,7 @@ The expansion of public charging infrastructure is bounded by initial-period cap
 
 where $\overline{q}^{\mathrm{init}}$ is the maximum new infrastructure investment in the initial period and $\rho$ is the maximum growth rate per investment period.
 
-\section{Model Parametrization}\label{app:rq2_parametrization}
+\section{Model parametrization}\label{app:rq2_parametrization}
 
 Table~\ref{tab:model_constants_rq2} summarizes the key constants and parametric assumptions used in the model formulation. Values marked as ``input data'' are read from the scenario-specific input files and may vary across sensitivity analyses.
 
@@ -430,15 +430,15 @@ $Y$ & Model horizon & 41 & a \\
 \end{longtable}
 \end{scriptsize}
 
-\section{Pre-processing of Travel Data}\label{app:rq2_travel_data}
+\section{Pre-processing of travel data}\label{app:rq2_travel_data}
 
-\subsection{Trip Lengths by Purpose}
+\subsection{Trip lengths by purpose}
 
-Two groups for the environmental setting of a trip are introduced: \textit{urban} and \textit{rural}. The segregation is based on the population distribution between cities with population size greater than 100{,}000 people of the Basque community, together with the respective mode share between urban and rural areas (20\%/50\% of trips by private car). This, together with the information on the trip purpose, serves as information to approximate the path length.
+Two groups for the environmental setting of a trip are introduced: \textit{urban} and \textit{rural}. The segregation is based on the population distribution between cities with population size greater than 100{,}000 people of the Basque Country, together with the respective mode share between urban and rural areas (20\%/50\% of trips by private car). This, together with the information on the trip purpose, serves as information to approximate the path length.
 
 These assumptions are drawn from a survey on mobility for Austria \citep{tomschy2016osterreich}, as this survey contains detailed information on average trip lengths by purpose for all NUTS-2 regions in Austria. Specifically, for urban areas, trip lengths recorded for Vienna are used, and for rural areas, the trip lengths recorded for suburban areas are used due to the high population density in the Basque Country.
 
-\subsection{Clustering of Trips to Vehicles}
+\subsection{Clustering of trips to vehicles}
 
 The clustering of trips to vehicles introduces a constraint linking commuting and private vehicle stocks. To consider the technology decision vehicle-based rather than trip-based, the share of technology must follow a ratio related to the application of the vehicles. Trips are grouped by income class and origin to $M$ route clusters, resulting in sets of routes $\mathcal{R}_{m}$. Based on empirical values on the relative frequency of trips per purpose, the vehicle stocks are related to each other with the following constraint:
 \begin{flalign}
@@ -461,7 +461,7 @@ $\zeta_2$ & 0.86 & 0.85 & 1.05 \\ \bottomrule
 \end{tabular}
 \end{table}
 
-\section{Discretization of the Detour-Fueling Function}\label{app:rq2_discretization}
+\section{Discretization of the detour-fueling function}\label{app:rq2_discretization}
 
 To introduce the relationship between installed charging infrastructure capacity and the detouring time to the closest available charging station into the mixed-integer linear program, the continuous detour-fueling function is discretized into piecewise steps. This discretization balances the trade-off between the loss of information due to discretization and the increase in model complexity (number of binary variables) with finer resolution. Figure~\ref{fig:dtf_sampling_rq2} illustrates the sampling of the detour fueling time functions used in the MILP formulation.
 
@@ -471,13 +471,13 @@ To introduce the relationship between installed charging infrastructure capacity
     \caption{Sampling of the detour fueling time functions to introduce the relation between charging infrastructure capacity expansion and detour fueling time to the MILP.}\label{fig:dtf_sampling_rq2}
 \end{figure}
 
-\section{Computational Details}\label{app:rq2_computational}
+\section{Computational details}\label{app:rq2_computational}
 
 The model is implemented in Julia using JuMP~1.9 \citep{Lubin2023} and solved with Gurobi~12.0 \citep{gurobi}. Simulations are performed on an AMD Ryzen Threadripper 7980X (64 cores, 3.20~GHz base clock, 5.2~GHz boost) with 512~GB RAM. The model comprises approximately 32 million continuous variables and 189 binary variables. After presolve, the problem is reduced to approximately 2 million variables. A single scenario solves in approximately 6.5 hours, terminating at an MIP gap below 0.005\%.
 
 The source code and input data are publicly available at: \url{https://github.com/antoniamgolab/iDesignRES_transcompmodel}.
 
-\section{Sensitivity Analysis: Circuity Factor}\label{app:rq2_circuity}
+\section{Sensitivity analysis: circuity factor}\label{app:rq2_circuity}
 
 A sensitivity analysis is conducted on the circuity parameter $\mu$, which translates the aerial distance to the driving distance in the road network. The tested range is $\mu \in \{1.0, 1.2, 1.4, 1.6, 1.8, 2.0, 2.2, 2.4\}$. The base case uses $\mu = 1.4$, which aligns with circuity values reported for European cities \citep{COSTA2025106087} and non-urban road networks \citep{f10121147}. Figure~\ref{fig:circuity_ass_rq2} displays the circuity values used as reference.
 
@@ -529,7 +529,7 @@ Figure~\ref{fig:infr_comparison_rq2} shows a negative correlation between detour
     \caption{Fast charging capacity versus medium-income BEV adoption share for 2035 and 2040 across circuity factor sensitivity scenarios.}\label{fig:develop_cs_rq2}
 \end{figure}
 
-\section{Validation of Detour Fueling Time Function}\label{app:rq2_validation}
+\section{Validation of detour fueling time function}\label{app:rq2_validation}
 
 The assumed shape of the detour fueling time function is validated using a Monte Carlo-based approach with real charger data from OpenChargeMap \citep{openchargemap2011} and official Basque Country boundaries \citep{eurostat_gisco_nuts}. The procedure samples 1{,}000 random driver locations within the region, identifies the nearest charging station for each location, and calculates the detour time using the same circuity factor and driving speed assumptions as in the model. The validation is performed separately for slow and fast charging networks.
 
@@ -559,9 +559,9 @@ Figures~\ref{fig:validation_slow_rq2} and~\ref{fig:validation_fast_rq2} display 
     \caption{Validation of the detour fueling time function for fast chargers in the Basque Country: comparison between Monte Carlo simulation results and assumed functional form.}\label{fig:validation_fast_rq2}
 \end{figure}
 
-\section{Sensitivity Analysis: Value of Time}\label{app:rq2_vot}
+\section{Sensitivity analysis: value of time}\label{app:rq2_vot}
 
-\subsection{Quantification of Value of Time}\label{app:rq2_vot_quantification}
+\subsection{Quantification of value of time}\label{app:rq2_vot_quantification}
 
 The value of time (VoT) represents the monetary value that consumers assign to the time spent detouring to reach a charging station. The Victoria Transport Policy Institute recommends valuing personal travel, including commuting, at approximately 50\% of the hourly wage rate \citep{litman2023travel}. For transit under comfortable conditions, recommended values range from 25--35\% of wage, while crowded conditions can justify values up to 100\%. Similarly, a recent World Bank meta-analysis of VoT studies in low- and middle-income countries found that VoT corresponds to approximately 50\% of after-tax wages \citep{wardman2023meta}.
 
@@ -622,7 +622,7 @@ As an additional validation, the Spanish Independent Authority for Fiscal Respon
     \end{tabular}
 \end{table}
 
-\subsection{Sensitivity Analysis of Value of Time}
+\subsection{Sensitivity analysis of value of time}
 
 The sensitivity analysis tests absolute shifts of $\pm 3$~\euro/h, which correspond approximately to the absolute differences between VoT values for inter-city versus urban car trips in Spain \citep{WARDMAN201693}, and relative compression/expansion of VoT differences between income classes (factors of 0.5, 0.75, 1.25, and 1.5). Figure~\ref{fig:vot_scenarios_rq2} illustrates the tested VoT scenarios.
 
@@ -658,7 +658,7 @@ The highest sensitivity is observed in the \textit{Medium low income} consumer g
     \caption{Charged energy at fast chargers by the \textit{Very low income} and \textit{Low income} groups in 2050 for different VoT scenarios.}\label{fig:vot_fastcharg_rq2}
 \end{figure}
 
-\section{Sensitivity Analysis: Home Charger Capacities}\label{app:rq2_home}
+\section{Sensitivity analysis: home charger capacities}\label{app:rq2_home}
 
 The expansion of home charging is treated as an exogenous parameter reflecting the share of maximum home charging capacity that is reached by 2050. Five scenarios are defined: 20\%, 40\%, 60\%, 80\%, and 100\% of maximum capacity. Higher home charging availability shifts utilization away from public charging.
 
@@ -680,7 +680,7 @@ The expansion of home charging is treated as an exogenous parameter reflecting t
     \caption{Charging infrastructure capacities by charger type for 2035 and 2045 across home charging scenarios.}\label{fig:home_infr_rq2}
 \end{figure}
 
-\section{Sensitivity Analysis: Central Accelerated Roll-out}\label{app:rq2_spillover}
+\section{Sensitivity analysis: central accelerated roll-out}\label{app:rq2_spillover}
 
 To test the robustness of the spillover effects observed in the main analysis, additional scenarios with $+15\%$, $+30\%$, and $+45\%$ capacity expansion in Bizkaia are tested. The spillover effect increases with larger capacities but remains modest overall.
 

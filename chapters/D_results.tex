@@ -1408,6 +1408,7 @@ The traffic-flow-based estimation of heavy-duty truck charging demand enables a 
 \centering
 \caption{Classification of heavy-duty truck charging demand in Austria by traffic type, based on ETIS+ 2030 transport flow projections. AT~tkm refers to ton-kilometers traveled within Austria. Daily demand represents electricity required for charging within Austria.}
 \label{tab:snf_traffic_classification}
+\resizebox{\textwidth}{!}{%
 \begin{tabular}{lrrrrr}
 \toprule
 \textbf{Traffic Type} & \textbf{Flows} & \textbf{Transport Volume} & \textbf{AT tkm} & \textbf{Daily Demand} & \textbf{Share} \\
@@ -1419,7 +1420,8 @@ Import/Export (AT $\leftrightarrow$ non-AT) & 79,078 & 185.0 & 32.2 & 15.1 & 36.
 \midrule
 \textbf{Total} & \textbf{319,447} & \textbf{529.5} & \textbf{87.3} & \textbf{40.9} & \textbf{100.0} \\
 \bottomrule
-\end{tabular}
+\end{tabular}%
+}
 \end{table}
 
 Table~\ref{tab:snf_yearly_demand} presents the annual charging demand for the \textit{HIGH} scenario (100\% \ac{HDT} electrification), disaggregated by traffic type and charging location. The total annual \ac{HDT} charging demand of 11.24~TWh is predominantly covered at depot locations during nighttime (10.97~TWh), while highway charging accounts for 0.27~TWh. Highway charging is concentrated in transit and import/export traffic (0.12~TWh each), whereas inland transport generates negligible highway charging demand (0.02~TWh). This reflects the shorter route segments of inland transport within Austria, for which depot charging at origin and destination is sufficient without en-route stops.
