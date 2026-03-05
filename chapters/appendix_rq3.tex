@@ -1,6 +1,6 @@
 \chapter{Supplementary Material for Contribution 3 (RQ3)}\label{app:rq3}
 
-The content of this appendix is based on \citet{GOLAB2026SpatialTruck} (2026).
+The content of this appendix is based on \citeauthor{GOLAB2026SpatialTruck} (\citeyear{GOLAB2026SpatialTruck}).
 
 \section{Extended nomenclature}\label{app:rq3_nomenclature}
 
@@ -25,7 +25,6 @@ $m \in \mathcal{M}$ & transport mode (road, rail) & & \\
 $e \in \mathcal{E}$ & geographic location (NUTS-2 region) & & \\
 $\mathbf{E}_r$ & ordered set of geographic locations along route $r$ & & \\
 $e_{r,i}$ & $i$-th geographic location along route $r$ & & \\
-$k \in \mathcal{K}$ & travel paths & & \\
 $l \in \mathcal{L}$ & types of fueling infrastructure (by capacity) & & \\
 $\mathcal{Y}^{\mathrm{exp}}$ & set of years of investment decisions & & \\
 $\mathcal{Y}^{\mathrm{exp}}_y$ & subset of investment years up to year $y$ & & \\
@@ -34,7 +33,7 @@ $\mathcal{T}^{\mathrm{road}}$ & road technologies (ICEV, BET) & & \\
 $\mathcal{T}^{\mathrm{rail}}$ & rail technology & & \\
 $\mathcal{T}^{\mathrm{BET}}$ & battery-electric truck technology & & \\
 $\mathcal{T}^{\mathrm{ICEV}}$ & internal combustion engine technology & & \\
-$\mathcal{K}_{e}$ & set of paths that go through location $e$ & & \\
+$\mathcal{R}_{e}$ & set of routes that go through location $e$ & & \\
 $\mathcal{L}_{t}$ & \begin{tabular}[t]{@{}l@{}}types of fueling infrastructure\\by drivetrain technology\end{tabular} & & \\
 $\mathcal{E}_{r}$ & \begin{tabular}[t]{@{}l@{}}set of geographic locations\\along route $r$\end{tabular} & & \\
 \\\hline
@@ -44,7 +43,6 @@ $h_{yrtg}$ & number of vehicles & -- & $[0, \infty[$ \\
 $h^{+}_{yrtg}$ & newly purchased vehicles & -- & $[0,\infty[$ \\
 $h^{-}_{yrtg}$ & \begin{tabular}[t]{@{}l@{}}number of vehicles leaving\\the vehicle stock\end{tabular} & -- & $[0, \infty[$ \\
 $s_{yrtgle}$ & energy fueled & kWh & $[0, \infty[$ \\
-$n_{yrtgle}$ & number of fueling vehicles & -- & $[0, \infty[$ \\
 $soc_{yrtge}$ & \begin{tabular}[t]{@{}l@{}}fleet-aggregate state of charge\\at location $e$\end{tabular} & kWh & $[0, \infty[$ \\
 $travel\_time_{yrtge}$ & \begin{tabular}[t]{@{}l@{}}fleet-aggregate accumulated travel\\time at location $e$\end{tabular} & h & $[0, \infty[$ \\
 $break\_time^{+}_{yrtge}$ & \begin{tabular}[t]{@{}l@{}}time on mandatory break not\\used for charging\end{tabular} & h & $[0, \infty[$ \\
@@ -101,11 +99,11 @@ This section provides the complete set of constraints of the long-distance freig
 
 \textbf{Objective function:}
 
-The objective function minimizes the net present value of total system costs comprising vehicle stock costs (${C}^{\mathrm{vehicle\_stock}}$), fueling costs (${C}^{\mathrm{fueling}}$), toll costs (${C}^{\mathrm{toll}}$), charging infrastructure costs (${C}^{\mathrm{infrastructure}}$), and time-related costs (${C}^{\mathrm{time}}$). All cost components are discounted using the discount rate~$\delta$:
+The objective function minimizes the net present value of total system costs comprising vehicle stock costs (${C}^{\mathrm{vehicle\_stock}}$), fueling costs (${C}^{\mathrm{fueling}}$), toll costs (${C}^{\mathrm{toll}}$), charging infrastructure costs (${C}^{\mathrm{infrastructure}}$), time-related costs (${C}^{\mathrm{time}}$), and rail transport costs (${C}^{\mathrm{rail}}$). All cost components are discounted using the discount rate~$\delta$:
 
 \begin{flalign} \label{equ:app_rq3_obj_fun}
     \begin{split}
-        \underset{f,h,h^{+}, h^{-},s,n,soc,travel\_time,break\_time^+,q^{+}}{minimize} \; z = \sum_{y} \frac{1}{(1+\delta)^{y-y_0}} \Big( {C}^{\mathrm{vehicle\_stock}}_{y} + {C}^{\mathrm{fueling}}_{y} \\ + {C}^{\mathrm{toll}}_{y} + {C}^{\mathrm{infrastructure}}_{y} + {C}^{\mathrm{time}}_{y} \Big)
+        \underset{f,h,h^{+}, h^{-},s,soc,travel\_time,break\_time^+,q^{+}}{minimize} \; z = \sum_{y} \frac{1}{(1+\delta)^{y-y_0}} \Big( {C}^{\mathrm{vehicle\_stock}}_{y} + {C}^{\mathrm{fueling}}_{y} \\ + {C}^{\mathrm{toll}}_{y} + {C}^{\mathrm{infrastructure}}_{y} + {C}^{\mathrm{time}}_{y} + {C}^{\mathrm{rail}}_{y} \Big)
     \end{split}
 \end{flalign}
 
@@ -135,16 +133,25 @@ where $\tau_t(y)$ is the technology-specific toll rate (\euro/km), applied unifo
 The infrastructure cost covers capital investment, operation and maintenance, and country-specific annual grid charges:
 \begin{flalign} \label{equ:app_rq3_cost_infr}
     \begin{split}
-        {C}^{\mathrm{infrastructure}}_{y} = \sum_{t,l,e} C^{\mathrm{CAPEX, infr}}_{ytl} \cdot q^{+, \mathrm{charg\_infr}}_{ytle} + \sum_{t,l,e} \left(C^{\mathrm{O\&M, infr}}_{ytl} + c^{\mathrm{grid}}_{e}\right) \cdot \left(Q^{\mathrm{charg\_infr}}_{tle} + \sum_{y' \in \mathcal{Y}^{\mathrm{exp}}_y} q^{+, \mathrm{charg\_infr}}_{y'tle}\right)
+        {C}^{\mathrm{infrastructure}}_{y} = \sum_{t,l,e} C^{\mathrm{CAPEX, infr}}_{ytl} \cdot q^{+, \mathrm{charg\_infr}}_{ytle} \\ + \sum_{t,l,e} \left(C^{\mathrm{O\&M, infr}}_{ytl} + c^{\mathrm{grid}}_{e}\right) \cdot \left(Q^{\mathrm{charg\_infr}}_{tle} + \sum_{y' \in \mathcal{Y}^{\mathrm{exp}}_y} q^{+, \mathrm{charg\_infr}}_{y'tle}\right)
     \end{split}
 \end{flalign}
 
-The time cost monetizes the fleet-aggregate travel time via the value of time and adds the rail transport cost:
+The time cost monetizes the fleet-aggregate travel time via the value of time:
 \begin{flalign} \label{equ:app_rq3_cost_time}
     \begin{split}
-        {C}^{\mathrm{time}}_{y} = \mathrm{VoT} \cdot \sum_{\substack{r \in \mathcal{R},\; t \in \mathcal{T}^{\mathrm{road}} \\ g \in \mathcal{G}}} travel\_time_{yrtge_{r,|\mathbf{E}_r|}} + \sum_{\substack{r \in \mathcal{R},\; t \in \mathcal{T}^{\mathrm{rail}} \\ g \in \mathcal{G}}} \left(c^{\mathrm{rail}} \cdot L_r + 2 \cdot c^{\mathrm{terminal}}\right) \cdot f_{yr(m=\mathrm{rail})tg}
+        {C}^{\mathrm{time}}_{y} = \mathrm{VoT} \cdot \sum_{\substack{r \in \mathcal{R},\; t \in \mathcal{T}^{\mathrm{road}} \\ g \in \mathcal{G}}} travel\_time_{yrtge_{r,|\mathbf{E}_r|}}
     \end{split}
 \end{flalign}
+
+The rail transport cost covers the levelized cost of rail freight and terminal handling at origin and destination:
+\begin{flalign} \label{equ:app_rq3_cost_rail}
+    \begin{split}
+        {C}^{\mathrm{rail}}_{y} = \sum_{\substack{r \in \mathcal{R},\; t \in \mathcal{T}^{\mathrm{rail}} \\ g \in \mathcal{G}}} \left(c^{\mathrm{rail}} \cdot L_r + 2 \cdot c^{\mathrm{terminal}}\right) \cdot f_{yr(m=\mathrm{rail})tg}
+    \end{split}
+\end{flalign}
+
+where $c^{\mathrm{rail}}$ is the levelized rail transport cost (\euro/tkm) and $c^{\mathrm{terminal}}$ is the terminal handling cost (\euro/t) incurred at both origin and destination.
 
 \textbf{Demand coverage:}
 
@@ -215,16 +222,6 @@ The total energy fueled along a route must cover the energy consumption derived 
     \end{split}
 \end{flalign}
 
-\textbf{Number of fueling vehicles:}
-
-The number of fueling vehicles is derived from the fueled energy, accounting for the usable state of charge:
-
-\begin{flalign} \label{equ:app_rq3_n_fueling}
-    \begin{split}
-        n_{yrtgle} \geq \frac{s_{yrtgle}}{\mathrm{SOC}^{+,\mathrm{charging}} \cdot \mathrm{Cap}^{\mathrm{tank}}_{tg}} \quad : \forall y, r, t \in \mathcal{T}^{\mathrm{road}}, g, l, e
-    \end{split}
-\end{flalign}
-
 \textbf{Maximum capacity constraints:}
 
 The expansion of charging infrastructure is limited by upper bounds:
@@ -270,11 +267,11 @@ The fleet-aggregate travel time is accumulated along each route, comprising driv
     \end{split}
 \end{flalign}
 
-The charging time term $s_{yrtge_{r,i}} / \hat{P}_{tg}$ is dimensionally consistent because $s$ is a fleet-aggregate quantity (total energy charged across all vehicle trips), so dividing by per-vehicle charging power yields fleet-aggregate charging time (vehicle-hours).
+The charging time term $s_{yrtge_{r,i}} / \hat{P}_{tg}$ divides the total energy charged across all vehicle trips by the per-vehicle charging power, yielding fleet-aggregate charging time (vehicle-hours).
 
 \textbf{Mandatory break enforcement (cf.\ Equation~\ref{equ:mandatory_break}):}
 
-Mandatory driver rest periods following EU driving time regulations are imposed at geographic locations where the break must have been taken by the latest:
+At locations where EU driving time regulations require a mandatory break, the accumulated travel time must meet a minimum threshold:
 
 \begin{flalign} \label{equ:app_rq3_mandatory_break}
     \begin{split}
@@ -282,7 +279,7 @@ Mandatory driver rest periods following EU driving time regulations are imposed 
     \end{split}
 \end{flalign}
 
-where $TravelTime^{\mathrm{min}}_{e_{r, j}}$ is the minimum cumulative travel time at node $j$, comprising the driving time and the mandatory break time that must have been taken by that point. Since $travel\_time$ is a fleet-aggregate quantity, the right-hand side is scaled by the number of vehicle trips $f_{yrtg}/W_{tg}$. The variable $break\_time^{+}_{yrtge}$ in Equation~\ref{equ:app_rq3_travel_time} acts as a slack variable ensuring that the total time at a mandatory break location equals the regulated break duration. Charging during mandatory breaks incurs no additional time cost, creating an economic incentive to co-locate charging at break locations.
+where $TravelTime^{\mathrm{min}}_{e_{r, j}}$ is the minimum cumulative travel time at node $j$, comprising the driving time and the mandatory break time that must have been taken by that point. Since $travel\_time$ is a fleet-aggregate quantity, the right-hand side is scaled by the number of vehicle trips $f_{yrtg}/W_{tg}$. The variable $break\_time^{+}_{yrtge}$ in Equation~\ref{equ:app_rq3_travel_time} ensures that the total stop duration at a mandatory break location equals the regulated break duration. Charging during mandatory breaks can partially or fully overlap with the required rest period, reducing additional time cost and creating an economic incentive to co-locate charging at break locations.
 
 \textbf{Maximum mode share (cf.\ Equation~\ref{equ:max_mode_share}):}
 
@@ -323,16 +320,6 @@ The year-over-year change in the vehicle stock of a drivetrain technology $t$ is
 \end{flalign}
 
 where $\alpha^h$ and $\beta^h$ are the maximum rate-of-change parameters relative to the total vehicle stock and the previous stock of the respective technology.
-
-\textbf{No fossil infrastructure expansion:}
-
-Expansion of fueling infrastructure for fossil-fuel technologies is not permitted, reflecting the assumption that existing diesel refueling infrastructure is of sufficient capacity:
-
-\begin{flalign} \label{equ:app_rq3_no_fossil_infr}
-    \begin{split}
-        q^{+, \mathrm{charg\_infr}}_{ytle} = 0 \quad : \forall y, t \in \mathcal{T}^{\mathrm{ICEV}}, l, e
-    \end{split}
-\end{flalign}
 
 \textbf{Infrastructure expansion rate limits:}
 
@@ -382,8 +369,8 @@ $\alpha^h,\; \beta^h$ & \begin{tabular}[t]{@{}l@{}}Maximum stock transition rate
 \multicolumn{4}{l}{\textbf{Modal shift}} \\ \hline
 $\bar{\alpha}^{\mathrm{mode}}$ & Maximum corridor-wide rail share & 0.30 & -- \\
 $\alpha_f,\; \beta_f$ & Modal shift rate-of-change parameters & 0.1 & -- \\
-$c^{\mathrm{rail}}$ & Levelized rail transport cost & 0.057 & \euro/tkm \\
-$c^{\mathrm{terminal}}$ & Rail terminal handling cost & 15 & \euro/t \\
+$c^{\mathrm{rail}}$ & \begin{tabular}[t]{@{}l@{}}Levelized rail transport cost\\(incl.\ infrastructure amortization)\end{tabular} & 0.057 & \euro/tkm \\
+$c^{\mathrm{terminal}}$ & Rail terminal handling cost & 4 & \euro/t \\
 & Rail availability (first year) & 2026 & -- \\
 \\\hline
 \multicolumn{4}{l}{\textbf{Infrastructure constraints}} \\ \hline
@@ -414,24 +401,8 @@ The case study network, transport demand data processing, and OD pair filtering 
 
 The determination of mandatory break locations following EU Regulation~561/2006 is described in Section~\ref{sec:rq3_results}. Break locations are determined individually per route at the fixed average speed of 80~km/h, with 45-minute breaks after 4.5~hours of driving and 9-hour rest periods after 9~hours of daily driving.
 
-\subsection{Toll rate differentiation}
 
-Distance-based toll rates follow the EU Eurovignette Directive minimum infrastructure charge, differentiated by vehicle emission class (Table~\ref{tab:app_rq3_toll_rates}). The 64\% reduction for zero-emission vehicles reflects the incentive structure of the directive.
-
-\begin{table}[H]
-\centering
-\caption{Distance-based toll rates based on the EU Eurovignette Directive minimum infrastructure charge, differentiated by vehicle emission class.}
-\label{tab:app_rq3_toll_rates}
-\begin{tabular}{@{}lll@{}}
-\toprule
-\textbf{Technology} & \textbf{Toll rate} & \textbf{Basis} \\ \midrule
-ICEV (Euro~VI diesel) & 0.10\,\euro/km & EU Eurovignette base rate \\
-BET (zero-emission) & 0.036\,\euro/km & 64\% reduction for zero-emission vehicles \\
-\bottomrule
-\end{tabular}
-\end{table}
-
-\section{SOC-aware charging benchmark}\label{app:rq3_soc_benchmark}
+\section{SOC-aware charging heuristic benchmark}\label{app:rq3_soc_benchmark}
 
 The SOC-aware benchmark estimates where along a route a battery-electric truck would need to charge, given mandatory driving break locations and finite battery capacity. Unlike a uniform distribution of charging across all break nodes, the SOC-aware rule accounts for the truck's state of charge and only charges when necessary.
 

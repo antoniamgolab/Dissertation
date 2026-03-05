@@ -1,24 +1,24 @@
 \chapter{Results of case studies}\label{ch:results}
 
-This chapter presents the case studies and results of the four contributions underlying this thesis. Each section corresponds to one contribution and draws on the respective publication: \citet{en15062147} (2022) for Contribution~1 (Section~\ref{sec:rq1_results}), \citet{GOLAB2026PublicCharger} (2026) for Contribution~2 (Section~\ref{sec:rq2_results}), \citet{GOLAB2026SpatialTruck} (2026) for Contribution~3 (Section~\ref{sec:rq3_results}), and \citet{GOLAB2025134385} (2025) for Contribution~4 (Section~\ref{sec:rq4_results}).
+This chapter presents the case studies and results of the four contributions underlying this thesis. Each section corresponds to one contribution and draws on the respective publication: \citeauthor{en15062147} (\citeyear{en15062147}) for Contribution~1 (Section~\ref{sec:rq1_results}), \citeauthor{GOLAB2026PublicCharger} (\citeyear{GOLAB2026PublicCharger}) for Contribution~2 (Section~\ref{sec:rq2_results}), \citeauthor{GOLAB2026SpatialTruck} (\citeyear{GOLAB2026SpatialTruck}) for Contribution~3 (Section~\ref{sec:rq3_results}), and \citeauthor{GOLAB2025134385} (\citeyear{GOLAB2025134385}) for Contribution~4 (Section~\ref{sec:rq4_results}).
 
 \section{Fast-charging infrastructure network capacities for
 passenger cars along Austria’s highway network in
 2030 (RQ1)}\label{sec:rq1_results}
 
-The following case study and results are taken from the journal publication by \citet{en15062147} (2022).
+The following case study and results are taken from the journal publication by \citeauthor{en15062147} (\citeyear{en15062147}).
 
 \subsection{Case study: Austrian highway network 2030}
-    The proposed modeling framework is applied to Austria`s highway network by modeling a cost-optimal charging infrastructure expansion for 2030 under different future scenarios. In this study, year 2030 has been chosen mainly due to the two following reasons: first is that the aim of the analysis of this work is to illustrate short-term infrastructure requirements (short term in terms of infrastructure planning), and second is that it is a significant year in decarbonization plans for the transport sector as the Paris Agreement explicitly states a 20\% electrification of global road transport by 2030 \citep{paris}.   
+    The proposed modeling framework is applied to Austria's highway network by modeling a cost-optimal charging infrastructure expansion for 2030 under different future scenarios. In this study, year 2030 has been chosen mainly due to the two following reasons: first is that the aim of the analysis of this work is to illustrate short-term infrastructure requirements (short term in terms of infrastructure planning), and second is that it is a significant year in decarbonization plans for the transport sector as the Paris Declaration on Electro-Mobility explicitly states a 20\% electrification of global road transport by 2030 \citep{paris}.   
     
     To extrapolate future scenarios, model input parameters were set, which describe the current status of Austria in 2021. Table \ref{tab:val} presents the selected values. Until the end of December 2021, $76,539$ electric vehicles have been registered in Austria \citep{beoe}, which make up for 1.5 \% of all the registered passenger cars in Austria. In order to determine traffic load on highways during peak hour and the share of long-distance drivers, the most recently acquired data (Austrian-wide) on mobility patterns was used \citep{mob_survey}. Similar to the work of \citet{Jochem2016}, it was assumed that all car trips taking longer than 45 min and are longer than $25km$ or car trips longer than $50km$ are most probable to include driving on highways or motorways. Furthermore, trips were classified as long-distance if the drive was at least $100km$ long, following the common definition of \textit{long-distance} travel \citep{frei2010long}. Based on the starting times of these trips, it was assumed that during the hour of peak demand on Austrian highways $12\%$ of the daily traffic takes place and 24\% of the traffic are long-distance travelers. 
     
-    Traffic counts were obtained from \citet{asfinag}, which provide averaged weekly traffic counts for up to 276 positions along Austrian`s highways and motorways. Their data encompasses counts for vehicles of two categories, namely: vehicles weighing up to 3.5 tons and those weighing greater than 3.5 tons. As no differentiation is made between light-duty vehicles and passenger cars in the category of $< 3.5$ tons, it was assumed that all vehicles of this category are passenger cars, as light-duty transport will also be transitioned to electromobility \citep{Nachhaltig}. Data for the year 2019 was chosen to be representative for 2021 as the complete data set for 2021 has not been published as of the time of the conduction of this analysis, and the 2020 dataset cannot be used due to \added{being effected by the} month-long lockdowns during the COVID pandemic. 
+    Traffic counts were obtained from \citet{asfinag}, which provide averaged weekly traffic counts for up to 276 positions along Austria's highways and motorways. Their data encompasses counts for vehicles of two categories, namely: vehicles weighing up to 3.5 tons and those weighing greater than 3.5 tons. As no differentiation is made between light-duty vehicles and passenger cars in the category of $< 3.5$ tons, it was assumed that all vehicles of this category are passenger cars, as light-duty transport will also be transitioned to electromobility \citep{Nachhaltig}. Data for the year 2019 was chosen to be representative for 2021 as the complete data set for 2021 has not been published as of the time of the conduction of this analysis, and the 2020 dataset cannot be used due to \added{being affected by the} month-long lockdowns during the COVID pandemic. 
     
   To derive charging demand at each node of the network, the sparse traffic count positions are mapped onto each highway segment and spatially interpolated using a generalized regression neural network (GRNN) \citep{Gholamrezaei2007}. The GRNN approximates a continuous function of peak daily traffic load as a function of distance along each segment and driving direction. This function is then evaluated at each node position to obtain the local traffic load, and integrated between consecutive nodes to compute the accumulated energy demand that must be covered by charging infrastructure at each node.
 
-  The technical parameters $\overline{d}_{spec, BEV}$, $\overline{dist}_{range, BEV}$, and $\overline{P}_{charge, BEV}$ were set in such a way that they would represent an average Austrian \ac{BEV}. For this, the technological attributes of the respective top 10 sold cars during the years 2019, 2020 and 2021 were used to evaluate the weighted average values (see Appendix~\ref{app:rq1_bev_params} for the complete list of car models and their technical attributes).
-    
+  The technical parameters $\overline{d}_{spec, BEV}$, $\overline{dist}_{range, BEV}$, and $\overline{P}_{charge, BEV}$ were set in such a way that they would represent an average Austrian \ac{BEV}. For this, the technological attributes of the respective top 10 sold cars during the years 2019, 2020 and 2021 were used to evaluate the weighted average values (see Appendix~\ref{app:rq1_bev_params} for the complete list of car models and their technical attributes). The maximum distance for demand coverage is derived as $dist_{max}=\nicefrac{4}{5} \cdot 0.6 \cdot \overline{dist}_{range, BEV}$, where the factor $\nicefrac{4}{5}$ accounts for reduced driving range at highway speeds \citep{Baresch2019, Napoli2020} and $0.6$ reflects charging processes starting at a state of charge of 20\% up to 80\% \citep{NEUBAUER201412}.
+
     Infrastructure cost component $c_X$ is particularly difficult to set here as these onsite preparation costs may significantly vary based on the location of the site.
     Indications for the approximation of this value were drawn from \cite{Jochem2016}, \cite{Serradilla2017} and \cite{Verein2019}. The installation costs of one charging point, $c_Y$, was assumed to be \euro$60,000$ for the hardware of a charging pole with $\hat{P}_{CP} = 150kW$ --- which currently enables the fastest charging of passenger cars; an added construction costs to be \euro$7,000$ \citep{Verein2019, Suarez2019}. Furthermore, it was assumed that the maximum installed capacity at a charging station is $12 MW$.
     
@@ -77,7 +77,7 @@ The following case study and results are taken from the journal publication by \
 
     
     Based on these scenario descriptions, we\footnote{Throughout this chapter, the first-person plural ``we'' is used where text is directly based on the underlying journal publications.} embed projections on changes in the modal split and developments in the \ac{BEV} technology in European climate mitigation pathways for 2030.
-    Parameters $\epsilon$ and $\alpha$ are specified based on the climate change mitigation goals for Austria`s passenger transport sector described in the governmental document \enquote{Austria's Mobility Master Plan 2030} (\textit{AMMP}) \citep{Nachhaltig}. One of these key goals is to reduce motorized private transport by $31\%$ between the years 2018 and 2040 to meet the $1.5^\circ C$ target set by the Paris Agreement. In the SC scenario where strong societal and political engagement act together, this goal will be met by 2030. The AMMP further specifies that by 2030, $100\%$ of newly registered passenger vehicles must be exclusively powered by an electric engine. In the SC and TF scenarios, it is assumed that the share of new registrations of electric vehicles will gradually increase until 100\% in 2030 due to the strong awareness of the necessity of electromobility by the society. For the \textit{DT} and \textit{GD} scenarios, the steady growth rate as experienced in 2020-2021 is projected until 2030, which will result in an EV share of $27\%$\footnote{This was calculated under the assumption that the size of the Austrian car fleet will not grow further from 2021.}. Further details on the BEV share projections are provided in Appendix~\ref{app:rq1_projections}.
+    Parameters $\epsilon$ and $\alpha$ are specified based on the climate change mitigation goals for Austria's passenger transport sector described in the governmental document \enquote{Austria's Mobility Master Plan 2030} (\textit{AMMP}) \citep{Nachhaltig}. One of these key goals is to reduce motorized private transport by $31\%$ between the years 2018 and 2040 to meet the $1.5^\circ C$ target set by the Paris Agreement. In the SC scenario where strong societal and political engagement act together, this goal will be met by 2030. The AMMP further specifies that by 2030, $100\%$ of newly registered passenger vehicles must be exclusively powered by an electric engine. In the SC and TF scenarios, it is assumed that the share of new registrations of electric vehicles will gradually increase until 100\% in 2030 due to the strong awareness of the necessity of electromobility by the society. For the \textit{DT} and \textit{GD} scenarios, the steady growth rate as experienced in 2020-2021 is projected until 2030, which will result in an EV share of $27\%$\footnote{This was calculated under the assumption that the size of the Austrian car fleet will not grow further from 2021.}. Further details on the BEV share projections are provided in Appendix~\ref{app:rq1_projections}.
     
     Table \ref{tab:technolog_params_future} presents the projected values. The presence of major technological breakthroughs is expressed by a significant development in the driving range of \acp{BEV} and increasing charging power, which is in line with the current major focus in \ac{BEV} technology research on battery technology with the goal of allowing faster charging and longer trips \citep{IRENA2019, Thielmann2020}. According \added{to} the study by \citet{Thielmann2020}, there is a great potential in battery storage research suggesting that technological breakthroughs in the next years could lead to the sale of \acp{BEV} with a driving range of up to $1000km$.  Based on this, the sale of \acp{BEV} with an average driving range of up to $800km$ is projected for 2030 in the TF and DT scenarios, whereas in the SC scenario, this range is assumed to be $450km$, being slightly larger than the ranges of \acp{BEV} currently on the market . To reflect a weak extent of technical developments in the GD scenario, the increase in the average driving range of up to $600km$ is projected for 2030.
     
@@ -120,17 +120,36 @@ The following case study and results are taken from the journal publication by \
     \end{tabularx}%
     
     \end{table}
-    
+
+\subsubsection{Charging demand calculation}
+
+The charging demand at each candidate location along the highway network is derived from empirical traffic count data rather than from synthetic demand assumptions. The following describes the procedure used to assign spatially resolved charging demand to each node in the network.
+
+To each node $n$ in the network, a charging demand is assigned for each direction $k$ from which it is accessible. For this, daily traffic counts are utilized to estimate the number of cars passing at all node positions $n$ and driving in direction $k$. To take into account the demand of maximum traffic load to the charging infrastructure in the analysis, the maximum daily traffic count values are obtained from the measurements performed for a span of one year.
+Then, the following is performed for each segment $s$ in the direction $k$ of the highway network: All traffic counter positions lying on $s$ are mapped onto the segment, and a function expressing traffic load in dependence of the distance in the traveling direction is approximated using the general regression neural network (GRNN) model, which is able to estimate various forms of underlying functions using Gaussian functions given few input data points \citep[][]{Gholamrezaei2007}. Using the function, $GRNN_{sk} (dist)$, the peak daily traffic loads are approximated for all nodes $n$, which lie on segment $s$ and are accessible from the driving direction $k$:
+
+\begin{equation}
+    \hat{f}_{n_k}=GRNN_{s_k} (dist_{ns_k})
+\end{equation}
+
+To obtain the charging demand at node $n_k$ resulting from the energy consumed along the distance driven since passing the last node $n-1_k$, the integral between these distances is calculated and multiplied by the specific energy demand $\overline{d}_{spec, BEV}$ by one \ac{BEV}:
+
+\begin{equation}
+    \hat{D}_{ns_k} = \overline{d}_{spec, BEV} \cdot \epsilon \cdot \mu \cdot \gamma_h \cdot \alpha \int_{dist_{n-1}}^{dist_n} GRNN_{s_k} (dist) \, \mathrm{d} \, dist
+\end{equation}
+
+$\epsilon$ describes the share of \acp{BEV} in the car fleet, whereas $\mu$ expresses the share of long-distance drivers. Factor $\gamma_h$ expresses the share of daily travels appearing during the peak hour of a day. Parameter $\alpha$ is introduced as a factor that allows to express relative changes in the overall traffic load along highways between the year during which the traffic counts were obtained and the year for which the demand is modeled; this allows to take into account the decrease in road traffic due to activity reduction or modal shift.
+
 \subsection{Expansion of fast-charging infrastructure along Austrian highway network under different scenarios for 2030}
 
 In this section, the most relevant results are presented. It is divided into two parts: First, we elaborate on the expansion requirements for the existing fast-charging infrastructure along Austria's highway network under different future scenarios for 2030. Details on the results obtained for the DT scenario, for which the costs of fast-charging infrastructure expansion are the lowest, are presented. Subsequently, the results of the modeled expansion given four different scenarios, SC, TF, DT and GD, are compared based on parameters describing the costs and the required charging infrastructure expansion. To gain better insight into how the observed differences between the scenarios come to place, \deleted{the} selected input parameters of the scenario result with the highest infrastructure expansion costs for 2030, which is the GD scenario, are altered. In the second part of this section, the focus shifts from the required infrastructure expansion for 2030 to the analysis of changing infrastructure requirements in the face of technological development and increasing demand. First, the effect of change in the driving range of an average \ac{BEV} is observed and, second, that of increasing demand by the rising share of \acp{BEV} in the Austrian car fleet.
 
 Under the consideration of existing charging points with the peak capacity of $\hat{P}_{CP} = 350kW$, which is assumed to be the predominant charging capacity of fast-charging infrastructure for 2030, and the assumption that the investment of on-site preparation ($c_X$) has been made for all existing charging stations with charging points allowing fast-charging, the expansion of the current charging infrastructure along the Austrian highway network is modeled under different climate mitigation scenarios. 
 
-\subsubsection{Austria`s fast-charging infrastructure for 2030 under the Directed Transition scenario}
+\subsubsection{Austria's fast-charging infrastructure for 2030 under the Directed Transition scenario}
 
 
-Table \ref{tab:spec_res} and Figure \ref{fig:expansion_dt_2030} display the modeling results for the expansion of the current $350kW$ charging infrastructure along highways in Austria for 2030 under the DT scenario. In Figure \ref{fig:expansion_dt_2030}, the charging infrastructure expansion is expressed through additionally needed capacities. The expansions at existing charging points are indicated in dark \replaced{green}{blue and green}, and required capacities at newly installed charging points are indicated in orange \deleted{and red}. The charging stations in \replaced{the lighter shades of green and orange}{turquoise and orange} indicate the required expansion of $350 - 4900 kW$, i.e., by 1-14 charging points, and charging stations in \replaced{the darker shades}{dark blue and red} installations of additional $5200 - 10500 kW$, i.e., 15 - 28 additional charging points. The total infrastructure expansion costs are estimated to be \euro54 Mio., which are translated to \euro/kW 369 and \euro39 per registered \ac{BEV} in the Austrian car fleet in 2030. While currently, 40 charging points with $\hat{P}_{CP}=350 kW$, i.e., $14 MW$, are \deleted{currently} installed along Austrian highways, an additional $+146 MW$ of charging capacity are required until 2030. Further, additional $24$ charging stations are needed, of which 10 are positioned within the dense part of the highway network in the East of Austria, in the vicinity of Vienna. The results also indicate\deleted{d} the need for the installation of new charging stations near the Austrian border in order to cover all demand within the boarders, which mostly results from the model formulation enforcing all coverage of demand within the network . Aside from this, there exist three charging stations that do not need any infrastructure expansion.
+Table \ref{tab:spec_res} and Figure \ref{fig:expansion_dt_2030} display the modeling results for the expansion of the current $350kW$ charging infrastructure along highways in Austria for 2030 under the DT scenario. In Figure \ref{fig:expansion_dt_2030}, the charging infrastructure expansion is expressed through additionally needed capacities. The expansions at existing charging points are indicated in dark \replaced{green}{blue and green}, and required capacities at newly installed charging points are indicated in orange \deleted{and red}. The charging stations in \replaced{the lighter shades of green and orange}{turquoise and orange} indicate the required expansion of $350 - 4900 kW$, i.e., by 1-14 charging points, and charging stations in \replaced{the darker shades}{dark blue and red} installations of additional $5200 - 10500 kW$, i.e., 15 - 28 additional charging points. The total infrastructure expansion costs are estimated to be \euro54 Mio., which are translated to \euro/kW 369 and \euro39 per registered \ac{BEV} in the Austrian car fleet in 2030. While currently, 40 charging points with $\hat{P}_{CP}=350 kW$, i.e., $14 MW$, are \deleted{currently} installed along Austrian highways, an additional $+146 MW$ of charging capacity are required until 2030. Further, additional $24$ charging stations are needed, of which 10 are positioned within the dense part of the highway network in the East of Austria, in the vicinity of Vienna. The results also indicate\deleted{d} the need for the installation of new charging stations near the Austrian border in order to cover all demand within the borders, which mostly results from the model formulation enforcing all coverage of demand within the network. Aside from this, there exist three charging stations that do not need any infrastructure expansion.
 
 % The modeled expansion of the charging infrastructure covers up to 94.6 \% of the total energy demand along the highway network. The 5.4\% of not covered energy demand corresponds to the demand with results from the energy consumption by vehicles driving between a service area near the ending node to the ending point of the highway network. This cannot be covered within the network as no charging points can be built at network ends but only at service areas.
 %Figure \ref{fig:expansion_dt_2030} displays the specific positions of required infrastructure expansion and further how much of capacity expansion is needed at existing charging points versus the amount and capacity of newly planted charging points which is overall 
@@ -263,7 +282,7 @@ Rel. change                                         & -                         
 
 \begin{figure}[h]
 \includegraphics[width=14cm]{graphics/paper_1/cost_red.pdf}
-\caption{Cost reduction potentials in the \textit{Directed Transition} (DT) scenario. Detailed descriptions of the measures are in Table~\ref{tab:cost_red}. \label{fig:cost_red}}
+\caption{Cost reduction potentials in the \textit{Gradual Development} (GD) scenario. Detailed descriptions of the measures are in Table~\ref{tab:cost_red}. \label{fig:cost_red}}
 \end{figure}   
 \unskip
 
@@ -297,7 +316,7 @@ During this analysis, the model was run for each of the ranges between $200$ and
 \subsubsection{Increasing share of \acp{BEV} in the Societal Commitment scenario}
 Figure \ref{fig:sa_2_1} presents the results of the sensitivity analysis on the share of \acp{BEV} in the Austrian car fleet under the SC scenario for 2030. The top-left sub\added{-}figure presents the total installed capacity of the fast-charging infrastructure as a function of rising share of \acp{BEV}. The top-right sub\added{-}figure displays the change in the number of charging stations. Boxplots illustrating the distribution of the number of charging points at charging stations are presented in the bottom-left sub\added{-}figure. The timeline in this figure is projected based on the assumption that as of 2030, all registered cars will be \acp{BEV} and a \ac{BEV} has a lifetime of 10 years which would lead to an Austrian car fleet \replaced{that}{which} is 100 \% electric by 2040. Table \ref{tab:tech} presents the values of parameters describing the key features of modeled infrastructure for the different shares of \acp{BEV}, 10\%, 50\% and 100\%.
 
-The required capacity for fast-charging is rising linearly with the share of \acp{BEV}. The number of charging stations is significantly increasing between 40\% to 100\%, indicating the requirement for a densification of the fast-charging infrastructure. This effect of densification can be attributed to the increasing amount of fully occupied charging stations which is visible in the bottom left sub-figure of Figure \ref{fig:sa_2_1}. The overall cost increase by a factor of about 10 between 10\% and 100\% share of BEVs, so does the required capacity.
+The required capacity for fast-charging is rising linearly with the share of \acp{BEV}. The number of charging stations is significantly increasing between 40\% to 100\%, indicating the requirement for a densification of the fast-charging infrastructure. This effect of densification can be attributed to the increasing amount of fully occupied charging stations which is visible in the bottom left sub-figure of Figure \ref{fig:sa_2_1}. The overall costs increase by a factor of about 10 between 10\% and 100\% share of BEVs, so does the required capacity.
 
 
 % \begin{itemize}
@@ -357,13 +376,13 @@ Total investment costs (\euro)           & 72 Mio.                  & 71 Mio.   
 
 \section{Impact of charging infrastructure roll-out on passenger car adoption across income groups and regions (RQ2)}\label{sec:rq2_results}
 
-The following case study and results are taken from the journal publication by \citet{GOLAB2026PublicCharger} (2026). The extended nomenclature and mathematical formulation are provided in Appendices~\ref{app:rq2_nomenclature} and~\ref{app:rq2_math}, respectively. Computational details are provided in Appendix~\ref{app:rq2_computational}.
+The following case study and results are taken from the journal publication by \citeauthor{GOLAB2026PublicCharger} (\citeyear{GOLAB2026PublicCharger}). The extended nomenclature and mathematical formulation are provided in Appendices~\ref{app:rq2_nomenclature} and~\ref{app:rq2_math}, respectively. Computational details are provided in Appendix~\ref{app:rq2_computational}.
 
 \subsection{Case study: Passenger car fleet of the Basque Country}
        \subsubsection{Basque Country}
 
-        The geographic extent of \replaced{this}{the} analysis of this paper is the autonomous community Basque Country (in Spanish: \textit{País Vasco}, NUTS code: ES21). This region is located in the North of Spain. The current passenger car vehicle stock is in the magnitude of 1\replaced{.}{,}08 Mio. (2022) \citep{eurostat_transport2024}. In 2023, the electrification rate of the passenger car fleet was at 0.05\% \citep{eurostat_zev_2024}. The Basque Country is classified as a NUTS-2 region in the EV NUTS classification scheme \citep{eurostat_nuts} and consists of three NUTS-3 regions: Araba/Álava\footnote{For the readability of the article, we\deleted{ will} refer to the region by its Basque language, Araba.} (ES211), Guipuzcoa (ES212), \replaced{Bizkaia}{Bizcaya} (ES213). Figure \ref{fig: scenario_design} displays the relative geographic allocation of the regions and of the capital cities. For RQ1, we represent the NUTS-2\added{ region} as one node.
-        For RQ2, we \replaced{derive}{deduct} a graph-based conceptualization with three nodes representing each of the NUTS-3 regions and three edges representing the transport connections between neighboring regions.    
+        The geographic extent of \replaced{this}{the} analysis of this paper is the autonomous community Basque Country (in Spanish: \textit{País Vasco}, NUTS code: ES21). This region is located in the North of Spain. The current passenger car vehicle stock is in the magnitude of 1\replaced{.}{,}08 Mio. (2022) \citep{eurostat_transport2024}. In 2023, the electrification rate of the passenger car fleet was at 0.05\% \citep{eurostat_zev_2024}. The Basque Country is classified as a NUTS-2 region in the EV NUTS classification scheme \citep{eurostat_nuts} and consists of three NUTS-3 regions: Araba/Álava\footnote{For the readability of the article, we\deleted{ will} refer to the region by its Basque language, Araba.} (ES211), Guipuzcoa (ES212), \replaced{Bizkaia}{Bizcaya} (ES213). Figure \ref{fig: scenario_design} displays the relative geographic allocation of the regions and of the capital cities. For RQ2.a, we represent the NUTS-2\added{ region} as one node.
+        For RQ2.b, we \replaced{derive}{deduct} a graph-based conceptualization with three nodes representing each of the NUTS-3 regions and three edges representing the transport connections between neighboring regions.    
 
  
 
@@ -453,7 +472,7 @@ The following case study and results are taken from the journal publication by \
                 }
                 \end{table}
                 
-                A statistic for \added{the }UK details expenditures for \deleted{the }purchases \citep{statista2023newcars} \citep{ons2024vehicle}, displaying an approximately linear relationship between level of income and expenditure for purchases, among with how much is spend on the primary market. Based on this, we determine the monetary budgets for a new vehicle from the primary market for the \textit{Very high}, \textit{High} and \textit{Medium High} income class, while we use the vehicle purchase price from the secondary market for the budget quantification of income class levels \textit{Low} and \textit{Very low}. \added{Home ownership is extrapolated from the average Spanish home ownership rate reported in \citep{statista_homeowners_spain}.} 
+                A statistic for \added{the }UK details expenditures for \deleted{the }purchases \citep{statista2023newcars} \citep{ons2024vehicle}, displaying an approximately linear relationship between level of income and expenditure for purchases, along with how much is spent on the primary market. Based on this, we determine the monetary budgets for a new vehicle from the primary market for the \textit{Very high}, \textit{High} and \textit{Medium High} income class, while we use the vehicle purchase price from the secondary market for the budget quantification of income class levels \textit{Low} and \textit{Very low}. \added{Home ownership is extrapolated from the average Spanish home ownership rate reported in \citep{statista_homeowners_spain}.} 
 
 
                 
@@ -463,7 +482,7 @@ The following case study and results are taken from the journal publication by \
  \subsubsection{Drive\deleted{-}train technologies and fuels}
         
             When it comes to the selection of the drive\deleted{-}train technologies, we simplify it to two options: fossil-fueled vehicles and plug-in battery-electric vehicles. In contrast to this choice, studies in the literature have included larger technology portfolios by considering different electric car technologies, such as hydrogen fuel-cell or hybrid plug-in electric. The reason for the limitation to two technologies is twofold: Plug-in battery-electric vehicles have been largely proven to be \replaced{cost-wise and environmentally the most viable}{cost-wise and environmentally the most viable}, with a promising outlook on further cost decreases \citep{GRUBE2021103110}. Therefore, most policies focus on supporting this technology. We reduce the \deleted{used }fuels\added{ used} to \textit{fossil fuel}, including diesel and petrol, and electricity. Cost parameters for electricity are drawn from marginal costs for the energy system optimization for Spain performed with GENeSYS-MOD \citep{loffler2025european}. The average fuel price is based on \citep{MARTIN2023113637}. 
-            Costs of the drive-train technologies are drawn from a detailed modeling of the manufacturing of all components by \citep{GRUBE2021103110}. We reduce the complexity of different car sizes to one representative vehicle type as related parameters to the choice of the car size - for example, household size, housing type \citep{jia2023preferences} - are not part of the modeling. Therefore, different sizes are excluded to avoid introducing a modeling bias due to insufficient complexity of the model. Table \ref{tab:assumptions_cost} summarizes all assumptions on cost parameters and sources. The cost assumptions are based on the work by \citet{GRUBE2021103110}  who have evaluated a wide range of different drive-train technologies for passenger cars and different passenger car sizes, including small, medium\added{,} and SUV. Here, we \replaced{derive}{deduct} the costs for an \textit{average}-sized vehicle by averaging the costs using weights that correspond to the magnitudes of the sizes in the current vehicle stock, assuming that this distribution would be constant throughout the optimization horizon. The data on different vehicle sizes represented in the statistic for different engine sizes in the Spanish vehicle stock \replaced{are}{is} retrieved from \citep{dgt2023}. 
+            Costs of the drivetrain technologies are drawn from a detailed modeling of the manufacturing of all components by \citep{GRUBE2021103110}. We reduce the complexity of different car sizes to one representative vehicle type as related parameters to the choice of the car size - for example, household size, housing type \citep{jia2023preferences} - are not part of the modeling. Therefore, different sizes are excluded to avoid introducing a modeling bias due to insufficient complexity of the model. Table \ref{tab:assumptions_cost} summarizes all assumptions on cost parameters and sources. The cost assumptions are based on the work by \citet{GRUBE2021103110}  who have evaluated a wide range of different drivetrain technologies for passenger cars and different passenger car sizes, including small, medium\added{,} and SUV. Here, we \replaced{derive}{deduct} the costs for an \textit{average}-sized vehicle by averaging the costs using weights that correspond to the magnitudes of the sizes in the current vehicle stock, assuming that this distribution would be constant throughout the optimization horizon. The data on different vehicle sizes represented in the statistic for different engine sizes in the Spanish vehicle stock \replaced{are}{is} retrieved from \citep{dgt2023}. 
             The costs for the maintenance are increased at a rate of 3\% per year for the first three years, and then by 10\% per year.
             
 
@@ -651,10 +670,10 @@ OPEX                      & \multicolumn{3}{c}{30\% of CAPEX}                   
             % densification is calculated based on constant capacities; but future vot is scaled with expecgted charging speeds 
             \subsection{Charging infrastructure roll-out scenarios} \label{sec:scenarios}
 
-            Figure \ref{fig: scenario_design} illustrates the setup for analyzing different scenarios of the roll-out of public charging infrastructure. Illustrations 1 and 2 address the setup to answer RQ1: two expansion strategies are compared, the \textit{Concentrated} and the \textit{Distributed expansion}. For this, the case study area is considered as one NUTS-2 node, while for addressing RQ2, the area is modeled on NUTS-3 level with three nodes.
+            Figure \ref{fig: scenario_design} illustrates the setup for analyzing different scenarios of the roll-out of public charging infrastructure. Illustrations 1 and 2 address the setup to answer RQ2.a: two expansion strategies are compared, the \textit{Concentrated} and the \textit{Distributed expansion}. For this, the case study area is considered as one NUTS-2 node, while for addressing RQ2.b, the area is modeled on NUTS-3 level with three nodes.
              \begin{figure}[H]
                         \includegraphics[width=\textwidth]{graphics/paper_2/different_charging_infr_expansion_approaches.drawio.pdf} 
-                        \caption{Overview of the scenario setups for the analysis. The top row (illustrations 1 and 2) displays the contrasting approaches to the densification of public charging infrastructure, addressing research question 1 (RQ1). In the bottom row, illustration 3 displays a map of the geographic area of Basque Country by its three NUTS-3 regions, together with the corresponding capitals. In illustration 4, it is implied which pace of charging infrastructure roll-out is assumed for the NUTS-3 regions --- addressing research question 2 (RQ2).} \label{fig: scenario_design}
+                        \caption{Overview of the scenario setups for the analysis. The top row (illustrations 1 and 2) displays the contrasting approaches to the densification of public charging infrastructure, addressing research question RQ2.a. In the bottom row, illustration 3 displays a map of the geographic area of Basque Country by its three NUTS-3 regions, together with the corresponding capitals. In illustration 4, it is implied which pace of charging infrastructure roll-out is assumed for the NUTS-3 regions --- addressing research question RQ2.b.} \label{fig: scenario_design}
                 \end{figure} 
                 The spatial densification of charging infrastructure is addressed using the mixed-integer extension of the optimization model. For this, the trip data is accumulated to the NUTS-2 level. 
                 
@@ -750,6 +769,9 @@ OPEX                      & \multicolumn{3}{c}{30\% of CAPEX}                   
         \end{figure}
        
 \subsection{Income-class dependent impact of spatial densification of public charging infrastructure}
+
+        The results in this section are obtained using the MILP extension of Model~2 (Section~\ref{sec:rq2_milp}), which endogenizes the fueling detour time as a function of charging infrastructure expansion.
+
         Figure \ref{res_1} displays two snapshots of the development of the share of electrification in the passenger car fleet by consumer group: years 2030 and 2040. $n^{\textrm{points per site}}$ indicates how many charging points are installed in newly built charging stations as of 2020, implying the degree of spatial densification of the public charging infrastructure network. The development of technology turnover is different among the consumer groups. In 2030 and 2040, the electrification in the vehicle fleet belonging to the \textit{Very high income} and \textit{High income} consumer groups is significantly higher, at the level of around 20.7-38.4\% in 2030 and 29.5-61.9\% in 2040, than that of the vehicle fleet belonging to the other consumer groups. The share of electrification for consumer groups \textit{Medium low income}, \textit{Low income} and \textit{Very low income} rises to the levels of 1.7-5.8\% in 2030, then mostly drops to 0.0-2.2\%.
             
         \label{sec:res_1}
@@ -806,6 +828,8 @@ OPEX                      & \multicolumn{3}{c}{30\% of CAPEX}                   
         \end{figure}
 \subsection{Spill-over effect of charging infrastructure planning for destination charging}
 
+    The results in this section are obtained using the LP extension of Model~2 (Section~\ref{sec:rq2_lp}), which introduces consumer group differentiation and intangible costs.
+
     Figure \ref{fig:rq2_1} displays the development of the adoption of \acp{BEV} by years 2030 and 2040. In particular, this is shown for the NUTS-3 regions Bizkaia, Araba, and Gipuzkoa, under the different scenarios in the speed of charging infrastructure expansion. In the \textit{Baseline Roll-out} case, in 2030, the range of the electrification rate varies by region within 2.6-6.0\%. By 2040, the region-dependent range becomes wider, 35.5-42.8\%, with Araba having the highest rate of electrification and Bizkaia the lowest. With increased charging capacities built in Bizkaia (case \textit{Central Acc. Roll-out}), the electrification share in Bizkaia increases slightly (0.9\% by 2030 and 3.3\% by 2040), while the electrification rates of Araba and Gipuzkoa are also positively affected (increase by 0.6-1.3\%). When the charging infrastructure capacity in Araba and Gipuzkoa (scenarios \textit{Neighbor Slowed Roll-out} and \textit{Central Acc. + Neighbor Slowed Roll-out}) are reduced, the values for the share of electrification in Araba and Gipuzkoa in 2040 are significantly lower than in \textit{Baseline Roll-out}. Figure \ref{fig:rq2_temp} displays the temporal development of the difference in electric vehicle numbers between the \textit{Central Acc. Roll-out} and the \textit{Baseline Roll-out}. A peak in the positive absolute differences occurs in 2045. The maximum relative difference is in 2044 and is 2.1\% for Araba and 1.1\% for Gipuzkoa. For some time periods, we observe negative spillover. In particular, there is a distinctive decrease in the \ac{BEV} numbers in 2049.
         
     \begin{figure}[H]
@@ -817,7 +841,7 @@ OPEX                      & \multicolumn{3}{c}{30\% of CAPEX}                   
      \begin{figure}[H]
             \centering
                 \includegraphics[width=0.8\textwidth]{graphics/paper_2/rq_2_vehicle_difference_temporal_development.pdf}
-                \caption{Temporal development of the difference of adopted battery electric vehicles numbers in Araba and Gipuzkoa between the \textit{Basic Roll-out} and \textit{Central Acc. Roll-out.}} \label{fig:rq2_temp}
+                \caption{Temporal development of the difference of adopted battery electric vehicles numbers in Araba and Gipuzkoa between the \textit{Baseline Roll-out} and \textit{Central Acc. Roll-out.}} \label{fig:rq2_temp}
         \end{figure}
     
     With higher expansion in Bizkaia in \textit{Central Acc. + Neighbor Slowed Roll-out}, the electrification share in Bizkaia is increased by 2.1\% by 2040. The \ac{BEV} adoption shares in Araba and Gipuzkoa are here impacted significantly less, i.e., than in the reference capacity expansion. In 2030, a slight negative impact is observed. A sensitivity analysis testing different levels of capacity expansion ($+15\%$, $+30\%$, $+45\%$) is provided in Appendix~\ref{app:rq2_spillover}.
@@ -862,9 +886,9 @@ OPEX                      & \multicolumn{3}{c}{30\% of CAPEX}                   
         \end{figure}
 
 
-\section{Spatial patterns of charging load distribution in inter-zonal long-haul truck electrification (RQ3)}\label{sec:rq3_results}
+\section{Spatial patterns of charging demand allocation in inter-zonal long-haul truck electrification (RQ3)}\label{sec:rq3_results}
 
-The following case study and results are taken from the journal publication by \citet{GOLAB2026SpatialTruck} (2026).
+The following case study and results are taken from the journal publication by \citeauthor{GOLAB2026SpatialTruck} (\citeyear{GOLAB2026SpatialTruck}).
 
 \subsection{Case study: Scandinavian-Mediterranean corridor}
 
@@ -880,7 +904,7 @@ The following case study and results are taken from the journal publication by \
 
         The resulting dataset comprises 81 NUTS-2 regions and 2,244 exclusively international \ac{OD} pairs connecting eight countries (AT, DE, DK, FI, IT, NO, SE). Figure~\ref{fig:od_matrix_input} shows the freight demand by country pair. The largest share of routes connects Germany and Italy (1,167 \ac{OD} pairs, 52\%), followed by Germany--Scandinavia connections (DE--SE: 459, DE--NO: 118, DK--SE: 76). The optimization horizon is 2020--2060, while the analysis focuses on 2020--2050; the additional decade avoids end-of-horizon artifacts in investment decisions.
 
-        Transport demand is extrapolated from the 2030 reference year based on historic growth of European road freight activity \citep{eurostat2024roadfreight}, growing from 7.63 billion tonne-kilometres (Btkm) in 2020 to 8.93\,Btkm in 2060 (compound annual growth rate of 0.4\%), applied uniformly across all \ac{OD} pairs. For each route, mandatory driver rest stops are determined following EU Regulation~561/2006 \citep{SHOMAN2023103825}: starting from the origin, the model traces the route node by node, accumulating driving time at a fixed speed; whenever the cumulative driving time since the last break reaches 4.5~hours, a 45-minute break is placed at the nearest node, and after 9~hours of total daily driving, a 9-hour rest period is assigned. This procedure is applied to every \ac{OD} pair individually, so each route has its own sequence and number of mandatory stops determined by its length and geometry. These mandatory breaks create natural charging windows for battery-electric trucks, as vehicles are already stationary and can be connected to charging infrastructure without additional time cost. Figure~\ref{fig:mandatory_breaks_map} shows the resulting spatial distribution of mandatory break locations. Break locations concentrate in central Germany and the Alpine region, reflecting the convergence of long-haul routes from Scandinavia toward the Brenner and other Alpine crossings.
+        Transport demand is extrapolated from the 2030 reference year based on historic growth of European road freight activity \citep{eurostat2024roadfreight}, growing from 7.63 billion tonne-kilometres (Btkm) in 2020 to 8.93\,Btkm in 2060 (compound annual growth rate of 0.4\%), applied uniformly across all \ac{OD} pairs. For each route, mandatory driver rest stops are determined following EU Regulation~561/2006 \citep{SHOMAN2023103825}: starting from the origin, the model traces the route node by node, accumulating driving time at a fixed speed; whenever the cumulative driving time since the last break reaches 4.5~hours, a 45-minute break is placed at the nearest node, and after 9~hours of total daily driving, a 9-hour rest period is assigned. This procedure is applied to every \ac{OD} pair individually, so each route has its own sequence and number of mandatory stops determined by its length and geometry. These mandatory breaks create natural charging windows for battery-electric trucks, as charging during mandatory breaks can partially or fully overlap with the required rest period, reducing additional time cost. Figure~\ref{fig:mandatory_breaks_map} shows the resulting spatial distribution of mandatory break locations. Break locations concentrate in central Germany and the Alpine region, reflecting the convergence of long-haul routes from Scandinavia toward the Brenner and other Alpine crossings.
 
         \begin{figure}[H]
               \centering
@@ -952,7 +976,6 @@ The following case study and results are taken from the journal publication by \
             Charging power (MCS) & 1 & MW & \citep{en16124704} \\
             Utilization factor $\gamma_t$ & 0.3 & --- & --- \\
             Vehicle lifetime (ICEV \& \ac{BET}) & 10 & years & --- \\
-            Toll rate & \multicolumn{2}{l}{EU Eurovignette minimum} & --- \\
             Base diesel price (pre-tax) & 0.051 & \euro/kWh & --- \\
             Carbon price & \multicolumn{2}{l}{Scenario-specific (Table~\ref{tab:carbon_trajectories})} & \citep{EUEnVis2025} \\
             \bottomrule
@@ -962,7 +985,7 @@ The following case study and results are taken from the journal publication by \
         \acp{BET} depart each trip with a state of charge of 50\% of battery capacity and must arrive at the destination with at least 50\%, ensuring that the net energy consumed along the route equals the total energy charged en route. The utilization factor $\gamma_t = 0.3$ reflects the ratio of average to peak power demand at charging stations, analogous to a capacity factor in power system terminology. The base diesel price of 0.051\,\euro/kWh represents the pre-tax wholesale price, to which the scenario-specific carbon price component (Table~\ref{tab:carbon_trajectories}) is added.
 
     \paragraph*{Rail infrastructure}
-    Since the focus of this analysis is the spatial allocation of road charging loads, the rail mode is modeled in reduced form: a levelized transport cost of 0.057\,\euro/tkm covers rail operation, fuel, rolling stock, and labor, while a terminal handling cost of 15\,\euro/tonne accounts for on- and off-loading of freight at intermodal terminals (i.e.\ transfer facilities where freight containers are moved between road and rail) \citep{transportandedecarb2021}. Both cost components are assumed uniform across the corridor and constant over time. Rail becomes available from 2026 onward, reflecting the lead time for intermodal terminal deployment along the corridor. The maximum corridor-wide rail modal share is capped at 30\%, and the transition rate is bounded by approximately 1~percentage point per four-year period, reflecting infrastructure and market constraints on rapid modal shift. The initial fleet is 100\% internal combustion engine vehicles (ICEVs, i.e.\ conventional diesel trucks) in the base year 2020.
+    Since the focus of this analysis is the spatial allocation of road charging loads, the rail mode is modeled in reduced form: a levelized transport cost of 0.057\,\euro/tkm covers rail operation, fuel, rolling stock, labor, and infrastructure amortization \citep{Janic2007, BAKKER2025104076}, while a terminal handling cost of 4\,\euro/tonne accounts for on- and off-loading of freight at intermodal terminals (i.e.\ transfer facilities where freight containers are moved between road and rail) \citep{Wiegmans2018}. Both cost components are assumed uniform across the corridor and constant over time. Rail becomes available from 2026 onward, reflecting the lead time for intermodal terminal deployment along the corridor. The maximum corridor-wide rail modal share is capped at 30\%, and the transition rate is bounded by approximately 1~percentage point per four-year period, reflecting infrastructure and market constraints on rapid modal shift. The initial fleet is 100\% internal combustion engine vehicles (ICEVs, i.e.\ conventional diesel trucks) in the base year 2020.
 
     \paragraph*{Charging infrastructure}
             Regarding charging infrastructure, exclusively electric charging infrastructure is considered, assuming that existing diesel refueling infrastructure is of sufficient capacity and does not need to be expanded. One representative charging infrastructure type is modeled with cost parameters presented in Table~\ref{tab:fueling_rq3}.
@@ -1039,7 +1062,7 @@ The following case study and results are taken from the journal publication by \
 
         \begin{table}[H]
         \centering
-        \caption{Spatial reallocation mechanisms and their effects on charging load distribution.}
+        \caption{Spatial reallocation mechanisms and their effects on charging demand distribution.}
         \label{tab:reallocation_mechanisms}
         \begin{tabular}{@{}p{2.8cm}p{3.5cm}p{3cm}p{4cm}@{}}
         \toprule
@@ -1139,11 +1162,11 @@ The following case study and results are taken from the journal publication by \
         \label{fig:cross_scenario_spread}
     \end{figure}
 
-\subsection{Spatial patterns of charging load distribution}
+\subsection{Spatial patterns of charging demand distribution}
 
     The preceding subsection presented the cost-optimized (System-optimal) charging allocation, in which the model freely chooses where trucks charge along their routes to minimize total system costs. This subsection quantifies the degree of spatial flexibility inherent in this solution by comparing it against the Heuristic benchmark defined in Section~\ref{sec:analytical_setup} (Table~\ref{tab:analytical_setup}), in which charging is restricted to mandatory break locations and energy is distributed by a reactive state-of-charge rule rather than cost optimization. The difference between these two strategies reveals how much the geographic distribution of charging demand can shift when location choice is optimized.
 
-    Figure~\ref{fig:distrib_charging_load} compares the geographic distribution of charging load by latitude for all four energy system scenarios in 2032. The Heuristic shows pronounced peaks across all scenarios, while the cost-optimized allocation smooths these peaks by redistributing charging to locations with lower costs. The largest differences between the two strategies arise around the DE--AT--IT border and the DK--DE border.
+    Figure~\ref{fig:distrib_charging_load} compares the geographic distribution of charging demand by latitude for all four energy system scenarios in 2032. The Heuristic shows pronounced demand peaks across all scenarios, while the cost-optimized allocation smooths these peaks by redistributing charging demand to locations with lower costs. The largest differences between the two strategies arise around the DE--AT--IT border and the DK--DE border.
 
     \begin{figure}[H]
           \centering
@@ -1275,7 +1298,7 @@ The following case study and results are taken from the journal publication by \
 \section{Hourly charging demand profiles of the commercial
 fleet in Austria in 2040 (RQ4)}\label{sec:rq4_results}
 
-The following case study and results are taken from the journal publication by \citet{GOLAB2025134385} (2025).
+The following case study and results are taken from the journal publication by \citeauthor{GOLAB2025134385} (\citeyear{GOLAB2025134385}).
 
 \subsection{Case study: Austria's commercial fleet at federal state level}
 The representation of the commercial fleet is focused on three fleet types: \ac{LDT}, \ac{HDT}, and buses. These are chosen based on their substantial fleet size and transport activity. Their electrification is therefore expected to play a significant role in the electricity system. Based on the mobility patterns of the different fleet types and expected charging strategies, future charging profiles are generated together with plug-in times and installed charging power. The charging profiles are generated for an average week in 2040, i.e. representing seven days in hourly resolution. In the geographic aggregation of charging profiles, Austria is represented by nine nodes ($|\mathcal{N}_1|=9$) mirroring the nine federal states of Austria.
@@ -1299,14 +1322,14 @@ The representation of the commercial fleet is focused on three fleet types: \ac{
 
         \begin{table}[]
         \centering
-        \caption{Parameter settings for light-duty vehicle charging demand modeling.}
+        \caption{Parameter settings for light-duty truck charging demand modeling.}
         \label{tab:parameters_ldv}
         \begin{tabular}{@{}lrl@{}}
         \toprule
         \textbf{Parameter}                       & \multicolumn{1}{l}{\textbf{Value}} & \textbf{Reference} \\ \midrule
         Fleet size (Austria 2040)                & 535,000                            &   \cite{umweltbundesamt_rep0808}                 \\
         Battery capacity                         & 145 kWh                            &      \cite{IRENA2019}              \\
-        Specific energy consumption              & 27 kWh/100km                       &     \cite{umweltbundesamt_rep0808}              \\
+        Specific energy consumption              & 0.27 kWh/km                       &     \cite{umweltbundesamt_rep0808}              \\
         Daily range                              & 70 km/day                          &  \cite{SCORRANO2021101022}                   \\
         Charging power at charging station depot & 11 kW                              &        \cite{SCORRANO2021101022}             \\ \bottomrule
         \end{tabular}%
@@ -1316,7 +1339,7 @@ The representation of the commercial fleet is focused on three fleet types: \ac{
 
         \begin{table}[]
         \centering
-        \caption{Parameter settings for heavy-duty vehicle charging demand modeling.}
+        \caption{Parameter settings for heavy-duty truck charging demand modeling.}
         \label{tab:parameters_hdv}
         \begin{tabular}{@{}lrl@{}}
         \toprule
@@ -1388,13 +1411,13 @@ The representation of the commercial fleet is focused on three fleet types: \ac{
         
 \begin{table}[H]
 \centering
-\caption{Annual charging demand of three commercial fleet types under different electrification rate assumptions for Austria in 2040. HDV demand is further disaggregated by physical charging location.}
+\caption{Annual charging demand of three commercial fleet types under different electrification rate assumptions for Austria in 2040. \ac{HDT} demand is further disaggregated by physical charging location.}
 \label{tab:results_charging_load}
 \resizebox{\textwidth}{!}{%
 \begin{tabular}{llrrcrrr}
 \hline
                 & \multicolumn{7}{c}{Total annual demand of fleet types 2040 (TWh)}                                                                       \\ \cline{3-8}
-                & \textbf{Total}                    & \multicolumn{1}{c}{LDV} & \multicolumn{1}{c}{Bus} & \multicolumn{4}{c}{HDV}                      \\ \hline
+                & \textbf{Total}                    & \multicolumn{1}{c}{\ac{LDT}} & \multicolumn{1}{c}{Bus} & \multicolumn{4}{c}{\ac{HDT}}                      \\ \hline
                 &                                   & \multicolumn{1}{l}{}    & \multicolumn{1}{l}{}       & \multicolumn{3}{c}{Charging location} &      \\ \cline{5-7}
 Scenario &  & \multicolumn{1}{l}{} & \multicolumn{1}{l}{} & Depot & \multicolumn{1}{c}{Highway (day time)} & \multicolumn{1}{c}{Highway (night time)} & Total \\ \cline{5-8}
 \textit{LOW}    & \multicolumn{1}{r}{\textbf{7.4}}  & 2.7                     & 1.3                        & \multicolumn{1}{r}{1.8}  & 1.1  & 0.5 & 3.4  \\
@@ -1422,7 +1445,7 @@ The traffic-flow-based estimation of heavy-duty truck charging demand enables a 
 
 \begin{table}[htbp]
 \centering
-\caption{Classification of heavy-duty truck charging demand in Austria by traffic type, based on ETIS+ 2030 transport flow projections. AT~tkm refers to ton-kilometers traveled within Austria. Daily demand represents electricity required for charging within Austria.}
+\caption{Classification of heavy-duty truck charging demand in Austria by traffic type, based on ETISplus 2030 transport flow projections. AT~tkm refers to ton-kilometers traveled within Austria. Daily demand represents electricity required for charging within Austria.}
 \label{tab:snf_traffic_classification}
 \resizebox{\textwidth}{!}{%
 \begin{tabular}{lrrrrr}
