@@ -546,12 +546,10 @@ $\mathrm{fueling\_time}_{ykvt}$         & \begin{tabular}[t]{@{}l@{}}fueling tim
     \section{Spatio-temporal charging demand modeling}
         \subsection{Problem description}
 
-        This methodology is part of a broader framework for investigating how electrified commercial fleets affect dispatch operations and redispatch costs (Figure~\ref{fig:model_overview}). The methodological contribution of this thesis is the first building block: the bottom-up modeling of spatio-temporal charging demand profiles (highlighted in Figures~\ref{fig:model_overview} and~\ref{fig:model_graphs}). The intended redispatch application determines the required resolution---spatially at the federal-state level and temporally at hourly granularity for a representative week. The subsequent electricity market modeling is part of the broader study presented in the underlying publication but is not a contribution of this thesis.
+        This methodology is part of a broader framework for investigating how electrified commercial fleets affect dispatch operations and redispatch costs in the electricity system (Figure~\ref{fig:model_overview}). Figure~\ref{fig:model_overview} gives an overview of the three building blocks of the framework. The charging demand profiles produced by the first block serve as input to the subsequent dispatch and redispatch models (see Appendix~\ref{app:rq4} for details on the electricity market integration and results).
+        The methodological contribution of this thesis is the first building block: the bottom-up modeling of spatio-temporal charging demand profiles (highlighted in Figures~\ref{fig:model_overview} and~\ref{fig:model_graphs}). The intended redispatch application determines the required resolution of the charging demand profiles---spatially at the federal-state level and temporally at hourly granularity for a representative week. The subsequent electricity market modeling is part of the broader study presented in the underlying publication but is not a contribution of this thesis.
 
-        Figure~\ref{fig:model_overview} gives an overview of the three building blocks of the framework. The charging demand profiles produced by the first block serve as input to the subsequent dispatch and redispatch models (see Appendix~\ref{app:rq4} for details on the electricity market integration and results).
-
-        The framework operates on three geographic layers ($\mathcal{G}_1, \mathcal{G}_2, \mathcal{G}_3$; see Figure~\ref{fig:model_graphs}), mirroring the three building blocks. The charging demand modeling presented here operates on $\mathcal{G}_1 = (\mathcal{N}_1, \mathcal{E}_1)$, a network of regions and route connections of the commercial vehicle fleet, where different charging opportunities exist at the visited nodes.
-        \begin{figure}[h]
+        \begin{figure}[H]
             \centering
             \begin{tikzpicture}
                 \node[inner sep=0pt] (img) {\includegraphics[width=0.9\textwidth]{graphics/paper_4/overview_model_3_steps.drawio.pdf}};
@@ -567,8 +565,8 @@ $\mathrm{fueling\_time}_{ykvt}$         & \begin{tabular}[t]{@{}l@{}}fueling tim
             \caption{Overview of the building blocks of the framework. The dashed box highlights the building block that constitutes the methodological contribution of this thesis.}
             \label{fig:model_overview}
         \end{figure}
-
-        \begin{figure}[h]
+        The framework operates on three geographic layers ($\mathcal{G}_1, \mathcal{G}_2, \mathcal{G}_3$; see Figure~\ref{fig:model_graphs}), mirroring the three building blocks. The charging demand modeling presented here operates on $\mathcal{G}_1 = (\mathcal{N}_1, \mathcal{E}_1)$, a network of regions and route connections of the commercial vehicle fleet, where different charging opportunities exist at the visited local nodes.
+        \begin{figure}[H]
             \centering
             \begin{tikzpicture}
                 \node[inner sep=0pt] (img) {\includegraphics[width=1\textwidth]{graphics/paper_4/overview_graphs.drawio.pdf}};
@@ -584,8 +582,10 @@ $\mathrm{fueling\_time}_{ykvt}$         & \begin{tabular}[t]{@{}l@{}}fueling tim
             \caption{The three layers of geographic information used throughout the framework. The dashed box highlights the layer central to the contribution of this thesis.}
             \label{fig:model_graphs}
         \end{figure}
+        The charging demand estimation distinguishes two cases based on the geographic scope of vehicle operation: \textit{local} fleets, whose charging demand is assigned to a single node in $\mathcal{G}_1$ (i.e., the region in which the vehicle operates), and \textit{interregional} fleets, whose vehicles travel between multiple nodes and may charge at any visited node along their route.
+
         \subsection{Charging demand estimation for local transport fleets}
-        For the case of local transport, the charging demand of a vehicle is assigned to exclusively one node in $\mathcal{G}_1$. We aggregate all vehicles of a specific type to a fleet $f \in \mathcal{F}^{\mathrm{local}}$ and the energy demand for node $n$ is estimated as follows:
+        For local transport, the charging demand of a vehicle is assigned to exclusively one node in $\mathcal{G}_1$. We aggregate all vehicles of a specific type to a fleet $f \in \mathcal{F}^{\mathrm{local}}$ and the energy demand for node $n$ is estimated as follows:
                 \begin{align}
                     D^{\mathrm{BEV}}_{f,n} = \overline{D^{\mathrm{spec,BEV}}_{f}} \cdot dist_{f}  \cdot k_{f,n} \quad \forall f \in \mathcal{F}^{\mathrm{local}}, n \in \mathcal{N}_1 \\
                     \sum_{l \in \mathcal{L}^f} D^{\mathrm{BEV}}_{f,n,l} = D^{\mathrm{BEV}}_{f,n}  \quad \forall f \in \mathcal{F}^{\mathrm{local}}, n \in \mathcal{N}_1
