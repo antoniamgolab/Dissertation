@@ -22,7 +22,7 @@ The following case study and results are taken from the journal publication by \
     Infrastructure cost component $c_X$ is particularly difficult to set here as these onsite preparation costs may significantly vary based on the location of the site.
     Indications for the approximation of this value were drawn from \cite{Jochem2016}, \cite{Serradilla2017} and \cite{Verein2019}. The installation costs of one charging point, $c_Y$, was assumed to be \euro$60,000$ for the hardware of a charging pole with $\hat{P}_{CP} = 150kW$ --- which currently enables the fastest charging of passenger cars; an added construction costs to be \euro$7,000$ \citep{Verein2019, Suarez2019}. Furthermore, it was assumed that the maximum installed capacity at a charging station is $12 MW$.
     
-       The shape of the Austrian highway and motorway network was mapped based on geographic data by \citet{OpenStreetMap}. The positions of the service areas were gathered based on the information drawn from \citet{asfinagrastanlagen} and complemented with geographic information from \citet{OpenStreetMap}. The retrieved highway network used throughout the analysis has an overall length of approximately $2{,}200$~km and consists of $55$ segments. Moreover, there are $249$ nodes in total, $139$ of which represent service areas and $110$ junctions. A detailed description of the data preparation steps is provided in Appendix~\ref{app:rq1_data_prep}.
+       The shape of the Austrian highway and motorway network was mapped based on geographic data by \citet{OpenStreetMap}. The positions of the service areas were gathered based on the information drawn from \citet{ASFINAG_Rastanlagensuche} and complemented with geographic information from \citet{OpenStreetMap}. The retrieved highway network used throughout the analysis has an overall length of approximately $2{,}200$~km and consists of $55$ segments. Moreover, there are $249$ nodes in total, $139$ of which represent service areas and $110$ junctions. A detailed description of the data preparation steps is provided in Appendix~\ref{app:rq1_data_prep}.
     
     
 
@@ -500,7 +500,7 @@ OPEX                      & \multicolumn{3}{c}{30\% of CAPEX}                   
         \subsubsection{Types of charging infrastructure}
             For fossil-fueled vehicles, we assume that the fueling infrastructure with sufficient capacities has been established. Therefore, for combustion-engine passenger\added{ cars}, no expansion of the fueling infrastructure is required. 
     
-            For charging infrastructure, we introduce four different types: Home (Level II), Workplace (Level II), Public slow (Level II)\added{,} and Public fast (DCFC) (based on \citep{LAMONACA2022111733}). Tables \ref{tab:charging_types} and \ref{tab:inits and restrictions} summarize relevant assumptions. The reduction \replaced{in}{for} fueling detour time is relevant for public infrastructure. In the case of fast charging (DCFC), the fueling time is considered \replaced{in addition}{additionally} to the level of service (similar as in the work by \citet{LUH2024122412}), while for the other types of infrastructure, we assume that there the charging is during typical down times of the vehicle and \deleted{is }therefore\added{ does} not impact\deleted{ing} the level of service. \added{Initial home charging capacity (40 MW in 2020) reflects the early adopter profile of \ac{BEV} owners, who were predominantly homeowners with dedicated parking and charging infrastructure. This assumption is consistent with empirical findings that early \ac{BEV} adopters had home charging access rates exceeding 90\% \citep{BARESCH2019388}. A sensitivity analysis on different home charging expansion scenarios is provided in Appendix~\ref{app:rq2_home}.}
+            For charging infrastructure, we introduce four different types: Home (Level II), Workplace (Level II), Public slow (Level II)\added{,} and Public fast (DCFC) (based on \citep{LAMONACA2022111733}). Tables \ref{tab:charging_types} and \ref{tab:inits and restrictions} summarize relevant assumptions. The reduction \replaced{in}{for} fueling detour time is relevant for public infrastructure. In the case of fast charging (DCFC), the fueling time is considered \replaced{in addition}{additionally} to the level of service (similar as in the work by \citet{LUH2024122412}), while for the other types of infrastructure, we assume that there the charging is during typical down times of the vehicle and \deleted{is }therefore\added{ does} not impact\deleted{ing} the level of service. \added{Initial home charging capacity (40 MW in 2020) reflects the early adopter profile of \ac{BEV} owners, who were predominantly homeowners with dedicated parking and charging infrastructure. This assumption is consistent with empirical findings that early \ac{BEV} adopters had home charging access rates exceeding 90\% \citep{Baresch2019}. A sensitivity analysis on different home charging expansion scenarios is provided in Appendix~\ref{app:rq2_home}.}
 
             
             
@@ -528,8 +528,8 @@ OPEX                      & \multicolumn{3}{c}{30\% of CAPEX}                   
             \begin{tabular}{lll}
             \hline
             Type of charging infrastructure & Sizing of initial charging infrastructure  & Limitation for capacity installation                                                                                                                                                                                                                                          \\ \hline
-            Home (Level II)                 & \begin{tabular}[]{@{}l@{}} based on current observations in the share \\of charging processes at home chargers (88\%, \citep{BARESCH2019388}) \end{tabular} & \begin{tabular}[c]{@{}l@{}}Home charging infrastructure can be installed \\ in 30\% of owned homes.\end{tabular}                                                                                                                                                     \\
-            Workplace (Level II)            & \begin{tabular}[]{@{}l@{}} based on current observations in the share \\of charging processes at workplace chargers (8.8\%, \citep{BARESCH2019388}) \end{tabular}& \begin{tabular}[c]{@{}l@{}}based on today's charging demand coverage at work \\and scaled by current total number of \\ passenger cars in the given region.\end{tabular} \\
+            Home (Level II)                 & \begin{tabular}[]{@{}l@{}} based on current observations in the share \\of charging processes at home chargers (88\%, \citep{Baresch2019}) \end{tabular} & \begin{tabular}[c]{@{}l@{}}Home charging infrastructure can be installed \\ in 30\% of owned homes.\end{tabular}                                                                                                                                                     \\
+            Workplace (Level II)            & \begin{tabular}[]{@{}l@{}} based on current observations in the share \\of charging processes at workplace chargers (8.8\%, \citep{Baresch2019}) \end{tabular}& \begin{tabular}[c]{@{}l@{}}based on today's charging demand coverage at work \\and scaled by current total number of \\ passenger cars in the given region.\end{tabular} \\
             Public slow (Level II)              & current \ac{BEV}-to-charging point ratio for public slow chargers \citep{eafo2024ev, eurostatZEV}                                                            & No upper limit                                                                                                                                                                                                                                                        \\
             Public fast (DCFC)                            & current \ac{BEV}-to-charging point ratio for public fast chargers \citep{eafo2024ev, eurostatZEV}                                  & No upper limit                                                                                                                                                                                                                                                               \\ \hline
             \end{tabular}%
@@ -581,7 +581,7 @@ OPEX                      & \multicolumn{3}{c}{30\% of CAPEX}                   
             % \begin{itemize}
             %     \item Public charging infrastructure is estimated based on the current charging-point-to-BEV ratio for Spain which is currently \hl{\dots} and is scaled for the Basque community based on the existing battery-electric vehicle stock. \hl{[REF]} gives information on the distribution for fast and slow charging.
             %     \item Home charging report a vehicle-to-point ratio for home chargers of 0.9. 
-            %     \item Work place charging: No existing statistics on this can be found. We use the study of \citep{BARESCH2019388} as a baseline. It includes a current distribution of charging allocation between public, home and workplace charging - indicating an approx. 9\% of charging processes taking place at the workplace. We estimate the infrastructure based on this. 
+            %     \item Work place charging: No existing statistics on this can be found. We use the study of \citep{Baresch2019} as a baseline. It includes a current distribution of charging allocation between public, home and workplace charging - indicating an approx. 9\% of charging processes taking place at the workplace. We estimate the infrastructure based on this. 
             % \end{itemize}
 
             % \paragraph*{Restrictions of capacity expansion:}
@@ -899,7 +899,7 @@ The following case study and results are taken from the journal publication by \
         \begin{figure}[H]
               \centering
               \includegraphics[width=0.6\linewidth]{graphics/paper_3/border_regions_map_zoomed.pdf}
-              \caption{Geographic overview of the DE-AT-IT border region with NUTS-2 boundaries and node locations used in the model. The border region encompasses the Alpine crossing between Southern Germany, Western Austria, and Northern Italy.}
+              \caption{Geographic overview of the DE-AT-IT border region with NUTS-2 boundaries and node locations used in the model. The border region encompasses the Alpine crossing between Southern Germany, Western Austria, and Northern Italy. The dashed magenta border in Figure~\ref{fig:mandatory_breaks_map} indicates this region.}
               \label{fig:border_region_map}
         \end{figure}
 
@@ -922,7 +922,7 @@ The following case study and results are taken from the journal publication by \
             Specific energy consumption  & \multicolumn{1}{r}{2.90}   & \multicolumn{1}{r}{2.65}   & \multicolumn{1}{r}{2.40}   & kWh/km                        &     \citep{MARTIN2023100156}            \\
             Emission factor              & \multicolumn{1}{r}{86}     & \multicolumn{1}{r}{79}     & \multicolumn{1}{r}{71}     & gCO\textsubscript{2}/Tkm      & \citep{UmeltbundesamtPDF} \\
             Tank size                          & \multicolumn{1}{r}{5600}    & \multicolumn{1}{r}{5600}    & \multicolumn{1}{r}{5600}    & kWh                      &  \citep{Speth2021}         \\
-            Yearly mileage                     & \multicolumn{1}{r}{136,750} & \multicolumn{1}{r}{136,750} & \multicolumn{1}{r}{136,750} & km                       &       \citep{MARTIN2023100156}   \\
+            Yearly mileage                     & \multicolumn{1}{r}{136,750} & \multicolumn{1}{r}{136,750} & \multicolumn{1}{r}{136,750} & km                       &       \citep{MARTIN2023113637}   \\
             Average load per truck                    & \multicolumn{1}{r}{13.6}                     & \multicolumn{1}{r}{13.6}                     & \multicolumn{1}{r}{13.6}                     & T                       &        \citep{SHOMAN2023103825}   \\
              \multicolumn{6}{l}{\textbf{Battery-electric}}  \\
             Vehicle Purchase                   & \multicolumn{1}{r}{220,000}                     &\multicolumn{1}{r}{177,381}                     & \multicolumn{1}{r}{146,293}                    & \euro                    &   \citep{basma2023tco}        \\
@@ -962,7 +962,7 @@ The following case study and results are taken from the journal publication by \
         \acp{BET} depart each trip with a state of charge of 50\% of battery capacity and must arrive at the destination with at least 50\%, ensuring that the net energy consumed along the route equals the total energy charged en route. The utilization factor $\gamma_t = 0.3$ reflects the ratio of average to peak power demand at charging stations, analogous to a capacity factor in power system terminology. The base diesel price of 0.051\,\euro/kWh represents the pre-tax wholesale price, to which the scenario-specific carbon price component (Table~\ref{tab:carbon_trajectories}) is added.
 
     \paragraph*{Rail infrastructure}
-    Since the focus of this analysis is the spatial allocation of road charging loads, the rail mode is modeled in reduced form: a levelized transport cost of 0.057\,\euro/tkm covers rail operation, fuel, rolling stock, and labor, while a terminal handling cost of 15\,\euro/tonne accounts for on- and off-loading of freight at intermodal terminals \citep{transportandedecarb2021}. Both cost components are assumed uniform across the corridor and constant over time. Rail becomes available from 2026 onward, reflecting the lead time for intermodal terminal deployment along the corridor. The maximum corridor-wide rail modal share is capped at 30\%, and the transition rate is bounded by approximately 1~percentage point per four-year period, reflecting infrastructure and market constraints on rapid modal shift. The initial fleet is 100\% internal combustion engine vehicles (ICEVs) in the base year 2020.
+    Since the focus of this analysis is the spatial allocation of road charging loads, the rail mode is modeled in reduced form: a levelized transport cost of 0.057\,\euro/tkm covers rail operation, fuel, rolling stock, and labor, while a terminal handling cost of 15\,\euro/tonne accounts for on- and off-loading of freight at intermodal terminals (i.e.\ transfer facilities where freight containers are moved between road and rail) \citep{transportandedecarb2021}. Both cost components are assumed uniform across the corridor and constant over time. Rail becomes available from 2026 onward, reflecting the lead time for intermodal terminal deployment along the corridor. The maximum corridor-wide rail modal share is capped at 30\%, and the transition rate is bounded by approximately 1~percentage point per four-year period, reflecting infrastructure and market constraints on rapid modal shift. The initial fleet is 100\% internal combustion engine vehicles (ICEVs, i.e.\ conventional diesel trucks) in the base year 2020.
 
     \paragraph*{Charging infrastructure}
             Regarding charging infrastructure, exclusively electric charging infrastructure is considered, assuming that existing diesel refueling infrastructure is of sufficient capacity and does not need to be expanded. One representative charging infrastructure type is modeled with cost parameters presented in Table~\ref{tab:fueling_rq3}.
@@ -1034,6 +1034,23 @@ The following case study and results are taken from the journal publication by \
 
         \ac{BET} purchase costs follow the reference trajectory from Table~\ref{tab:ass_fleet_parameters}, declining from \euro220,000 in 2020 to \euro146,293 by 2050.
 
+    \subsubsection{Spatial reallocation mechanisms}
+        Two mechanisms are evaluated for their effectiveness in redistributing charging loads along the corridor (Table~\ref{tab:reallocation_mechanisms}). These levers operate through different cost channels and affect both the spatial distribution of charging infrastructure and the aggregate level of electrification.
+
+        \begin{table}[H]
+        \centering
+        \caption{Spatial reallocation mechanisms and their effects on charging load distribution.}
+        \label{tab:reallocation_mechanisms}
+        \begin{tabular}{@{}p{2.8cm}p{3.5cm}p{3cm}p{4cm}@{}}
+        \toprule
+        \textbf{Mechanism} & \textbf{Cost channel} & \textbf{Primary effect} & \textbf{Expected outcome} \\ \midrule
+        Electricity price differentiation & Variable costs (per-kWh) & Spatial arbitrage & Incentivizes charging in lower-price regions; effect scales with charging volume \\
+        \addlinespace
+        Grid charge differentiation & Fixed costs (per-kW) & Infrastructure siting & Affects economic attractiveness of charging infrastructure deployment; stronger effect on high-capacity stations \\
+        \bottomrule
+        \end{tabular}
+        \end{table}
+
     \subsubsection{Border region locational cost premium scenarios}
     \label{sec:locational_premium_scenarios}
         To investigate the effectiveness of cost-based policy instruments in relieving charging demand concentration, the analysis focuses on the Germany--Austria--Italy border region (Figure~\ref{fig:border_region_map}). Transportation routes between Germany and Italy traverse a small number of connections through Austria, creating a potential bottleneck for charging infrastructure. Austria's electricity price at fast chargers (0.159\,\euro/kWh in 2040 under Go~RES, including the 30\% CPO markup) lies between Italy (0.155\,\euro/kWh) and Germany (0.173\,\euro/kWh), with a total spread of only 0.018\,\euro/kWh across the border region. Similarly, Austria's grid charge (14.69\,\euro/kW/yr) lies between Italy (8.96\,\euro/kW/yr) and Germany (16.77\,\euro/kW/yr).
@@ -1053,6 +1070,14 @@ The following case study and results are taken from the journal publication by \
                 \item High (+10\,\euro/kW/yr, $+$68\%): Austria at 24.69\,\euro/kW/yr --- significantly above both neighbours.
             \end{itemize}
         \end{itemize}
+        The premium levels are chosen to test whether incremental cost adjustments can meaningfully redistribute charging demand without undermining \ac{BET} competitiveness on routes that must traverse Austria. The electricity price premiums range from a modest narrowing of the AT--DE price gap to a clear reversal of the price ordering. The grid charge premiums follow the same logic applied to the fixed capacity-based cost component, testing whether annual infrastructure charges --- which affect long-term investment decisions rather than per-trip costs --- have a comparable steering effect. Each locational cost premium scenario is run both in road-only mode and with modal shift to rail enabled.
+
+    \begin{figure}[H]
+          \centering
+          \includegraphics[width=\linewidth]{graphics/paper_3/at_border_cost_difference_by_surcharge.pdf}
+          \caption{Relative electricity price difference (ct/kWh) between Austrian and neighbouring border regions under locational cost premiums (fast charging, REPowerEU++ scenario). Left: AT vs.\ DE border regions; right: AT vs.\ IT border regions. Negative values indicate AT is cheaper; positive values indicate AT is more expensive. Shaded areas highlight the baseline cost advantage or disadvantage.}
+          \label{fig:at_border_cost_diff}
+    \end{figure}
 
     \subsubsection{Analytical setup for charging allocation comparison}
     \label{sec:analytical_setup}
@@ -1060,7 +1085,7 @@ The following case study and results are taken from the journal publication by \
     To investigate the spatially flexible charging demand allocation, two allocation strategies are compared (Table~\ref{tab:analytical_setup}):
     \begin{itemize}
         \item \textbf{System-optimal:} Charging is permitted at all geographic locations along each route, with both charging allocation and fleet adoption jointly optimized.
-        \item \textbf{Heuristic:} Charging is restricted to mandatory break locations with energy distributed according to a state-of-charge-aware rule, using the fleet from the System-optimal case. At each break, the rule checks whether the current battery state of charge is sufficient to reach the next break location; if not, exactly enough energy is charged to bridge that gap.
+        \item \textbf{Heuristic:} Charging is restricted to mandatory break locations with energy distributed according to a state-of-charge-aware rule, using the fleet from the System-optimal case. At each break, the rule checks whether the current battery state of charge is sufficient to reach the next break location; if not, exactly enough energy is charged to bridge that gap. This represents a plausible real-world charging pattern where drivers charge reactively based on remaining range rather than optimizing for lowest-cost locations.
     \end{itemize}
 
     \begin{table}[H]
@@ -1078,7 +1103,7 @@ The following case study and results are taken from the journal publication by \
         \end{tabular}}
     \end{table}
 
-    In total, the analysis comprises: (i) four GENeSYS-MOD energy scenarios run in both road-only and road-with-rail configurations (8 system-optimal runs), each paired with a heuristic counterpart (8 heuristic runs); and (ii) six border region locational cost premium scenarios, each run in road-only and road-with-rail mode (12 runs). This yields 28 model configurations in total.
+    In total, the analysis comprises: (i) four GENeSYS-MOD energy scenarios run in both road-only and road-with-rail configurations (8 system-optimal runs), each paired with a Heuristic counterpart (8 Heuristic runs); and (ii) six border region locational cost premium scenarios, each run in road-only and road-with-rail mode (12 runs). This yields 28 model configurations in total.
 
 \subsection{Geographic distribution of charging demand across energy system scenarios}
 
@@ -1116,9 +1141,9 @@ The following case study and results are taken from the journal publication by \
 
 \subsection{Spatial patterns of charging load distribution}
 
-    The preceding subsection presented the cost-optimized (System-optimal) charging allocation, in which the model freely chooses where trucks charge along their routes to minimize total system costs. This subsection quantifies the degree of spatial variation in charging allocation by comparing the cost-optimized solution against the Heuristic benchmark defined in Section~\ref{sec:analytical_setup} (Table~\ref{tab:analytical_setup}), in which charging is restricted to mandatory break locations and energy is distributed by a reactive state-of-charge rule rather than cost optimization. The difference between these two strategies reveals how much the geographic distribution of charging demand can shift when location choice is optimized.
+    The preceding subsection presented the cost-optimized (System-optimal) charging allocation, in which the model freely chooses where trucks charge along their routes to minimize total system costs. This subsection quantifies the degree of spatial flexibility inherent in this solution by comparing it against the Heuristic benchmark defined in Section~\ref{sec:analytical_setup} (Table~\ref{tab:analytical_setup}), in which charging is restricted to mandatory break locations and energy is distributed by a reactive state-of-charge rule rather than cost optimization. The difference between these two strategies reveals how much the geographic distribution of charging demand can shift when location choice is optimized.
 
-    Figure~\ref{fig:distrib_charging_load} compares the geographic distribution of charging load by latitude for all four energy system scenarios in 2032. The heuristic shows pronounced peaks across all scenarios, while the cost-optimized allocation smooths these peaks by redistributing charging to locations with lower costs. The largest differences between the two strategies arise around the DE--AT--IT border and the DK--DE border.
+    Figure~\ref{fig:distrib_charging_load} compares the geographic distribution of charging load by latitude for all four energy system scenarios in 2032. The Heuristic shows pronounced peaks across all scenarios, while the cost-optimized allocation smooths these peaks by redistributing charging to locations with lower costs. The largest differences between the two strategies arise around the DE--AT--IT border and the DK--DE border.
 
     \begin{figure}[H]
           \centering
@@ -1127,9 +1152,9 @@ The following case study and results are taken from the journal publication by \
           \label{fig:distrib_charging_load}
     \end{figure}
 
-    The Go~RES scenario is examined in greater detail. Country-level differences between the two allocation strategies are summarized in Table~\ref{tab:demand_shift}. Compared to the System-optimal, the Heuristic concentrates more charging in Germany ($+$9.0~pp) at the expense of Italy ($-$6.4~pp) and Austria ($-$4.2~pp). Overall, 39\% of total charging demand shifts to a different location when comparing the cost-optimized and heuristic allocation strategies, indicating that charging loads along the corridor are substantially spatially flexible.
+    The Go~RES scenario is examined in greater detail to illustrate the charging-cost-optimized reallocation of demand. Country-level differences between the two allocation strategies are summarized in Table~\ref{tab:demand_shift}. Compared to the System-optimal, the Heuristic concentrates more charging in Germany ($+$9.0~pp) at the expense of Italy ($-$6.4~pp) and Austria ($-$4.2~pp), where pp denotes percentage points. Overall, the relative difference in charging load magnitudes across NUTS-2 regions amounts to 39\% when comparing the cost-optimized and heuristic allocation strategies, indicating that charging loads along the corridor are substantially spatially flexible.
 
-    Table~\ref{tab:levelized_charging} compares average charging prices between the two strategies across three time horizons. Total charging costs --- comprising location-dependent electricity prices and charging infrastructure costs influenced by local grid charges --- are consistently higher under the heuristic, with a premium of $+$0.20~ct/kWh in 2032 and $+$0.17~ct/kWh in 2040.
+    Table~\ref{tab:levelized_charging} compares average charging prices between the two strategies across three time horizons. Total charging costs --- comprising location-dependent electricity prices and charging infrastructure costs influenced by local grid charges --- are consistently higher under the Heuristic, with a premium of $+$0.20~ct/kWh in 2032 and $+$0.17~ct/kWh in 2040.
 
     \begin{table}[H]
     \centering
@@ -1174,7 +1199,7 @@ The following case study and results are taken from the journal publication by \
 
 \subsection{Role of modal shift to rail}
 
-    The spatial distribution of rail transport work by latitude is robust across all four energy system scenarios: beyond 2028 the curves largely overlap. Rail is allocated primarily in two latitude bands: northern Scandinavia (Norway, Sweden, Finland) and northern Italy, while Germany and Austria see comparatively less rail shift, suggesting that intermediate corridor segments remain more efficiently served by road freight.
+    The spatial distribution of rail transport work by latitude is robust across all four energy system scenarios: beyond 2028 the curves largely overlap. Rail is allocated primarily in two latitude bands: Scandinavia (Norway, Sweden, Finland) and Italy, while Germany and Austria see comparatively less rail shift, suggesting that intermediate corridor segments remain more efficiently served by road freight.
 
     Figure~\ref{fig:modalshift_latitude_gores} isolates the Go~RES scenario to show the effect of modal shift on \ac{BET} electricity consumption more clearly. The shaded area between the solid (baseline) and dashed (with rail) curves highlights the reduction in charging demand at each latitude. The largest reductions appear in northern Scandinavia (60--68\textdegree{}N) and at the Austria--Italy border (46--48\textdegree{}N), where long distances and high local charging costs make rail economically attractive. By 2048, the cumulative reduction extends across the full corridor as rail capacity grows.
 
@@ -1196,11 +1221,11 @@ The following case study and results are taken from the journal publication by \
 
     Table~\ref{tab:demand_shift} (right) compares the country-level distribution of \ac{BET} charging demand between road-only and road-plus-rail for the Go~RES scenario. Enabling modal shift to rail concentrates \ac{BET} charging in Germany ($+$13.1~pp), as the long-haul routes through Italy --- which accounted for a large share of \ac{BET} demand in the road-only case --- are preferentially shifted to rail. Italy's share drops by 8.8~pp, and Sweden's by 6.6~pp, reflecting the disproportionate shift of long-distance Nordic--Italian freight to rail. Austria's share remains nearly unchanged ($+$0.5~pp), while Norway increases slightly ($+$1.7~pp) as the remaining \ac{BET} routes concentrate on shorter northern segments. Overall, the charging demand distribution is changed by 15.4\%.
 
-    Table~\ref{tab:rail_intensity} complements this share-based view with an infrastructure-normalized measure: \ac{BET} charging demand per highway-kilometer (MWh/hw-km) by country. While the share-based analysis highlights Germany's growing dominance, the intensity metric reveals that Austria becomes the most infrastructure-stressed country under modal shift. Austria's charging intensity nearly doubles by 2048 ($+$82\%, from 189 to 343~MWh/hw-km), driven by its short highway network (695~km). Germany's intensity also increases substantially ($+$44\%), but from a much lower base due to its large highway network (13,210~km).
+    Table~\ref{tab:rail_intensity} complements this share-based view with an infrastructure-normalized measure: \ac{BET} charging demand per highway-kilometer (MWh/hw-km) by country. While the share-based analysis highlights Germany's growing dominance, the intensity metric reveals that \emph{Austria} becomes the most infrastructure-stressed country under modal shift. Austria's charging intensity nearly doubles by 2048 ($+$82\%, from 189 to 343~MWh/hw-km), driven by its short highway network (695~km). Germany's intensity also increases substantially ($+$44\%), but from a much lower base due to its large highway network (13,210~km).
 
-    Denmark shows the most dramatic relative increase from 2040 onward ($+$445\% in 2040, $+$266\% in 2048): as long-haul Scandinavian freight shifts to rail, the remaining road traffic through Denmark is dominated by medium-distance DK--DE routes that electrify rapidly, raising Denmark's intensity from 9 to 48~MWh/hw-km in 2040 and to 80~MWh/hw-km by 2048. Conversely, Finland and Sweden see sharp intensity reductions as their long-distance freight shifts to rail.
+    Denmark shows the most dramatic relative increase from 2040 onward ($+$445\% in 2040, $+$266\% in 2048): as long-haul Scandinavian freight shifts to rail, the remaining road traffic through Denmark is dominated by medium-distance DK--DE routes that electrify rapidly, raising Denmark's intensity from 9 to 48~MWh/hw-km in 2040 and to 80~MWh/hw-km by 2048. Conversely, Finland and Sweden see sharp intensity reductions as their long-distance freight shifts to rail. The overall spatial concentration of charging intensity per highway-km decreases with rail (the Herfindahl-Hirschman Index, HHI\footnote{The HHI is the sum of squared shares; lower values indicate more even geographic distribution.}, drops from 641 to 417 in 2048), as the extreme Scandinavian hotspots are relieved.
 
-    Notably, this intensification in Austria exhibits a temporal reversal. In the early transition (2032), Austrian border region charging decreases with rail ($-$16\% to $-$25\% across scenarios), because the first routes shifted to rail are the long DE$\leftrightarrow$IT connections that previously charged in Tyrol (AT33) while transiting Austria. From 2040 onward, however, the effect reverses: the remaining shorter road routes electrify more aggressively --- since rail has absorbed the costliest long-distance freight --- and Austria's border regions end up with substantially more charging than without rail ($+$8\% to $+$82\% by 2048). This pattern is consistent across all four GENeSYS-MOD scenarios.
+    Notably, this intensification in Austria exhibits a temporal reversal. In the early transition (2032), Austrian border region charging \emph{decreases} with rail ($-$16\% to $-$25\% across scenarios), because the first routes shifted to rail are the long DE$\leftrightarrow$IT connections that previously charged in Tyrol (AT33) while transiting Austria. Removing these long-haul routes from road eliminates their charging stops in Austria. From 2040 onward, however, the effect reverses: the remaining shorter road routes electrify more aggressively --- since rail has absorbed the costliest long-distance freight --- and Austria's border regions end up with substantially \emph{more} charging than without rail ($+$8\% to $+$82\% by 2048). This pattern is consistent across all four GENeSYS-MOD scenarios, indicating that modal shift to rail initially relieves the Austrian transit bottleneck but ultimately intensifies it as the residual road fleet accelerates its electrification.
 
     \begin{table}[H]
     \centering
@@ -1224,9 +1249,9 @@ The following case study and results are taken from the journal publication by \
 
 \subsection{Border region analysis: Germany--Austria--Italy}
 
-    The preceding subsections show that the DE--AT--IT border region consistently exhibits the highest charging demand concentration across all scenarios, and that modal shift to rail ultimately intensifies rather than relieves this concentration in Austria. This subsection analyses whether localized cost instruments can manage this demand, using the REPowerEU++ scenario, which exhibits particularly high charging demand in this area early in the transition. The two borders are in close geographic proximity, as the Austrian transit corridor is relatively short. Using the locational cost premium scenarios defined in Section~\ref{sec:locational_premium_scenarios}, the analysis investigates how the two spatially varying cost components --- electricity prices and fixed grid charges --- affect the local concentration of charging demand.
+    The preceding subsections showed that the DE--AT--IT border region consistently exhibits the highest charging demand concentration across all scenarios, and that modal shift to rail ultimately intensifies rather than relieves this concentration in Austria. This subsection analyses whether localized cost instruments can manage this demand. The analysis focuses on the REPowerEU++ scenario because it exhibits the highest early-stage charging demand concentration in the border region among all four scenarios, providing the most demanding test case for localized cost instruments. The two borders are in close geographic proximity, as the Austrian transit corridor is relatively short. Using the locational cost premium scenarios defined in Section~\ref{sec:locational_premium_scenarios}, the analysis investigates how the two spatially varying cost components --- electricity prices and fixed grid charges --- affect the local concentration of charging demand.
 
-    Figures~\ref{fig:at_surcharge_reallocation} and~\ref{fig:at_surcharge_intensity} show the effect of different cost premiums applied to AT33 on charging allocation in the border region. The Austrian locational cost premiums have negligible impact on corridor-wide \ac{BET} fleet shares. In contrast, the spatial distribution of where \acp{BET} charge shifts substantially (Figure~\ref{fig:at_surcharge_reallocation}).
+    Figures~\ref{fig:at_surcharge_reallocation} and~\ref{fig:at_surcharge_intensity} show the effect of different cost premiums applied to AT33 on charging allocation in the border region. The Austrian locational cost premiums have negligible impact on corridor-wide \ac{BET} fleet shares. In contrast, the spatial distribution of \emph{where} \acp{BET} charge shifts substantially (Figure~\ref{fig:at_surcharge_reallocation}).
 
     At an electricity price premium of +0.04~\euro/kWh, charging load in Austria drops by 97\% (from 120~GWh to 3~GWh in 2040), with demand redirected primarily to Italy. AT33 (Tyrol) --- the primary transit node for DE--IT freight --- sees a 99.9\% reduction in charged energy. This reallocation effect saturates at low premium levels: even +0.01~\euro/kWh, which merely narrows the AT--DE price gap without reversing it, reduces Austrian charging by approximately 10\%.
 
@@ -1262,7 +1287,7 @@ The representation of the commercial fleet is focused on three fleet types: \ac{
 
 
             \paragraph*{Heavy-duty truck}
-            The \ac{HDT} has a total weight greater than 3.5 tons. Technical assumptions for this fleet are summarized in Table~\ref{tab:parameters_hdv}. Origin-destination flow data on the European level is used to capture charging demand from national as well as transit transport. The ETISplus dataset provides estimations of the annual tons transported by trucks in the year 2030 \cite{speth2021synthetic}. The charging profile generation for \textit{interregional transport} is applied under the following considerations:
+            The \ac{HDT} has a total weight greater than 3.5 tons. Technical assumptions for this fleet are summarized in Table~\ref{tab:parameters_hdv}. Origin-destination flow data on the European level is used to capture charging demand from national as well as transit transport. The ETISplus dataset provides estimations of the annual tons transported by trucks in the year 2030 \cite{Speth2021}. The charging profile generation for \textit{interregional transport} is applied under the following considerations:
             
             The assumed charging strategy considers that European regulation dictates a maximum driving shift of 4.5~hours \cite{ec_driving_time_2023}, and that in Austria, driving is prohibited between 10~pm and 5~am for multiple transport segments \cite{usp_lkw_fahrverbote} as well as on Saturdays and Sundays. \acp{HDT} are charged at depots and highway service areas. For trips longer than 4.5~hours, the mandatory 45-minute break takes place at a highway service area, during which the \ac{HDT} is connected to a megawatt charging station at full power. The remaining energy demand is covered at origin and destination depots during nighttime. For trips shorter than 4.5~hours, charging is fully compensated at depots. Additional depot charging during daytime occurs if the driving range is insufficient for a single battery charge. During multi-day trips, charging demand is also covered at service areas during nighttime.
             Assumptions on charging infrastructure sizing and temporal distribution of fast-charging are provided in Appendix~\ref{app:rq4_infra_sizing}.
@@ -1280,7 +1305,7 @@ The representation of the commercial fleet is focused on three fleet types: \ac{
         \toprule
         \textbf{Parameter}                       & \multicolumn{1}{l}{\textbf{Value}} & \textbf{Reference} \\ \midrule
         Fleet size (Austria 2040)                & 535,000                            &   \cite{umweltbundesamt_rep0808}                 \\
-        Battery capacity                         & 145 kWh                            &      \cite{irena2019smart_charging}              \\
+        Battery capacity                         & 145 kWh                            &      \cite{IRENA2019}              \\
         Specific energy consumption              & 27 kWh/100km                       &     \cite{umweltbundesamt_rep0808}              \\
         Daily range                              & 70 km/day                          &  \cite{SCORRANO2021101022}                   \\
         Charging power at charging station depot & 11 kW                              &        \cite{SCORRANO2021101022}             \\ \bottomrule
@@ -1381,7 +1406,7 @@ Scenario &  & \multicolumn{1}{l}{} & \multicolumn{1}{l}{} & Depot & \multicolumn
     \begin{figure}[H]
         \centering
         \includegraphics[width=0.9\textwidth]{graphics/paper_4/peak_demand_service_areas.pdf}
-        \caption{Approximation of charging peaks at Austrian service areas for a 100\% electrified commercial vehicle fleet (positions retrieved from \cite{ASFINAG}).}
+        \caption{Approximation of charging peaks at Austrian service areas for a 100\% electrified commercial vehicle fleet (positions retrieved from \cite{ASFINAG_Rastanlagensuche}).}
         \label{fig:truck_highway_charging_peak}
     \end{figure}
         \begin{figure}[H]
