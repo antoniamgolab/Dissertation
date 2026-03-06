@@ -41,7 +41,7 @@ $h_{yurvtg}$ & number of vehicles & -- & $[0, \infty[$ \\
 $h^{+}_{yurvtg}$ & newly purchased vehicles & -- & $[0,\infty[$ \\
 $h^{-}_{yurvtg}$ & \begin{tabular}[t]{@{}l@{}}number of vehicles leaving\\ the vehicle stock\end{tabular} & -- & $[0, \infty[$ \\
 $s_{yurvtgle}$ & energy fueled & kWh & $[0, \infty[$ \\
-$n_{yurlge}$ & \begin{tabular}[t]{@{}l@{}}number of fueling vehicles\\ (aggregated over $v,t$)\end{tabular} & -- & $[0, \infty[$ \\
+$n_{yurlge}$ & \begin{tabular}[t]{@{}l@{}}number of charging vehicles\\ (aggregated over $v,t$)\end{tabular} & -- & $[0, \infty[$ \\
 $b_{yiel}$ & \begin{tabular}[t]{@{}l@{}}VoT-weighted detour cost at location $e$\\ for charging type $l$ in year $y$\end{tabular} & \euro & $[0, \infty[$ \\
 $w_{yiel}$ & \begin{tabular}[t]{@{}l@{}}binary decision variable indicating whether\\ detour reduction $i$ is active\end{tabular} & -- & $\{0, 1\}$ \\
 $q^{+,\mathrm{charg\_infr, home}}_{yrte}$ & added fueling infrastructure at home & kW & $[0,\infty[$ \\
@@ -171,9 +171,9 @@ Fueling demand is derived from the number of trips $f$ and via the specific dema
     \end{split}
 \end{flalign}
 
-\textbf{Number of fueling vehicles:}
+\textbf{Number of charging vehicles:}
 
-$n$ indicates the number of fueling vehicles and is derived from the fueled energy, accounting for the usable state of charge $\mathrm{SOC}^{+,\mathrm{charging}}$:
+$n$ indicates the number of charging vehicles and is derived from the charged energy, accounting for the usable state of charge $\mathrm{SOC}^{+,\mathrm{charging}}$:
 
 \begin{flalign} \label{equ:app_n_fueling}
     \begin{split}

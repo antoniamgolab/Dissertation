@@ -3,115 +3,115 @@
         The methodologies developed in this thesis address different aspects of the geographic allocation of charging capacities for electric vehicles. Three distinct optimization and modeling approaches are formulated, as addressing each research question necessitates different model features and fleet representations (see Table~\ref{tab:methodology_overview} and Figure~\ref{fig:methodology_overview}). Model~1 determines the optimal siting and sizing of fast-charging stations along highway networks in a static setting, i.e., for a single planning period. Model~2 performs a joint optimization of the long-term transition of vehicle fleets and the deployment of charging infrastructure over a multi-year horizon. It is built around a core linear program that is extended with consumer income differentiation and detour time modeling for passenger cars (RQ2) and with state-of-charge tracking, mandatory break regulations, and modal shift for long-haul trucks to rail (RQ3). Model~3 generates hourly charging load profiles from traffic flow data for commercial vehicle fleets with transport routes of both local and interregional extent.
 
         The three models reflect a trade-off between spatial resolution, temporal scope, and the set of endogenous variables. Model~1 operates at the highest spatial resolution (individual highway segments and service areas) but considers only a single planning period and takes charging demand as exogenous. Model~2 extends the scope to multi-year fleet turnover and joint optimization of infrastructure deployment at a coarser regional level. Model~3 shifts the focus to hourly temporal resolution to capture the intra-week patterns of charging load relevant for electricity system integration.\begin{table}[htbp]
-\centering
-\caption{Overview of methodological designs in this thesis. Model~2 serves as the core formulation and is extended differently for RQ2 and RQ3.}
-\label{tab:methodology_overview}
-\small
-\resizebox{\textwidth}{!}{%
-\rowcolors{2}{gray!10}{white}%
-\begin{tabular}{p{3.8cm}p{3.5cm}p{4.2cm}p{4.2cm}p{4.2cm}}
-\toprule
-\rowcolor{white}
- & \textbf{Model 1 (RQ1)} & \textbf{Model 2 -- RQ2} & \textbf{Model 2 -- RQ3} & \textbf{Model 3 (RQ4)} \\
-\midrule
-\textbf{Method type} & MILP & LP / MILP & LP & Deterministic simulation \\[4pt]
-\textbf{Vehicle segment} & Passenger cars & Passenger cars & Heavy-duty trucks & Commercial fleet (\ac{HDT}, \ac{LDT}, buses) \\[4pt]
-\textbf{Charger type} & Fast charging only & Home, work, public (slow \& fast) & Public en-route (fast) & Depot, en-route, opportunity \\[4pt]
-\textbf{Demand representation} & Charging demand defined by location & Endogenous BEV adoption by OD pair & Endogenous BEV adoption by OD pair & Exogenous BEV fleet sizes by type, location \& OD pair \\[4pt]
-\textbf{Infrastructure decisions} & Siting \& sizing of stations & Capacity expansion by type \& location & Capacity expansion by type \& location & None \\[4pt]
-\textbf{Temporal scope} & Single year & Multi-year (2020--2050) & Multi-year (2020--2050) & Representative week \\[4pt]
-\textbf{Geographic scope} & National highway network & Sub-national (NUTS-2/3) & International corridor & National \\[4pt]
-\textbf{Spatial resolution} & Service areas / grid cells & NUTS-2/3 regions & NUTS-2 regions & NUTS-2 regions \\[4pt]
-\textbf{Key outputs} & \parbox{3.5cm}{Station locations,\\ number of charging\\ points per station} & \parbox{4.2cm}{\ac{BEV} adoption by income\\ class, charger capacity\\ by type \& region} & \parbox{4.2cm}{Charging load allocation\\ along corridor, modal\\ split road/rail} & \parbox{4.2cm}{Hourly charging profiles\\ by location \& fleet type} \\
-\bottomrule
-\end{tabular}%
-}
-\end{table}
-    \begin{figure}[htbp]
         \centering
-        \includegraphics[width=\textwidth]{graphics/methodology_overview.pdf}
-        \caption{Overview of the three methodological approaches and their relation to the central challenge of charging capacity planning.}
-        \label{fig:methodology_overview}
-    \end{figure}
+        \caption{Overview of methodological designs in this thesis. Model~2 serves as the core formulation and is extended differently for RQ2 and RQ3.}
+        \label{tab:methodology_overview}
+        \small
+        \resizebox{\textwidth}{!}{%
+        \rowcolors{2}{gray!10}{white}%
+        \begin{tabular}{p{3.8cm}p{3.5cm}p{4.2cm}p{4.2cm}p{4.2cm}}
+        \toprule
+        \rowcolor{white}
+        & \textbf{Model 1 (RQ1)} & \textbf{Model 2 -- RQ2} & \textbf{Model 2 -- RQ3} & \textbf{Model 3 (RQ4)} \\
+        \midrule
+        \textbf{Method type} & MILP & LP / MILP & LP & Deterministic simulation \\[4pt]
+        \textbf{Vehicle segment} & Passenger cars & Passenger cars & Heavy-duty trucks & Commercial fleet (\ac{HDT}, \ac{LDT}, buses) \\[4pt]
+        \textbf{Charger type} & Fast charging only & Home, work, public (slow \& fast) & Public en-route (fast) & Depot, en-route, opportunity \\[4pt]
+        \textbf{Demand representation} & Charging demand defined by location & Endogenous BEV adoption by OD pair & Endogenous BEV adoption by OD pair & Exogenous BEV fleet sizes by type, location \& OD pair \\[4pt]
+        \textbf{Infrastructure decisions} & Siting \& sizing of stations & Capacity expansion by type \& location & Capacity expansion by type \& location & None \\[4pt]
+        \textbf{Temporal scope} & Single year & Multi-year (2020--2050) & Multi-year (2020--2050) & Representative week \\[4pt]
+        \textbf{Geographic scope} & National highway network & Sub-national (NUTS-2/3) & International corridor & National \\[4pt]
+        \textbf{Spatial resolution} & Service areas / grid cells & NUTS-2/3 regions & NUTS-2 regions & NUTS-2 regions \\[4pt]
+        \textbf{Key outputs} & \parbox{3.5cm}{Station locations,\\ number of charging\\ points per station} & \parbox{4.2cm}{\ac{BEV} adoption by income\\ class, charger capacity\\ by type \& region} & \parbox{4.2cm}{Charging demand allocation\\ along corridor, modal\\ split road/rail} & \parbox{4.2cm}{Hourly charging profiles\\ by location \& fleet type} \\
+        \bottomrule
+        \end{tabular}%
+        }
+        \end{table}
+            \begin{figure}[htbp]
+                \centering
+                \includegraphics[width=\textwidth]{graphics/methodology_overview.pdf}
+                \caption{Overview of the three methodological approaches and their relation to the central challenge of charging capacity planning.}
+                \label{fig:methodology_overview}
+            \end{figure}
 
-            Figure \ref{fig:methodology_overview} illustrates how the three models relate to the central challenge of charging capacity planning. The three models are applied as stand-alone analyses. The following sections describe each model in detail. As the three models are independent, each section uses its own nomenclature; symbols may be reused across sections with different meanings. The methodological descriptions are based on the underlying journal publications, \citeauthor{en15062147} (\citeyear{en15062147}), \citeauthor{GOLAB2026PublicCharger} (\citeyear{GOLAB2026PublicCharger}), \citeauthor{GOLAB2026SpatialTruck} (\citeyear{GOLAB2026SpatialTruck}), and \citeauthor{GOLAB2025134385} (\citeyear{GOLAB2025134385}). 
+                    Figure \ref{fig:methodology_overview} illustrates how the three models relate to the central challenge of charging capacity planning. The three models are applied as stand-alone analyses. The following sections describe each model in detail. As the three models are independent, each section uses its own nomenclature; symbols may be reused across sections with different meanings. The methodological descriptions are based on the underlying journal publications, \citeauthor{en15062147} (\citeyear{en15062147}), \citeauthor{GOLAB2026PublicCharger} (\citeyear{GOLAB2026PublicCharger}), \citeauthor{GOLAB2026SpatialTruck} (\citeyear{GOLAB2026SpatialTruck}), and \citeauthor{GOLAB2025134385} (\citeyear{GOLAB2025134385}). 
 
-    \section{Static charging infrastructure planning}\label{sec:rq1_methods}
-    %MILP for fast-charging infrastructure sizing and allocation along highway networks (RQ1).
-    \subsection{Problem description}
+            \section{Static charging infrastructure planning}\label{sec:rq1_methods}
+            %MILP for fast-charging infrastructure sizing and allocation along highway networks (RQ1).
+            \subsection{Problem description}
 
-    The model is designed to cost-optimally plan fast-charging infrastructure along highway networks. The planning encompasses the geographic allocation, i.e., the siting, and the sizing of charging capacities. The model reflects cost-optimal decisions from the perspective of an infrastructure planner seeking to determine a fast-charging infrastructure set-up for ensuring charging demand coverage of battery-electric passenger cars traveling long distances. This decision-making could, for example, apply to a highway network operator preparing tenders for charging service providers, or to a public authority defining minimum infrastructure requirements. The considered costs encompass two components: the onsite preparations to enable the support of large capacities at a location and the hardware and construction costs associated with the installation of individual charging points. The planning refers to a defined network topology described by intersections, distances along highway segments, and positions of service areas, where potential sites for charging stations are exclusively service areas.
+            The model is designed to cost-optimally plan fast-charging infrastructure along highway networks. The planning encompasses the geographic allocation, i.e., the siting, and the sizing of charging capacities. The model reflects cost-optimal decisions from the perspective of an infrastructure planner seeking to determine a fast-charging infrastructure set-up for ensuring charging demand coverage of battery-electric passenger cars traveling long distances. This decision-making could, for example, apply to a highway network operator preparing tenders for charging service providers, or to a public authority defining minimum infrastructure requirements. The considered costs encompass two components: the onsite preparations to enable the support of large capacities at a location and the hardware and construction costs associated with the installation of individual charging points. The planning refers to a defined network topology described by intersections, distances along highway segments, and positions of service areas, where potential sites for charging stations are exclusively service areas.
 
-    \subsection{Model features and assumptions}
-    The \textit{HighCharge} model is formulated as a mixed-integer linear program (MILP). The underlying methodology is based on a graph representation of the highway network (Figure~\ref{fig:method}). Road connections between two junctions or between a junction and a network endpoint are referred to as \textit{segments}, and the vertices as \textit{nodes}. Two types of nodes are distinguished: nodes representing possible sites for charging station installation along segments (\textit{node type 1}), and nodes representing highway junctions or endpoints (\textit{node type 2}). At each node, a charging demand exists which can be covered at the node itself or at adjacent nodes within a defined range. The model allocates sites for charging station installation and determines the optimal number of charging points at each site.
+            \subsection{Model features and assumptions}
+            The \textit{HighCharge} model is formulated as a mixed-integer linear program (MILP). The underlying methodology is based on a graph representation of the highway network (Figure~\ref{fig:method}). Road connections between two junctions or between a junction and a network endpoint are referred to as \textit{segments}, and the vertices as \textit{nodes}. Two types of nodes are distinguished: nodes representing possible sites for charging station installation along segments (\textit{node type 1}), and nodes representing highway junctions or endpoints (\textit{node type 2}). At each node, a charging demand exists which can be covered at the node itself or at adjacent nodes within a defined range. The model allocates sites for charging station installation and determines the optimal number of charging points at each site.
 
-    The charging infrastructure is planned in consideration of the traffic flow and technological parameters of the vehicle's battery. The following key assumptions related to the representation of charging demand are made:
-    \begin{itemize}
-     \item The \ac{BEV} fleet traveling along the highway network is treated as a homogeneous quantity, allowing to consider accumulated charging demand and translating this into the optimal sizing of a charging station. Based on this assumption, the technical parameters of an \textit{average} \ac{BEV} are assumed, such as average driving range ($\overline{dist}_{range, BEV}$), energy consumption ($\overline{d}_{spec, BEV}$) and charging capacity ($\overline{P}_{charge,BEV}$).
-     \item All charging demands, $\sum_{n, k}\hat{D}_{n_k}$, result from the energy consumption of \acp{BEV} driving along the highway and need to be compensated for in total by charging stations built along the highway network.
-     \item Highway charging infrastructure is primarily used by long-distance drivers as \ac{BEV} owners mostly charge at home or at work.
-     \item A fast-charging infrastructure along a highway network is designed based on peak demands, including seasonal peak demand ($\hat{f}_{l_k}$) and hourly peak demand, during a day ($\gamma_h$).
-    \end{itemize}
-
-
+            The charging infrastructure is planned in consideration of the traffic flow and technological parameters of the vehicle's battery. The following key assumptions related to the representation of charging demand are made:
+            \begin{itemize}
+            \item The \ac{BEV} fleet traveling along the highway network is treated as a homogeneous quantity, allowing to consider accumulated charging demand and translating this into the optimal sizing of a charging station. Based on this assumption, the technical parameters of an \textit{average} \ac{BEV} are assumed, such as average driving range ($\overline{dist}_{range, BEV}$), energy consumption ($\overline{d}_{spec, BEV}$) and charging capacity ($\overline{P}_{charge,BEV}$).
+            \item All charging demands, $\sum_{n, k}\hat{D}_{n_k}$, result from the energy consumption of \acp{BEV} driving along the highway and need to be compensated for in total by charging stations built along the highway network.
+            \item Highway charging infrastructure is primarily used by long-distance drivers as \ac{BEV} owners mostly charge at home or at work.
+            \item A fast-charging infrastructure along a highway network is designed based on peak demands, including seasonal peak demand ($\hat{f}_{l_k}$) and hourly peak demand, during a day ($\gamma_h$).
+            \end{itemize}
 
 
 
 
-    \subsection{Input-Output relations}
-    Figure~\ref{fig:method} displays the input-output relations of the modeling framework. In order to capture the spatially granular charging demand along the highway network, the inputs are grouped into four categories: (i) the composition of the car fleet is represented through the share of \acp{BEV}, the share of long-distance drivers, and traffic load data; (ii) the technological characteristics of \acp{BEV} are captured through energy consumption, driving range, and charging power; (iii) constraints and costs of the charging infrastructure are included through the peak capacity of charging stations, grid connection constraints, and infrastructure costs; and (iv) the physical layout of the road network is represented through the graph topology described above. These inputs feed into a demand calculation step that derives the charging demand at each node of the network. The \textit{HighCharge} optimization model then determines at which nodes charging stations are installed and how many charging points each station is equipped with.
-\begin{figure}[H]
-\includegraphics[width=14 cm]{graphics/paper_1/modelling_framework.pdf}
-\caption{Overview of the modeling framework for RQ1. Input parameters feed into a demand calculation and the \textit{HighCharge} optimization model, which determines the allocation and sizing of charging infrastructure along the highway network.\label{fig:method}}
-\end{figure}   
-    \subsection{Mathematical formulation}
 
-        Table~\ref{tab:nomenclature_rq1} lists the nomenclature used in the following equations.
 
-\begin{scriptsize}
-\begin{longtable}{lll}
-\caption{Nomenclature for the \textit{HighCharge} model (RQ1).}
-\label{tab:nomenclature_rq1}\\
-\hline
-\textbf{Symbol} & \textbf{Description} & \textbf{Unit / Domain} \\ \hline
-\endfirsthead
-\hline
-\textbf{Symbol} & \textbf{Description} & \textbf{Unit / Domain} \\ \hline
-\endhead
-\hline
-\endfoot
-\endlastfoot
-\multicolumn{3}{l}{\textbf{Sets and indices}} \\ \hline
-$l$ & Node & -- \\
-$k$ & Highway segment & -- \\
-$l_k$ & Node $l$ on segment $k$ & -- \\
-$n_k$ & Node with charging demand on segment $k$ & -- \\
-$A_{n_k}$ & Set of nodes within distance $dist_{max}$ of node $n_k$ & -- \\
-$s_{l_k}$ & Segment to which node $l_k$ belongs & -- \\
-\\ \hline
-\multicolumn{3}{l}{\textbf{Decision variables}} \\ \hline
-$X_l$ & Whether a charging station is installed at node $l$ & $\{0,1\}$ \\
-$Y_{l_k}$ & Number of charging points at node $l_k$ & $\mathbb{Z}_{\geq 0}$ \\
-$\hat{E}_{l_k}^{charged, n_k}$ & Energy charged at node $l_k$ to cover demand from $n_k$ & kWh \\
-$\hat{D}_{l_k}^{in, n_k}$ & Demand transferred into node $l_k$ from adjacent node & kWh \\
-$\hat{D}_{l_k}^{out, n_k}$ & Demand transferred out of node $l_k$ to adjacent node & kWh \\
-\\ \hline
-\multicolumn{3}{l}{\textbf{Parameters}} \\ \hline
-$c_X$ & Cost of installing a charging station (site preparation) & \euro \\
-$c_Y$ & Cost per charging point (hardware and construction) & \euro \\
-$\hat{D}_{n_k}$ & Charging demand at node $n_k$ & kWh \\
-$\overline{dist}_{range, BEV}$ & Average driving range of BEV & km \\
-$\overline{d}_{spec, BEV}$ & Average specific energy consumption of BEV & kWh/km \\
-$\overline{P}_{charge, BEV}$ & Average charging power of BEV & kW \\
-$dist_{max}$ & Maximum distance for demand coverage & km \\
-$r_{l_k, l'_k}$ & Rationing parameter for traffic flow splitting at junctions & $[0,1]$ \\
-$P_{max}$ & Maximum power capacity at a station & kW \\
-$\hat{P}_{CP}$ & Power per charging point & kW \\
-$\hat{f}_{l_k}$ & Seasonal peak demand factor & -- \\
-$\gamma_h$ & Hourly peak demand factor & -- \\
-\hline
-\end{longtable}
-\end{scriptsize}
+            \subsection{Input-Output relations}
+            Figure~\ref{fig:method} displays the input-output relations of the modeling framework. In order to capture the spatially granular charging demand along the highway network, the inputs are grouped into four categories: (i) the composition of the car fleet is represented through the share of \acp{BEV}, the share of long-distance drivers, and traffic load data; (ii) the technological characteristics of \acp{BEV} are captured through energy consumption, driving range, and charging power; (iii) constraints and costs of the charging infrastructure are included through the peak capacity of charging stations, grid connection constraints, and infrastructure costs; and (iv) the physical layout of the road network is represented through the graph topology described above. These inputs feed into a demand calculation step that derives the charging demand at each node of the network. The \textit{HighCharge} optimization model then determines at which nodes charging stations are installed and how many charging points each station is equipped with.
+        \begin{figure}[H]
+        \includegraphics[width=14 cm]{graphics/paper_1/modelling_framework.pdf}
+        \caption{Overview of the modeling framework for RQ1. Input parameters feed into a demand calculation and the \textit{HighCharge} optimization model, which determines the allocation and sizing of charging infrastructure along the highway network.\label{fig:method}}
+        \end{figure}   
+            \subsection{Mathematical formulation}
+
+                Table~\ref{tab:nomenclature_rq1} lists the nomenclature used in the following equations.
+
+        \begin{scriptsize}
+        \begin{longtable}{lll}
+        \caption{Nomenclature for the \textit{HighCharge} model (RQ1).}
+        \label{tab:nomenclature_rq1}\\
+        \hline
+        \textbf{Symbol} & \textbf{Description} & \textbf{Unit / Domain} \\ \hline
+        \endfirsthead
+        \hline
+        \textbf{Symbol} & \textbf{Description} & \textbf{Unit / Domain} \\ \hline
+        \endhead
+        \hline
+        \endfoot
+        \endlastfoot
+        \multicolumn{3}{l}{\textbf{Sets and indices}} \\ \hline
+        $l$ & Node & -- \\
+        $k$ & Highway segment & -- \\
+        $l_k$ & Node $l$ on segment $k$ & -- \\
+        $n_k$ & Node with charging demand on segment $k$ & -- \\
+        $A_{n_k}$ & Set of nodes within distance $dist_{max}$ of node $n_k$ & -- \\
+        $s_{l_k}$ & Segment to which node $l_k$ belongs & -- \\
+        \\ \hline
+        \multicolumn{3}{l}{\textbf{Decision variables}} \\ \hline
+        $X_l$ & Whether a charging station is installed at node $l$ & $\{0,1\}$ \\
+        $Y_{l_k}$ & Number of charging points at node $l_k$ & $\mathbb{Z}_{\geq 0}$ \\
+        $\hat{E}_{l_k}^{charged, n_k}$ & Energy charged at node $l_k$ to cover demand from $n_k$ & kWh \\
+        $\hat{D}_{l_k}^{in, n_k}$ & Demand transferred into node $l_k$ from adjacent node & kWh \\
+        $\hat{D}_{l_k}^{out, n_k}$ & Demand transferred out of node $l_k$ to adjacent node & kWh \\
+        \\ \hline
+        \multicolumn{3}{l}{\textbf{Parameters}} \\ \hline
+        $c_X$ & Cost of installing a charging station (site preparation) & \euro \\
+        $c_Y$ & Cost per charging point (hardware and construction) & \euro \\
+        $\hat{D}_{n_k}$ & Charging demand at node $n_k$ & kWh \\
+        $\overline{dist}_{range, BEV}$ & Average driving range of BEV & km \\
+        $\overline{d}_{spec, BEV}$ & Average specific energy consumption of BEV & kWh/km \\
+        $\overline{P}_{charge, BEV}$ & Average charging power of BEV & kW \\
+        $dist_{max}$ & Maximum distance for demand coverage & km \\
+        $r_{l_k, l'_k}$ & Rationing parameter for traffic flow splitting at junctions & $[0,1]$ \\
+        $P_{max}$ & Maximum power capacity at a station & kW \\
+        $\hat{P}_{CP}$ & Power per charging point & kW \\
+        $\hat{f}_{l_k}$ & Seasonal peak demand factor & -- \\
+        $\gamma_h$ & Hourly peak demand factor & -- \\
+        \hline
+        \end{longtable}
+        \end{scriptsize}
 
         The objective function of the optimization model is to minimize the total charging infrastructure investment costs: 
         
@@ -358,7 +358,7 @@ $\beta^{h}_{t}$                          & \begin{tabular}[t]{@{}l@{}}Bass-diffu
     Fueling demand is derived from the number of trips $f$ and via the specific demand $D^{spec}$ of the vehicle:
         \begin{flalign} \label{equ_d:_fuel}
             \begin{split}
-                \sum_{l \in \mathcal{L}_{t}} \sum_{e \in \mathcal{E}_{rl}} s_{yrvtgle} \geq \frac{D^{\mathrm{spec}}_{vtg} \cdot L_{r}}{W_{vtg}} f_{yrvtg} \quad : \forall y,r,v,t,g
+                \sum_{l \in \mathcal{L}_{t}} \sum_{e \in \mathcal{E}_{rl}} s_{yrvtgle} = \frac{D^{\mathrm{spec}}_{vtg} \cdot L_{r}}{W_{vtg}} f_{yrvtg} \quad : \forall y,r,v,t,g
             \end{split}
         \end{flalign}
 
@@ -533,7 +533,7 @@ $F_{yur}$                                & exogenous travel demand (by consumer 
 
         The left-hand side of the first equation is the total installed capacity. The right-hand side decomposes it into the discrete lower bound $cap^{\mathrm{lb}}_{iel}$ of the active detour-reduction level and a continuous residual $q^{\Delta+, \mathrm{charg\_infr}}$ that captures capacity above this threshold. The indicator constraint (second line) enforces that when $w_{yiel} = 1$, the total installed capacity lies within the bounds $[cap^{\mathrm{lb}}_{iel},\; cap^{\mathrm{ub}}_{iel}]$ associated with detour-reduction level $i$. This ties charging infrastructure expansion to a discrete reduction of detour time.
 
-        The VoT-weighted detour cost is defined only for charging types not allocated at home, for $l \in \mathcal{L}^{\textrm{not home}}$. Based on an assumed charging detour time $B^{\textrm{init}}_{el}$ that is initially needed to reach the nearest charging station, we model the relative reductions of the detour time that directly result from the expansion of the charging infrastructure capacities. The decision variable $b_{yiel}$ represents the total monetized detour cost at location $e$ for charging type $l$ in year $y$, aggregated across all consumer groups and charging events. It is defined via an indicator constraint:
+        The VoT-weighted detour cost is defined only for charging types not allocated at home, for $l \in \mathcal{L}^{\textrm{not home}}$. Based on an assumed charging detour time $B^{\textrm{init}}_{el}$ that is initially needed to reach the nearest charging station, we model the relative reductions of the detour time aggregated over all charging vehicles that directly result from the expansion of the charging infrastructure capacities. The decision variable $b_{yiel}$ represents the total monetized detour cost at location $e$ for charging type $l$ in year $y$, aggregated across all consumer groups and charging events. It is defined via an indicator constraint:
 
         \begin{flalign}
             \begin{split}
