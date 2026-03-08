@@ -254,6 +254,20 @@ The left-hand side is the total installed capacity (initial plus cumulative expa
     \end{split}
 \end{flalign}
 
+For solvers without native indicator constraint support, the equivalent big-M reformulation is:
+
+\begin{flalign} \label{equ:app_bigM_cap_lb}
+    \begin{split}
+        Q^{\mathrm{charg\_infr}}_{tle} + \sum_{y' \in \mathcal{Y}^{\mathrm{exp}}_y} q^{+, \mathrm{charg\_infr}}_{y'tle} \geq cap^{\mathrm{lb}}_{iel} - M \cdot (1 - w_{yiel}) \quad : \forall y,i,e,l \in \mathcal{L}^{\textrm{not home}}
+    \end{split}
+\end{flalign}
+
+\begin{flalign} \label{equ:app_bigM_cap_ub}
+    \begin{split}
+        Q^{\mathrm{charg\_infr}}_{tle} + \sum_{y' \in \mathcal{Y}^{\mathrm{exp}}_y} q^{+, \mathrm{charg\_infr}}_{y'tle} \leq cap^{\mathrm{ub}}_{iel} + M \cdot (1 - w_{yiel}) \quad : \forall y,i,e,l \in \mathcal{L}^{\textrm{not home}}
+    \end{split}
+\end{flalign}
+
 Exactly one detour-reduction level is selected per location, year, and charging type:
 
 \begin{flalign} \label{equ:app_sum_w}
