@@ -312,18 +312,6 @@ The year-over-year change in the stock of an individual vehicle type $v$ and tec
     \end{split}
 \end{flalign}
 
-\textbf{Market share constraints:}
-
-For vehicle technologies with exogenously defined market shares $\mu_{yvt}$, the share of newly purchased vehicles is fixed:
-
-\begin{flalign} \label{equ:app_market_share}
-    \begin{split}
-        \sum_{u,r,g} h^+_{yurvtg} = \mu_{yvt} \cdot \sum_{u,r,v',t',g} h^+_{yurv't'g} \quad :\forall (y, v, t) \in \mathcal{MS}
-    \end{split}
-\end{flalign}
-
-where $\mathcal{MS}$ denotes the set of year--technology--vehicle type combinations with defined market shares.
-
 \textbf{Trip purpose ratio:}
 
 The ratio between commuting and private trip vehicle stocks is fixed per geographic location to maintain the observed trip-purpose distribution:
@@ -335,26 +323,6 @@ The ratio between commuting and private trip vehicle stocks is fixed per geograp
 \end{flalign}
 
 where $\sigma^{\mathrm{commuting}}_e$ and $\sigma^{\mathrm{private}}_e$ are the exogenously given trip shares for commuting and private purposes at location $e$, and $\mathcal{R}^{\mathrm{commuting}}_e$ and $\mathcal{R}^{\mathrm{private}}_e$ denote the respective subsets of OD pairs originating at $e$.
-
-\textbf{BEV fleet growth:}
-
-The total BEV fleet within each consumer group must not decrease over time:
-
-\begin{flalign} \label{equ:app_bev_growth}
-    \begin{split}
-        \sum_{r \in \mathcal{R}_u} \sum_{v} \sum_{t \in \mathcal{T}^{\mathrm{BEV}}} \sum_g h_{yurvtg} \geq \sum_{r \in \mathcal{R}_u} \sum_{v} \sum_{t \in \mathcal{T}^{\mathrm{BEV}}} \sum_g h_{(y-1)urvtg} \\ :\forall y \in \mathcal{Y}\setminus\{y_0\}, u
-    \end{split}
-\end{flalign}
-
-\textbf{Minimum home charging share:}
-
-For consumer groups with a defined minimum home charging share $\sigma^{\mathrm{home}}_{yu}$, the energy charged at home must be at least a specified fraction of the total electricity consumed by that consumer group:
-
-\begin{flalign} \label{equ:app_min_home}
-    \begin{split}
-        \sum_{\substack{r \in \mathcal{R}_u,\, v,\, t,\, g \\ e = \mathrm{origin}(r),\; l \in \mathcal{L}^{\mathrm{home}}}} s_{yurvtgle} \geq \sigma^{\mathrm{home}}_{yu} \cdot \sum_{\substack{r \in \mathcal{R}_u,\, v,\, t,\, g \\ e,\, l}} s_{yurvtgle} \quad :\forall y, u
-    \end{split}
-\end{flalign}
 
 \textbf{Forced fast charging for long-distance trips:}
 
@@ -368,11 +336,11 @@ Trips whose path length exceeds the usable driving range of the vehicle are rest
 
 \textbf{Slow and fast charging expansion ratio:}
 
-The cumulative expansion of public slow charging infrastructure is bounded relative to the expansion of public fast charging at each location:
+The cumulative expansion of public slow charging infrastructure is bounded relative to the expansion, expressed by $\kappa$, of public fast charging at each location:
 
 \begin{flalign} \label{equ:app_slow_fast}
     \begin{split}
-        \sum_{y' \in \mathcal{Y}^{\mathrm{exp}}_y} q^{+, \mathrm{charg\_infr}}_{y'(l=\mathrm{slow})e} \leq 2 \cdot \sum_{y' \in \mathcal{Y}^{\mathrm{exp}}_y} q^{+, \mathrm{charg\_infr}}_{y'(l=\mathrm{fast})e} \quad :\forall y \in \mathcal{Y}^{\mathrm{exp}}, e
+        \sum_{y' \in \mathcal{Y}^{\mathrm{exp}}_y} q^{+, \mathrm{charg\_infr}}_{y'(l=\mathrm{slow})e} \leq \kappa \cdot \sum_{y' \in \mathcal{Y}^{\mathrm{exp}}_y} q^{+, \mathrm{charg\_infr}}_{y'(l=\mathrm{fast})e} \quad :\forall y \in \mathcal{Y}^{\mathrm{exp}}, e
     \end{split}
 \end{flalign}
 
