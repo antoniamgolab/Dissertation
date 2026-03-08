@@ -44,7 +44,7 @@ $s_{yurvtgle}$ & energy fueled & kWh & $[0, \infty[$ \\
 $n_{yurlge}$ & \begin{tabular}[t]{@{}l@{}}number of charging vehicles\\ (aggregated over $v,t$)\end{tabular} & -- & $[0, \infty[$ \\
 $b_{yiel}$ & \begin{tabular}[t]{@{}l@{}}VoT-weighted detour cost at location $e$\\ for charging type $l$ in year $y$\end{tabular} & \euro & $[0, \infty[$ \\
 $w_{yiel}$ & \begin{tabular}[t]{@{}l@{}}binary decision variable indicating whether\\ detour reduction $i$ is active\end{tabular} & -- & $\{0, 1\}$ \\
-$q^{+,\mathrm{charg\_infr, home}}_{yrte}$ & added fueling infrastructure at home & kW & $[0,\infty[$ \\
+$q^{+,\mathrm{charg\_infr, home}}_{yurtle}$ & added fueling infrastructure at home & kW & $[0,\infty[$ \\
 $q^{+, \mathrm{charg\_infr}}_ {ytle}$ & added fueling infrastructure & kW & $[0, \infty[$ \\
 $q^{\Delta +, \mathrm{charg\_infr}}_ {ytle}$ & \begin{tabular}[t]{@{}l@{}}relative difference of fueling capacity\\ expansion to fixed capacity size values\end{tabular} & kW & $[0, \infty[$ \\
 $\mathrm{budget}^{+}_{yur}$ & budget overrun & \euro & $[0, \infty[$ \\
@@ -54,15 +54,15 @@ Parameters & Description & Unit & Domain \\ \hline
 $\mathrm{LoS}$ & level of service & h & $[0, \infty[$ \\
 $\mathrm{VoT}$ & value of time & \euro/h & $[0, \infty[$ \\
 $\gamma_l$ & \begin{tabular}[t]{@{}l@{}}factor between annual peak hour\\ and total annual demand\end{tabular} & -- & $[0, 1]$ \\
-$Q^{\mathrm{charg\_infr, not home}}_{urte}$ & initial fueling infrastructure (not home) & kW & $[0, \infty[$ \\
+$Q^{\mathrm{charg\_infr}}_{tle}$ & initial charging infrastructure & kW & $[0, \infty[$ \\
 $Q^{\mathrm{charg\_infr, home}}_{urtle}$ & initial fueling infrastructure at home & kW & $[0, \infty[$ \\
 $\hat{Q}^{\mathrm{charg\_infr,home}}_{utle}$ & \begin{tabular}[t]{@{}l@{}}upper limit for home charging\\ infrastructure capacity by consumer group\end{tabular} & kW & $[0, \infty[$ \\
 $\hat{Q}^{\mathrm{charg\_infr}}_{tle}$ & \begin{tabular}[t]{@{}l@{}}upper limit for charging\\ infrastructure capacity\end{tabular} & kW & $[0, \infty[$ \\
-$\alpha_{iel}$ & reduction $i$ of detour time & \% & $[0, 100]$ \\
+$\alpha_{iel}$ & reduction $i$ of detour time & -- & $[0, 1]$ \\
 $cap^{\mathrm{lb}}_{iel}$ & \begin{tabular}[t]{@{}l@{}}lower bound of capacity level $i$\\ for detour time reduction $\alpha_{i}$\end{tabular} & kW & $[0, \infty[$ \\
 $cap^{\mathrm{ub}}_{iel}$ & \begin{tabular}[t]{@{}l@{}}upper bound of capacity level $i$\\ for detour time reduction $\alpha_{i}$\end{tabular} & kW & $[0, \infty[$ \\
-$\tau^u$ & \begin{tabular}[t]{@{}l@{}}vehicle replacement period\\ by consumer group\end{tabular} & a & $[0, \infty[$ \\
-$\beta$ & \begin{tabular}[t]{@{}l@{}}relative threshold for budget\\ under- or overrun\end{tabular} & \% & $[0, 100]$ \\
+$\tau_u$ & \begin{tabular}[t]{@{}l@{}}vehicle replacement period\\ by consumer group\end{tabular} & a & $[0, \infty[$ \\
+$\beta$ & \begin{tabular}[t]{@{}l@{}}relative threshold for budget\\ under- or overrun\end{tabular} & -- & $[0, 1]$ \\
 $B^{\mathrm{init}}_{el}$ & initial detour time & h & $[0, \infty[$ \\
 $D^{\textrm{spec}}_{vtg}$ & specific energy consumption & kWh/km & $[0, \infty[$ \\
 $W_{vtg}$ & load factor & persons/vehicle & $[0, \infty[$ \\
